@@ -1,0 +1,22 @@
+E:\lập trình c#\Chess Game Project\Chess Game Project\bin\Debug\Chess Game Project.exe.config
+E:\lập trình c#\Chess Game Project\Chess Game Project\bin\Debug\Chess Game Project.exe
+E:\lập trình c#\Chess Game Project\Chess Game Project\bin\Debug\Chess Game Project.pdb
+E:\lập trình c#\Chess Game Project\Chess Game Project\bin\Debug\Guna.UI2.dll
+E:\lập trình c#\Chess Game Project\Chess Game Project\bin\Debug\Newtonsoft.Json.dll
+E:\lập trình c#\Chess Game Project\Chess Game Project\bin\Debug\Newtonsoft.Json.xml
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Project.csproj.AssemblyReference.cache
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Project.csproj.SuggestedBindingRedirects.cache
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.AuthInterface.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ChangePasswordInterface.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.InfoUserInterface.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.InputTokenForm1.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.LobbyInterface.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.Login.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.MatchInterface.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.Properties.Resources.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.RegisterInterface.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Project.csproj.GenerateResource.cache
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Project.csproj.CoreCompileInputs.cache
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Project.csproj.CopyComplete
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Project.exe
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Project.pdb
