@@ -67,6 +67,30 @@
     <Compile Include="ChangePasswordInterface.Designer.cs">
       <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContainUserControls\userControlContentChatLeft.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlContentChatLeft.Designer.cs">
+      <DependentUpon>userControlContentChatLeft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlChatOne.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlChatOne.Designer.cs">
+      <DependentUpon>userControlChatOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlClick.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlClick.Designer.cs">
+      <DependentUpon>userControlClick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlContentChatRight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlContentChatRight.Designer.cs">
+      <DependentUpon>userControlContentChatRight.cs</DependentUpon>
+    </Compile>
     <Compile Include="InfoUserInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +134,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordInterface.resx">
       <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainUserControls\userControlContentChatLeft.resx">
+      <DependentUpon>userControlContentChatLeft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainUserControls\userControlChatOne.resx">
+      <DependentUpon>userControlChatOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainUserControls\userControlContentChatRight.resx">
+      <DependentUpon>userControlContentChatRight.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InfoUserInterface.resx">
       <DependentUpon>InfoUserInterface.cs</DependentUpon>

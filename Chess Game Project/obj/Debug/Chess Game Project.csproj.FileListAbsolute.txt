@@ -20,3 +20,6 @@ E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Pr
 E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Project.csproj.CopyComplete
 E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Project.exe
 E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Project.pdb
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlContentChatLeft.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlChatOne.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlContentChatRight.resources
