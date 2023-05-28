@@ -91,6 +91,30 @@
     <Compile Include="ContainUserControls\userControlContentChatRight.Designer.cs">
       <DependentUpon>userControlContentChatRight.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContainUserControls\userControlCreateRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlCreateRoom.Designer.cs">
+      <DependentUpon>userControlCreateRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlHistory.Designer.cs">
+      <DependentUpon>userControlHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlLists.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlLists.Designer.cs">
+      <DependentUpon>userControlLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlRanks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlRanks.Designer.cs">
+      <DependentUpon>userControlRanks.cs</DependentUpon>
+    </Compile>
     <Compile Include="InfoUserInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +167,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContainUserControls\userControlContentChatRight.resx">
       <DependentUpon>userControlContentChatRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainUserControls\userControlCreateRoom.resx">
+      <DependentUpon>userControlCreateRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainUserControls\userControlHistory.resx">
+      <DependentUpon>userControlHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainUserControls\userControlLists.resx">
+      <DependentUpon>userControlLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainUserControls\userControlRanks.resx">
+      <DependentUpon>userControlRanks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InfoUserInterface.resx">
       <DependentUpon>InfoUserInterface.cs</DependentUpon>

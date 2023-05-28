@@ -34,6 +34,7 @@
             this.btnSendIconChatOne = new System.Windows.Forms.Button();
             this.txtSendMsgChatOne = new System.Windows.Forms.TextBox();
             this.rtbContentChatOne = new System.Windows.Forms.RichTextBox();
+            this.userControlContentChatLeft1 = new Chess_Game_Project.ContainUserControls.userControlContentChatLeft();
             this.SuspendLayout();
             // 
             // pnlContainIconsChatOne
@@ -88,10 +89,19 @@
             this.rtbContentChatOne.TabIndex = 6;
             this.rtbContentChatOne.Text = "";
             // 
+            // userControlContentChatLeft1
+            // 
+            this.userControlContentChatLeft1.BackColor = System.Drawing.Color.Transparent;
+            this.userControlContentChatLeft1.Location = new System.Drawing.Point(12, 58);
+            this.userControlContentChatLeft1.Name = "userControlContentChatLeft1";
+            this.userControlContentChatLeft1.Size = new System.Drawing.Size(336, 78);
+            this.userControlContentChatLeft1.TabIndex = 12;
+            // 
             // userControlChatOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.userControlContentChatLeft1);
             this.Controls.Add(this.pnlContainIconsChatOne);
             this.Controls.Add(this.btnCloseForm);
             this.Controls.Add(this.btnSendMsgChatOne);
@@ -113,5 +123,6 @@
         private System.Windows.Forms.Button btnSendIconChatOne;
         private System.Windows.Forms.TextBox txtSendMsgChatOne;
         private System.Windows.Forms.RichTextBox rtbContentChatOne;
+        private userControlContentChatLeft userControlContentChatLeft1;
     }
 }

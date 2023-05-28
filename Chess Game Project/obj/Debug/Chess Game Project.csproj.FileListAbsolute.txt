@@ -23,3 +23,7 @@ E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess Game Pr
 E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlContentChatLeft.resources
 E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlChatOne.resources
 E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlContentChatRight.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlCreateRoom.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlHistory.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlLists.resources
+E:\lập trình c#\Chess Game Project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlRanks.resources
