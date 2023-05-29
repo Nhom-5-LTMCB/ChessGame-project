@@ -16,5 +16,10 @@ namespace Chess_Game_Project
         {
             InitializeComponent();
         }
+
+        private void forgotPasswordLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
