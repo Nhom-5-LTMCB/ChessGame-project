@@ -16,5 +16,20 @@ namespace Chess_Game_Project
         {
             InitializeComponent();
         }
+
+        private void btnSendTokenAgain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void authLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
