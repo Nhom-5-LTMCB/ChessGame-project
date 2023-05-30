@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtAuthEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnBack = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnNext = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.gmailLabel = new System.Windows.Forms.Label();
             this.txtAuthUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.userNamLabel = new System.Windows.Forms.Label();
-            this.txtAuthEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorHideLabel = new System.Windows.Forms.Label();
-            this.gmailLabel = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -47,9 +48,9 @@
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.NavajoWhite;
-            this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.guna2PictureBox2);
             this.pnlContent.Controls.Add(this.guna2PictureBox1);
+            this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.txtAuthEmail);
             this.pnlContent.Controls.Add(this.btnBack);
             this.pnlContent.Controls.Add(this.btnNext);
@@ -60,6 +61,39 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(390, 360);
             this.pnlContent.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(151, 323);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 10);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "----------------------";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtAuthEmail
+            // 
+            this.txtAuthEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtAuthEmail.BorderRadius = 5;
+            this.txtAuthEmail.BorderThickness = 2;
+            this.txtAuthEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAuthEmail.DefaultText = "";
+            this.txtAuthEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAuthEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAuthEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAuthEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAuthEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAuthEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.txtAuthEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAuthEmail.Location = new System.Drawing.Point(69, 174);
+            this.txtAuthEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAuthEmail.Name = "txtAuthEmail";
+            this.txtAuthEmail.PasswordChar = '\0';
+            this.txtAuthEmail.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtAuthEmail.PlaceholderText = "Nhập email";
+            this.txtAuthEmail.SelectedText = "";
+            this.txtAuthEmail.Size = new System.Drawing.Size(296, 58);
+            this.txtAuthEmail.TabIndex = 24;
             // 
             // btnBack
             // 
@@ -97,6 +131,17 @@
             this.btnNext.TabIndex = 11;
             this.btnNext.Text = "Xác nhận";
             // 
+            // gmailLabel
+            // 
+            this.gmailLabel.AutoSize = true;
+            this.gmailLabel.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gmailLabel.ForeColor = System.Drawing.Color.LightYellow;
+            this.gmailLabel.Location = new System.Drawing.Point(64, 130);
+            this.gmailLabel.Name = "gmailLabel";
+            this.gmailLabel.Size = new System.Drawing.Size(142, 27);
+            this.gmailLabel.TabIndex = 22;
+            this.gmailLabel.Text = "Nhập gmail";
+            // 
             // txtAuthUserName
             // 
             this.txtAuthUserName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -111,14 +156,14 @@
             this.txtAuthUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAuthUserName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.txtAuthUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAuthUserName.Location = new System.Drawing.Point(69, 69);
+            this.txtAuthUserName.Location = new System.Drawing.Point(69, 58);
             this.txtAuthUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAuthUserName.Name = "txtAuthUserName";
             this.txtAuthUserName.PasswordChar = '\0';
             this.txtAuthUserName.PlaceholderForeColor = System.Drawing.Color.DarkGray;
             this.txtAuthUserName.PlaceholderText = "Nhập tài khoản";
             this.txtAuthUserName.SelectedText = "";
-            this.txtAuthUserName.Size = new System.Drawing.Size(287, 32);
+            this.txtAuthUserName.Size = new System.Drawing.Size(296, 57);
             this.txtAuthUserName.TabIndex = 22;
             // 
             // userNamLabel
@@ -132,30 +177,6 @@
             this.userNamLabel.TabIndex = 21;
             this.userNamLabel.Text = "Nhập username";
             // 
-            // txtAuthEmail
-            // 
-            this.txtAuthEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.txtAuthEmail.BorderRadius = 5;
-            this.txtAuthEmail.BorderThickness = 2;
-            this.txtAuthEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAuthEmail.DefaultText = "";
-            this.txtAuthEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAuthEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAuthEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAuthEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAuthEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAuthEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.txtAuthEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAuthEmail.Location = new System.Drawing.Point(69, 174);
-            this.txtAuthEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtAuthEmail.Name = "txtAuthEmail";
-            this.txtAuthEmail.PasswordChar = '\0';
-            this.txtAuthEmail.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtAuthEmail.PlaceholderText = "Nhập email";
-            this.txtAuthEmail.SelectedText = "";
-            this.txtAuthEmail.Size = new System.Drawing.Size(287, 32);
-            this.txtAuthEmail.TabIndex = 24;
-            // 
             // errorHideLabel
             // 
             this.errorHideLabel.AutoSize = true;
@@ -164,50 +185,27 @@
             this.errorHideLabel.Size = new System.Drawing.Size(0, 16);
             this.errorHideLabel.TabIndex = 23;
             // 
-            // gmailLabel
-            // 
-            this.gmailLabel.AutoSize = true;
-            this.gmailLabel.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gmailLabel.ForeColor = System.Drawing.Color.LightYellow;
-            this.gmailLabel.Location = new System.Drawing.Point(64, 130);
-            this.gmailLabel.Name = "gmailLabel";
-            this.gmailLabel.Size = new System.Drawing.Size(142, 27);
-            this.gmailLabel.TabIndex = 22;
-            this.gmailLabel.Text = "Nhập gmail";
-            // 
             // guna2PictureBox2
             // 
-            this.guna2PictureBox2.Image = global::Chess_Game_Project.Properties.Resources.email;
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(24, 173);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(15, 174);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(35, 33);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(48, 48);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 25;
+            this.guna2PictureBox2.TabIndex = 28;
             this.guna2PictureBox2.TabStop = false;
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.NavajoWhite;
-            this.guna2PictureBox1.FillColor = System.Drawing.SystemColors.ActiveBorder;
-            this.guna2PictureBox1.Image = global::Chess_Game_Project.Properties.Resources.user;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = global::Chess_Game_Project.Properties.Resources.padlock;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(18, 69);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(15, 58);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(41, 32);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(48, 48);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 23;
+            this.guna2PictureBox1.TabIndex = 27;
             this.guna2PictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(151, 323);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 10);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "----------------------";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // AuthInterface
             // 
@@ -232,13 +230,13 @@
         private System.Windows.Forms.Panel pnlContent;
         private Guna.UI2.WinForms.Guna2GradientButton btnBack;
         private Guna.UI2.WinForms.Guna2GradientButton btnNext;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox txtAuthUserName;
         private System.Windows.Forms.Label userNamLabel;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox txtAuthEmail;
         private System.Windows.Forms.Label gmailLabel;
         private System.Windows.Forms.Label errorHideLabel;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

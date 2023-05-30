@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.authLabel = new System.Windows.Forms.Label();
-            this.btnSendTokenAgain = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnNext = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtAuth = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnNext = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnSendTokenAgain = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.authLabel = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlContent
@@ -44,7 +42,6 @@
             this.pnlContent.BackColor = System.Drawing.Color.NavajoWhite;
             this.pnlContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlContent.Controls.Add(this.txtAuth);
-            this.pnlContent.Controls.Add(this.pictureBox1);
             this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.btnNext);
             this.pnlContent.Controls.Add(this.btnSendTokenAgain);
@@ -53,66 +50,6 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(591, 400);
             this.pnlContent.TabIndex = 15;
-            // 
-            // authLabel
-            // 
-            this.authLabel.AutoSize = true;
-            this.authLabel.BackColor = System.Drawing.Color.NavajoWhite;
-            this.authLabel.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.authLabel.ForeColor = System.Drawing.Color.LightYellow;
-            this.authLabel.Location = new System.Drawing.Point(170, 77);
-            this.authLabel.Name = "authLabel";
-            this.authLabel.Size = new System.Drawing.Size(220, 27);
-            this.authLabel.TabIndex = 10;
-            this.authLabel.Text = "Nhập mã xác thực";
-            this.authLabel.Click += new System.EventHandler(this.authLabel_Click);
-            // 
-            // btnSendTokenAgain
-            // 
-            this.btnSendTokenAgain.BorderRadius = 10;
-            this.btnSendTokenAgain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSendTokenAgain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSendTokenAgain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSendTokenAgain.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSendTokenAgain.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSendTokenAgain.FillColor = System.Drawing.Color.NavajoWhite;
-            this.btnSendTokenAgain.FillColor2 = System.Drawing.Color.NavajoWhite;
-            this.btnSendTokenAgain.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSendTokenAgain.ForeColor = System.Drawing.Color.Black;
-            this.btnSendTokenAgain.Location = new System.Drawing.Point(159, 182);
-            this.btnSendTokenAgain.Name = "btnSendTokenAgain";
-            this.btnSendTokenAgain.Size = new System.Drawing.Size(123, 27);
-            this.btnSendTokenAgain.TabIndex = 14;
-            this.btnSendTokenAgain.Text = "Gửi lại mã";
-            this.btnSendTokenAgain.Click += new System.EventHandler(this.btnSendTokenAgain_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.BorderRadius = 20;
-            this.btnNext.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNext.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNext.FillColor = System.Drawing.Color.Blue;
-            this.btnNext.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnNext.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.Moccasin;
-            this.btnNext.Location = new System.Drawing.Point(231, 253);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(180, 45);
-            this.btnNext.TabIndex = 15;
-            this.btnNext.Text = "Xác nhận";
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(187, 212);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 2);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "-----------------------";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtAuth
             // 
@@ -138,15 +75,65 @@
             this.txtAuth.Size = new System.Drawing.Size(287, 32);
             this.txtAuth.TabIndex = 19;
             // 
-            // pictureBox1
+            // label1
             // 
-            this.pictureBox1.BackgroundImage = global::Chess_Game_Project.Properties.Resources.token;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(135, 127);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 32);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(187, 212);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 2);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "-----------------------";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.BorderRadius = 20;
+            this.btnNext.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNext.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNext.FillColor = System.Drawing.Color.Blue;
+            this.btnNext.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnNext.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.Moccasin;
+            this.btnNext.Location = new System.Drawing.Point(231, 253);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(180, 45);
+            this.btnNext.TabIndex = 15;
+            this.btnNext.Text = "Xác nhận";
+            // 
+            // btnSendTokenAgain
+            // 
+            this.btnSendTokenAgain.BorderRadius = 10;
+            this.btnSendTokenAgain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendTokenAgain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendTokenAgain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSendTokenAgain.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSendTokenAgain.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSendTokenAgain.FillColor = System.Drawing.Color.NavajoWhite;
+            this.btnSendTokenAgain.FillColor2 = System.Drawing.Color.NavajoWhite;
+            this.btnSendTokenAgain.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSendTokenAgain.ForeColor = System.Drawing.Color.Black;
+            this.btnSendTokenAgain.Location = new System.Drawing.Point(159, 182);
+            this.btnSendTokenAgain.Name = "btnSendTokenAgain";
+            this.btnSendTokenAgain.Size = new System.Drawing.Size(123, 27);
+            this.btnSendTokenAgain.TabIndex = 14;
+            this.btnSendTokenAgain.Text = "Gửi lại mã";
+            this.btnSendTokenAgain.Click += new System.EventHandler(this.btnSendTokenAgain_Click);
+            // 
+            // authLabel
+            // 
+            this.authLabel.AutoSize = true;
+            this.authLabel.BackColor = System.Drawing.Color.NavajoWhite;
+            this.authLabel.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.authLabel.ForeColor = System.Drawing.Color.LightYellow;
+            this.authLabel.Location = new System.Drawing.Point(170, 77);
+            this.authLabel.Name = "authLabel";
+            this.authLabel.Size = new System.Drawing.Size(220, 27);
+            this.authLabel.TabIndex = 10;
+            this.authLabel.Text = "Nhập mã xác thực";
+            this.authLabel.Click += new System.EventHandler(this.authLabel_Click);
             // 
             // InputTokenForm1
             // 
@@ -158,7 +145,6 @@
             this.Text = "InputTokenForm1";
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,7 +156,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnSendTokenAgain;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2GradientButton btnNext;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox txtAuth;
     }
 }

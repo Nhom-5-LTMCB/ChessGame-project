@@ -172,7 +172,7 @@
             this.btnSendMessage.TabIndex = 58;
             this.btnSendMessage.Text = ">";
             this.btnSendMessage.UseVisualStyleBackColor = true;
-            this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
+            //this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
             // btnSendIcon
             // 
@@ -182,7 +182,7 @@
             this.btnSendIcon.TabIndex = 57;
             this.btnSendIcon.Text = "...";
             this.btnSendIcon.UseVisualStyleBackColor = true;
-            this.btnSendIcon.Click += new System.EventHandler(this.btnSendIcon_Click);
+            //this.btnSendIcon.Click += new System.EventHandler(this.btnSendIcon_Click);
             // 
             // txtSendMessage
             // 

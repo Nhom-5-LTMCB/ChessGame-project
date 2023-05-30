@@ -17,11 +17,34 @@ namespace Chess_Game_Project
 {
     public partial class InfoUserInterface : Form
     {
-  
         public InfoUserInterface()
         {
             InitializeComponent();
         }
-        
+       
+        private void InfoUserInterface_Load(object sender, EventArgs e)
+        {
+            
+        }
+        private void btnEditInfo_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void addImageIntoPath(string directoryPath, string fileImage)
+        {
+            
+        }
+        private void btnSaveInfo_Click(object sender, EventArgs e)
+        {
+           
+        }
+        private void btnChangeImage_Click(object sender, EventArgs e)
+        {
+           
+        }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

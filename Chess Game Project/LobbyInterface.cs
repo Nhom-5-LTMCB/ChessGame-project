@@ -28,11 +28,45 @@ namespace Chess_Game_Project
     public partial class LobbyInterface : Form
     {
 
-       
         public LobbyInterface()
+        {
+            InitializeComponent();
+           
+        }
+        
+        private void btnContainInfoUser_Click(object sender, EventArgs e)
+        {
+          
+        }
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+           
+        }
+        private void btnRank_Click(object sender, EventArgs e)
         {
             
         }
-        
+        private void btnListFriend_Click(object sender, EventArgs e)
+        {
+
+           
+        }
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void btnRandomRoom_Click(object sender, EventArgs e)
+        {
+
+        }
+       
+        private void mainInterface_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+      
+
+        //==================================================================================================================================
     }
 }

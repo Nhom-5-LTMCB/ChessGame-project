@@ -20,23 +20,26 @@ namespace Chess_Game_Project
         public Login()
         {
             InitializeComponent();
-            
+       
         }
 
-    
+        
 
-
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+           
+        }
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            
+           
         }
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            
+           
         }
         private void forgotPasswordLabel_Click(object sender, EventArgs e)
         {
-          
+            
         }
         private void login_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -45,7 +48,7 @@ namespace Chess_Game_Project
 
         private void Login_Load(object sender, EventArgs e)
         {
-          
+            
         }
     }
 }

@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.errorConfirmPassword = new System.Windows.Forms.Label();
-            this.errorNewPassword = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnNext = new Guna.UI2.WinForms.Guna2GradientButton();
             this.confirmPasswordLabel = new System.Windows.Forms.Label();
             this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
+            this.errorConfirmPassword = new System.Windows.Forms.Label();
+            this.errorNewPassword = new System.Windows.Forms.Label();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pnlContent.Controls.Add(this.guna2PictureBox2);
             this.pnlContent.Controls.Add(this.guna2PictureBox1);
-            this.pnlContent.Controls.Add(this.guna2PictureBox3);
             this.pnlContent.Controls.Add(this.txtConfirmPassword);
             this.pnlContent.Controls.Add(this.btnNext);
             this.pnlContent.Controls.Add(this.confirmPasswordLabel);
@@ -59,22 +60,6 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(738, 384);
             this.pnlContent.TabIndex = 22;
-            // 
-            // errorConfirmPassword
-            // 
-            this.errorConfirmPassword.AutoSize = true;
-            this.errorConfirmPassword.Location = new System.Drawing.Point(110, 131);
-            this.errorConfirmPassword.Name = "errorConfirmPassword";
-            this.errorConfirmPassword.Size = new System.Drawing.Size(0, 16);
-            this.errorConfirmPassword.TabIndex = 20;
-            // 
-            // errorNewPassword
-            // 
-            this.errorNewPassword.AutoSize = true;
-            this.errorNewPassword.Location = new System.Drawing.Point(110, 49);
-            this.errorNewPassword.Name = "errorNewPassword";
-            this.errorNewPassword.Size = new System.Drawing.Size(0, 16);
-            this.errorNewPassword.TabIndex = 19;
             // 
             // txtConfirmPassword
             // 
@@ -166,27 +151,43 @@
             this.passwordLabel.TabIndex = 27;
             this.passwordLabel.Text = "Nhập mật khẩu mới";
             // 
+            // errorConfirmPassword
+            // 
+            this.errorConfirmPassword.AutoSize = true;
+            this.errorConfirmPassword.Location = new System.Drawing.Point(110, 131);
+            this.errorConfirmPassword.Name = "errorConfirmPassword";
+            this.errorConfirmPassword.Size = new System.Drawing.Size(0, 16);
+            this.errorConfirmPassword.TabIndex = 20;
+            // 
+            // errorNewPassword
+            // 
+            this.errorNewPassword.AutoSize = true;
+            this.errorNewPassword.Location = new System.Drawing.Point(110, 49);
+            this.errorNewPassword.Name = "errorNewPassword";
+            this.errorNewPassword.Size = new System.Drawing.Size(0, 16);
+            this.errorNewPassword.TabIndex = 19;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(137, 233);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 33;
+            this.guna2PictureBox2.TabStop = false;
+            // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.Image = global::Chess_Game_Project.Properties.Resources.confirm;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(116, 235);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(137, 121);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(51, 44);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(48, 48);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 34;
+            this.guna2PictureBox1.TabIndex = 32;
             this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.Image = global::Chess_Game_Project.Properties.Resources.padlock;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(116, 131);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(51, 48);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 33;
-            this.guna2PictureBox3.TabStop = false;
             // 
             // ChangePasswordInterface
             // 
@@ -198,8 +199,8 @@
             this.Text = "ChangePasswordInterface";
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,7 +215,7 @@
         private System.Windows.Forms.Label confirmPasswordLabel;
         private Guna.UI2.WinForms.Guna2TextBox txtNewPassword;
         private System.Windows.Forms.Label passwordLabel;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
     }
 }

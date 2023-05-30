@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -40,10 +40,11 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.userNamLabel = new System.Windows.Forms.Label();
             this.ptbContainAvt = new System.Windows.Forms.PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbContainAvt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlContent
@@ -65,29 +66,15 @@
             this.pnlContent.Size = new System.Drawing.Size(966, 473);
             this.pnlContent.TabIndex = 6;
             // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = global::Chess_Game_Project.Properties.Resources.padlock;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(215, 210);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(47, 48);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 21;
-            this.guna2PictureBox2.TabStop = false;
-            // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.NavajoWhite;
-            this.guna2PictureBox1.FillColor = System.Drawing.SystemColors.ActiveBorder;
-            this.guna2PictureBox1.Image = global::Chess_Game_Project.Properties.Resources.user;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = global::Chess_Game_Project.Properties.Resources.padlock;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(215, 84);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(222, 85);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(47, 49);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(48, 48);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 20;
+            this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
             // 
             // txtPassword
@@ -222,9 +209,20 @@
             // 
             this.ptbContainAvt.Location = new System.Drawing.Point(0, -2);
             this.ptbContainAvt.Name = "ptbContainAvt";
-            this.ptbContainAvt.Size = new System.Drawing.Size(285, 235);
+            this.ptbContainAvt.Size = new System.Drawing.Size(203, 146);
             this.ptbContainAvt.TabIndex = 7;
             this.ptbContainAvt.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(222, 210);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 20;
+            this.guna2PictureBox2.TabStop = false;
             // 
             // Login
             // 
@@ -238,16 +236,15 @@
             this.Load += new System.EventHandler(this.Login_Load);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbContainAvt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel pnlContent;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtUserName;
@@ -258,6 +255,7 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label userNamLabel;
         private System.Windows.Forms.PictureBox ptbContainAvt;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
     }
 }
 
