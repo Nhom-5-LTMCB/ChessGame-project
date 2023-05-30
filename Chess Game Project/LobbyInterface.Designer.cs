@@ -30,40 +30,41 @@
         {
             this.pnlCoverPage = new System.Windows.Forms.Panel();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.btnRank = new Guna.UI2.WinForms.Guna2Button();
+            this.btnListFriend = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.btnContainInfoUser = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlContainsChild = new System.Windows.Forms.Panel();
+            this.pnlContainsUserControl = new System.Windows.Forms.Panel();
+            this.pnlChatOne = new System.Windows.Forms.Panel();
             this.pnlMultiChatFrame = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlContainsIcon = new System.Windows.Forms.Panel();
             this.lbScore = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
-            this.btnRandomRoom = new System.Windows.Forms.Button();
-            this.btnCreateRoom = new System.Windows.Forms.Button();
             this.dtGridContainListRooms = new System.Windows.Forms.DataGridView();
-            this.btnSendMessage = new System.Windows.Forms.Button();
-            this.btnSendIcon = new System.Windows.Forms.Button();
-            this.txtSendMessage = new System.Windows.Forms.TextBox();
-            this.btnHistory = new System.Windows.Forms.Button();
-            this.btnListFriend = new System.Windows.Forms.Button();
-            this.btnRank = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnContainInfoUser = new System.Windows.Forms.Button();
             this.ptboxAvatar = new System.Windows.Forms.PictureBox();
             this.ptbAvatarPage = new System.Windows.Forms.PictureBox();
-            this.pnlContainsChild = new System.Windows.Forms.Panel();
-            this.pnlContainsUserControl = new System.Windows.Forms.Panel();
-            this.pnlChatOne = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.btnHistory = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCreateRoom = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRandomRoom = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSendMessage = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnSendMessage = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSendIcon = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.pnlCoverPage.SuspendLayout();
             this.pnlContent.SuspendLayout();
+            this.pnlContainsChild.SuspendLayout();
+            this.pnlContainsUserControl.SuspendLayout();
             this.pnlMultiChatFrame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridContainListRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptboxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).BeginInit();
-            this.pnlContainsChild.SuspendLayout();
-            this.pnlContainsUserControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCoverPage
             // 
+            this.pnlCoverPage.BackColor = System.Drawing.Color.NavajoWhite;
             this.pnlCoverPage.Controls.Add(this.pnlContent);
             this.pnlCoverPage.Controls.Add(this.ptbAvatarPage);
             this.pnlCoverPage.Location = new System.Drawing.Point(-61, 6);
@@ -73,27 +74,119 @@
             // 
             // pnlContent
             // 
+            this.pnlContent.Controls.Add(this.txtSendMessage);
+            this.pnlContent.Controls.Add(this.btnSendMessage);
+            this.pnlContent.Controls.Add(this.btnSendIcon);
+            this.pnlContent.Controls.Add(this.btnRandomRoom);
+            this.pnlContent.Controls.Add(this.btnCreateRoom);
+            this.pnlContent.Controls.Add(this.btnHistory);
+            this.pnlContent.Controls.Add(this.btnRank);
+            this.pnlContent.Controls.Add(this.btnListFriend);
+            this.pnlContent.Controls.Add(this.btnLogout);
+            this.pnlContent.Controls.Add(this.btnContainInfoUser);
             this.pnlContent.Controls.Add(this.pnlContainsChild);
             this.pnlContent.Controls.Add(this.pnlMultiChatFrame);
             this.pnlContent.Controls.Add(this.lbScore);
             this.pnlContent.Controls.Add(this.label2);
             this.pnlContent.Controls.Add(this.lbUserName);
-            this.pnlContent.Controls.Add(this.btnRandomRoom);
-            this.pnlContent.Controls.Add(this.btnCreateRoom);
             this.pnlContent.Controls.Add(this.dtGridContainListRooms);
-            this.pnlContent.Controls.Add(this.btnSendMessage);
-            this.pnlContent.Controls.Add(this.btnSendIcon);
-            this.pnlContent.Controls.Add(this.txtSendMessage);
-            this.pnlContent.Controls.Add(this.btnHistory);
-            this.pnlContent.Controls.Add(this.btnListFriend);
-            this.pnlContent.Controls.Add(this.btnRank);
-            this.pnlContent.Controls.Add(this.btnLogout);
-            this.pnlContent.Controls.Add(this.btnContainInfoUser);
             this.pnlContent.Controls.Add(this.ptboxAvatar);
             this.pnlContent.Location = new System.Drawing.Point(65, 42);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(1349, 643);
             this.pnlContent.TabIndex = 53;
+            // 
+            // btnRank
+            // 
+            this.btnRank.BorderRadius = 5;
+            this.btnRank.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRank.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRank.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRank.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRank.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnRank.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRank.ForeColor = System.Drawing.Color.White;
+            this.btnRank.Location = new System.Drawing.Point(1022, 79);
+            this.btnRank.Name = "btnRank";
+            this.btnRank.Size = new System.Drawing.Size(135, 51);
+            this.btnRank.TabIndex = 79;
+            this.btnRank.Text = "Bảng xếp hạng";
+            // 
+            // btnListFriend
+            // 
+            this.btnListFriend.BorderRadius = 5;
+            this.btnListFriend.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnListFriend.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnListFriend.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnListFriend.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnListFriend.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnListFriend.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnListFriend.ForeColor = System.Drawing.Color.White;
+            this.btnListFriend.Location = new System.Drawing.Point(1177, 79);
+            this.btnListFriend.Name = "btnListFriend";
+            this.btnListFriend.Size = new System.Drawing.Size(135, 51);
+            this.btnListFriend.TabIndex = 78;
+            this.btnListFriend.Text = "Danh sách bạn bè";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BorderRadius = 5;
+            this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(1177, 16);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(135, 51);
+            this.btnLogout.TabIndex = 77;
+            this.btnLogout.Text = "Đăng xuất";
+            // 
+            // btnContainInfoUser
+            // 
+            this.btnContainInfoUser.BorderRadius = 5;
+            this.btnContainInfoUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnContainInfoUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnContainInfoUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnContainInfoUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnContainInfoUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnContainInfoUser.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnContainInfoUser.ForeColor = System.Drawing.Color.White;
+            this.btnContainInfoUser.Location = new System.Drawing.Point(1022, 16);
+            this.btnContainInfoUser.Name = "btnContainInfoUser";
+            this.btnContainInfoUser.Size = new System.Drawing.Size(135, 51);
+            this.btnContainInfoUser.TabIndex = 76;
+            this.btnContainInfoUser.Text = "Xem thông tin";
+            // 
+            // pnlContainsChild
+            // 
+            this.pnlContainsChild.AutoSize = true;
+            this.pnlContainsChild.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pnlContainsChild.Controls.Add(this.btnExit);
+            this.pnlContainsChild.Controls.Add(this.pnlContainsUserControl);
+            this.pnlContainsChild.Location = new System.Drawing.Point(183, 154);
+            this.pnlContainsChild.Name = "pnlContainsChild";
+            this.pnlContainsChild.Size = new System.Drawing.Size(908, 645);
+            this.pnlContainsChild.TabIndex = 70;
+            // 
+            // pnlContainsUserControl
+            // 
+            this.pnlContainsUserControl.BackColor = System.Drawing.Color.DimGray;
+            this.pnlContainsUserControl.Controls.Add(this.pnlChatOne);
+            this.pnlContainsUserControl.Location = new System.Drawing.Point(0, 112);
+            this.pnlContainsUserControl.Name = "pnlContainsUserControl";
+            this.pnlContainsUserControl.Size = new System.Drawing.Size(905, 530);
+            this.pnlContainsUserControl.TabIndex = 1;
+            // 
+            // pnlChatOne
+            // 
+            this.pnlChatOne.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlChatOne.Location = new System.Drawing.Point(0, 77);
+            this.pnlChatOne.Name = "pnlChatOne";
+            this.pnlChatOne.Size = new System.Drawing.Size(506, 459);
+            this.pnlChatOne.TabIndex = 5;
             // 
             // pnlMultiChatFrame
             // 
@@ -122,9 +215,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 133);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label2.Location = new System.Drawing.Point(179, 129);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
+            this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 63;
             this.label2.Text = "Điểm:";
             // 
@@ -136,24 +230,6 @@
             this.lbUserName.Size = new System.Drawing.Size(0, 16);
             this.lbUserName.TabIndex = 62;
             // 
-            // btnRandomRoom
-            // 
-            this.btnRandomRoom.Location = new System.Drawing.Point(1017, 574);
-            this.btnRandomRoom.Name = "btnRandomRoom";
-            this.btnRandomRoom.Size = new System.Drawing.Size(154, 40);
-            this.btnRandomRoom.TabIndex = 61;
-            this.btnRandomRoom.Text = "Tham gia ngẫu nhiên";
-            this.btnRandomRoom.UseVisualStyleBackColor = true;
-            // 
-            // btnCreateRoom
-            // 
-            this.btnCreateRoom.Location = new System.Drawing.Point(1177, 574);
-            this.btnCreateRoom.Name = "btnCreateRoom";
-            this.btnCreateRoom.Size = new System.Drawing.Size(154, 40);
-            this.btnCreateRoom.TabIndex = 60;
-            this.btnCreateRoom.Text = "Tạo phòng";
-            this.btnCreateRoom.UseVisualStyleBackColor = true;
-            // 
             // dtGridContainListRooms
             // 
             this.dtGridContainListRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -163,82 +239,6 @@
             this.dtGridContainListRooms.RowTemplate.Height = 24;
             this.dtGridContainListRooms.Size = new System.Drawing.Size(850, 414);
             this.dtGridContainListRooms.TabIndex = 59;
-            // 
-            // btnSendMessage
-            // 
-            this.btnSendMessage.Location = new System.Drawing.Point(344, 574);
-            this.btnSendMessage.Name = "btnSendMessage";
-            this.btnSendMessage.Size = new System.Drawing.Size(71, 42);
-            this.btnSendMessage.TabIndex = 58;
-            this.btnSendMessage.Text = ">";
-            this.btnSendMessage.UseVisualStyleBackColor = true;
-            //this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
-            // 
-            // btnSendIcon
-            // 
-            this.btnSendIcon.Location = new System.Drawing.Point(279, 574);
-            this.btnSendIcon.Name = "btnSendIcon";
-            this.btnSendIcon.Size = new System.Drawing.Size(59, 42);
-            this.btnSendIcon.TabIndex = 57;
-            this.btnSendIcon.Text = "...";
-            this.btnSendIcon.UseVisualStyleBackColor = true;
-            //this.btnSendIcon.Click += new System.EventHandler(this.btnSendIcon_Click);
-            // 
-            // txtSendMessage
-            // 
-            this.txtSendMessage.Location = new System.Drawing.Point(18, 574);
-            this.txtSendMessage.Multiline = true;
-            this.txtSendMessage.Name = "txtSendMessage";
-            this.txtSendMessage.Size = new System.Drawing.Size(255, 42);
-            this.txtSendMessage.TabIndex = 56;
-            // 
-            // btnHistory
-            // 
-            this.btnHistory.Location = new System.Drawing.Point(18, 184);
-            this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(159, 40);
-            this.btnHistory.TabIndex = 66;
-            this.btnHistory.Text = "Lịch sử đấu";
-            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
-            // 
-            // btnListFriend
-            // 
-            this.btnListFriend.Location = new System.Drawing.Point(1195, 89);
-            this.btnListFriend.Name = "btnListFriend";
-            this.btnListFriend.Size = new System.Drawing.Size(136, 51);
-            this.btnListFriend.TabIndex = 54;
-            this.btnListFriend.Text = "Danh sách";
-            this.btnListFriend.UseVisualStyleBackColor = true;
-            this.btnListFriend.Click += new System.EventHandler(this.btnListFriend_Click);
-            // 
-            // btnRank
-            // 
-            this.btnRank.Location = new System.Drawing.Point(1044, 89);
-            this.btnRank.Name = "btnRank";
-            this.btnRank.Size = new System.Drawing.Size(136, 51);
-            this.btnRank.TabIndex = 53;
-            this.btnRank.Text = "Bảng xếp hạng";
-            this.btnRank.UseVisualStyleBackColor = true;
-            this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(1195, 32);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(136, 51);
-            this.btnLogout.TabIndex = 52;
-            this.btnLogout.Text = "Đăng xuất";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // btnContainInfoUser
-            // 
-            this.btnContainInfoUser.Location = new System.Drawing.Point(1044, 32);
-            this.btnContainInfoUser.Name = "btnContainInfoUser";
-            this.btnContainInfoUser.Size = new System.Drawing.Size(136, 51);
-            this.btnContainInfoUser.TabIndex = 51;
-            this.btnContainInfoUser.Text = "Xem thông tin";
-            this.btnContainInfoUser.UseVisualStyleBackColor = true;
             // 
             // ptboxAvatar
             // 
@@ -250,48 +250,132 @@
             // 
             // ptbAvatarPage
             // 
+            this.ptbAvatarPage.BackColor = System.Drawing.Color.NavajoWhite;
             this.ptbAvatarPage.Location = new System.Drawing.Point(0, 0);
             this.ptbAvatarPage.Name = "ptbAvatarPage";
             this.ptbAvatarPage.Size = new System.Drawing.Size(1121, 658);
             this.ptbAvatarPage.TabIndex = 0;
             this.ptbAvatarPage.TabStop = false;
             // 
-            // pnlContainsChild
+            // btnHistory
             // 
-            this.pnlContainsChild.AutoSize = true;
-            this.pnlContainsChild.BackColor = System.Drawing.Color.RosyBrown;
-            this.pnlContainsChild.Controls.Add(this.pnlContainsUserControl);
-            this.pnlContainsChild.Controls.Add(this.btnExit);
-            this.pnlContainsChild.Location = new System.Drawing.Point(284, 0);
-            this.pnlContainsChild.Name = "pnlContainsChild";
-            this.pnlContainsChild.Size = new System.Drawing.Size(908, 645);
-            this.pnlContainsChild.TabIndex = 70;
+            this.btnHistory.BorderRadius = 5;
+            this.btnHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHistory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHistory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHistory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnHistory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHistory.ForeColor = System.Drawing.Color.White;
+            this.btnHistory.Location = new System.Drawing.Point(21, 174);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(156, 40);
+            this.btnHistory.TabIndex = 80;
+            this.btnHistory.Text = "Lịch sử đấu";
             // 
-            // pnlContainsUserControl
+            // btnCreateRoom
             // 
-            this.pnlContainsUserControl.BackColor = System.Drawing.Color.DimGray;
-            this.pnlContainsUserControl.Controls.Add(this.pnlChatOne);
-            this.pnlContainsUserControl.Location = new System.Drawing.Point(0, 112);
-            this.pnlContainsUserControl.Name = "pnlContainsUserControl";
-            this.pnlContainsUserControl.Size = new System.Drawing.Size(905, 530);
-            this.pnlContainsUserControl.TabIndex = 1;
+            this.btnCreateRoom.BorderRadius = 5;
+            this.btnCreateRoom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCreateRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCreateRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnCreateRoom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCreateRoom.ForeColor = System.Drawing.Color.White;
+            this.btnCreateRoom.Location = new System.Drawing.Point(1177, 576);
+            this.btnCreateRoom.Name = "btnCreateRoom";
+            this.btnCreateRoom.Size = new System.Drawing.Size(154, 40);
+            this.btnCreateRoom.TabIndex = 81;
+            this.btnCreateRoom.Text = "Tạo phòng";
             // 
-            // pnlChatOne
+            // btnRandomRoom
             // 
-            this.pnlChatOne.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlChatOne.Location = new System.Drawing.Point(0, 77);
-            this.pnlChatOne.Name = "pnlChatOne";
-            this.pnlChatOne.Size = new System.Drawing.Size(506, 459);
-            this.pnlChatOne.TabIndex = 5;
+            this.btnRandomRoom.BorderRadius = 5;
+            this.btnRandomRoom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRandomRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRandomRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRandomRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRandomRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnRandomRoom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRandomRoom.ForeColor = System.Drawing.Color.White;
+            this.btnRandomRoom.Location = new System.Drawing.Point(1022, 576);
+            this.btnRandomRoom.Name = "btnRandomRoom";
+            this.btnRandomRoom.Size = new System.Drawing.Size(154, 40);
+            this.btnRandomRoom.TabIndex = 82;
+            this.btnRandomRoom.Text = "Ngẫu nhiên";
+            // 
+            // txtSendMessage
+            // 
+            this.txtSendMessage.BorderColor = System.Drawing.Color.Black;
+            this.txtSendMessage.BorderRadius = 5;
+            this.txtSendMessage.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSendMessage.DefaultText = "";
+            this.txtSendMessage.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSendMessage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSendMessage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSendMessage.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSendMessage.FillColor = System.Drawing.Color.LemonChiffon;
+            this.txtSendMessage.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSendMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSendMessage.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSendMessage.Location = new System.Drawing.Point(18, 574);
+            this.txtSendMessage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSendMessage.Name = "txtSendMessage";
+            this.txtSendMessage.PasswordChar = '\0';
+            this.txtSendMessage.PlaceholderText = "";
+            this.txtSendMessage.SelectedText = "";
+            this.txtSendMessage.Size = new System.Drawing.Size(253, 42);
+            this.txtSendMessage.TabIndex = 85;
+            // 
+            // btnSendMessage
+            // 
+            this.btnSendMessage.BorderColor = System.Drawing.Color.Red;
+            this.btnSendMessage.BorderRadius = 5;
+            this.btnSendMessage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendMessage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendMessage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSendMessage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSendMessage.FillColor = System.Drawing.Color.Red;
+            this.btnSendMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSendMessage.ForeColor = System.Drawing.Color.White;
+            this.btnSendMessage.Location = new System.Drawing.Point(344, 574);
+            this.btnSendMessage.Name = "btnSendMessage";
+            this.btnSendMessage.Size = new System.Drawing.Size(62, 42);
+            this.btnSendMessage.TabIndex = 84;
+            this.btnSendMessage.Text = ">";
+            // 
+            // btnSendIcon
+            // 
+            this.btnSendIcon.BorderRadius = 5;
+            this.btnSendIcon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendIcon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendIcon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSendIcon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSendIcon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSendIcon.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSendIcon.ForeColor = System.Drawing.Color.White;
+            this.btnSendIcon.Location = new System.Drawing.Point(277, 574);
+            this.btnSendIcon.Name = "btnSendIcon";
+            this.btnSendIcon.Size = new System.Drawing.Size(61, 42);
+            this.btnSendIcon.TabIndex = 83;
+            this.btnSendIcon.Text = "...";
             // 
             // btnExit
             // 
+            this.btnExit.BorderRadius = 5;
+            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(852, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(53, 48);
-            this.btnExit.TabIndex = 0;
+            this.btnExit.TabIndex = 86;
             this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // LobbyInterface
             // 
@@ -304,12 +388,12 @@
             this.pnlCoverPage.ResumeLayout(false);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
+            this.pnlContainsChild.ResumeLayout(false);
+            this.pnlContainsUserControl.ResumeLayout(false);
             this.pnlMultiChatFrame.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridContainListRooms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptboxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).EndInit();
-            this.pnlContainsChild.ResumeLayout(false);
-            this.pnlContainsUserControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -322,23 +406,23 @@
         private System.Windows.Forms.Label lbScore;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbUserName;
-        private System.Windows.Forms.Button btnRandomRoom;
-        private System.Windows.Forms.Button btnCreateRoom;
         private System.Windows.Forms.DataGridView dtGridContainListRooms;
-        private System.Windows.Forms.Button btnSendMessage;
-        private System.Windows.Forms.Button btnSendIcon;
-        private System.Windows.Forms.TextBox txtSendMessage;
-        private System.Windows.Forms.Button btnHistory;
-        private System.Windows.Forms.Button btnListFriend;
-        private System.Windows.Forms.Button btnRank;
-        private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnContainInfoUser;
         private System.Windows.Forms.PictureBox ptboxAvatar;
         private System.Windows.Forms.PictureBox ptbAvatarPage;
         private Guna.UI2.WinForms.Guna2Panel pnlMultiChatFrame;
         private System.Windows.Forms.Panel pnlContainsChild;
         private System.Windows.Forms.Panel pnlContainsUserControl;
         private System.Windows.Forms.Panel pnlChatOne;
-        private System.Windows.Forms.Button btnExit;
+        private Guna.UI2.WinForms.Guna2Button btnRank;
+        private Guna.UI2.WinForms.Guna2Button btnListFriend;
+        private Guna.UI2.WinForms.Guna2Button btnLogout;
+        private Guna.UI2.WinForms.Guna2Button btnContainInfoUser;
+        private Guna.UI2.WinForms.Guna2Button btnHistory;
+        private Guna.UI2.WinForms.Guna2Button btnRandomRoom;
+        private Guna.UI2.WinForms.Guna2Button btnCreateRoom;
+        private Guna.UI2.WinForms.Guna2TextBox txtSendMessage;
+        private Guna.UI2.WinForms.Guna2Button btnSendMessage;
+        private Guna.UI2.WinForms.Guna2Button btnSendIcon;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

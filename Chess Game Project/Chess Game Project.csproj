@@ -203,15 +203,9 @@
       <DependentUpon>MatchInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RegisterInterface.resx">
       <DependentUpon>RegisterInterface.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Resources\confirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Resources\padlock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
