@@ -30,6 +30,7 @@
         {
             this.pnlCoverPage = new System.Windows.Forms.Panel();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.pnlMultiChatFrame = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlContainsIcon = new System.Windows.Forms.Panel();
             this.lbScore = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,26 +41,25 @@
             this.btnSendMessage = new System.Windows.Forms.Button();
             this.btnSendIcon = new System.Windows.Forms.Button();
             this.txtSendMessage = new System.Windows.Forms.TextBox();
-            this.rtbChat = new System.Windows.Forms.RichTextBox();
             this.btnHistory = new System.Windows.Forms.Button();
-            this.btnMakeFriend = new System.Windows.Forms.Button();
+            this.btnListFriend = new System.Windows.Forms.Button();
             this.btnRank = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnContainInfoUser = new System.Windows.Forms.Button();
             this.ptboxAvatar = new System.Windows.Forms.PictureBox();
             this.ptbAvatarPage = new System.Windows.Forms.PictureBox();
-            this.userControlContentChatLeft1 = new Chess_Game_Project.ContainUserControls.userControlContentChatLeft();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.pnlContainsChild = new System.Windows.Forms.Panel();
             this.pnlContainsUserControl = new System.Windows.Forms.Panel();
             this.pnlChatOne = new System.Windows.Forms.Panel();
-            this.pnlContainsChild = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnlCoverPage.SuspendLayout();
             this.pnlContent.SuspendLayout();
+            this.pnlMultiChatFrame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridContainListRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptboxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).BeginInit();
-            this.pnlContainsUserControl.SuspendLayout();
             this.pnlContainsChild.SuspendLayout();
+            this.pnlContainsUserControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCoverPage
@@ -74,8 +74,7 @@
             // pnlContent
             // 
             this.pnlContent.Controls.Add(this.pnlContainsChild);
-            this.pnlContent.Controls.Add(this.userControlContentChatLeft1);
-            this.pnlContent.Controls.Add(this.pnlContainsIcon);
+            this.pnlContent.Controls.Add(this.pnlMultiChatFrame);
             this.pnlContent.Controls.Add(this.lbScore);
             this.pnlContent.Controls.Add(this.label2);
             this.pnlContent.Controls.Add(this.lbUserName);
@@ -85,9 +84,8 @@
             this.pnlContent.Controls.Add(this.btnSendMessage);
             this.pnlContent.Controls.Add(this.btnSendIcon);
             this.pnlContent.Controls.Add(this.txtSendMessage);
-            this.pnlContent.Controls.Add(this.rtbChat);
             this.pnlContent.Controls.Add(this.btnHistory);
-            this.pnlContent.Controls.Add(this.btnMakeFriend);
+            this.pnlContent.Controls.Add(this.btnListFriend);
             this.pnlContent.Controls.Add(this.btnRank);
             this.pnlContent.Controls.Add(this.btnLogout);
             this.pnlContent.Controls.Add(this.btnContainInfoUser);
@@ -97,9 +95,18 @@
             this.pnlContent.Size = new System.Drawing.Size(1349, 643);
             this.pnlContent.TabIndex = 53;
             // 
+            // pnlMultiChatFrame
+            // 
+            this.pnlMultiChatFrame.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlMultiChatFrame.Controls.Add(this.pnlContainsIcon);
+            this.pnlMultiChatFrame.Location = new System.Drawing.Point(18, 240);
+            this.pnlMultiChatFrame.Name = "pnlMultiChatFrame";
+            this.pnlMultiChatFrame.Size = new System.Drawing.Size(397, 328);
+            this.pnlMultiChatFrame.TabIndex = 69;
+            // 
             // pnlContainsIcon
             // 
-            this.pnlContainsIcon.Location = new System.Drawing.Point(18, 350);
+            this.pnlContainsIcon.Location = new System.Drawing.Point(0, 101);
             this.pnlContainsIcon.Name = "pnlContainsIcon";
             this.pnlContainsIcon.Size = new System.Drawing.Size(397, 227);
             this.pnlContainsIcon.TabIndex = 65;
@@ -165,6 +172,7 @@
             this.btnSendMessage.TabIndex = 58;
             this.btnSendMessage.Text = ">";
             this.btnSendMessage.UseVisualStyleBackColor = true;
+            this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
             // btnSendIcon
             // 
@@ -174,6 +182,7 @@
             this.btnSendIcon.TabIndex = 57;
             this.btnSendIcon.Text = "...";
             this.btnSendIcon.UseVisualStyleBackColor = true;
+            this.btnSendIcon.Click += new System.EventHandler(this.btnSendIcon_Click);
             // 
             // txtSendMessage
             // 
@@ -183,14 +192,6 @@
             this.txtSendMessage.Size = new System.Drawing.Size(255, 42);
             this.txtSendMessage.TabIndex = 56;
             // 
-            // rtbChat
-            // 
-            this.rtbChat.Location = new System.Drawing.Point(18, 230);
-            this.rtbChat.Name = "rtbChat";
-            this.rtbChat.Size = new System.Drawing.Size(397, 347);
-            this.rtbChat.TabIndex = 55;
-            this.rtbChat.Text = "";
-            // 
             // btnHistory
             // 
             this.btnHistory.Location = new System.Drawing.Point(18, 184);
@@ -198,15 +199,17 @@
             this.btnHistory.Size = new System.Drawing.Size(159, 40);
             this.btnHistory.TabIndex = 66;
             this.btnHistory.Text = "Lịch sử đấu";
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
-            // btnMakeFriend
+            // btnListFriend
             // 
-            this.btnMakeFriend.Location = new System.Drawing.Point(1195, 89);
-            this.btnMakeFriend.Name = "btnMakeFriend";
-            this.btnMakeFriend.Size = new System.Drawing.Size(136, 51);
-            this.btnMakeFriend.TabIndex = 54;
-            this.btnMakeFriend.Text = "Danh sách";
-            this.btnMakeFriend.UseVisualStyleBackColor = true;
+            this.btnListFriend.Location = new System.Drawing.Point(1195, 89);
+            this.btnListFriend.Name = "btnListFriend";
+            this.btnListFriend.Size = new System.Drawing.Size(136, 51);
+            this.btnListFriend.TabIndex = 54;
+            this.btnListFriend.Text = "Danh sách";
+            this.btnListFriend.UseVisualStyleBackColor = true;
+            this.btnListFriend.Click += new System.EventHandler(this.btnListFriend_Click);
             // 
             // btnRank
             // 
@@ -216,6 +219,7 @@
             this.btnRank.TabIndex = 53;
             this.btnRank.Text = "Bảng xếp hạng";
             this.btnRank.UseVisualStyleBackColor = true;
+            this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
             // 
             // btnLogout
             // 
@@ -225,6 +229,7 @@
             this.btnLogout.TabIndex = 52;
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnContainInfoUser
             // 
@@ -251,50 +256,42 @@
             this.ptbAvatarPage.TabIndex = 0;
             this.ptbAvatarPage.TabStop = false;
             // 
-            // userControlContentChatLeft1
-            // 
-            this.userControlContentChatLeft1.BackColor = System.Drawing.Color.Transparent;
-            this.userControlContentChatLeft1.Location = new System.Drawing.Point(18, 230);
-            this.userControlContentChatLeft1.Name = "userControlContentChatLeft1";
-            this.userControlContentChatLeft1.Size = new System.Drawing.Size(336, 78);
-            this.userControlContentChatLeft1.TabIndex = 67;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(1299, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(53, 48);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // pnlContainsUserControl
-            // 
-            this.pnlContainsUserControl.BackColor = System.Drawing.Color.DimGray;
-            this.pnlContainsUserControl.Controls.Add(this.pnlChatOne);
-            this.pnlContainsUserControl.Location = new System.Drawing.Point(0, 58);
-            this.pnlContainsUserControl.Name = "pnlContainsUserControl";
-            this.pnlContainsUserControl.Size = new System.Drawing.Size(1352, 584);
-            this.pnlContainsUserControl.TabIndex = 1;
-            // 
-            // pnlChatOne
-            // 
-            this.pnlChatOne.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlChatOne.Location = new System.Drawing.Point(0, 103);
-            this.pnlChatOne.Name = "pnlChatOne";
-            this.pnlChatOne.Size = new System.Drawing.Size(753, 454);
-            this.pnlChatOne.TabIndex = 5;
-            // 
             // pnlContainsChild
             // 
             this.pnlContainsChild.AutoSize = true;
             this.pnlContainsChild.BackColor = System.Drawing.Color.RosyBrown;
             this.pnlContainsChild.Controls.Add(this.pnlContainsUserControl);
             this.pnlContainsChild.Controls.Add(this.btnExit);
-            this.pnlContainsChild.Location = new System.Drawing.Point(0, 0);
+            this.pnlContainsChild.Location = new System.Drawing.Point(284, 0);
             this.pnlContainsChild.Name = "pnlContainsChild";
-            this.pnlContainsChild.Size = new System.Drawing.Size(1355, 645);
-            this.pnlContainsChild.TabIndex = 68;
+            this.pnlContainsChild.Size = new System.Drawing.Size(908, 645);
+            this.pnlContainsChild.TabIndex = 70;
+            // 
+            // pnlContainsUserControl
+            // 
+            this.pnlContainsUserControl.BackColor = System.Drawing.Color.DimGray;
+            this.pnlContainsUserControl.Controls.Add(this.pnlChatOne);
+            this.pnlContainsUserControl.Location = new System.Drawing.Point(0, 112);
+            this.pnlContainsUserControl.Name = "pnlContainsUserControl";
+            this.pnlContainsUserControl.Size = new System.Drawing.Size(905, 530);
+            this.pnlContainsUserControl.TabIndex = 1;
+            // 
+            // pnlChatOne
+            // 
+            this.pnlChatOne.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlChatOne.Location = new System.Drawing.Point(0, 77);
+            this.pnlChatOne.Name = "pnlChatOne";
+            this.pnlChatOne.Size = new System.Drawing.Size(506, 459);
+            this.pnlChatOne.TabIndex = 5;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(852, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(53, 48);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // LobbyInterface
             // 
@@ -307,11 +304,12 @@
             this.pnlCoverPage.ResumeLayout(false);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
+            this.pnlMultiChatFrame.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridContainListRooms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptboxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).EndInit();
-            this.pnlContainsUserControl.ResumeLayout(false);
             this.pnlContainsChild.ResumeLayout(false);
+            this.pnlContainsUserControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -330,15 +328,14 @@
         private System.Windows.Forms.Button btnSendMessage;
         private System.Windows.Forms.Button btnSendIcon;
         private System.Windows.Forms.TextBox txtSendMessage;
-        private System.Windows.Forms.RichTextBox rtbChat;
         private System.Windows.Forms.Button btnHistory;
-        private System.Windows.Forms.Button btnMakeFriend;
+        private System.Windows.Forms.Button btnListFriend;
         private System.Windows.Forms.Button btnRank;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnContainInfoUser;
         private System.Windows.Forms.PictureBox ptboxAvatar;
         private System.Windows.Forms.PictureBox ptbAvatarPage;
-        private ContainUserControls.userControlContentChatLeft userControlContentChatLeft1;
+        private Guna.UI2.WinForms.Guna2Panel pnlMultiChatFrame;
         private System.Windows.Forms.Panel pnlContainsChild;
         private System.Windows.Forms.Panel pnlContainsUserControl;
         private System.Windows.Forms.Panel pnlChatOne;

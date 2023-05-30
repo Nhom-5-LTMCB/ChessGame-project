@@ -67,11 +67,18 @@
     <Compile Include="ChangePasswordInterface.Designer.cs">
       <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContainUserControls\userControlContentChatLeft.cs">
+    <Compile Include="classes\button.cs" />
+    <Compile Include="classes\infoUser.cs" />
+    <Compile Include="classes\listFriends.cs" />
+    <Compile Include="classes\match.cs" />
+    <Compile Include="classes\matches.cs" />
+    <Compile Include="classes\matchPlayer.cs" />
+    <Compile Include="classes\player.cs" />
+    <Compile Include="ContainUserControls\userControlContentChatMessage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ContainUserControls\userControlContentChatLeft.Designer.cs">
-      <DependentUpon>userControlContentChatLeft.cs</DependentUpon>
+    <Compile Include="ContainUserControls\userControlContentChatMessage.Designer.cs">
+      <DependentUpon>userControlContentChatMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="ContainUserControls\userControlChatOne.cs">
       <SubType>UserControl</SubType>
@@ -85,11 +92,11 @@
     <Compile Include="ContainUserControls\userControlClick.Designer.cs">
       <DependentUpon>userControlClick.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContainUserControls\userControlContentChatRight.cs">
+    <Compile Include="ContainUserControls\userControlContentChatIcon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ContainUserControls\userControlContentChatRight.Designer.cs">
-      <DependentUpon>userControlContentChatRight.cs</DependentUpon>
+    <Compile Include="ContainUserControls\userControlContentChatIcon.Designer.cs">
+      <DependentUpon>userControlContentChatIcon.cs</DependentUpon>
     </Compile>
     <Compile Include="ContainUserControls\userControlCreateRoom.cs">
       <SubType>UserControl</SubType>
@@ -159,14 +166,14 @@
     <EmbeddedResource Include="ChangePasswordInterface.resx">
       <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContainUserControls\userControlContentChatLeft.resx">
-      <DependentUpon>userControlContentChatLeft.cs</DependentUpon>
+    <EmbeddedResource Include="ContainUserControls\userControlContentChatMessage.resx">
+      <DependentUpon>userControlContentChatMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContainUserControls\userControlChatOne.resx">
       <DependentUpon>userControlChatOne.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContainUserControls\userControlContentChatRight.resx">
-      <DependentUpon>userControlContentChatRight.cs</DependentUpon>
+    <EmbeddedResource Include="ContainUserControls\userControlContentChatIcon.resx">
+      <DependentUpon>userControlContentChatIcon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContainUserControls\userControlCreateRoom.resx">
       <DependentUpon>userControlCreateRoom.cs</DependentUpon>
@@ -223,7 +230,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="classes\" />
+    <Folder Include="classes handle\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pexels-photo-846070.jpeg" />

@@ -34,7 +34,7 @@
             this.btnSendIconChatOne = new System.Windows.Forms.Button();
             this.txtSendMsgChatOne = new System.Windows.Forms.TextBox();
             this.rtbContentChatOne = new System.Windows.Forms.RichTextBox();
-            this.userControlContentChatLeft1 = new Chess_Game_Project.ContainUserControls.userControlContentChatLeft();
+            this.userControlContentChatLeft1 = new Chess_Game_Project.ContainUserControls.userControlContentChatMessage();
             this.SuspendLayout();
             // 
             // pnlContainIconsChatOne
@@ -123,6 +123,6 @@
         private System.Windows.Forms.Button btnSendIconChatOne;
         private System.Windows.Forms.TextBox txtSendMsgChatOne;
         private System.Windows.Forms.RichTextBox rtbContentChatOne;
-        private userControlContentChatLeft userControlContentChatLeft1;
+        private userControlContentChatMessage userControlContentChatLeft1;
     }
 }

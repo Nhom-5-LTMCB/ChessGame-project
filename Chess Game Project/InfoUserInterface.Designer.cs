@@ -78,6 +78,7 @@
             this.btnBack.TabIndex = 29;
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnEditInfo
             // 
@@ -87,6 +88,7 @@
             this.btnEditInfo.TabIndex = 28;
             this.btnEditInfo.Text = "Chỉnh sửa thông tin";
             this.btnEditInfo.UseVisualStyleBackColor = true;
+            this.btnEditInfo.Click += new System.EventHandler(this.btnEditInfo_Click);
             // 
             // btnSaveInfo
             // 
@@ -96,6 +98,7 @@
             this.btnSaveInfo.TabIndex = 27;
             this.btnSaveInfo.Text = "Lưu thông tin";
             this.btnSaveInfo.UseVisualStyleBackColor = true;
+            this.btnSaveInfo.Click += new System.EventHandler(this.btnSaveInfo_Click);
             // 
             // btnChangeImage
             // 
@@ -105,6 +108,7 @@
             this.btnChangeImage.TabIndex = 26;
             this.btnChangeImage.Text = "Chọn hình ảnh";
             this.btnChangeImage.UseVisualStyleBackColor = true;
+            this.btnChangeImage.Click += new System.EventHandler(this.btnChangeImage_Click);
             // 
             // txtDefeats
             // 
@@ -212,6 +216,7 @@
             this.Controls.Add(this.pnlContent);
             this.Name = "InfoUserInterface";
             this.Text = "InfoUserInterface";
+            this.Load += new System.EventHandler(this.InfoUserInterface_Load);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptboxAvatar)).EndInit();
