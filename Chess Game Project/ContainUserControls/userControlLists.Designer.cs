@@ -157,13 +157,13 @@
             this.txtFindUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtFindUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtFindUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFindUser.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFindUser.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtFindUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFindUser.Location = new System.Drawing.Point(44, 58);
             this.txtFindUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFindUser.Name = "txtFindUser";
             this.txtFindUser.PasswordChar = '\0';
-            this.txtFindUser.PlaceholderText = "Seach for other users";
+            this.txtFindUser.PlaceholderText = "Nhập ID/tên người chơi khác";
             this.txtFindUser.SelectedText = "";
             this.txtFindUser.Size = new System.Drawing.Size(407, 28);
             this.txtFindUser.TabIndex = 8;

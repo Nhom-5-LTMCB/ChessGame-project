@@ -41,65 +41,67 @@
             // 
             this.pnlContainIconsChatOne.AutoScroll = true;
             this.pnlContainIconsChatOne.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlContainIconsChatOne.Location = new System.Drawing.Point(423, 104);
+            this.pnlContainIconsChatOne.Location = new System.Drawing.Point(370, 98);
             this.pnlContainIconsChatOne.Name = "pnlContainIconsChatOne";
-            this.pnlContainIconsChatOne.Size = new System.Drawing.Size(256, 289);
+            this.pnlContainIconsChatOne.Size = new System.Drawing.Size(224, 271);
             this.pnlContainIconsChatOne.TabIndex = 11;
             // 
             // btnCloseForm
             // 
-            this.btnCloseForm.Location = new System.Drawing.Point(593, 26);
+            this.btnCloseForm.Location = new System.Drawing.Point(519, 24);
             this.btnCloseForm.Name = "btnCloseForm";
-            this.btnCloseForm.Size = new System.Drawing.Size(85, 23);
+            this.btnCloseForm.Size = new System.Drawing.Size(74, 22);
             this.btnCloseForm.TabIndex = 10;
-            this.btnCloseForm.Text = "Close";
+            this.btnCloseForm.Text = "Thoát";
             this.btnCloseForm.UseVisualStyleBackColor = true;
             // 
             // btnSendMsgChatOne
             // 
-            this.btnSendMsgChatOne.Location = new System.Drawing.Point(571, 399);
+            this.btnSendMsgChatOne.Location = new System.Drawing.Point(500, 374);
             this.btnSendMsgChatOne.Name = "btnSendMsgChatOne";
-            this.btnSendMsgChatOne.Size = new System.Drawing.Size(107, 38);
+            this.btnSendMsgChatOne.Size = new System.Drawing.Size(94, 36);
             this.btnSendMsgChatOne.TabIndex = 9;
-            this.btnSendMsgChatOne.Text = "Send";
+            this.btnSendMsgChatOne.Text = "Gửi";
             this.btnSendMsgChatOne.UseVisualStyleBackColor = true;
             // 
             // btnSendIconChatOne
             // 
-            this.btnSendIconChatOne.Location = new System.Drawing.Point(470, 399);
+            this.btnSendIconChatOne.Location = new System.Drawing.Point(411, 374);
             this.btnSendIconChatOne.Name = "btnSendIconChatOne";
-            this.btnSendIconChatOne.Size = new System.Drawing.Size(95, 38);
+            this.btnSendIconChatOne.Size = new System.Drawing.Size(83, 36);
             this.btnSendIconChatOne.TabIndex = 8;
             this.btnSendIconChatOne.Text = "...";
             this.btnSendIconChatOne.UseVisualStyleBackColor = true;
             // 
             // txtSendMsgChatOne
             // 
-            this.txtSendMsgChatOne.Location = new System.Drawing.Point(3, 399);
+            this.txtSendMsgChatOne.Location = new System.Drawing.Point(3, 374);
             this.txtSendMsgChatOne.Multiline = true;
             this.txtSendMsgChatOne.Name = "txtSendMsgChatOne";
-            this.txtSendMsgChatOne.Size = new System.Drawing.Size(461, 38);
+            this.txtSendMsgChatOne.Size = new System.Drawing.Size(404, 36);
             this.txtSendMsgChatOne.TabIndex = 7;
             // 
             // rtbContentChatOne
             // 
-            this.rtbContentChatOne.Location = new System.Drawing.Point(3, 48);
+            this.rtbContentChatOne.Location = new System.Drawing.Point(3, 45);
             this.rtbContentChatOne.Name = "rtbContentChatOne";
-            this.rtbContentChatOne.Size = new System.Drawing.Size(676, 345);
+            this.rtbContentChatOne.Size = new System.Drawing.Size(592, 324);
             this.rtbContentChatOne.TabIndex = 6;
             this.rtbContentChatOne.Text = "";
             // 
             // userControlContentChatLeft1
             // 
+            this.userControlContentChatLeft1.AutoSize = true;
             this.userControlContentChatLeft1.BackColor = System.Drawing.Color.Transparent;
-            this.userControlContentChatLeft1.Location = new System.Drawing.Point(12, 58);
+            this.userControlContentChatLeft1.content = null;
+            this.userControlContentChatLeft1.Location = new System.Drawing.Point(10, 54);
             this.userControlContentChatLeft1.Name = "userControlContentChatLeft1";
-            this.userControlContentChatLeft1.Size = new System.Drawing.Size(336, 78);
+            this.userControlContentChatLeft1.Size = new System.Drawing.Size(294, 73);
             this.userControlContentChatLeft1.TabIndex = 12;
             // 
             // userControlChatOne
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.userControlContentChatLeft1);
             this.Controls.Add(this.pnlContainIconsChatOne);
@@ -108,8 +110,9 @@
             this.Controls.Add(this.btnSendIconChatOne);
             this.Controls.Add(this.txtSendMsgChatOne);
             this.Controls.Add(this.rtbContentChatOne);
+            this.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Name = "userControlChatOne";
-            this.Size = new System.Drawing.Size(685, 442);
+            this.Size = new System.Drawing.Size(599, 414);
             this.ResumeLayout(false);
             this.PerformLayout();
 

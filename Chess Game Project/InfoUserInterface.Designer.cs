@@ -96,9 +96,9 @@
             this.label1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Underline);
             this.label1.Location = new System.Drawing.Point(461, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 29);
+            this.label1.Size = new System.Drawing.Size(293, 29);
             this.label1.TabIndex = 42;
-            this.label1.Text = "User Information";
+            this.label1.Text = "Thông tin người dùng";
             // 
             // guna2CirclePictureBox3
             // 
@@ -223,14 +223,14 @@
             this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.Location = new System.Drawing.Point(466, 371);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtEmail.PlaceholderText = "Your Email";
+            this.txtEmail.PlaceholderText = "Nhập Email";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(278, 37);
             this.txtEmail.TabIndex = 37;
@@ -248,14 +248,14 @@
             this.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.Location = new System.Drawing.Point(466, 300);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtUsername.PlaceholderText = "Your Username";
+            this.txtUsername.PlaceholderText = "Nhập tên người dùng";
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(278, 37);
             this.txtUsername.TabIndex = 36;
@@ -273,7 +273,7 @@
             this.txtID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtID.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtID.ForeColor = System.Drawing.Color.Black;
             this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtID.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -282,7 +282,7 @@
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtID.PlaceholderText = "Your ID";
+            this.txtID.PlaceholderText = "Nhập ID";
             this.txtID.SelectedText = "";
             this.txtID.Size = new System.Drawing.Size(247, 37);
             this.txtID.TabIndex = 35;
@@ -325,7 +325,7 @@
             this.btnSaveInfo.Name = "btnSaveInfo";
             this.btnSaveInfo.Size = new System.Drawing.Size(197, 53);
             this.btnSaveInfo.TabIndex = 33;
-            this.btnSaveInfo.Text = "Save";
+            this.btnSaveInfo.Text = "Lưu";
             // 
             // btnEditInfo
             // 
@@ -345,7 +345,7 @@
             this.btnEditInfo.Name = "btnEditInfo";
             this.btnEditInfo.Size = new System.Drawing.Size(205, 49);
             this.btnEditInfo.TabIndex = 32;
-            this.btnEditInfo.Text = "Edit Profile";
+            this.btnEditInfo.Text = "Chỉnh sửa hồ sơ";
             // 
             // btnChangeImage
             // 
@@ -366,7 +366,7 @@
             this.btnChangeImage.Name = "btnChangeImage";
             this.btnChangeImage.Size = new System.Drawing.Size(205, 51);
             this.btnChangeImage.TabIndex = 31;
-            this.btnChangeImage.Text = "Select Picture";
+            this.btnChangeImage.Text = "Chỉnh sửa ảnh";
             // 
             // ptboxAvatar
             // 
