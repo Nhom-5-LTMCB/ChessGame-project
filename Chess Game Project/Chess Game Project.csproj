@@ -113,7 +113,7 @@
     <Compile Include="ContainUserControls\userControlLists.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ContainUserControls\userControlLists.Designer.cs">
+    <Compile Include="ContainUserControls\userControlLists.designer.cs">
       <DependentUpon>userControlLists.cs</DependentUpon>
     </Compile>
     <Compile Include="ContainUserControls\userControlRanks.cs">
@@ -154,6 +154,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegisterInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +210,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterInterface.resx">
       <DependentUpon>RegisterInterface.cs</DependentUpon>
@@ -237,6 +243,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Resources\padlock.png" />
+    <None Include="Resources\id.png" />
+    <None Include="Resources\confirmPASS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

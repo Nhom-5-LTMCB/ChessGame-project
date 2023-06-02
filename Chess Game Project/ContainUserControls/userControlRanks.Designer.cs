@@ -65,10 +65,11 @@
             // 
             this.lbCurrentRank.AutoSize = true;
             this.lbCurrentRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCurrentRank.Location = new System.Drawing.Point(17, 10);
+            this.lbCurrentRank.Location = new System.Drawing.Point(128, 10);
             this.lbCurrentRank.Name = "lbCurrentRank";
-            this.lbCurrentRank.Size = new System.Drawing.Size(0, 38);
+            this.lbCurrentRank.Size = new System.Drawing.Size(36, 38);
             this.lbCurrentRank.TabIndex = 0;
+            this.lbCurrentRank.Text = "1";
             // 
             // panel1
             // 
@@ -82,10 +83,10 @@
             // lbYourRank
             // 
             this.lbYourRank.AutoSize = true;
-            this.lbYourRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYourRank.Font = new System.Drawing.Font("Consolas", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbYourRank.Location = new System.Drawing.Point(17, 10);
             this.lbYourRank.Name = "lbYourRank";
-            this.lbYourRank.Size = new System.Drawing.Size(232, 38);
+            this.lbYourRank.Size = new System.Drawing.Size(233, 38);
             this.lbYourRank.TabIndex = 4;
             this.lbYourRank.Text = "Hạng của bạn";
             // 
@@ -103,7 +104,7 @@
             this.dtGridRank.Name = "dtGridRank";
             this.dtGridRank.RowHeadersWidth = 51;
             this.dtGridRank.RowTemplate.Height = 24;
-            this.dtGridRank.Size = new System.Drawing.Size(573, 494);
+            this.dtGridRank.Size = new System.Drawing.Size(570, 494);
             this.dtGridRank.TabIndex = 1;
             // 
             // userControlRanks

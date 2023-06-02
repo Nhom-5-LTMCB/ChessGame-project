@@ -50,10 +50,11 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(591, 400);
             this.pnlContent.TabIndex = 15;
+            this.pnlContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContent_Paint);
             // 
             // txtAuth
             // 
-            this.txtAuth.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtAuth.BorderColor = System.Drawing.Color.Black;
             this.txtAuth.BorderRadius = 5;
             this.txtAuth.BorderThickness = 2;
             this.txtAuth.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -63,22 +64,22 @@
             this.txtAuth.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtAuth.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtAuth.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAuth.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.txtAuth.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtAuth.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAuth.Location = new System.Drawing.Point(175, 127);
+            this.txtAuth.Location = new System.Drawing.Point(181, 183);
             this.txtAuth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAuth.Name = "txtAuth";
             this.txtAuth.PasswordChar = '\0';
             this.txtAuth.PlaceholderForeColor = System.Drawing.Color.DarkGray;
             this.txtAuth.PlaceholderText = "Nhập mã";
             this.txtAuth.SelectedText = "";
-            this.txtAuth.Size = new System.Drawing.Size(287, 32);
+            this.txtAuth.Size = new System.Drawing.Size(292, 48);
             this.txtAuth.TabIndex = 19;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(187, 212);
+            this.label1.Location = new System.Drawing.Point(183, 283);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 2);
             this.label1.TabIndex = 4;
@@ -93,11 +94,11 @@
             this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNext.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNext.FillColor = System.Drawing.Color.Blue;
-            this.btnNext.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnNext.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnNext.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnNext.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnNext.ForeColor = System.Drawing.Color.Moccasin;
-            this.btnNext.Location = new System.Drawing.Point(231, 253);
+            this.btnNext.Location = new System.Drawing.Point(237, 309);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(180, 45);
             this.btnNext.TabIndex = 15;
@@ -115,7 +116,7 @@
             this.btnSendTokenAgain.FillColor2 = System.Drawing.Color.NavajoWhite;
             this.btnSendTokenAgain.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSendTokenAgain.ForeColor = System.Drawing.Color.Black;
-            this.btnSendTokenAgain.Location = new System.Drawing.Point(159, 182);
+            this.btnSendTokenAgain.Location = new System.Drawing.Point(155, 253);
             this.btnSendTokenAgain.Name = "btnSendTokenAgain";
             this.btnSendTokenAgain.Size = new System.Drawing.Size(123, 27);
             this.btnSendTokenAgain.TabIndex = 14;
@@ -126,11 +127,11 @@
             // 
             this.authLabel.AutoSize = true;
             this.authLabel.BackColor = System.Drawing.Color.NavajoWhite;
-            this.authLabel.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.authLabel.ForeColor = System.Drawing.Color.LightYellow;
-            this.authLabel.Location = new System.Drawing.Point(170, 77);
+            this.authLabel.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold);
+            this.authLabel.ForeColor = System.Drawing.Color.Black;
+            this.authLabel.Location = new System.Drawing.Point(177, 159);
             this.authLabel.Name = "authLabel";
-            this.authLabel.Size = new System.Drawing.Size(220, 27);
+            this.authLabel.Size = new System.Drawing.Size(153, 20);
             this.authLabel.TabIndex = 10;
             this.authLabel.Text = "Nhập mã xác thực";
             this.authLabel.Click += new System.EventHandler(this.authLabel_Click);

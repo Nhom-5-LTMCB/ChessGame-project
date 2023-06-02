@@ -65,7 +65,12 @@ namespace Chess_Game_Project
             
         }
 
-      
+        private void pnlContainsIcon_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
 
         //==================================================================================================================================
     }

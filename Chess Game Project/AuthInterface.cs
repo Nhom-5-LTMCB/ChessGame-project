@@ -21,5 +21,10 @@ namespace Chess_Game_Project
         {
 
         }
+
+        private void txtAuthUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
