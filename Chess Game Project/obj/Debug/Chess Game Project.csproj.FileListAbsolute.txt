@@ -105,3 +105,5 @@ C:\Users\carldesin\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_
 C:\Users\carldesin\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess Game Project.csproj.GenerateResource.cache
 C:\Users\carldesin\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess Game Project.exe
 C:\Users\carldesin\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess Game Project.pdb
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlContentChatMessage.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlContentChatIcon.resources

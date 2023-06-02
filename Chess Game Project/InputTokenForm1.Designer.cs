@@ -53,7 +53,7 @@
             // 
             // txtAuth
             // 
-            this.txtAuth.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtAuth.BorderColor = System.Drawing.Color.Black;
             this.txtAuth.BorderRadius = 5;
             this.txtAuth.BorderThickness = 2;
             this.txtAuth.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -93,9 +93,9 @@
             this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNext.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNext.FillColor = System.Drawing.Color.Blue;
-            this.btnNext.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnNext.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnNext.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnNext.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Moccasin;
             this.btnNext.Location = new System.Drawing.Point(231, 253);
             this.btnNext.Name = "btnNext";
@@ -127,7 +127,7 @@
             this.authLabel.AutoSize = true;
             this.authLabel.BackColor = System.Drawing.Color.NavajoWhite;
             this.authLabel.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.authLabel.ForeColor = System.Drawing.Color.LightYellow;
+            this.authLabel.ForeColor = System.Drawing.Color.Black;
             this.authLabel.Location = new System.Drawing.Point(170, 77);
             this.authLabel.Name = "authLabel";
             this.authLabel.Size = new System.Drawing.Size(220, 27);

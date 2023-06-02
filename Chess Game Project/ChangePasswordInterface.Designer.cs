@@ -30,15 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.txtConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnNext = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.confirmPasswordLabel = new System.Windows.Forms.Label();
-            this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.errorConfirmPassword = new System.Windows.Forms.Label();
-            this.errorNewPassword = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.txtConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnNext = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.errorConfirmPassword = new System.Windows.Forms.Label();
+            this.errorNewPassword = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -51,15 +49,35 @@
             this.pnlContent.Controls.Add(this.guna2PictureBox1);
             this.pnlContent.Controls.Add(this.txtConfirmPassword);
             this.pnlContent.Controls.Add(this.btnNext);
-            this.pnlContent.Controls.Add(this.confirmPasswordLabel);
             this.pnlContent.Controls.Add(this.txtNewPassword);
-            this.pnlContent.Controls.Add(this.passwordLabel);
             this.pnlContent.Controls.Add(this.errorConfirmPassword);
             this.pnlContent.Controls.Add(this.errorNewPassword);
             this.pnlContent.Location = new System.Drawing.Point(31, 33);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(738, 384);
             this.pnlContent.TabIndex = 22;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(137, 199);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 33;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(137, 84);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 32;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // txtConfirmPassword
             // 
@@ -75,12 +93,12 @@
             this.txtConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.txtConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(191, 235);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(205, 199);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '\0';
             this.txtConfirmPassword.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtConfirmPassword.PlaceholderText = "Nhập email";
+            this.txtConfirmPassword.PlaceholderText = "Xác nhận mật khẩu";
             this.txtConfirmPassword.SelectedText = "";
             this.txtConfirmPassword.Size = new System.Drawing.Size(372, 46);
             this.txtConfirmPassword.TabIndex = 31;
@@ -93,27 +111,15 @@
             this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNext.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNext.FillColor = System.Drawing.Color.Blue;
-            this.btnNext.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnNext.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnNext.Font = new System.Drawing.Font("Consolas", 12F);
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(256, 301);
+            this.btnNext.ForeColor = System.Drawing.Color.Moccasin;
+            this.btnNext.Location = new System.Drawing.Point(267, 294);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(182, 45);
             this.btnNext.TabIndex = 26;
             this.btnNext.Text = "Xác nhận";
-            // 
-            // confirmPasswordLabel
-            // 
-            this.confirmPasswordLabel.AutoSize = true;
-            this.confirmPasswordLabel.BackColor = System.Drawing.Color.Transparent;
-            this.confirmPasswordLabel.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPasswordLabel.ForeColor = System.Drawing.Color.LightYellow;
-            this.confirmPasswordLabel.Location = new System.Drawing.Point(186, 196);
-            this.confirmPasswordLabel.Name = "confirmPasswordLabel";
-            this.confirmPasswordLabel.Size = new System.Drawing.Size(233, 27);
-            this.confirmPasswordLabel.TabIndex = 28;
-            this.confirmPasswordLabel.Text = "Xác nhận mật khẩu";
             // 
             // txtNewPassword
             // 
@@ -129,27 +135,15 @@
             this.txtNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.txtNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(191, 131);
+            this.txtNewPassword.Location = new System.Drawing.Point(205, 84);
             this.txtNewPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '\0';
             this.txtNewPassword.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtNewPassword.PlaceholderText = "Nhập tài khoản";
+            this.txtNewPassword.PlaceholderText = "Nhập mật khẩu mới ";
             this.txtNewPassword.SelectedText = "";
             this.txtNewPassword.Size = new System.Drawing.Size(372, 48);
             this.txtNewPassword.TabIndex = 29;
-            // 
-            // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
-            this.passwordLabel.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.ForeColor = System.Drawing.Color.LightYellow;
-            this.passwordLabel.Location = new System.Drawing.Point(186, 91);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(233, 27);
-            this.passwordLabel.TabIndex = 27;
-            this.passwordLabel.Text = "Nhập mật khẩu mới";
             // 
             // errorConfirmPassword
             // 
@@ -166,28 +160,6 @@
             this.errorNewPassword.Name = "errorNewPassword";
             this.errorNewPassword.Size = new System.Drawing.Size(0, 16);
             this.errorNewPassword.TabIndex = 19;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(137, 233);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 33;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(137, 121);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 32;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // ChangePasswordInterface
             // 
@@ -212,9 +184,7 @@
         private System.Windows.Forms.Label errorNewPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtConfirmPassword;
         private Guna.UI2.WinForms.Guna2GradientButton btnNext;
-        private System.Windows.Forms.Label confirmPasswordLabel;
         private Guna.UI2.WinForms.Guna2TextBox txtNewPassword;
-        private System.Windows.Forms.Label passwordLabel;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }

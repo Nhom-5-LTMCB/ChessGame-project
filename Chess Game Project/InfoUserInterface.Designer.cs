@@ -62,7 +62,7 @@
             // 
             // pnlContent
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.pnlContent.BackColor = System.Drawing.Color.NavajoWhite;
             this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.guna2CirclePictureBox3);
             this.pnlContent.Controls.Add(this.guna2CirclePictureBox2);
@@ -230,7 +230,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtEmail.PlaceholderText = "Nhập Email";
+            this.txtEmail.PlaceholderText = "Email";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(278, 37);
             this.txtEmail.TabIndex = 37;
@@ -255,7 +255,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtUsername.PlaceholderText = "Nhập tên người dùng";
+            this.txtUsername.PlaceholderText = "Tên người dùng";
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(278, 37);
             this.txtUsername.TabIndex = 36;
@@ -282,7 +282,7 @@
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtID.PlaceholderText = "Nhập ID";
+            this.txtID.PlaceholderText = "";
             this.txtID.SelectedText = "";
             this.txtID.Size = new System.Drawing.Size(247, 37);
             this.txtID.TabIndex = 35;
@@ -330,15 +330,15 @@
             // btnEditInfo
             // 
             this.btnEditInfo.Animated = true;
-            this.btnEditInfo.BorderRadius = 10;
+            this.btnEditInfo.BorderRadius = 20;
             this.btnEditInfo.BorderThickness = 2;
             this.btnEditInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEditInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEditInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEditInfo.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEditInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(159)))), ((int)(((byte)(253)))));
-            this.btnEditInfo.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(114)))));
+            this.btnEditInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnEditInfo.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnEditInfo.Font = new System.Drawing.Font("Consolas", 12F);
             this.btnEditInfo.ForeColor = System.Drawing.Color.White;
             this.btnEditInfo.Location = new System.Drawing.Point(106, 359);
@@ -351,15 +351,15 @@
             // 
             this.btnChangeImage.Animated = true;
             this.btnChangeImage.BackColor = System.Drawing.Color.Transparent;
-            this.btnChangeImage.BorderRadius = 10;
+            this.btnChangeImage.BorderRadius = 20;
             this.btnChangeImage.BorderThickness = 2;
             this.btnChangeImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnChangeImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChangeImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChangeImage.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChangeImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChangeImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(159)))), ((int)(((byte)(253)))));
-            this.btnChangeImage.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(114)))));
+            this.btnChangeImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnChangeImage.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnChangeImage.Font = new System.Drawing.Font("Consolas", 12F);
             this.btnChangeImage.ForeColor = System.Drawing.Color.White;
             this.btnChangeImage.Location = new System.Drawing.Point(106, 266);
