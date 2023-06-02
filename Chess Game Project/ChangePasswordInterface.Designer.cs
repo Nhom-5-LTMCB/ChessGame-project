@@ -61,7 +61,7 @@
             // 
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(137, 199);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(137, 197);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(48, 48);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -81,7 +81,7 @@
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtConfirmPassword.BorderColor = System.Drawing.Color.Black;
             this.txtConfirmPassword.BorderRadius = 5;
             this.txtConfirmPassword.BorderThickness = 2;
             this.txtConfirmPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -123,7 +123,7 @@
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txtNewPassword.BorderColor = System.Drawing.Color.Black;
             this.txtNewPassword.BorderRadius = 5;
             this.txtNewPassword.BorderThickness = 2;
             this.txtNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;

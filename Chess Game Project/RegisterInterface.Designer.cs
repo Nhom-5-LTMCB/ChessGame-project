@@ -84,7 +84,7 @@
             this.btnComeback.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnComeback.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnComeback.ForeColor = System.Drawing.Color.Moccasin;
-            this.btnComeback.Location = new System.Drawing.Point(327, 356);
+            this.btnComeback.Location = new System.Drawing.Point(340, 356);
             this.btnComeback.Name = "btnComeback";
             this.btnComeback.Size = new System.Drawing.Size(182, 45);
             this.btnComeback.TabIndex = 84;
@@ -101,7 +101,7 @@
             this.btnRegister.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnRegister.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.btnRegister.ForeColor = System.Drawing.Color.Moccasin;
-            this.btnRegister.Location = new System.Drawing.Point(139, 356);
+            this.btnRegister.Location = new System.Drawing.Point(122, 356);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(182, 45);
             this.btnRegister.TabIndex = 83;

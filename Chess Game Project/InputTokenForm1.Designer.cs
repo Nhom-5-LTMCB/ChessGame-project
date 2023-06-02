@@ -72,7 +72,7 @@
             this.txtAuth.PlaceholderForeColor = System.Drawing.Color.DarkGray;
             this.txtAuth.PlaceholderText = "Nhập mã";
             this.txtAuth.SelectedText = "";
-            this.txtAuth.Size = new System.Drawing.Size(287, 32);
+            this.txtAuth.Size = new System.Drawing.Size(292, 48);
             this.txtAuth.TabIndex = 19;
             // 
             // label1
@@ -128,7 +128,7 @@
             this.authLabel.BackColor = System.Drawing.Color.NavajoWhite;
             this.authLabel.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.authLabel.ForeColor = System.Drawing.Color.Black;
-            this.authLabel.Location = new System.Drawing.Point(170, 77);
+            this.authLabel.Location = new System.Drawing.Point(170, 78);
             this.authLabel.Name = "authLabel";
             this.authLabel.Size = new System.Drawing.Size(220, 27);
             this.authLabel.TabIndex = 10;

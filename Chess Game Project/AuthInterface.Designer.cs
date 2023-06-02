@@ -62,7 +62,7 @@
             // 
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(15, 174);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(15, 160);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(48, 48);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,14 +103,14 @@
             this.txtAuthEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAuthEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.txtAuthEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAuthEmail.Location = new System.Drawing.Point(69, 48);
+            this.txtAuthEmail.Location = new System.Drawing.Point(69, 174);
             this.txtAuthEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAuthEmail.Name = "txtAuthEmail";
             this.txtAuthEmail.PasswordChar = '\0';
             this.txtAuthEmail.PlaceholderForeColor = System.Drawing.Color.DarkGray;
             this.txtAuthEmail.PlaceholderText = "Nhập email";
             this.txtAuthEmail.SelectedText = "";
-            this.txtAuthEmail.Size = new System.Drawing.Size(296, 58);
+            this.txtAuthEmail.Size = new System.Drawing.Size(296, 34);
             this.txtAuthEmail.TabIndex = 24;
             // 
             // btnBack
@@ -163,14 +163,14 @@
             this.txtAuthUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAuthUserName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.txtAuthUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAuthUserName.Location = new System.Drawing.Point(69, 165);
+            this.txtAuthUserName.Location = new System.Drawing.Point(69, 72);
             this.txtAuthUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAuthUserName.Name = "txtAuthUserName";
             this.txtAuthUserName.PasswordChar = '\0';
             this.txtAuthUserName.PlaceholderForeColor = System.Drawing.Color.DarkGray;
             this.txtAuthUserName.PlaceholderText = "Nhập tài khoản";
             this.txtAuthUserName.SelectedText = "";
-            this.txtAuthUserName.Size = new System.Drawing.Size(296, 57);
+            this.txtAuthUserName.Size = new System.Drawing.Size(296, 34);
             this.txtAuthUserName.TabIndex = 22;
             this.txtAuthUserName.TextChanged += new System.EventHandler(this.txtAuthUserName_TextChanged);
             // 
