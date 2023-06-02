@@ -26,5 +26,10 @@ namespace Chess_Game_Project
         {
 
         }
+
+        private void pnlContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

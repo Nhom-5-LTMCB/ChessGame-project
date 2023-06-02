@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
@@ -37,8 +39,6 @@
             this.txtNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorConfirmPassword = new System.Windows.Forms.Label();
             this.errorNewPassword = new System.Windows.Forms.Label();
-            this.lbID = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -60,6 +60,26 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(738, 384);
             this.pnlContent.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(200, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 27);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Mật khẩu mới";
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(200, 158);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(246, 27);
+            this.lbID.TabIndex = 34;
+            this.lbID.Text = "Xác nhận mật khẩu ";
             // 
             // guna2PictureBox2
             // 
@@ -168,26 +188,6 @@
             this.errorNewPassword.Name = "errorNewPassword";
             this.errorNewPassword.Size = new System.Drawing.Size(0, 16);
             this.errorNewPassword.TabIndex = 19;
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(200, 158);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(116, 27);
-            this.lbID.TabIndex = 34;
-            this.lbID.Text = "Xác nhận";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(200, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 27);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Mật khẩu mới";
             // 
             // ChangePasswordInterface
             // 

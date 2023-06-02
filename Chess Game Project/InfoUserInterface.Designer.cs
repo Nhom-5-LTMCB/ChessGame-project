@@ -104,7 +104,7 @@
             // 
             this.guna2CirclePictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox3.Image")));
             this.guna2CirclePictureBox3.ImageRotate = 0F;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(628, 499);
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(634, 522);
             this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
             this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox3.Size = new System.Drawing.Size(32, 32);
@@ -116,7 +116,7 @@
             // 
             this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
             this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(641, 423);
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(641, 445);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox2.Size = new System.Drawing.Size(32, 32);
@@ -128,7 +128,7 @@
             // 
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(588, 266);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(582, 288);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(32, 32);
@@ -142,7 +142,7 @@
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.InitialImage")));
-            this.guna2PictureBox2.Location = new System.Drawing.Point(510, 189);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(510, 211);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(42, 32);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -155,7 +155,7 @@
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(537, 338);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(537, 368);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(32, 32);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -177,7 +177,7 @@
             this.txtDefeats.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDefeats.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDefeats.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDefeats.Location = new System.Drawing.Point(466, 538);
+            this.txtDefeats.Location = new System.Drawing.Point(466, 561);
             this.txtDefeats.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDefeats.Name = "txtDefeats";
             this.txtDefeats.PasswordChar = '\0';
@@ -201,7 +201,7 @@
             this.txtWins.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtWins.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWins.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtWins.Location = new System.Drawing.Point(466, 456);
+            this.txtWins.Location = new System.Drawing.Point(466, 478);
             this.txtWins.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtWins.Name = "txtWins";
             this.txtWins.PasswordChar = '\0';
@@ -225,7 +225,7 @@
             this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(466, 371);
+            this.txtEmail.Location = new System.Drawing.Point(466, 401);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -250,7 +250,7 @@
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Location = new System.Drawing.Point(466, 300);
+            this.txtUsername.Location = new System.Drawing.Point(466, 324);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
@@ -277,12 +277,12 @@
             this.txtID.ForeColor = System.Drawing.Color.Black;
             this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtID.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.txtID.Location = new System.Drawing.Point(466, 222);
+            this.txtID.Location = new System.Drawing.Point(466, 244);
             this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtID.PlaceholderText = "ID";
+            this.txtID.PlaceholderText = "";
             this.txtID.SelectedText = "";
             this.txtID.Size = new System.Drawing.Size(247, 37);
             this.txtID.TabIndex = 35;
@@ -387,7 +387,7 @@
             // 
             this.lbDefeats.AutoSize = true;
             this.lbDefeats.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDefeats.Location = new System.Drawing.Point(460, 499);
+            this.lbDefeats.Location = new System.Drawing.Point(460, 522);
             this.lbDefeats.Name = "lbDefeats";
             this.lbDefeats.Size = new System.Drawing.Size(168, 27);
             this.lbDefeats.TabIndex = 24;
@@ -397,7 +397,7 @@
             // 
             this.lbWins.AutoSize = true;
             this.lbWins.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWins.Location = new System.Drawing.Point(460, 423);
+            this.lbWins.Location = new System.Drawing.Point(460, 445);
             this.lbWins.Name = "lbWins";
             this.lbWins.Size = new System.Drawing.Size(181, 27);
             this.lbWins.TabIndex = 22;
@@ -407,7 +407,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(460, 338);
+            this.lbEmail.Location = new System.Drawing.Point(460, 368);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(77, 27);
             this.lbEmail.TabIndex = 20;
@@ -417,7 +417,7 @@
             // 
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.Location = new System.Drawing.Point(460, 264);
+            this.lbUserName.Location = new System.Drawing.Point(460, 288);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(116, 27);
             this.lbUserName.TabIndex = 18;
@@ -427,7 +427,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(460, 189);
+            this.lbID.Location = new System.Drawing.Point(460, 211);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(38, 27);
             this.lbID.TabIndex = 16;

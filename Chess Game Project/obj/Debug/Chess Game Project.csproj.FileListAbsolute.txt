@@ -37,9 +37,7 @@ C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess Game 
 C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess Game Project.csproj.SuggestedBindingRedirects.cache
 C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.AuthInterface.resources
 C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ChangePasswordInterface.resources
-C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlContentChatLeft.resources
 C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlChatOne.resources
-C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlContentChatRight.resources
 C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlCreateRoom.resources
 C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlHistory.resources
 C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlLists.resources
