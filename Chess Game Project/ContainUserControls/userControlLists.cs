@@ -16,5 +16,6 @@ namespace Chess_Game_Project.ContainUserControls
         {
             InitializeComponent();
         }
+
     }
 }

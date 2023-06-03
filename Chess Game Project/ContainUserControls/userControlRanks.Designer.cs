@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlRanker = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbCurrentRank = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbYourRank = new System.Windows.Forms.Label();
             this.pnlYourLevel = new System.Windows.Forms.FlowLayoutPanel();
-            this.dtGridRank = new System.Windows.Forms.DataGridView();
+            this.dtGridRank = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnlRanker.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -43,10 +46,10 @@
             // 
             // pnlRanker
             // 
+            this.pnlRanker.Controls.Add(this.dtGridRank);
             this.pnlRanker.Controls.Add(this.panel2);
             this.pnlRanker.Controls.Add(this.panel1);
             this.pnlRanker.Controls.Add(this.pnlYourLevel);
-            this.pnlRanker.Controls.Add(this.dtGridRank);
             this.pnlRanker.Location = new System.Drawing.Point(0, 0);
             this.pnlRanker.Name = "pnlRanker";
             this.pnlRanker.Size = new System.Drawing.Size(577, 546);
@@ -99,13 +102,54 @@
             // 
             // dtGridRank
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtGridRank.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridRank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtGridRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridRank.Location = new System.Drawing.Point(3, -3);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridRank.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtGridRank.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtGridRank.Location = new System.Drawing.Point(0, 0);
             this.dtGridRank.Name = "dtGridRank";
+            this.dtGridRank.RowHeadersVisible = false;
             this.dtGridRank.RowHeadersWidth = 51;
             this.dtGridRank.RowTemplate.Height = 24;
-            this.dtGridRank.Size = new System.Drawing.Size(570, 494);
-            this.dtGridRank.TabIndex = 1;
+            this.dtGridRank.Size = new System.Drawing.Size(572, 484);
+            this.dtGridRank.TabIndex = 5;
+            this.dtGridRank.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtGridRank.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dtGridRank.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dtGridRank.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dtGridRank.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dtGridRank.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dtGridRank.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtGridRank.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtGridRank.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtGridRank.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtGridRank.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dtGridRank.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridRank.ThemeStyle.HeaderStyle.Height = 4;
+            this.dtGridRank.ThemeStyle.ReadOnly = false;
+            this.dtGridRank.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtGridRank.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtGridRank.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtGridRank.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dtGridRank.ThemeStyle.RowsStyle.Height = 24;
+            this.dtGridRank.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtGridRank.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // userControlRanks
             // 
@@ -132,6 +176,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbYourRank;
         private System.Windows.Forms.FlowLayoutPanel pnlYourLevel;
-        private System.Windows.Forms.DataGridView dtGridRank;
+        private Guna.UI2.WinForms.Guna2DataGridView dtGridRank;
     }
 }

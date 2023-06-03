@@ -42,19 +42,16 @@
             this.errorHideLabel = new System.Windows.Forms.Label();
             this.forgotPasswordLabel = new System.Windows.Forms.Label();
             this.ptbContainAvt = new System.Windows.Forms.PictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbContainAvt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.NavajoWhite;
             this.pnlContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlContent.Controls.Add(this.guna2CirclePictureBox1);
             this.pnlContent.Controls.Add(this.label2);
             this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.lbID);
@@ -66,7 +63,7 @@
             this.pnlContent.Controls.Add(this.btnLogin);
             this.pnlContent.Controls.Add(this.errorHideLabel);
             this.pnlContent.Controls.Add(this.forgotPasswordLabel);
-            this.pnlContent.Location = new System.Drawing.Point(355, 36);
+            this.pnlContent.Location = new System.Drawing.Point(242, 37);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(649, 473);
             this.pnlContent.TabIndex = 6;
@@ -85,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(161, 144);
+            this.label1.Location = new System.Drawing.Point(137, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 27);
             this.label1.TabIndex = 22;
@@ -95,7 +92,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(161, 227);
+            this.lbID.Location = new System.Drawing.Point(137, 214);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(116, 27);
             this.lbID.TabIndex = 21;
@@ -105,7 +102,7 @@
             // 
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(94, 258);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(70, 245);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(48, 48);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -116,7 +113,7 @@
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(94, 175);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(70, 162);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(48, 48);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -138,7 +135,7 @@
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(161, 258);
+            this.txtPassword.Location = new System.Drawing.Point(137, 245);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
@@ -164,7 +161,7 @@
             this.txtUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUserName.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUserName.Location = new System.Drawing.Point(161, 175);
+            this.txtUserName.Location = new System.Drawing.Point(137, 162);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
@@ -189,7 +186,7 @@
             this.btnSignUp.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnSignUp.Font = new System.Drawing.Font("Consolas", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnSignUp.ForeColor = System.Drawing.Color.Moccasin;
-            this.btnSignUp.Location = new System.Drawing.Point(371, 357);
+            this.btnSignUp.Location = new System.Drawing.Point(347, 344);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(206, 57);
             this.btnSignUp.TabIndex = 17;
@@ -210,7 +207,7 @@
             this.btnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnLogin.Font = new System.Drawing.Font("Consolas", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnLogin.ForeColor = System.Drawing.Color.Moccasin;
-            this.btnLogin.Location = new System.Drawing.Point(136, 357);
+            this.btnLogin.Location = new System.Drawing.Point(112, 344);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(206, 57);
             this.btnLogin.TabIndex = 16;
@@ -221,7 +218,7 @@
             // 
             this.errorHideLabel.AutoSize = true;
             this.errorHideLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorHideLabel.Location = new System.Drawing.Point(123, 321);
+            this.errorHideLabel.Location = new System.Drawing.Point(99, 308);
             this.errorHideLabel.Name = "errorHideLabel";
             this.errorHideLabel.Size = new System.Drawing.Size(85, 20);
             this.errorHideLabel.TabIndex = 15;
@@ -233,7 +230,7 @@
             this.forgotPasswordLabel.BackColor = System.Drawing.Color.NavajoWhite;
             this.forgotPasswordLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgotPasswordLabel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.forgotPasswordLabel.Location = new System.Drawing.Point(270, 426);
+            this.forgotPasswordLabel.Location = new System.Drawing.Point(246, 413);
             this.forgotPasswordLabel.Name = "forgotPasswordLabel";
             this.forgotPasswordLabel.Size = new System.Drawing.Size(182, 31);
             this.forgotPasswordLabel.TabIndex = 13;
@@ -246,16 +243,6 @@
             this.ptbContainAvt.Size = new System.Drawing.Size(203, 146);
             this.ptbContainAvt.TabIndex = 7;
             this.ptbContainAvt.TabStop = false;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(276, 24);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(119, 108);
-            this.guna2CirclePictureBox1.TabIndex = 24;
-            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // Login
             // 
@@ -272,7 +259,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbContainAvt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,7 +277,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
     }
 }
 
