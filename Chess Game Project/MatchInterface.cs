@@ -16,6 +16,8 @@ using System.Windows.Forms;
 using chessgames.backPieces;
 using chessgames.whitePieces;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
+using System.Xml.Linq;
 
 namespace Chess_Game_Project
 {
@@ -165,7 +167,13 @@ namespace Chess_Game_Project
                 pnl.Controls.Add(btn);
             }
         }
-
+        private void displayAnncount(bool whiteTurn, bool blackTurn)
+        {
+            if (whiteTurn && !blackTurn) //quân trắng được di chuyển trước
+                txtTurnUser.BackColor = Color.White;
+            else
+                txtTurnUser.BackColor = Color.Black;
+        }
         public MatchInterface()
         {
             InitializeComponent();
@@ -244,6 +252,128 @@ namespace Chess_Game_Project
                 }
             }
 
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (setUpTimer)
+            {
+                timer.Interval = 1000;
+            }
+            txtCountTime.Text = countTime.ToString();
+            //sendMove(0, 0, 1, 0, 0); // mode = 1 tương ứng với dùng để nhận thời gian đếm ngược, 0 là thực hiện với bàn cờ
+
+            countTime--;
+            if (countTime == 0)
+            {
+                whiteTurn = !whiteTurn;
+                blackTurn = !blackTurn;
+                displayAnncount(whiteTurn, blackTurn);
+                countTime = setUpTime;
+                //clearMove();
+                //thực hiện việc xóa các nút có màu đỏ trong list view nếu có
+                for (int i = 0; i < buttonList.Count; i++)
+                {
+                    if (buttonList[i].BackColor == Color.Red)
+                        buttonList[i].BackColor = Color.Transparent;
+                }
+            }
+            if (setUpTimerThread)
+            {
+                timer.Interval = 1;
+                setUpTimerThread = false;
+            }
+        }
+        public MatchInterface(string myIp, string difIp, string matchId, string ipConnectRoom, bool isCreated, bool turn, int piece, int betPoint, infoUser difPlayer, infoUser currentPlayer) : this()
+        {
+            this.myIp = myIp;
+            this.difIp = difIp;
+            this.isCreated = isCreated;
+            this.matchId = matchId;
+            this.betPoint = betPoint;
+            this.difPlayer = difPlayer;
+            this.currentPlayer = currentPlayer;
+            this.ipConnectRoom = ipConnectRoom;
+
+            //chủ phòng sẽ là cờ trắng và biến piece = 0
+            lbCurrentPlayer.Text = currentPlayer.userName;
+            avtCurrentPlayer.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + currentPlayer.linkAvatar);
+            avtCurrentPlayer.SizeMode = PictureBoxSizeMode.Zoom;
+
+            if (isCreated) // đây là người tạo phòng cũng tương đương với server
+            {
+                //đây là lượt mà chủ phòng sẽ được đánh trước
+                whiteTurn = turn;
+                blackTurn = !turn;
+                displayAnncount(whiteTurn, blackTurn);
+                clientUDP = new UdpClient(port);
+                //rcvDataUDPThread = new Thread(new ThreadStart(rcvDataUDP));
+                //rcvDataUDPThread.Start();
+
+                this.piece = piece;
+                server = new TcpListener(IPAddress.Any, portConnect);
+                server.Start();
+                //threadWaiting = new Thread(new ThreadStart(waitingAnotherClient));
+                //threadWaiting.Start();
+            }
+            else //đây sẽ là người sẽ tham gia vào phòng chơi
+            {
+                try
+                {
+                    //đây là lượt mà người còn lại sẽ được đánh
+                    blackTurn = turn;
+                    whiteTurn = !turn;
+                    displayAnncount(whiteTurn, blackTurn);
+                    //người chơi sẽ là cờ đen và biến piece = 1
+                    this.piece = piece;
+                    client = new TcpClient();
+                    client.Connect(IPAddress.Parse(ipConnectRoom), portConnect);
+
+                    //tạo ra đối tượng UDP
+                    clientUDP = new UdpClient(port);
+                    ipEndPoint = new IPEndPoint(IPAddress.Parse(difIp), port);
+
+                    string message = "<<<+" + JsonConvert.SerializeObject(currentPlayer) + "+" + myIp + "+>>>";
+                    byte[] sendData = Encoding.UTF8.GetBytes(message);
+
+                    clientUDP.Send(sendData, sendData.Length, ipEndPoint);
+
+
+                    lbDifPlayer.Text = difPlayer.userName;
+                    avtDifPlayer.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + difPlayer.linkAvatar);
+                    avtDifPlayer.SizeMode = PictureBoxSizeMode.Zoom;
+
+                    //rcvDataUDPThread = new Thread(new ThreadStart(rcvDataUDP));
+                    //rcvDataUDPThread.Start();
+
+                    //clientRcvData = new Thread(new ThreadStart(rcvData));
+                    //clientRcvData.Start();
+                    timer = new System.Windows.Forms.Timer();
+                    timer.Tick += Timer_Tick;
+                    timer.Interval = 1;
+                    setUpTimer = true;
+                    setUpTimerThread = true;
+                    timer.Start();
+                    player.players += 1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    this.Close();
+                    return;
+                }
+            }
+            // hàm kiểm tra ô nào chứa quân cờ
+            //getPiecesOnBoard();
+
+            // hiển thị danh sách các quân cờ
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    //hiển thị các quân cờ lên trên giao diện
+                    //choose(i, j);
+                }
+            }
         }
         private void tableBackground_Click(object sender, EventArgs e)
         {
