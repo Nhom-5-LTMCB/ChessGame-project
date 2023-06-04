@@ -76,6 +76,7 @@
     <Compile Include="ChangePasswordInterface.Designer.cs">
       <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="classes handle\manageApi.cs" />
     <Compile Include="classes\button.cs" />
     <Compile Include="classes\ChessBoard.cs" />
     <Compile Include="classes\infoUser.cs" />
@@ -252,9 +253,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="classes handle\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="bin\Debug\Resources\token.png" />
   </ItemGroup>

@@ -67,7 +67,7 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(649, 473);
             this.pnlContent.TabIndex = 6;
-            this.pnlContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContent_Paint);
+            
             // 
             // label2
             // 
@@ -144,7 +144,7 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(441, 48);
             this.txtPassword.TabIndex = 19;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            
             // 
             // txtUserName
             // 

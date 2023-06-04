@@ -153,3 +153,4 @@ E:\Đồ án\ChessGame-project\Chess Game Project\obj\Debug\Chess Game Project.c
 E:\Đồ án\ChessGame-project\Chess Game Project\obj\Debug\Chess Game Project.exe
 E:\Đồ án\ChessGame-project\Chess Game Project\obj\Debug\Chess Game Project.pdb
 E:\Đồ án\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlClick.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlClick.resources
