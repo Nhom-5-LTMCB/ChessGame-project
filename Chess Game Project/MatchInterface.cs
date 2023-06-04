@@ -251,7 +251,18 @@ namespace Chess_Game_Project
                     tableBackground[i, j].BackgroundImageLayout = ImageLayout.Center;
                 }
             }
+            // hàm kiểm tra ô nào chứa quân cờ
+            //getPiecesOnBoard();
 
+            // hiển thị danh sách các quân cờ
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    //hiển thị các quân cờ lên trên giao diện
+                    choose(i, j);
+                }
+            }
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -312,8 +323,8 @@ namespace Chess_Game_Project
                 this.piece = piece;
                 server = new TcpListener(IPAddress.Any, portConnect);
                 server.Start();
-                //threadWaiting = new Thread(new ThreadStart(waitingAnotherClient));
-                //threadWaiting.Start();
+                threadWaiting = new Thread(new ThreadStart(waitingAnotherClient));
+                threadWaiting.Start();
             }
             else //đây sẽ là người sẽ tham gia vào phòng chơi
             {
@@ -361,23 +372,39 @@ namespace Chess_Game_Project
                     this.Close();
                     return;
                 }
-            }
-            // hàm kiểm tra ô nào chứa quân cờ
-            //getPiecesOnBoard();
-
-            // hiển thị danh sách các quân cờ
-            for (int i = 0; i < 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    //hiển thị các quân cờ lên trên giao diện
-                    //choose(i, j);
-                }
-            }
+            }       
         }
         private void tableBackground_Click(object sender, EventArgs e)
         {
 
+        }
+        private System.Drawing.Image choose(int i, int j)
+        {
+            switch (chessboard.Board[i, j])
+            {
+                case 00: tableBackground[i, j].BackgroundImage = null; break;
+                //Đây là trường hợp của các quân cờ đen
+                case 01: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\BlackPawn.png"); break;
+                case 02: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\BlackRock.png"); break;
+                case 03: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\BlackKnight.png"); break;
+                case 04: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\BlackBiShop.png"); break;
+                case 05: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\BlackQueen.png"); break;
+                case 06: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\BlackKing.png"); break;
+                case 07: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\BlackRock.png"); break;
+                case 08: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\BlackKnight.png"); break;
+                case 09: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\BlackBiShop.png"); break;
+                //đây là trường hợp của các quân cờ trắng
+                case 11: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\WhitePawn.png"); break;
+                case 12: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\WhiteRock.png"); break;
+                case 13: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\WhiteKnight.png"); break;
+                case 14: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\WhiteBiShop.png"); break;
+                case 15: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\WhiteQueen.png"); break;
+                case 16: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\WhiteKing.png"); break;
+                case 17: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\WhiteRock.png"); break;
+                case 18: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\WhiteKnight.png"); break;
+                case 19: tableBackground[i, j].BackgroundImage = System.Drawing.Image.FromFile("Resources\\WhiteBiShop.png"); break;
+            }
+            return tableBackground[i, j].BackgroundImage;
         }
         private void MatchInterface_Load(object sender, EventArgs e)
         {
@@ -404,5 +431,20 @@ namespace Chess_Game_Project
             pnlContainsIcon.Parent = pnlChatClientFrame;
             pnlContainsIcon.BringToFront();
         }
+
+        private void waitingAnotherClient()
+        {
+            while (true)
+            {
+                if (player.players == 2)
+                {
+                    client = server.AcceptTcpClient();
+                    //serverRcvData = new Thread(new ThreadStart(rcvData));
+                    //serverRcvData.Start();
+                    break;
+                }
+            }
+        }
+
     }
 }
