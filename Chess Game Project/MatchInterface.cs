@@ -485,7 +485,6 @@ namespace Chess_Game_Project
             WhiteStaleArray = blackRock2.isStale(chessboard.Board, WhiteStaleArray);
             WhiteStaleArray = blackQueen.isStale(chessboard.Board, WhiteStaleArray);
         }
-
         private void afterClickOnTable(int j, int i)
         {
             // khi client chưa tham gia phòng đấu thì không được phép làm gì cả
@@ -504,6 +503,7 @@ namespace Chess_Game_Project
                         // dùng để lưu lại việc tính toán các đường đi có sẵn của quân cờ
                         // lưu lại vị trí của các quân cờ đã chọn 
                         case 1: //1: tương đương với các quân cờ có thể chọn
+                            possibleMovesByPieces(chessboard.Board[i, j], j, i);
                             beforeMove_Y = i;
                             beforeMove_X = j;
                             break;
@@ -526,6 +526,92 @@ namespace Chess_Game_Project
                 }
             }
         }
+        //numberOfPiece là số kí hiệu của quân cờ trên bàn cờ và X, Y là vị trí của quân cờ đó trên bàn cờ
+        private void possibleMovesByPieces(int numberOfPiece, int posX, int posY)
+        {
+            //khi chọn vào 1 quân cờ mới thì vị trí của quân cờ cũ sẽ bị clear đi
+            clearMove();
+
+            //kiểm tra nếu đang bị chiếu tướng thì không thể nhập thành
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (tableBackground[i, j].BackColor == Color.Red && chessboard.Board[i, j] == 06)
+                    {
+                        castlingBlackKing = false;
+                    }
+                    else if (tableBackground[i, j].BackColor == Color.Red && chessboard.Board[i, j] == 16)
+                    {
+                        castlingWhiteKing = false;
+                    }
+                }
+            }
+            switch (numberOfPiece)
+            {
+                //thuật toán đường di chuyển của quân tốt
+                case 1:
+                    chessboard.PossibleMoves = blackPawn.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, blackTurn);
+                    break;
+                case 2:
+                    chessboard.PossibleMoves = blackRock1.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, blackTurn);
+                    break;
+                case 3:
+                    chessboard.PossibleMoves = blackKnight1.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, blackTurn);
+                    break;
+                case 4:
+                    chessboard.PossibleMoves = blackBiShop1.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, blackTurn);
+                    break;
+                case 5:
+                    chessboard.PossibleMoves = blackQueen.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, blackTurn);
+                    break;
+                case 6:
+                    chessboard.PossibleMoves = blackKing.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, blackTurn, castlingBlackKing, castlingBlackRock1, castlingBlackRock2);
+                    break;
+                case 7:
+                    chessboard.PossibleMoves = blackRock2.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, blackTurn);
+                    break;
+                case 8:
+                    chessboard.PossibleMoves = blackKnight2.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, blackTurn);
+                    break;
+                case 9:
+                    chessboard.PossibleMoves = blackBiShop2.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, blackTurn);
+                    break;
+                case 11:
+                    chessboard.PossibleMoves = whitePawn.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, whiteTurn);
+                    break;
+                case 12:
+                    chessboard.PossibleMoves = whiteRock1.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, whiteTurn);
+                    break;
+                case 13:
+                    chessboard.PossibleMoves = whiteKnight1.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, whiteTurn);
+                    break;
+                case 14:
+                    chessboard.PossibleMoves = whiteBiShop1.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, whiteTurn);
+                    break;
+                case 15:
+                    chessboard.PossibleMoves = whiteQueen.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, whiteTurn);
+                    break;
+                case 16:
+                    chessboard.PossibleMoves = whiteKing.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, whiteTurn, castlingWhiteKing, castlingWhiteRock1, castlingWhiteRock2);
+                    break;
+                case 17:
+                    chessboard.PossibleMoves = whiteRock2.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, whiteTurn);
+                    break;
+                case 18:
+                    chessboard.PossibleMoves = whiteKnight2.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, whiteTurn);
+                    break;
+                case 19:
+                    chessboard.PossibleMoves = whiteBiShop2.getPossibleMoves(chessboard.Board, chessboard.PossibleMoves, posX, posY, whiteTurn);
+                    break;
+            }
+            //những vị trí mà quân cờ được lựa chọn sẽ có giá trị là 3
+            chessboard.PossibleMoves[posY, posX] = 3;
+            removeMoveThatNotPossible(numberOfPiece, posY, posX);
+            //hiển thị các vị trí mà quân cờ có thể di chuyển
+            showPossibleMoves();
+        }
+
 
     }
 }
