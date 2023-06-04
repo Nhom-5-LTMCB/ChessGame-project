@@ -376,7 +376,8 @@ namespace Chess_Game_Project
         }
         private void tableBackground_Click(object sender, EventArgs e)
         {
-
+            //sự kiện khi click vào 1 quân cờ bất kỳ
+            afterClickOnTable((sender as userControlClick).posX, (sender as userControlClick).posY);
         }
         private System.Drawing.Image choose(int i, int j)
         {
@@ -431,7 +432,6 @@ namespace Chess_Game_Project
             pnlContainsIcon.Parent = pnlChatClientFrame;
             pnlContainsIcon.BringToFront();
         }
-
         private void waitingAnotherClient()
         {
             while (true)
@@ -442,6 +442,87 @@ namespace Chess_Game_Project
                     //serverRcvData = new Thread(new ThreadStart(rcvData));
                     //serverRcvData.Start();
                     break;
+                }
+            }
+        }
+
+        //hiển thị vị trí mới của quân cờ trên giao diện
+        private void displayPieces(int posY, int posX, int beforeY, int beforeX)
+        {
+            for (int i = 0; i < 8; i++)
+                for (int j = 0; j < 8; j++)
+                    if ((posY == i && posX == j) || ((beforeY == i && beforeX == j)))
+                        //hiển thị các quân cờ lên trên giao diện
+                        choose(i, j);
+            //lưu lại tất cả các nước di chuyển của các quân cờ
+            staleArrays();
+
+            //kiểm tra xem quân vua có đang bị chiếu tướng hay không
+            chessboard.markStale(tableBackground, chessboard.Board, WhiteStaleArray, BlackStaleArray);
+        }
+        //hàm lưu lại vị trí di chuyển của các quân cờ
+        private void staleArrays()
+        {
+            //dùng để lưu mọi nước đi của người chơi
+            //đối với các quân cờ đen
+            BlackStaleArray = new int[8, 8];
+            BlackStaleArray = whitePawn.isStale(chessboard.Board, BlackStaleArray);
+            BlackStaleArray = whiteKnight1.isStale(chessboard.Board, BlackStaleArray);
+            BlackStaleArray = whiteKnight2.isStale(chessboard.Board, BlackStaleArray);
+            BlackStaleArray = whiteBiShop1.isStale(chessboard.Board, BlackStaleArray);
+            BlackStaleArray = whiteBiShop2.isStale(chessboard.Board, BlackStaleArray);
+            BlackStaleArray = whiteRock1.isStale(chessboard.Board, BlackStaleArray);
+            BlackStaleArray = whiteRock2.isStale(chessboard.Board, BlackStaleArray);
+            BlackStaleArray = whiteQueen.isStale(chessboard.Board, BlackStaleArray);
+            //đối với các quân cờ trắng
+            WhiteStaleArray = new int[8, 8];
+            WhiteStaleArray = blackPawn.isStale(chessboard.Board, WhiteStaleArray);
+            WhiteStaleArray = blackKnight1.isStale(chessboard.Board, WhiteStaleArray);
+            WhiteStaleArray = blackKnight2.isStale(chessboard.Board, WhiteStaleArray);
+            WhiteStaleArray = blackBiShop1.isStale(chessboard.Board, WhiteStaleArray);
+            WhiteStaleArray = blackBiShop2.isStale(chessboard.Board, WhiteStaleArray);
+            WhiteStaleArray = blackRock1.isStale(chessboard.Board, WhiteStaleArray);
+            WhiteStaleArray = blackRock2.isStale(chessboard.Board, WhiteStaleArray);
+            WhiteStaleArray = blackQueen.isStale(chessboard.Board, WhiteStaleArray);
+        }
+
+        private void afterClickOnTable(int j, int i)
+        {
+            // khi client chưa tham gia phòng đấu thì không được phép làm gì cả
+            if (isCreated && client == null)
+            {
+                MessageBox.Show("Game chưa bắt đầu, vui lòng đợi người chơi còn lại");
+                return;
+            }
+            else
+            {
+                if (isChoose)
+                {
+                    // i tương đương với posY, j tương đương với posX
+                    switch (chessboard.PossibleMoves[i, j])
+                    {
+                        // dùng để lưu lại việc tính toán các đường đi có sẵn của quân cờ
+                        // lưu lại vị trí của các quân cờ đã chọn 
+                        case 1: //1: tương đương với các quân cờ có thể chọn
+                            beforeMove_Y = i;
+                            beforeMove_X = j;
+                            break;
+                        case 2: //2: tương đương với những ô quân cờ có thể di chuyển
+                            move = 0;
+                            break;
+                        // khi người dùng hủy việc chọn quân thì vị trí trên bàn cờ sẽ bị xóa
+                        case 3: //3: tương đương với quân cờ được chọn
+                            break;
+                        case 4:
+                            break;
+                    }
+                    //kiểm tra việc chiếu tướng
+                    chessboard.markStale(tableBackground, chessboard.Board, WhiteStaleArray, BlackStaleArray);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn quân cờ thay thế");
+                    return;
                 }
             }
         }
