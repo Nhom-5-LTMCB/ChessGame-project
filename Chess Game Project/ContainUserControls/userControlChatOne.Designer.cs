@@ -1,4 +1,6 @@
-﻿namespace Chess_Game_Project.ContainUserControls
+﻿using System;
+
+namespace Chess_Game_Project.ContainUserControls
 {
     partial class userControlChatOne
     {
@@ -29,30 +31,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(userControlChatOne));
-            this.pnlContainIconsChatOne = new System.Windows.Forms.Panel();
-            this.rtbContentChatOne = new System.Windows.Forms.RichTextBox();
             this.txtSendMsgChatOne = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSendIcon = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSendMessage = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSendIconChatOne = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSendMsgChatOne = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCloseForm = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlChatOneFrame = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlContentChatOne = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlContainIconsChatOne = new System.Windows.Forms.Panel();
+            this.pnlChatOneFrame.SuspendLayout();
+            this.pnlContentChatOne.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlContainIconsChatOne
-            // 
-            this.pnlContainIconsChatOne.AutoScroll = true;
-            this.pnlContainIconsChatOne.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlContainIconsChatOne.Location = new System.Drawing.Point(210, 52);
-            this.pnlContainIconsChatOne.Name = "pnlContainIconsChatOne";
-            this.pnlContainIconsChatOne.Size = new System.Drawing.Size(384, 324);
-            this.pnlContainIconsChatOne.TabIndex = 11;
-            // 
-            // rtbContentChatOne
-            // 
-            this.rtbContentChatOne.Location = new System.Drawing.Point(3, 52);
-            this.rtbContentChatOne.Name = "rtbContentChatOne";
-            this.rtbContentChatOne.Size = new System.Drawing.Size(592, 324);
-            this.rtbContentChatOne.TabIndex = 6;
-            this.rtbContentChatOne.Text = "";
             // 
             // txtSendMsgChatOne
             // 
@@ -76,79 +64,124 @@
             this.txtSendMsgChatOne.Size = new System.Drawing.Size(402, 48);
             this.txtSendMsgChatOne.TabIndex = 12;
             // 
-            // btnSendIcon
+            // btnSendIconChatOne
             // 
-            this.btnSendIcon.BorderRadius = 10;
-            this.btnSendIcon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSendIcon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSendIcon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSendIcon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSendIcon.FillColor = System.Drawing.Color.Lime;
-            this.btnSendIcon.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSendIcon.ForeColor = System.Drawing.Color.White;
-            this.btnSendIcon.Image = ((System.Drawing.Image)(resources.GetObject("btnSendIcon.Image")));
-            this.btnSendIcon.Location = new System.Drawing.Point(412, 383);
-            this.btnSendIcon.Name = "btnSendIcon";
-            this.btnSendIcon.Size = new System.Drawing.Size(82, 48);
-            this.btnSendIcon.TabIndex = 13;
+            this.btnSendIconChatOne.BorderRadius = 10;
+            this.btnSendIconChatOne.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendIconChatOne.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendIconChatOne.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSendIconChatOne.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSendIconChatOne.FillColor = System.Drawing.Color.Lime;
+            this.btnSendIconChatOne.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSendIconChatOne.ForeColor = System.Drawing.Color.White;
+            this.btnSendIconChatOne.Image = ((System.Drawing.Image)(resources.GetObject("btnSendIconChatOne.Image")));
+            this.btnSendIconChatOne.Location = new System.Drawing.Point(412, 383);
+            this.btnSendIconChatOne.Name = "btnSendIconChatOne";
+            this.btnSendIconChatOne.Size = new System.Drawing.Size(82, 48);
+            this.btnSendIconChatOne.TabIndex = 13;
+            this.btnSendIconChatOne.Click += new System.EventHandler(this.btnSendIcon_Click);
             // 
-            // btnSendMessage
+            // btnSendMsgChatOne
             // 
-            this.btnSendMessage.BorderRadius = 10;
-            this.btnSendMessage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSendMessage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSendMessage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSendMessage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSendMessage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnSendMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSendMessage.ForeColor = System.Drawing.Color.White;
-            this.btnSendMessage.Image = ((System.Drawing.Image)(resources.GetObject("btnSendMessage.Image")));
-            this.btnSendMessage.Location = new System.Drawing.Point(500, 383);
-            this.btnSendMessage.Name = "btnSendMessage";
-            this.btnSendMessage.Size = new System.Drawing.Size(94, 48);
-            this.btnSendMessage.TabIndex = 14;
+            this.btnSendMsgChatOne.BorderRadius = 10;
+            this.btnSendMsgChatOne.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendMsgChatOne.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendMsgChatOne.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSendMsgChatOne.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSendMsgChatOne.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnSendMsgChatOne.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSendMsgChatOne.ForeColor = System.Drawing.Color.White;
+            this.btnSendMsgChatOne.Image = ((System.Drawing.Image)(resources.GetObject("btnSendMsgChatOne.Image")));
+            this.btnSendMsgChatOne.Location = new System.Drawing.Point(500, 383);
+            this.btnSendMsgChatOne.Name = "btnSendMsgChatOne";
+            this.btnSendMsgChatOne.Size = new System.Drawing.Size(94, 48);
+            this.btnSendMsgChatOne.TabIndex = 14;
+            this.btnSendMsgChatOne.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
-            // btnExit
+            // btnCloseForm
             // 
-            this.btnExit.Animated = true;
-            this.btnExit.BorderRadius = 10;
-            this.btnExit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(543, 3);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(53, 48);
-            this.btnExit.TabIndex = 87;
-            this.btnExit.Text = "X";
+            this.btnCloseForm.Animated = true;
+            this.btnCloseForm.BorderRadius = 10;
+            this.btnCloseForm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseForm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseForm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCloseForm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCloseForm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnCloseForm.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseForm.ForeColor = System.Drawing.Color.White;
+            this.btnCloseForm.Location = new System.Drawing.Point(543, 3);
+            this.btnCloseForm.Name = "btnCloseForm";
+            this.btnCloseForm.Size = new System.Drawing.Size(53, 48);
+            this.btnCloseForm.TabIndex = 87;
+            this.btnCloseForm.Text = "X";
+            this.btnCloseForm.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pnlChatOneFrame
+            // 
+            this.pnlChatOneFrame.Controls.Add(this.pnlContentChatOne);
+            this.pnlChatOneFrame.Location = new System.Drawing.Point(0, 57);
+            this.pnlChatOneFrame.Name = "pnlChatOneFrame";
+            this.pnlChatOneFrame.Size = new System.Drawing.Size(598, 320);
+            this.pnlChatOneFrame.TabIndex = 88;
+            // 
+            // pnlContentChatOne
+            // 
+            this.pnlContentChatOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlContentChatOne.Controls.Add(this.pnlContainIconsChatOne);
+            this.pnlContentChatOne.Location = new System.Drawing.Point(-3, 3);
+            this.pnlContentChatOne.Name = "pnlContentChatOne";
+            this.pnlContentChatOne.Size = new System.Drawing.Size(683, 338);
+            this.pnlContentChatOne.TabIndex = 12;
+            // 
+            // pnlContainIconsChatOne
+            // 
+            this.pnlContainIconsChatOne.AutoScroll = true;
+            this.pnlContainIconsChatOne.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlContainIconsChatOne.Location = new System.Drawing.Point(202, 54);
+            this.pnlContainIconsChatOne.Name = "pnlContainIconsChatOne";
+            this.pnlContainIconsChatOne.Size = new System.Drawing.Size(480, 285);
+            this.pnlContainIconsChatOne.TabIndex = 13;
             // 
             // userControlChatOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnSendMessage);
-            this.Controls.Add(this.btnSendIcon);
+            this.Controls.Add(this.pnlChatOneFrame);
+            this.Controls.Add(this.btnCloseForm);
+            this.Controls.Add(this.btnSendMsgChatOne);
+            this.Controls.Add(this.btnSendIconChatOne);
             this.Controls.Add(this.txtSendMsgChatOne);
-            this.Controls.Add(this.pnlContainIconsChatOne);
-            this.Controls.Add(this.rtbContentChatOne);
             this.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Name = "userControlChatOne";
             this.Size = new System.Drawing.Size(598, 442);
+            this.pnlChatOneFrame.ResumeLayout(false);
+            this.pnlContentChatOne.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
-        #endregion
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
-        private System.Windows.Forms.Panel pnlContainIconsChatOne;
-        private System.Windows.Forms.RichTextBox rtbContentChatOne;
+        private void btnSendMessage_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnSendIcon_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
         private Guna.UI2.WinForms.Guna2TextBox txtSendMsgChatOne;
-        private Guna.UI2.WinForms.Guna2Button btnSendIcon;
-        private Guna.UI2.WinForms.Guna2Button btnSendMessage;
-        private Guna.UI2.WinForms.Guna2Button btnExit;
+        private Guna.UI2.WinForms.Guna2Button btnSendIconChatOne;
+        private Guna.UI2.WinForms.Guna2Button btnSendMsgChatOne;
+        private Guna.UI2.WinForms.Guna2Button btnCloseForm;
+        private Guna.UI2.WinForms.Guna2Panel pnlChatOneFrame;
+        private Guna.UI2.WinForms.Guna2Panel pnlContentChatOne;
+        private System.Windows.Forms.Panel pnlContainIconsChatOne;
     }
 }

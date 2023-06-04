@@ -12,6 +12,7 @@ namespace Chess_Game_Project.ContainUserControls
 {
     public partial class userControlLists : UserControl
     {
+       
         public userControlLists()
         {
             InitializeComponent();
