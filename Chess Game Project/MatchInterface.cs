@@ -515,8 +515,10 @@ namespace Chess_Game_Project
                             break;
                         // khi người dùng hủy việc chọn quân thì vị trí trên bàn cờ sẽ bị xóa
                         case 3: //3: tương đương với quân cờ được chọn
+                            clearMove();
                             break;
                         case 4:
+                            handleCastling(j, i);
                             break;
                     }
                     //kiểm tra việc chiếu tướng
@@ -527,6 +529,114 @@ namespace Chess_Game_Project
                     MessageBox.Show("Vui lòng chọn quân cờ thay thế");
                     return;
                 }
+            }
+        }
+        private void handleCastling(int posX, int posY)
+        {
+
+            if (chessboard.Board[posY, posX] == 2 || chessboard.Board[posY, posX] == 7 || chessboard.Board[posY, posX] == 12 || chessboard.Board[posY, posX] == 17)
+            {
+                //lưu lại nước di chuyển để gửi cho đối phương
+                for (int index = 0; index < 20; index++)
+                {
+                    if (chessboard.Board[beforeMove_Y, beforeMove_X] == index)
+                    {
+                        playerMoved = index;
+                    }
+                }
+                //quân đen nhập thành
+                if (chessboard.Board[beforeMove_Y, beforeMove_X] == 06)
+                {
+                    castlingPiece = 1; //quân đen nhập thành
+                    //sau khi đã lưu lại nước di chuyển thì sẽ gửi cho đối phương
+                    if (!gameOver)
+                        sendMove(posY, posX, 0, 0, 0); // mode = 1 tương ứng với dùng để nhận thời gian đếm ngược, 0 là thực hiện với bàn cờ
+                    if (posY == 0 && posX == 0 && chessboard.Board[posY, posX] == 02)
+                    {
+                        //hoán đổi vị trí của quân vua
+                        chessboard.Board[0, 2] = 06;
+                        chessboard.Board[beforeMove_Y, beforeMove_X] = 00;
+                        //hoán đổi vị trí của quân xe
+                        chessboard.Board[0, 3] = 02;
+                        chessboard.Board[0, 0] = 00;
+
+                        //vẽ lại bàn cờ vị trí quân vua
+                        displayPieces(0, 2, beforeMove_Y, beforeMove_X);
+                        //vẽ lại vị trí quân xe
+                        displayPieces(0, 3, 0, 0);
+                    }
+                    if (posY == 0 && posX == 7 && chessboard.Board[posY, posX] == 07)
+                    {
+                        //hoán đổi vị trí của quân vua
+                        chessboard.Board[0, 6] = 06;
+                        chessboard.Board[beforeMove_Y, beforeMove_X] = 00;
+                        //hoán đổi vị trí của quân xe
+                        chessboard.Board[0, 5] = 07;
+                        chessboard.Board[0, 7] = 00;
+                        //vẽ lại bàn cờ vị trí quân vua
+                        displayPieces(0, 6, beforeMove_Y, beforeMove_X);
+                        //vẽ lại vị trí quân xe
+                        displayPieces(0, 5, 0, 7);
+                    }
+                }
+                //quân trắng nhập thành
+                if (chessboard.Board[beforeMove_Y, beforeMove_X] == 16)
+                {
+                    castlingPiece = 2; //quân trắng nhập thành
+                    //sau khi đã lưu lại nước di chuyển thì sẽ gửi cho đối phương
+                    if (!gameOver)
+                        sendMove(posY, posX, 0, 0, 0); // mode = 1 tương ứng với dùng để nhận thời gian đếm ngược, 0 là thực hiện với bàn cờ
+                    if (posY == 7 && posX == 0 && chessboard.Board[posY, posX] == 12)
+                    {
+                        //hoán đổi vị trí của quân vua
+                        chessboard.Board[7, 2] = 16;
+                        chessboard.Board[beforeMove_Y, beforeMove_X] = 00;
+                        //hoán đổi vị trí của quân xe
+                        chessboard.Board[7, 3] = 12;
+                        chessboard.Board[7, 0] = 00;
+
+                        //vẽ lại bàn cờ vị trí quân vua
+                        displayPieces(7, 2, beforeMove_Y, beforeMove_X);
+                        //vẽ lại vị trí quân xercvData
+                        displayPieces(7, 3, 7, 0);
+                    }
+                    if (posY == 7 && posX == 7 && chessboard.Board[posY, posX] == 17)
+                    {
+                        //hoán đổi vị trí của quân vua
+                        chessboard.Board[7, 6] = 16;
+                        chessboard.Board[beforeMove_Y, beforeMove_X] = 00;
+                        //hoán đổi vị trí của quân xe
+                        chessboard.Board[7, 5] = 17;
+                        chessboard.Board[7, 7] = 00;
+
+                        //vẽ lại bàn cờ vị trí quân vua
+                        displayPieces(7, 6, beforeMove_Y, beforeMove_X);
+                        //vẽ lại vị trí quân xe
+                        displayPieces(7, 5, 7, 7);
+                    }
+                }
+
+
+                if (timer != null)
+                {
+                    //cập nhật lại thời gian
+                    setUpTimer = true;
+                    timer.Interval = 1;
+                    countTime = setUpTime;
+                }
+                else
+                {
+                    //cập nhật lại thời gian
+                    sendMove(0, 0, 1, setUpTime, 0);
+                }
+                clearMove();
+                everyPossibleMoves();
+                //kiểm tra xem có bị chiếu tướng hay không
+                checkmateChecker(posY, posX);
+                //chuyển lượt người chơi
+                whiteTurn = !whiteTurn;
+                blackTurn = !blackTurn;
+                displayAnncount(whiteTurn, blackTurn);
             }
         }
         //numberOfPiece là số kí hiệu của quân cờ trên bàn cờ và X, Y là vị trí của quân cờ đó trên bàn cờ
@@ -948,7 +1058,6 @@ namespace Chess_Game_Project
                 }
             }
         }
-
         private void sendMove(int posY, int posX, int mode, int countAgain, int outRoom)
         {
             try
@@ -967,8 +1076,6 @@ namespace Chess_Game_Project
 
             }
         }
-
-
         private void listPieceKilled(int posY, int posX, int beforeMove_Y, int beforeMove_X)
         {
             //loại bỏ trường hợp khi nhập thành
@@ -999,7 +1106,6 @@ namespace Chess_Game_Project
                 }
             }
         }
-
         // Hàm gửi sự kiện chọn 1 quân cờ thay thế
         private void Btn1_Click(object sender, EventArgs e)
         {
@@ -1153,8 +1259,6 @@ namespace Chess_Game_Project
             whiteTurn = !whiteTurn;
             blackTurn = !blackTurn;
         }
-
-
         private void removeMoveThatNotPossible2(int numberOfPiece, int posY, int posX)
         {
             for (int i = 0; i < 8; i++)
