@@ -12,9 +12,12 @@ namespace Chess_Game_Project.ContainUserControls
 {
     public partial class userControlClick : UserControl
     {
+        public int posX;
+        public int posY;
         public userControlClick()
         {
             InitializeComponent();
         }
+        
     }
 }

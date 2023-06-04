@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using chessgames.backPieces;
 using chessgames.whitePieces;
+using System.Web.UI.WebControls;
 
 namespace Chess_Game_Project
 {
@@ -107,11 +108,11 @@ namespace Chess_Game_Project
         private Stream stream = null;
         private TcpClient client = null;
         private TcpListener server = null;
-        private List<Button> buttonList = new List<Button>();
-        private List<Button> buttonListIcons = new List<Button>();
+        private List<System.Windows.Forms.Button> buttonList = new List<System.Windows.Forms.Button>();
+        private List<System.Windows.Forms.Button> buttonListIcons = new List<System.Windows.Forms.Button>();
         private infoUser difPlayer = null;
         private infoUser currentPlayer = null;
-        private Button oldButton = new Button()
+        private System.Windows.Forms.Button oldButton = new System.Windows.Forms.Button()
         {
             Height = 0,
             Width = 0
@@ -123,12 +124,131 @@ namespace Chess_Game_Project
         private System.Windows.Forms.Timer timer = null;
         private int posY = 0;
         #endregion
+        private void addTextBoxIntoPanelHorizontal(System.Windows.Forms.Panel pnl)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                int posX = i == 0 ? 0 : i * 50;
+                int posY = pnl.Height / 2 - 15 / 2;
+                System.Windows.Forms.TextBox tb = new System.Windows.Forms.TextBox()
+                {
+                    Size = new Size(50, 15),
+                    Location = new Point(posX, posY),
+                };
+                tb.TextAlign = HorizontalAlignment.Center;
+                tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                tb.Font = new Font(tb.Font, FontStyle.Bold);
+                tb.Text = Convert.ToString((char)('A' + i));
+                tb.BackColor = Color.LightCyan;
+                tb.ReadOnly = true;
+                pnl.Controls.Add(tb);
+            }
+        }
+        private void addTextBoxIntoPanelVertical(System.Windows.Forms.Panel pnl)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                int posX = i == 0 ? 0 : i * 50;
+                int posY = pnl.Width / 2 - 15 / 2;
+                System.Windows.Forms.Button btn = new System.Windows.Forms.Button()
+                {
+                    Size = new Size(15, 50),
+                    Location = new Point(posY, posX),
+                };
+                btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+                btn.Font = new Font(btn.Font, FontStyle.Bold);
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
+                btn.BackColor = Color.LightCyan;
+                btn.Text = Convert.ToString(1 + i);
+                btn.Enabled = true;
+                pnl.Controls.Add(btn);
+            }
+        }
+
         public MatchInterface()
         {
             InitializeComponent();
+            pnlContainsIcon.Hide();
+            txtCountTime.ReadOnly = true;
+            txtCountTime.Text = countTime.ToString();
+
+            //tạo một ma trận có kích thước 8 * 8
+            chessboard.Board = new int[8, 8]
+            {
+                { 02, 03, 04, 05, 06, 09, 08, 07},
+                { 01, 01, 01, 01, 01, 01, 01, 01},
+                { 00, 00, 00, 00, 00, 00, 00, 00},
+                { 00, 00, 00, 00, 00, 00, 00 ,00},
+                { 00, 00, 00, 00, 00, 00, 00 ,00},
+                { 00, 00, 00, 00, 00, 00, 00 ,00},
+                { 11, 11, 11, 11, 11, 11, 11, 11},
+                { 12, 13, 14, 15, 16, 19, 18, 17},
+            };
+
+            chessboard.PossibleMoves = new int[8, 8];
+            tableBackground = new userControlClick[8, 8];
+
+            CheckForIllegalCrossThreadCalls = false;
+            //horizontal
+            System.Windows.Forms.Panel pnl = new System.Windows.Forms.Panel()
+            {
+                Size = new Size(400, 15),
+                Location = new Point(310, 100)
+            };
+            System.Windows.Forms.Panel pnl1 = new System.Windows.Forms.Panel()
+            {
+                Size = new Size(pnl.Size.Width, pnl.Size.Height),
+                Location = new Point(pnl.Location.X, pnl.Location.Y + 50 * 8 + 25)
+            };
+            addTextBoxIntoPanelHorizontal(pnl);
+            addTextBoxIntoPanelHorizontal(pnl1);
+            pnlContent.Controls.Add(pnl);
+            pnlContent.Controls.Add(pnl1);
+
+            //vertical
+            System.Windows.Forms.Panel pnl2 = new System.Windows.Forms.Panel()
+            {
+                Size = new Size(pnl.Size.Height, pnl.Size.Width),
+                Location = new Point(290, 120)
+            };
+
+            System.Windows.Forms.Panel pnl3 = new System.Windows.Forms.Panel()
+            {
+                Size = new Size(pnl.Size.Height, pnl.Size.Width),
+                Location = new Point(pnl2.Location.X + 50 * 8 + 25, pnl2.Location.Y)
+            };
+            addTextBoxIntoPanelVertical(pnl2);
+            addTextBoxIntoPanelVertical(pnl3);
+            pnlContent.Controls.Add(pnl2);
+            pnlContent.Controls.Add(pnl3);
+
+            for (int i = 0; i < 8; i++) // tượng trưng cho các dòng
+            {
+                for (int j = 0; j < 8; j++) //tượng trưng cho các cột
+                {
+                    tableBackground[i, j] = new userControlClick();
+                    tableBackground[i, j].Parent = pnlContent;
+                    tableBackground[i, j].Location = new Point(j * 50 + 310, i * 50 + 120);
+                    tableBackground[i, j].posX = j;
+                    tableBackground[i, j].posY = i;
+                    tableBackground[i, j].Size = new Size(50, 50);
+                    tableBackground[i, j].Click += tableBackground_Click;
+                    if (i % 2 == 0)
+                        if (j % 2 == 1) tableBackground[i, j].BackColor = Color.Brown;
+                        else tableBackground[i, j].BackColor = Color.White;
+                    else
+                        if (j % 2 == 1) tableBackground[i, j].BackColor = Color.White;
+                    else tableBackground[i, j].BackColor = Color.Brown;
+                    tableBackground[i, j].BackgroundImageLayout = ImageLayout.Center;
+                }
+            }
 
         }
+        private void tableBackground_Click(object sender, EventArgs e)
+        {
 
+        }
         private void MatchInterface_Load(object sender, EventArgs e)
         {
             // Thiết lập kích thước form

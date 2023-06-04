@@ -61,6 +61,15 @@
     <Compile Include="AuthInterface.Designer.cs">
       <DependentUpon>AuthInterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="backPieces\BlackBiShop1.cs" />
+    <Compile Include="backPieces\BlackBiShop2.cs" />
+    <Compile Include="backPieces\BlackKing.cs" />
+    <Compile Include="backPieces\BlackKnight1.cs" />
+    <Compile Include="backPieces\BlackKnight2.cs" />
+    <Compile Include="backPieces\BlackPawn.cs" />
+    <Compile Include="backPieces\BlackQueen.cs" />
+    <Compile Include="backPieces\BlackRock1.cs" />
+    <Compile Include="backPieces\BlackRock2.cs" />
     <Compile Include="ChangePasswordInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,12 +77,14 @@
       <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\button.cs" />
+    <Compile Include="classes\ChessBoard.cs" />
     <Compile Include="classes\infoUser.cs" />
     <Compile Include="classes\listFriends.cs" />
     <Compile Include="classes\match.cs" />
     <Compile Include="classes\matches.cs" />
     <Compile Include="classes\matchPlayer.cs" />
     <Compile Include="classes\player.cs" />
+    <Compile Include="classes\typeOfMovesChess.cs" />
     <Compile Include="ContainUserControls\userControlContentChatMessage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,11 +176,23 @@
     <Compile Include="RegisterInterface.Designer.cs">
       <DependentUpon>RegisterInterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="whitePieces\WhiteBiShop1.cs" />
+    <Compile Include="whitePieces\WhiteBiShop2.cs" />
+    <Compile Include="whitePieces\WhiteKing.cs" />
+    <Compile Include="whitePieces\WhiteKnight1.cs" />
+    <Compile Include="whitePieces\WhiteKnight2.cs" />
+    <Compile Include="whitePieces\WhitePawn.cs" />
+    <Compile Include="whitePieces\WhiteQueen.cs" />
+    <Compile Include="whitePieces\WhiteRock1.cs" />
+    <Compile Include="whitePieces\WhiteRock2.cs" />
     <EmbeddedResource Include="AuthInterface.resx">
       <DependentUpon>AuthInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordInterface.resx">
       <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainUserControls\userControlClick.resx">
+      <DependentUpon>userControlClick.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContainUserControls\userControlContentChatMessage.resx">
       <DependentUpon>userControlContentChatMessage.cs</DependentUpon>

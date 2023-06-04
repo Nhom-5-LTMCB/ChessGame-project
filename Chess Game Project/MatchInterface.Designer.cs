@@ -33,6 +33,9 @@ namespace Chess_Game_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.pnlChatClientFrame = new Guna.UI2.WinForms.Guna2Panel();
+            this.listChat = new System.Windows.Forms.RichTextBox();
+            this.pnlContainsIcon = new System.Windows.Forms.Panel();
             this.txtMessage = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCountTime = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSendData = new Guna.UI2.WinForms.Guna2Button();
@@ -44,18 +47,16 @@ namespace Chess_Game_Project
             this.avtCurrentPlayer = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTurnUser = new System.Windows.Forms.TextBox();
-            this.pnlContainsIcon = new System.Windows.Forms.Panel();
             this.pnlContainPieces = new System.Windows.Forms.Panel();
-            this.listChat = new System.Windows.Forms.RichTextBox();
-            this.pnlChatClientFrame = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlContent.SuspendLayout();
+            this.pnlChatClientFrame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avtDifPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avtCurrentPlayer)).BeginInit();
-            this.pnlChatClientFrame.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlContent
             // 
+            this.pnlContent.BackColor = System.Drawing.Color.LightCyan;
             this.pnlContent.Controls.Add(this.pnlChatClientFrame);
             this.pnlContent.Controls.Add(this.txtMessage);
             this.pnlContent.Controls.Add(this.txtCountTime);
@@ -69,10 +70,35 @@ namespace Chess_Game_Project
             this.pnlContent.Controls.Add(this.label3);
             this.pnlContent.Controls.Add(this.txtTurnUser);
             this.pnlContent.Controls.Add(this.pnlContainPieces);
-            this.pnlContent.Location = new System.Drawing.Point(2, 12);
+            this.pnlContent.Location = new System.Drawing.Point(12, -1);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1409, 651);
+            this.pnlContent.Size = new System.Drawing.Size(1470, 685);
             this.pnlContent.TabIndex = 1;
+            // 
+            // pnlChatClientFrame
+            // 
+            this.pnlChatClientFrame.Controls.Add(this.listChat);
+            this.pnlChatClientFrame.Controls.Add(this.pnlContainsIcon);
+            this.pnlChatClientFrame.Location = new System.Drawing.Point(1065, 156);
+            this.pnlChatClientFrame.Name = "pnlChatClientFrame";
+            this.pnlChatClientFrame.Size = new System.Drawing.Size(382, 436);
+            this.pnlChatClientFrame.TabIndex = 40;
+            // 
+            // listChat
+            // 
+            this.listChat.Location = new System.Drawing.Point(2, 0);
+            this.listChat.Name = "listChat";
+            this.listChat.Size = new System.Drawing.Size(380, 436);
+            this.listChat.TabIndex = 39;
+            this.listChat.Text = "";
+            // 
+            // pnlContainsIcon
+            // 
+            this.pnlContainsIcon.BackColor = System.Drawing.Color.PeachPuff;
+            this.pnlContainsIcon.Location = new System.Drawing.Point(3, 218);
+            this.pnlContainsIcon.Name = "pnlContainsIcon";
+            this.pnlContainsIcon.Size = new System.Drawing.Size(380, 215);
+            this.pnlContainsIcon.TabIndex = 22;
             // 
             // txtMessage
             // 
@@ -88,29 +114,30 @@ namespace Chess_Game_Project
             this.txtMessage.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMessage.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMessage.Location = new System.Drawing.Point(1007, 581);
+            this.txtMessage.Location = new System.Drawing.Point(1065, 598);
             this.txtMessage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.PasswordChar = '\0';
             this.txtMessage.PlaceholderText = "";
             this.txtMessage.SelectedText = "";
-            this.txtMessage.Size = new System.Drawing.Size(253, 42);
+            this.txtMessage.Size = new System.Drawing.Size(253, 55);
             this.txtMessage.TabIndex = 38;
             // 
             // txtCountTime
             // 
-            this.txtCountTime.BorderColor = System.Drawing.Color.Black;
+            this.txtCountTime.BorderColor = System.Drawing.Color.LightCyan;
             this.txtCountTime.BorderRadius = 5;
             this.txtCountTime.BorderThickness = 0;
             this.txtCountTime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCountTime.DefaultText = "";
+            this.txtCountTime.DefaultText = "60";
             this.txtCountTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtCountTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtCountTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCountTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCountTime.FillColor = System.Drawing.Color.Transparent;
+            this.txtCountTime.FillColor = System.Drawing.Color.LightCyan;
             this.txtCountTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCountTime.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCountTime.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCountTime.ForeColor = System.Drawing.Color.Black;
             this.txtCountTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCountTime.Location = new System.Drawing.Point(617, 29);
             this.txtCountTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -120,6 +147,7 @@ namespace Chess_Game_Project
             this.txtCountTime.SelectedText = "";
             this.txtCountTime.Size = new System.Drawing.Size(178, 48);
             this.txtCountTime.TabIndex = 37;
+            this.txtCountTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSendData
             // 
@@ -133,9 +161,9 @@ namespace Chess_Game_Project
             this.btnSendData.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSendData.ForeColor = System.Drawing.Color.White;
             this.btnSendData.Image = ((System.Drawing.Image)(resources.GetObject("btnSendData.Image")));
-            this.btnSendData.Location = new System.Drawing.Point(1327, 581);
+            this.btnSendData.Location = new System.Drawing.Point(1385, 598);
             this.btnSendData.Name = "btnSendData";
-            this.btnSendData.Size = new System.Drawing.Size(62, 42);
+            this.btnSendData.Size = new System.Drawing.Size(62, 55);
             this.btnSendData.TabIndex = 36;
             // 
             // btnOutRoom
@@ -149,9 +177,9 @@ namespace Chess_Game_Project
             this.btnOutRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnOutRoom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnOutRoom.ForeColor = System.Drawing.Color.White;
-            this.btnOutRoom.Location = new System.Drawing.Point(1107, 51);
+            this.btnOutRoom.Location = new System.Drawing.Point(1281, 29);
             this.btnOutRoom.Name = "btnOutRoom";
-            this.btnOutRoom.Size = new System.Drawing.Size(125, 56);
+            this.btnOutRoom.Size = new System.Drawing.Size(166, 56);
             this.btnOutRoom.TabIndex = 34;
             this.btnOutRoom.Text = "Thoát phòng";
             // 
@@ -166,9 +194,9 @@ namespace Chess_Game_Project
             this.btnSendIcon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSendIcon.ForeColor = System.Drawing.Color.White;
             this.btnSendIcon.Image = ((System.Drawing.Image)(resources.GetObject("btnSendIcon.Image")));
-            this.btnSendIcon.Location = new System.Drawing.Point(1266, 581);
+            this.btnSendIcon.Location = new System.Drawing.Point(1324, 598);
             this.btnSendIcon.Name = "btnSendIcon";
-            this.btnSendIcon.Size = new System.Drawing.Size(61, 42);
+            this.btnSendIcon.Size = new System.Drawing.Size(61, 55);
             this.btnSendIcon.TabIndex = 35;
             // 
             // lbDifPlayer
@@ -197,9 +225,11 @@ namespace Chess_Game_Project
             // 
             // avtCurrentPlayer
             // 
+            this.avtCurrentPlayer.Image = global::Chess_Game_Project.Properties.Resources.confirm;
             this.avtCurrentPlayer.Location = new System.Drawing.Point(412, 14);
             this.avtCurrentPlayer.Name = "avtCurrentPlayer";
             this.avtCurrentPlayer.Size = new System.Drawing.Size(85, 71);
+            this.avtCurrentPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.avtCurrentPlayer.TabIndex = 26;
             this.avtCurrentPlayer.TabStop = false;
             // 
@@ -207,7 +237,7 @@ namespace Chess_Game_Project
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(1323, 14);
+            this.label3.Location = new System.Drawing.Point(92, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 19);
             this.label3.TabIndex = 24;
@@ -215,60 +245,37 @@ namespace Chess_Game_Project
             // 
             // txtTurnUser
             // 
+            this.txtTurnUser.BackColor = System.Drawing.Color.White;
             this.txtTurnUser.Enabled = false;
-            this.txtTurnUser.Location = new System.Drawing.Point(1248, 36);
+            this.txtTurnUser.Location = new System.Drawing.Point(51, 26);
             this.txtTurnUser.Multiline = true;
             this.txtTurnUser.Name = "txtTurnUser";
             this.txtTurnUser.Size = new System.Drawing.Size(141, 94);
             this.txtTurnUser.TabIndex = 23;
             // 
-            // pnlContainsIcon
-            // 
-            this.pnlContainsIcon.BackColor = System.Drawing.Color.PeachPuff;
-            this.pnlContainsIcon.Location = new System.Drawing.Point(3, 218);
-            this.pnlContainsIcon.Name = "pnlContainsIcon";
-            this.pnlContainsIcon.Size = new System.Drawing.Size(380, 215);
-            this.pnlContainsIcon.TabIndex = 22;
-            // 
             // pnlContainPieces
             // 
             this.pnlContainPieces.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlContainPieces.Location = new System.Drawing.Point(3, 126);
+            this.pnlContainPieces.Location = new System.Drawing.Point(0, 156);
             this.pnlContainPieces.Name = "pnlContainPieces";
             this.pnlContainPieces.Size = new System.Drawing.Size(290, 497);
             this.pnlContainPieces.TabIndex = 17;
-            // 
-            // listChat
-            // 
-            this.listChat.Location = new System.Drawing.Point(2, 0);
-            this.listChat.Name = "listChat";
-            this.listChat.Size = new System.Drawing.Size(380, 436);
-            this.listChat.TabIndex = 39;
-            this.listChat.Text = "";
-            // 
-            // pnlChatClientFrame
-            // 
-            this.pnlChatClientFrame.Controls.Add(this.listChat);
-            this.pnlChatClientFrame.Controls.Add(this.pnlContainsIcon);
-            this.pnlChatClientFrame.Location = new System.Drawing.Point(1007, 139);
-            this.pnlChatClientFrame.Name = "pnlChatClientFrame";
-            this.pnlChatClientFrame.Size = new System.Drawing.Size(382, 436);
-            this.pnlChatClientFrame.TabIndex = 40;
             // 
             // MatchInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1432, 683);
+            this.BackColor = System.Drawing.Color.LightCyan;
+            this.ClientSize = new System.Drawing.Size(1487, 683);
             this.Controls.Add(this.pnlContent);
             this.Name = "MatchInterface";
             this.Text = "MatchInterface";
             this.Load += new System.EventHandler(this.MatchInterface_Load);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
+            this.pnlChatClientFrame.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.avtDifPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avtCurrentPlayer)).EndInit();
-            this.pnlChatClientFrame.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
