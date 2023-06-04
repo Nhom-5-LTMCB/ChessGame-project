@@ -45,15 +45,18 @@ namespace Chess_Game_Project
             this.label3 = new System.Windows.Forms.Label();
             this.txtTurnUser = new System.Windows.Forms.TextBox();
             this.pnlContainsIcon = new System.Windows.Forms.Panel();
-            this.listChat = new System.Windows.Forms.RichTextBox();
             this.pnlContainPieces = new System.Windows.Forms.Panel();
+            this.listChat = new System.Windows.Forms.RichTextBox();
+            this.pnlChatClientFrame = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avtDifPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avtCurrentPlayer)).BeginInit();
+            this.pnlChatClientFrame.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlContent
             // 
+            this.pnlContent.Controls.Add(this.pnlChatClientFrame);
             this.pnlContent.Controls.Add(this.txtMessage);
             this.pnlContent.Controls.Add(this.txtCountTime);
             this.pnlContent.Controls.Add(this.btnSendData);
@@ -65,8 +68,6 @@ namespace Chess_Game_Project
             this.pnlContent.Controls.Add(this.avtCurrentPlayer);
             this.pnlContent.Controls.Add(this.label3);
             this.pnlContent.Controls.Add(this.txtTurnUser);
-            this.pnlContent.Controls.Add(this.pnlContainsIcon);
-            this.pnlContent.Controls.Add(this.listChat);
             this.pnlContent.Controls.Add(this.pnlContainPieces);
             this.pnlContent.Location = new System.Drawing.Point(2, 12);
             this.pnlContent.Name = "pnlContent";
@@ -100,12 +101,14 @@ namespace Chess_Game_Project
             // 
             this.txtCountTime.BorderColor = System.Drawing.Color.Black;
             this.txtCountTime.BorderRadius = 5;
+            this.txtCountTime.BorderThickness = 0;
             this.txtCountTime.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCountTime.DefaultText = "";
             this.txtCountTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtCountTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtCountTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCountTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCountTime.FillColor = System.Drawing.Color.Transparent;
             this.txtCountTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCountTime.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCountTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -221,18 +224,11 @@ namespace Chess_Game_Project
             // 
             // pnlContainsIcon
             // 
-            this.pnlContainsIcon.Location = new System.Drawing.Point(1007, 136);
+            this.pnlContainsIcon.BackColor = System.Drawing.Color.PeachPuff;
+            this.pnlContainsIcon.Location = new System.Drawing.Point(3, 218);
             this.pnlContainsIcon.Name = "pnlContainsIcon";
-            this.pnlContainsIcon.Size = new System.Drawing.Size(382, 447);
+            this.pnlContainsIcon.Size = new System.Drawing.Size(380, 215);
             this.pnlContainsIcon.TabIndex = 22;
-            // 
-            // listChat
-            // 
-            this.listChat.Location = new System.Drawing.Point(1009, 136);
-            this.listChat.Name = "listChat";
-            this.listChat.Size = new System.Drawing.Size(380, 447);
-            this.listChat.TabIndex = 16;
-            this.listChat.Text = "";
             // 
             // pnlContainPieces
             // 
@@ -242,6 +238,23 @@ namespace Chess_Game_Project
             this.pnlContainPieces.Size = new System.Drawing.Size(290, 497);
             this.pnlContainPieces.TabIndex = 17;
             // 
+            // listChat
+            // 
+            this.listChat.Location = new System.Drawing.Point(2, 0);
+            this.listChat.Name = "listChat";
+            this.listChat.Size = new System.Drawing.Size(380, 436);
+            this.listChat.TabIndex = 39;
+            this.listChat.Text = "";
+            // 
+            // pnlChatClientFrame
+            // 
+            this.pnlChatClientFrame.Controls.Add(this.listChat);
+            this.pnlChatClientFrame.Controls.Add(this.pnlContainsIcon);
+            this.pnlChatClientFrame.Location = new System.Drawing.Point(1007, 139);
+            this.pnlChatClientFrame.Name = "pnlChatClientFrame";
+            this.pnlChatClientFrame.Size = new System.Drawing.Size(382, 436);
+            this.pnlChatClientFrame.TabIndex = 40;
+            // 
             // MatchInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,10 +263,12 @@ namespace Chess_Game_Project
             this.Controls.Add(this.pnlContent);
             this.Name = "MatchInterface";
             this.Text = "MatchInterface";
+            this.Load += new System.EventHandler(this.MatchInterface_Load);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avtDifPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avtCurrentPlayer)).EndInit();
+            this.pnlChatClientFrame.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -268,12 +283,13 @@ namespace Chess_Game_Project
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTurnUser;
         private System.Windows.Forms.Panel pnlContainsIcon;
-        private System.Windows.Forms.RichTextBox listChat;
         private System.Windows.Forms.Panel pnlContainPieces;
         private Guna.UI2.WinForms.Guna2Button btnOutRoom;
         private Guna.UI2.WinForms.Guna2TextBox txtCountTime;
         private Guna.UI2.WinForms.Guna2Button btnSendData;
         private Guna.UI2.WinForms.Guna2Button btnSendIcon;
         private Guna.UI2.WinForms.Guna2TextBox txtMessage;
+        private Guna.UI2.WinForms.Guna2Panel pnlChatClientFrame;
+        private RichTextBox listChat;
     }
 }

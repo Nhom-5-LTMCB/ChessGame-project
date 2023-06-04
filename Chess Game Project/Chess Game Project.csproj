@@ -243,8 +243,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Resources\padlock.png" />
-    <None Include="Resources\id.png" />
-    <None Include="Resources\confirmPASS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
