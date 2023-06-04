@@ -319,8 +319,8 @@ namespace Chess_Game_Project
                 blackTurn = !turn;
                 displayAnncount(whiteTurn, blackTurn);
                 clientUDP = new UdpClient(port);
-                //rcvDataUDPThread = new Thread(new ThreadStart(rcvDataUDP));
-                //rcvDataUDPThread.Start();
+                rcvDataUDPThread = new Thread(new ThreadStart(rcvDataUDP));
+                rcvDataUDPThread.Start();
 
                 this.piece = piece;
                 server = new TcpListener(IPAddress.Any, portConnect);
@@ -355,11 +355,11 @@ namespace Chess_Game_Project
                     avtDifPlayer.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + difPlayer.linkAvatar);
                     avtDifPlayer.SizeMode = PictureBoxSizeMode.Zoom;
 
-                    //rcvDataUDPThread = new Thread(new ThreadStart(rcvDataUDP));
-                    //rcvDataUDPThread.Start();
+                    rcvDataUDPThread = new Thread(new ThreadStart(rcvDataUDP));
+                    rcvDataUDPThread.Start();
 
-                    //clientRcvData = new Thread(new ThreadStart(rcvData));
-                    //clientRcvData.Start();
+                    clientRcvData = new Thread(new ThreadStart(rcvData));
+                    clientRcvData.Start();
                     timer = new System.Windows.Forms.Timer();
                     timer.Tick += Timer_Tick;
                     timer.Interval = 1;
@@ -1439,6 +1439,101 @@ namespace Chess_Game_Project
                             }
                         }
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void rcvDataUDP()
+        {
+            try
+            {
+                while (true)
+                {
+                    ipEndPoint = new IPEndPoint(IPAddress.Any, 0);
+                    byte[] receive_buffer = clientUDP.Receive(ref ipEndPoint);
+                    string data = Encoding.UTF8.GetString(receive_buffer);
+                    //đây sẽ là nơi mà chủ phòng nhận dữ liệu từ người chơi
+                    if (data.Contains("<<<") && data.Contains(">>>"))
+                    {
+                        string[] lst = data.Split('+');
+                        this.difPlayer = JsonConvert.DeserializeObject<infoUser>(lst[1]);
+                        lbDifPlayer.Text = difPlayer.userName;
+                        difIp = lst[2];
+                        avtDifPlayer.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + difPlayer.linkAvatar);
+                        avtDifPlayer.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                    else
+                    {
+                        string[] strs = data.Split(':');
+                        if (strs[0].Contains("(1)"))    //đây là chat 
+                            writeData(null, strs[2], strs[1], 1, strs[0].Substring(0, strs[0].Length - 3), listChat);
+                        else if (strs[0].Contains("(2)")) // đây là gửi icon
+                        {
+                            string imageData = strs[1];
+                            byte[] convertedBytes = Convert.FromBase64String(imageData);
+                            // Chuyển đổi mảng byte thành hình ảnh
+                            using (MemoryStream stream = new MemoryStream(convertedBytes))
+                            {
+                                System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
+                                writeData(image, strs[2], "", 2, strs[0].Substring(0, strs[0].Length - 3), listChat);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void writeData(System.Drawing.Image imgContent, string linkAvt, string msg, int mode, string userName, System.Windows.Forms.Panel pnl)
+        {
+            try
+            {
+                if (mode == 1)
+                {
+                    if (msg.Trim() == "")
+                        return;
+                    MethodInvoker invoker = new MethodInvoker(delegate
+                    {
+                        pnl.AutoScroll = false;
+                        userControlContentChatMessage userControl = new userControlContentChatMessage();
+                        userControl.addUsernameAndImage($"{parentDirectory}\\{linkAvt}", userName, currentPlayer.userName);
+                        int userControlWidth = pnl.Width * 70 / 100;
+                        userControl.Location = new Point(0, posY);
+                        userControl.Size = new Size(userControlWidth, userControl.Height);
+                        pnl.Controls.Add(userControl);
+                        userControl.content = msg;
+                        userControl.addMesageIntoFrame(userControlWidth);
+                        posY += userControl.Height;
+                        pnl.ScrollControlIntoView(userControl);
+                        pnl.AutoScroll = true;
+                        pnl.HorizontalScroll.Visible = false;
+                    });
+                    this.Invoke(invoker);
+                }
+                else
+                {
+                    MethodInvoker invoker = new MethodInvoker(delegate
+                    {
+                        pnl.AutoScroll = false;
+                        userControlContentChatIcon userControl = new userControlContentChatIcon();
+                        userControl.addUsernameAndImage($"{parentDirectory}\\{linkAvt}", userName, imgContent, currentPlayer.userName);
+                        userControl.Location = new Point(0, posY);
+                        pnl.Controls.Add(userControl);
+                        posY += userControl.Height;
+                        pnl.ScrollControlIntoView(userControl);
+
+                        pnlContainsIcon.Hide();
+                        buttonListIcons.Clear();
+
+                        pnl.AutoScroll = true;
+                        pnl.HorizontalScroll.Visible = false;
+                    });
+                    this.Invoke(invoker);
                 }
             }
             catch (Exception ex)
