@@ -33,9 +33,6 @@ namespace Chess_Game_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.pnlChatClientFrame = new Guna.UI2.WinForms.Guna2Panel();
-            this.listChat = new System.Windows.Forms.RichTextBox();
-            this.pnlContainsIcon = new System.Windows.Forms.Panel();
             this.txtMessage = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCountTime = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSendData = new Guna.UI2.WinForms.Guna2Button();
@@ -48,10 +45,14 @@ namespace Chess_Game_Project
             this.label3 = new System.Windows.Forms.Label();
             this.txtTurnUser = new System.Windows.Forms.TextBox();
             this.pnlContainPieces = new System.Windows.Forms.Panel();
+            this.pnlChatClientFrame = new Guna.UI2.WinForms.Guna2Panel();
+            this.listChat = new System.Windows.Forms.Panel();
+            this.pnlContainsIcon = new System.Windows.Forms.Panel();
             this.pnlContent.SuspendLayout();
-            this.pnlChatClientFrame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avtDifPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avtCurrentPlayer)).BeginInit();
+            this.pnlChatClientFrame.SuspendLayout();
+            this.listChat.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlContent
@@ -74,31 +75,6 @@ namespace Chess_Game_Project
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(1470, 685);
             this.pnlContent.TabIndex = 1;
-            // 
-            // pnlChatClientFrame
-            // 
-            this.pnlChatClientFrame.Controls.Add(this.listChat);
-            this.pnlChatClientFrame.Controls.Add(this.pnlContainsIcon);
-            this.pnlChatClientFrame.Location = new System.Drawing.Point(1065, 156);
-            this.pnlChatClientFrame.Name = "pnlChatClientFrame";
-            this.pnlChatClientFrame.Size = new System.Drawing.Size(382, 436);
-            this.pnlChatClientFrame.TabIndex = 40;
-            // 
-            // listChat
-            // 
-            this.listChat.Location = new System.Drawing.Point(2, 0);
-            this.listChat.Name = "listChat";
-            this.listChat.Size = new System.Drawing.Size(380, 436);
-            this.listChat.TabIndex = 39;
-            this.listChat.Text = "";
-            // 
-            // pnlContainsIcon
-            // 
-            this.pnlContainsIcon.BackColor = System.Drawing.Color.PeachPuff;
-            this.pnlContainsIcon.Location = new System.Drawing.Point(3, 218);
-            this.pnlContainsIcon.Name = "pnlContainsIcon";
-            this.pnlContainsIcon.Size = new System.Drawing.Size(380, 215);
-            this.pnlContainsIcon.TabIndex = 22;
             // 
             // txtMessage
             // 
@@ -261,6 +237,31 @@ namespace Chess_Game_Project
             this.pnlContainPieces.Size = new System.Drawing.Size(290, 497);
             this.pnlContainPieces.TabIndex = 17;
             // 
+            // pnlChatClientFrame
+            // 
+            this.pnlChatClientFrame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlChatClientFrame.Controls.Add(this.listChat);
+            this.pnlChatClientFrame.Location = new System.Drawing.Point(1065, 146);
+            this.pnlChatClientFrame.Name = "pnlChatClientFrame";
+            this.pnlChatClientFrame.Size = new System.Drawing.Size(381, 446);
+            this.pnlChatClientFrame.TabIndex = 39;
+            // 
+            // listChat
+            // 
+            this.listChat.Controls.Add(this.pnlContainsIcon);
+            this.listChat.Location = new System.Drawing.Point(0, 3);
+            this.listChat.Name = "listChat";
+            this.listChat.Size = new System.Drawing.Size(381, 446);
+            this.listChat.TabIndex = 30;
+            // 
+            // pnlContainsIcon
+            // 
+            this.pnlContainsIcon.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlContainsIcon.Location = new System.Drawing.Point(0, 123);
+            this.pnlContainsIcon.Name = "pnlContainsIcon";
+            this.pnlContainsIcon.Size = new System.Drawing.Size(381, 323);
+            this.pnlContainsIcon.TabIndex = 22;
+            // 
             // MatchInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -273,9 +274,10 @@ namespace Chess_Game_Project
             this.Load += new System.EventHandler(this.MatchInterface_Load);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
-            this.pnlChatClientFrame.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.avtDifPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avtCurrentPlayer)).EndInit();
+            this.pnlChatClientFrame.ResumeLayout(false);
+            this.listChat.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -289,7 +291,6 @@ namespace Chess_Game_Project
         private System.Windows.Forms.PictureBox avtCurrentPlayer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTurnUser;
-        private System.Windows.Forms.Panel pnlContainsIcon;
         private System.Windows.Forms.Panel pnlContainPieces;
         private Guna.UI2.WinForms.Guna2Button btnOutRoom;
         private Guna.UI2.WinForms.Guna2TextBox txtCountTime;
@@ -297,6 +298,7 @@ namespace Chess_Game_Project
         private Guna.UI2.WinForms.Guna2Button btnSendIcon;
         private Guna.UI2.WinForms.Guna2TextBox txtMessage;
         private Guna.UI2.WinForms.Guna2Panel pnlChatClientFrame;
-        private RichTextBox listChat;
+        private Panel listChat;
+        private Panel pnlContainsIcon;
     }
 }
