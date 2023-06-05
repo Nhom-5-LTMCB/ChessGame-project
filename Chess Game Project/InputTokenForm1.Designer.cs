@@ -102,6 +102,7 @@
             this.btnNext.Size = new System.Drawing.Size(180, 45);
             this.btnNext.TabIndex = 15;
             this.btnNext.Text = "Xác nhận";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnSendTokenAgain
             // 
@@ -142,6 +143,7 @@
             this.Controls.Add(this.pnlContent);
             this.Name = "InputTokenForm1";
             this.Text = "InputTokenForm1";
+            this.Load += new System.EventHandler(this.InputTokenForm1_Load);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
             this.ResumeLayout(false);
