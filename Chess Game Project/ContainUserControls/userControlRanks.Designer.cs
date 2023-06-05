@@ -37,6 +37,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbYourRank = new System.Windows.Forms.Label();
             this.pnlYourLevel = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCloseRank = new Guna.UI2.WinForms.Guna2Button();
             this.dtGridRank = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnlRanker.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -47,6 +48,7 @@
             // pnlRanker
             // 
             this.pnlRanker.Controls.Add(this.dtGridRank);
+            this.pnlRanker.Controls.Add(this.btnCloseRank);
             this.pnlRanker.Controls.Add(this.panel2);
             this.pnlRanker.Controls.Add(this.panel1);
             this.pnlRanker.Controls.Add(this.pnlYourLevel);
@@ -100,35 +102,51 @@
             this.pnlYourLevel.Size = new System.Drawing.Size(573, 59);
             this.pnlYourLevel.TabIndex = 2;
             // 
+            // btnCloseRank
+            // 
+            this.btnCloseRank.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseRank.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseRank.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCloseRank.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCloseRank.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseRank.ForeColor = System.Drawing.Color.White;
+            this.btnCloseRank.Location = new System.Drawing.Point(518, 0);
+            this.btnCloseRank.Name = "btnCloseRank";
+            this.btnCloseRank.Size = new System.Drawing.Size(56, 48);
+            this.btnCloseRank.TabIndex = 11;
+            this.btnCloseRank.Text = "X";
+            this.btnCloseRank.Click += new System.EventHandler(this.btnCloseRank_Click);
+            // 
             // dtGridRank
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dtGridRank.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtGridRank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtGridRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridRank.ColumnHeadersHeight = 18;
+            this.dtGridRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtGridRank.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtGridRank.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtGridRank.Location = new System.Drawing.Point(0, 0);
+            this.dtGridRank.Location = new System.Drawing.Point(0, 50);
             this.dtGridRank.Name = "dtGridRank";
             this.dtGridRank.RowHeadersVisible = false;
             this.dtGridRank.RowHeadersWidth = 51;
             this.dtGridRank.RowTemplate.Height = 24;
-            this.dtGridRank.Size = new System.Drawing.Size(572, 484);
-            this.dtGridRank.TabIndex = 5;
+            this.dtGridRank.Size = new System.Drawing.Size(574, 434);
+            this.dtGridRank.TabIndex = 89;
             this.dtGridRank.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtGridRank.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dtGridRank.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -140,8 +158,8 @@
             this.dtGridRank.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtGridRank.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtGridRank.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dtGridRank.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridRank.ThemeStyle.HeaderStyle.Height = 4;
+            this.dtGridRank.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dtGridRank.ThemeStyle.HeaderStyle.Height = 18;
             this.dtGridRank.ThemeStyle.ReadOnly = false;
             this.dtGridRank.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dtGridRank.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -176,6 +194,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbYourRank;
         private System.Windows.Forms.FlowLayoutPanel pnlYourLevel;
+        private Guna.UI2.WinForms.Guna2Button btnCloseRank;
         private Guna.UI2.WinForms.Guna2DataGridView dtGridRank;
     }
 }

@@ -307,6 +307,7 @@
             this.btnBack.Size = new System.Drawing.Size(56, 54);
             this.btnBack.TabIndex = 34;
             this.btnBack.Text = "X";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnSaveInfo
             // 

@@ -34,11 +34,13 @@ namespace Chess_Game_Project.ContainUserControls
                 return txtRoomName.Text;
             }
         }
-
+        private void btnCloseCreateRoom_Click(object sender, EventArgs e)
+        {
+            btnCloseCreateRoom_click?.Invoke(this, e);
+        }
         private void btnAcceptCreateRoom_Click(object sender, EventArgs e)
         {
             btnAcceptCreateRoom_click?.Invoke(this, e);
         }
-
     }
 }

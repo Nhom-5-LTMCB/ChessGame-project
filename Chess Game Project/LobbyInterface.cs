@@ -20,7 +20,6 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Web.UI;
 using Guna.UI2.WinForms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Runtime.Remoting.Contexts;
 using Chess_Game_Project.classes_handle;
 using System.Xml.Linq;

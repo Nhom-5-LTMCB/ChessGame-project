@@ -95,8 +95,8 @@ namespace Chess_Game_Project
                     btnLogin.Enabled = true;
 
                     //tạo ra giao diện chính
-                    //LobbyInterface inter = new LobbyInterface(user);
-                    //inter.Show();
+                    LobbyInterface inter = new LobbyInterface(user);
+                    inter.Show();
                 }
                 else
                 {

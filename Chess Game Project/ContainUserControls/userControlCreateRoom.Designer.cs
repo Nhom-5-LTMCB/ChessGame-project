@@ -34,6 +34,7 @@
             this.txtRoomName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCloseCreateRoom = new Guna.UI2.WinForms.Guna2Button();
             this.pnlCreateRoom.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,9 +47,9 @@
             this.pnlCreateRoom.Controls.Add(this.label3);
             this.pnlCreateRoom.Controls.Add(this.label1);
             this.pnlCreateRoom.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.pnlCreateRoom.Location = new System.Drawing.Point(34, 33);
+            this.pnlCreateRoom.Location = new System.Drawing.Point(34, 80);
             this.pnlCreateRoom.Name = "pnlCreateRoom";
-            this.pnlCreateRoom.Size = new System.Drawing.Size(629, 464);
+            this.pnlCreateRoom.Size = new System.Drawing.Size(621, 417);
             this.pnlCreateRoom.TabIndex = 5;
             // 
             // btnAcceptCreateRoom
@@ -142,10 +143,26 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Tên phòng :";
             // 
+            // btnCloseCreateRoom
+            // 
+            this.btnCloseCreateRoom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseCreateRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseCreateRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCloseCreateRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCloseCreateRoom.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseCreateRoom.ForeColor = System.Drawing.Color.White;
+            this.btnCloseCreateRoom.Location = new System.Drawing.Point(632, 0);
+            this.btnCloseCreateRoom.Name = "btnCloseCreateRoom";
+            this.btnCloseCreateRoom.Size = new System.Drawing.Size(62, 52);
+            this.btnCloseCreateRoom.TabIndex = 13;
+            this.btnCloseCreateRoom.Text = "X";
+            this.btnCloseCreateRoom.Click += new System.EventHandler(this.btnCloseCreateRoom_Click);
+            // 
             // userControlCreateRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnCloseCreateRoom);
             this.Controls.Add(this.pnlCreateRoom);
             this.Name = "userControlCreateRoom";
             this.Size = new System.Drawing.Size(694, 537);
@@ -163,5 +180,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtRoomName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button btnCloseCreateRoom;
     }
 }
