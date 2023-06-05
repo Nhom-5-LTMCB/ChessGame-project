@@ -84,7 +84,6 @@
             this.label1.Size = new System.Drawing.Size(67, 2);
             this.label1.TabIndex = 4;
             this.label1.Text = "-----------------------";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnNext
             // 
@@ -134,7 +133,6 @@
             this.authLabel.Size = new System.Drawing.Size(153, 20);
             this.authLabel.TabIndex = 10;
             this.authLabel.Text = "Nhập mã xác thực";
-            this.authLabel.Click += new System.EventHandler(this.authLabel_Click);
             // 
             // InputTokenForm1
             // 
