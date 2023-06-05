@@ -80,7 +80,7 @@
             this.pnlContent.Controls.Add(this.errorUserNameLabel);
             this.pnlContent.Location = new System.Drawing.Point(37, 26);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(551, 507);
+            this.pnlContent.Size = new System.Drawing.Size(572, 589);
             this.pnlContent.TabIndex = 21;
             // 
             // guna2HtmlLabel1
@@ -98,7 +98,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(168, 90);
+            this.label3.Location = new System.Drawing.Point(139, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 20);
             this.label3.TabIndex = 88;
@@ -108,7 +108,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(168, 167);
+            this.label2.Location = new System.Drawing.Point(162, 202);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 20);
             this.label2.TabIndex = 87;
@@ -118,7 +118,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(162, 243);
+            this.label1.Location = new System.Drawing.Point(122, 331);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 86;
@@ -128,7 +128,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold);
-            this.lbID.Location = new System.Drawing.Point(162, 321);
+            this.lbID.Location = new System.Drawing.Point(381, 435);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(162, 20);
             this.lbID.TabIndex = 85;
@@ -148,11 +148,12 @@
             this.btnComeback.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnComeback.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnComeback.ForeColor = System.Drawing.Color.Moccasin;
-            this.btnComeback.Location = new System.Drawing.Point(99, 434);
+            this.btnComeback.Location = new System.Drawing.Point(99, 541);
             this.btnComeback.Name = "btnComeback";
             this.btnComeback.Size = new System.Drawing.Size(182, 45);
             this.btnComeback.TabIndex = 84;
             this.btnComeback.Text = "Quay lại";
+            this.btnComeback.Click += new System.EventHandler(this.btnComeback_Click_1);
             // 
             // btnRegister
             // 
@@ -168,7 +169,7 @@
             this.btnRegister.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnRegister.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnRegister.ForeColor = System.Drawing.Color.Moccasin;
-            this.btnRegister.Location = new System.Drawing.Point(309, 434);
+            this.btnRegister.Location = new System.Drawing.Point(309, 541);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(182, 45);
             this.btnRegister.TabIndex = 83;
@@ -188,7 +189,7 @@
             this.txtConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtConfirmPassword.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(173, 355);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(173, 473);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '\0';
@@ -203,7 +204,7 @@
             this.guna2PictureBox4.ErrorImage = null;
             this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
             this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(119, 275);
+            this.guna2PictureBox4.Location = new System.Drawing.Point(79, 363);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
             this.guna2PictureBox4.Size = new System.Drawing.Size(43, 42);
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -215,7 +216,7 @@
             this.guna2PictureBox3.ErrorImage = null;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(119, 355);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(119, 473);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(43, 42);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -236,7 +237,7 @@
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(173, 275);
+            this.txtPassword.Location = new System.Drawing.Point(133, 363);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
@@ -260,7 +261,7 @@
             this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(172, 191);
+            this.txtEmail.Location = new System.Drawing.Point(166, 226);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -274,9 +275,9 @@
             // 
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(119, 191);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(106, 226);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(41, 42);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(54, 42);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 26;
             this.guna2PictureBox2.TabStop = false;
@@ -286,7 +287,7 @@
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(119, 117);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(99, 124);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(41, 32);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -307,7 +308,7 @@
             this.txtUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUserName.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUserName.Location = new System.Drawing.Point(173, 114);
+            this.txtUserName.Location = new System.Drawing.Point(144, 122);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
@@ -320,7 +321,7 @@
             // errorConfirmPasswordLabel
             // 
             this.errorConfirmPasswordLabel.AutoSize = true;
-            this.errorConfirmPasswordLabel.Location = new System.Drawing.Point(170, 434);
+            this.errorConfirmPasswordLabel.Location = new System.Drawing.Point(170, 541);
             this.errorConfirmPasswordLabel.Name = "errorConfirmPasswordLabel";
             this.errorConfirmPasswordLabel.Size = new System.Drawing.Size(0, 16);
             this.errorConfirmPasswordLabel.TabIndex = 19;
@@ -328,26 +329,29 @@
             // errorPasswordLabel
             // 
             this.errorPasswordLabel.AutoSize = true;
-            this.errorPasswordLabel.Location = new System.Drawing.Point(184, 321);
+            this.errorPasswordLabel.Location = new System.Drawing.Point(184, 439);
             this.errorPasswordLabel.Name = "errorPasswordLabel";
-            this.errorPasswordLabel.Size = new System.Drawing.Size(0, 16);
+            this.errorPasswordLabel.Size = new System.Drawing.Size(83, 16);
             this.errorPasswordLabel.TabIndex = 18;
+            this.errorPasswordLabel.Text = "loi password";
             // 
             // errorEmailLabel
             // 
             this.errorEmailLabel.AutoSize = true;
-            this.errorEmailLabel.Location = new System.Drawing.Point(147, 209);
+            this.errorEmailLabel.Location = new System.Drawing.Point(140, 272);
             this.errorEmailLabel.Name = "errorEmailLabel";
-            this.errorEmailLabel.Size = new System.Drawing.Size(0, 16);
+            this.errorEmailLabel.Size = new System.Drawing.Size(50, 16);
             this.errorEmailLabel.TabIndex = 17;
+            this.errorEmailLabel.Text = "lagggg";
             // 
             // errorUserNameLabel
             // 
             this.errorUserNameLabel.AutoSize = true;
-            this.errorUserNameLabel.Location = new System.Drawing.Point(167, 131);
+            this.errorUserNameLabel.Location = new System.Drawing.Point(247, 314);
             this.errorUserNameLabel.Name = "errorUserNameLabel";
-            this.errorUserNameLabel.Size = new System.Drawing.Size(0, 16);
+            this.errorUserNameLabel.Size = new System.Drawing.Size(30, 16);
             this.errorUserNameLabel.TabIndex = 16;
+            this.errorUserNameLabel.Text = "oke";
             // 
             // RegisterInterface
             // 

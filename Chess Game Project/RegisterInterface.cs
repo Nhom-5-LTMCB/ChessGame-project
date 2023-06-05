@@ -156,5 +156,9 @@ namespace Chess_Game_Project
             pnlContent.Parent = this;
         }
 
+        private void btnComeback_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

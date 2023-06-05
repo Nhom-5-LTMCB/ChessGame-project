@@ -79,6 +79,7 @@
     <Compile Include="classes handle\manageApi.cs" />
     <Compile Include="classes\button.cs" />
     <Compile Include="classes\ChessBoard.cs" />
+    <Compile Include="classes\errorRegister.cs" />
     <Compile Include="classes\infoUser.cs" />
     <Compile Include="classes\listFriends.cs" />
     <Compile Include="classes\match.cs" />
