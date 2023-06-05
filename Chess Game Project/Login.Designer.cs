@@ -67,12 +67,11 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(649, 473);
             this.pnlContent.TabIndex = 6;
-            
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(287, 457);
+            this.label2.Location = new System.Drawing.Point(265, 455);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 2);
             this.label2.TabIndex = 23;
@@ -144,7 +143,6 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(441, 48);
             this.txtPassword.TabIndex = 19;
-            
             // 
             // txtUserName
             // 

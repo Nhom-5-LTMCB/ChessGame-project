@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(userControlLists));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbControls = new Guna.UI2.WinForms.Guna2TabControl();
             this.tbFindUser = new System.Windows.Forms.TabPage();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -44,6 +44,7 @@
             this.tbAccept = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.dtAcceptFriend = new System.Windows.Forms.DataGridView();
+            this.btnCloseList = new Guna.UI2.WinForms.Guna2Button();
             this.tbControls.SuspendLayout();
             this.tbFindUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -62,7 +63,7 @@
             this.tbControls.Controls.Add(this.tbAccept);
             this.tbControls.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbControls.ItemSize = new System.Drawing.Size(180, 40);
-            this.tbControls.Location = new System.Drawing.Point(17, 35);
+            this.tbControls.Location = new System.Drawing.Point(23, 49);
             this.tbControls.Name = "tbControls";
             this.tbControls.SelectedIndex = 0;
             this.tbControls.Size = new System.Drawing.Size(867, 566);
@@ -114,26 +115,26 @@
             // 
             // dtAllUsers
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dtAllUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtAllUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dtAllUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtAllUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dtAllUsers.ColumnHeadersHeight = 4;
             this.dtAllUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtAllUsers.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtAllUsers.DefaultCellStyle = dataGridViewCellStyle12;
             this.dtAllUsers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtAllUsers.Location = new System.Drawing.Point(44, 93);
             this.dtAllUsers.Name = "dtAllUsers";
@@ -163,6 +164,7 @@
             this.dtAllUsers.ThemeStyle.RowsStyle.Height = 24;
             this.dtAllUsers.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtAllUsers.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dtAllUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtAllUsers_CellContentClick);
             // 
             // txtFindUser
             // 
@@ -210,6 +212,7 @@
             this.btnFindUser.Size = new System.Drawing.Size(127, 29);
             this.btnFindUser.TabIndex = 7;
             this.btnFindUser.Text = "TÌm kiếm";
+            this.btnFindUser.Click += new System.EventHandler(this.btnFindUser_Click);
             // 
             // tbFriends
             // 
@@ -244,6 +247,7 @@
             this.dtListFriends.RowTemplate.Height = 24;
             this.dtListFriends.Size = new System.Drawing.Size(640, 452);
             this.dtListFriends.TabIndex = 1;
+            this.dtListFriends.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtListFriends_CellContentClick);
             // 
             // tbAccept
             // 
@@ -277,14 +281,31 @@
             this.dtAcceptFriend.RowTemplate.Height = 24;
             this.dtAcceptFriend.Size = new System.Drawing.Size(640, 452);
             this.dtAcceptFriend.TabIndex = 1;
+            this.dtAcceptFriend.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtAcceptFriend_CellContentClick);
+            // 
+            // btnCloseList
+            // 
+            this.btnCloseList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseList.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCloseList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCloseList.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseList.ForeColor = System.Drawing.Color.White;
+            this.btnCloseList.Location = new System.Drawing.Point(844, 1);
+            this.btnCloseList.Name = "btnCloseList";
+            this.btnCloseList.Size = new System.Drawing.Size(46, 46);
+            this.btnCloseList.TabIndex = 3;
+            this.btnCloseList.Text = "X";
+            this.btnCloseList.Click += new System.EventHandler(this.btnCloseList_Click);
             // 
             // userControlLists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnCloseList);
             this.Controls.Add(this.tbControls);
             this.Name = "userControlLists";
-            this.Size = new System.Drawing.Size(867, 566);
+            this.Size = new System.Drawing.Size(897, 622);
             this.tbControls.ResumeLayout(false);
             this.tbFindUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -313,5 +334,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Button btnCloseList;
     }
 }

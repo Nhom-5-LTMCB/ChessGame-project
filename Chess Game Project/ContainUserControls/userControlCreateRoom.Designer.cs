@@ -69,6 +69,7 @@
             this.btnAcceptCreateRoom.Size = new System.Drawing.Size(180, 45);
             this.btnAcceptCreateRoom.TabIndex = 12;
             this.btnAcceptCreateRoom.Text = "Tạo phòng";
+            this.btnAcceptCreateRoom.Click += new System.EventHandler(this.btnAcceptCreateRoom_Click);
             // 
             // txtBetPoints
             // 

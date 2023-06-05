@@ -16,5 +16,29 @@ namespace Chess_Game_Project.ContainUserControls
         {
             InitializeComponent();
         }
+
+        public event EventHandler<EventArgs> btnCloseCreateRoom_click;
+        public event EventHandler<EventArgs> btnAcceptCreateRoom_click;
+
+        public string betpoint
+        {
+            get
+            {
+                return txtBetPoints.Text;
+            }
+        }
+        public string name
+        {
+            get
+            {
+                return txtRoomName.Text;
+            }
+        }
+
+        private void btnAcceptCreateRoom_Click(object sender, EventArgs e)
+        {
+            btnAcceptCreateRoom_click?.Invoke(this, e);
+        }
+
     }
 }
