@@ -20,6 +20,8 @@ namespace Chess_Game_Project
         public RegisterInterface()
         {
             InitializeComponent();
+            txtConfirmPassword.PasswordChar = '*';
+            txtConfirmPassword.PasswordChar = '*';
         }
         public string apiUrlRegister = "https://chessmates.onrender.com/api/v1/auth/register";
         private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
@@ -108,15 +110,21 @@ namespace Chess_Game_Project
                     // Lấy giá trị của thuộc tính "data"
                     JToken dataToken = jsonData["messageErrors"];
                     JObject dataObject = dataToken.ToObject<JObject>();
-                    errorRegister errors = JsonConvert.DeserializeObject<errorRegister>(dataObject.ToString());
-                    //hiển thị lỗi lên trên giao diện
-                    displayError(errors);
-                    if (string.Equals(txtConfirmPassword.Text, txtPassword.Text))
-                        errorConfirmPasswordLabel.Text = "";
-                    else
+                    if(dataObject != null)
                     {
-                        errorConfirmPasswordLabel.ForeColor = Color.Red;
-                        errorConfirmPasswordLabel.Text = "Mật khẩu không khớp";
+                        errorRegister errors = JsonConvert.DeserializeObject<errorRegister>(dataObject.ToString());
+                        //hiển thị lỗi lên trên giao diện
+                        displayError(errors);
+                        if (string.Equals(txtConfirmPassword.Text, txtPassword.Text))
+                            errorConfirmPasswordLabel.Text = "";
+                        else
+                        {
+                            errorConfirmPasswordLabel.ForeColor = Color.Red;
+                            errorConfirmPasswordLabel.Text = "Mật khẩu không khớp";
+                        }
+                    }else
+                    {
+                        MessageBox.Show("Tài khoản đã tồn tại, vui lòng thay đổi username khác");
                     }
                 }
             }
@@ -156,9 +164,24 @@ namespace Chess_Game_Project
             pnlContent.Parent = this;
         }
 
-        private void btnComeback_Click_1(object sender, EventArgs e)
+        private void RegisterInterface_Load_1(object sender, EventArgs e)
         {
+            // Thiết lập kích thước form
+            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+            int formWidth = (int)(screenWidth * 0.8);
+            int formHeight = (int)(screenHeight * 0.8);
+            this.Size = new Size(formWidth, formHeight);
 
+            // Đặt vị trí của form để nằm chính giữa màn hình
+            int left = (screenWidth - formWidth) / 2;
+            int top = (screenHeight - formHeight) / 2;
+            this.Location = new Point(left, top);
+
+            // Đưa Panel vào chính giữa màn hình
+            pnlContent.Location = new Point((this.Width - pnlContent.Width) / 2,
+                                        (this.Height - pnlContent.Height) / 2);
+            pnlContent.Parent = this;
         }
     }
 }

@@ -89,6 +89,7 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(1129, 654);
             this.pnlContent.TabIndex = 2;
+            this.pnlContent.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label1
             // 
@@ -327,6 +328,7 @@
             this.btnSaveInfo.Size = new System.Drawing.Size(197, 53);
             this.btnSaveInfo.TabIndex = 33;
             this.btnSaveInfo.Text = "Lưu";
+            this.btnSaveInfo.Click += new System.EventHandler(this.btnSaveInfo_Click);
             // 
             // btnEditInfo
             // 
@@ -347,6 +349,7 @@
             this.btnEditInfo.Size = new System.Drawing.Size(205, 49);
             this.btnEditInfo.TabIndex = 32;
             this.btnEditInfo.Text = "Chỉnh sửa hồ sơ";
+            this.btnEditInfo.Click += new System.EventHandler(this.btnEditInfo_Click);
             // 
             // btnChangeImage
             // 
@@ -368,6 +371,7 @@
             this.btnChangeImage.Size = new System.Drawing.Size(205, 51);
             this.btnChangeImage.TabIndex = 31;
             this.btnChangeImage.Text = "Chỉnh sửa ảnh";
+            this.btnChangeImage.Click += new System.EventHandler(this.btnChangeImage_Click);
             // 
             // ptboxAvatar
             // 

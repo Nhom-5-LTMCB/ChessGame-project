@@ -20,6 +20,8 @@ namespace Chess_Game_Project
         public ChangePasswordInterface()
         {
             InitializeComponent();
+            txtConfirmPassword.PasswordChar = '*';
+            txtNewPassword.PasswordChar = '*';
         }
 
         private void ChangePasswordInterface_Load(object sender, EventArgs e)

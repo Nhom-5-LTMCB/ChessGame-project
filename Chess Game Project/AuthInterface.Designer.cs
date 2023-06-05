@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.btnNext = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtAuthUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.errorHideLabel = new System.Windows.Forms.Label();
-            this.lbID = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -61,6 +61,26 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(390, 360);
             this.pnlContent.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(69, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 27);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Email";
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(69, 41);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(116, 27);
+            this.lbID.TabIndex = 29;
+            this.lbID.Text = "Username";
             // 
             // guna2PictureBox2
             // 
@@ -91,7 +111,6 @@
             this.label1.Size = new System.Drawing.Size(109, 10);
             this.label1.TabIndex = 26;
             this.label1.Text = "-------------------------";
-            
             // 
             // txtAuthEmail
             // 
@@ -135,6 +154,7 @@
             this.btnBack.Size = new System.Drawing.Size(127, 30);
             this.btnBack.TabIndex = 12;
             this.btnBack.Text = "Quay lại";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnNext
             // 
@@ -155,6 +175,7 @@
             this.btnNext.Size = new System.Drawing.Size(182, 45);
             this.btnNext.TabIndex = 11;
             this.btnNext.Text = "Xác nhận";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // txtAuthUserName
             // 
@@ -180,7 +201,6 @@
             this.txtAuthUserName.SelectedText = "";
             this.txtAuthUserName.Size = new System.Drawing.Size(296, 34);
             this.txtAuthUserName.TabIndex = 22;
-          
             // 
             // errorHideLabel
             // 
@@ -189,26 +209,6 @@
             this.errorHideLabel.Name = "errorHideLabel";
             this.errorHideLabel.Size = new System.Drawing.Size(0, 16);
             this.errorHideLabel.TabIndex = 23;
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(69, 41);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(116, 27);
-            this.lbID.TabIndex = 29;
-            this.lbID.Text = "Username";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 27);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Email";
             // 
             // AuthInterface
             // 

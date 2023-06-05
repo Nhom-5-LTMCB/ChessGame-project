@@ -103,7 +103,7 @@
             // 
             // pnlMultiChats
             // 
-            this.pnlMultiChats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlMultiChats.BackColor = System.Drawing.Color.NavajoWhite;
             this.pnlMultiChats.Controls.Add(this.pnlMultiChatFrame);
             this.pnlMultiChats.Location = new System.Drawing.Point(18, 172);
             this.pnlMultiChats.Name = "pnlMultiChats";
@@ -114,15 +114,15 @@
             // 
             this.pnlMultiChatFrame.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnlMultiChatFrame.Controls.Add(this.pnlContainsIcon);
-            this.pnlMultiChatFrame.Location = new System.Drawing.Point(0, 5);
+            this.pnlMultiChatFrame.Location = new System.Drawing.Point(0, 0);
             this.pnlMultiChatFrame.Name = "pnlMultiChatFrame";
-            this.pnlMultiChatFrame.Size = new System.Drawing.Size(397, 385);
+            this.pnlMultiChatFrame.Size = new System.Drawing.Size(397, 390);
             this.pnlMultiChatFrame.TabIndex = 72;
             // 
             // pnlContainsIcon
             // 
             this.pnlContainsIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pnlContainsIcon.Location = new System.Drawing.Point(0, 101);
+            this.pnlContainsIcon.Location = new System.Drawing.Point(0, 106);
             this.pnlContainsIcon.Name = "pnlContainsIcon";
             this.pnlContainsIcon.Size = new System.Drawing.Size(397, 284);
             this.pnlContainsIcon.TabIndex = 65;
@@ -150,12 +150,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtGridContainListRooms.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtGridContainListRooms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtGridContainListRooms.Location = new System.Drawing.Point(442, 185);
+            this.dtGridContainListRooms.Location = new System.Drawing.Point(442, 172);
             this.dtGridContainListRooms.Name = "dtGridContainListRooms";
             this.dtGridContainListRooms.RowHeadersVisible = false;
             this.dtGridContainListRooms.RowHeadersWidth = 51;
             this.dtGridContainListRooms.RowTemplate.Height = 24;
-            this.dtGridContainListRooms.Size = new System.Drawing.Size(889, 396);
+            this.dtGridContainListRooms.Size = new System.Drawing.Size(889, 409);
             this.dtGridContainListRooms.TabIndex = 87;
             this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -181,7 +181,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.guna2Panel1.BackColor = System.Drawing.Color.NavajoWhite;
             this.guna2Panel1.Controls.Add(this.btnSendMessage);
             this.guna2Panel1.Controls.Add(this.txtSendMessage);
             this.guna2Panel1.Controls.Add(this.btnSendIcon);
@@ -193,24 +193,25 @@
             // btnSendMessage
             // 
             this.btnSendMessage.BorderColor = System.Drawing.Color.Red;
-            this.btnSendMessage.BorderRadius = 5;
+            this.btnSendMessage.BorderRadius = 10;
             this.btnSendMessage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSendMessage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSendMessage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSendMessage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSendMessage.FillColor = System.Drawing.Color.Red;
+            this.btnSendMessage.FillColor = System.Drawing.Color.Plum;
             this.btnSendMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSendMessage.ForeColor = System.Drawing.Color.White;
             this.btnSendMessage.Image = ((System.Drawing.Image)(resources.GetObject("btnSendMessage.Image")));
-            this.btnSendMessage.Location = new System.Drawing.Point(326, 0);
+            this.btnSendMessage.Location = new System.Drawing.Point(326, -3);
             this.btnSendMessage.Name = "btnSendMessage";
             this.btnSendMessage.Size = new System.Drawing.Size(71, 56);
             this.btnSendMessage.TabIndex = 84;
+            this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
             // txtSendMessage
             // 
             this.txtSendMessage.BorderColor = System.Drawing.Color.Black;
-            this.txtSendMessage.BorderRadius = 5;
+            this.txtSendMessage.BorderRadius = 10;
             this.txtSendMessage.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSendMessage.DefaultText = "";
             this.txtSendMessage.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -221,18 +222,18 @@
             this.txtSendMessage.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSendMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSendMessage.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSendMessage.Location = new System.Drawing.Point(0, -2);
+            this.txtSendMessage.Location = new System.Drawing.Point(0, 0);
             this.txtSendMessage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSendMessage.Name = "txtSendMessage";
             this.txtSendMessage.PasswordChar = '\0';
             this.txtSendMessage.PlaceholderText = "";
             this.txtSendMessage.SelectedText = "";
-            this.txtSendMessage.Size = new System.Drawing.Size(260, 56);
+            this.txtSendMessage.Size = new System.Drawing.Size(263, 53);
             this.txtSendMessage.TabIndex = 85;
             // 
             // btnSendIcon
             // 
-            this.btnSendIcon.BorderRadius = 5;
+            this.btnSendIcon.BorderRadius = 10;
             this.btnSendIcon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSendIcon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSendIcon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -241,10 +242,11 @@
             this.btnSendIcon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSendIcon.ForeColor = System.Drawing.Color.White;
             this.btnSendIcon.Image = ((System.Drawing.Image)(resources.GetObject("btnSendIcon.Image")));
-            this.btnSendIcon.Location = new System.Drawing.Point(259, -2);
+            this.btnSendIcon.Location = new System.Drawing.Point(259, -1);
             this.btnSendIcon.Name = "btnSendIcon";
-            this.btnSendIcon.Size = new System.Drawing.Size(71, 55);
+            this.btnSendIcon.Size = new System.Drawing.Size(67, 55);
             this.btnSendIcon.TabIndex = 83;
+            this.btnSendIcon.Click += new System.EventHandler(this.btnSendIcon_Click);
             // 
             // btnRandomRoom
             // 
@@ -261,6 +263,7 @@
             this.btnRandomRoom.Size = new System.Drawing.Size(154, 40);
             this.btnRandomRoom.TabIndex = 82;
             this.btnRandomRoom.Text = "Ngẫu nhiên";
+            this.btnRandomRoom.Click += new System.EventHandler(this.btnRandomRoom_Click);
             // 
             // btnCreateRoom
             // 
@@ -277,6 +280,7 @@
             this.btnCreateRoom.Size = new System.Drawing.Size(154, 40);
             this.btnCreateRoom.TabIndex = 81;
             this.btnCreateRoom.Text = "Tạo phòng";
+            this.btnCreateRoom.Click += new System.EventHandler(this.btnCreateRoom_Click);
             // 
             // btnHistory
             // 
@@ -296,6 +300,7 @@
             this.btnHistory.Size = new System.Drawing.Size(204, 40);
             this.btnHistory.TabIndex = 80;
             this.btnHistory.Text = "Lịch sử đấu";
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // btnRank
             // 
@@ -315,6 +320,7 @@
             this.btnRank.Size = new System.Drawing.Size(157, 51);
             this.btnRank.TabIndex = 79;
             this.btnRank.Text = "Bảng xếp hạng";
+            this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
             // 
             // btnListFriend
             // 
@@ -334,6 +340,7 @@
             this.btnListFriend.Size = new System.Drawing.Size(180, 51);
             this.btnListFriend.TabIndex = 78;
             this.btnListFriend.Text = "Danh sách bạn bè";
+            this.btnListFriend.Click += new System.EventHandler(this.btnListFriend_Click);
             // 
             // btnLogout
             // 
@@ -373,6 +380,7 @@
             this.btnContainInfoUser.Size = new System.Drawing.Size(157, 51);
             this.btnContainInfoUser.TabIndex = 76;
             this.btnContainInfoUser.Text = "Xem thông tin";
+            this.btnContainInfoUser.Click += new System.EventHandler(this.btnContainInfoUser_Click);
             // 
             // lbScore
             // 
