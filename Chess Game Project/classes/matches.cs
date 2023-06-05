@@ -15,5 +15,6 @@ namespace Chess_Game_Project.classes
         public int betPoints { get; set; }
         public string roomName { get; set; }
         public string ownerRoom { get; set; }
+        public string ipRoom { get; set; }
     }
 }
