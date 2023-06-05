@@ -23,7 +23,12 @@ namespace Chess_Game_Project
         {
             InitializeComponent();
         }
-
+        public InputTokenForm1(string userName, string gmail) : this()
+        {
+            this.userName = userName;
+            this.gmail = gmail;
+            btnSendTokenAgain.Enabled = false;
+        }
         private async void btnSendTokenAgain_Click(object sender, EventArgs e)
         {
             var data = new

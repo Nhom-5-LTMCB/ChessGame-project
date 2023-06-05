@@ -91,7 +91,7 @@
             this.label1.Size = new System.Drawing.Size(109, 10);
             this.label1.TabIndex = 26;
             this.label1.Text = "-------------------------";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // txtAuthEmail
             // 
@@ -180,7 +180,7 @@
             this.txtAuthUserName.SelectedText = "";
             this.txtAuthUserName.Size = new System.Drawing.Size(296, 34);
             this.txtAuthUserName.TabIndex = 22;
-            this.txtAuthUserName.TextChanged += new System.EventHandler(this.txtAuthUserName_TextChanged);
+          
             // 
             // errorHideLabel
             // 
