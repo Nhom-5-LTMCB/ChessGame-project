@@ -35,6 +35,7 @@ namespace Chess_Game_Project.ContainUserControls
                 posY = value;
             }
         }
+        public bool eventActive = false;
         List<Button> buttonListIcons = new List<Button>();
         public Guna2TextBox TextBox
         {

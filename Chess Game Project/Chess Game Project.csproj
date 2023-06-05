@@ -76,6 +76,10 @@
     <Compile Include="ChangePasswordInterface.Designer.cs">
       <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="classes handle\handleChat.cs" />
+    <Compile Include="classes handle\handleGetLists.cs" />
+    <Compile Include="classes handle\handleLoadInterface.cs" />
+    <Compile Include="classes handle\hanleDataIntoDatagridview.cs" />
     <Compile Include="classes handle\manageApi.cs" />
     <Compile Include="classes\button.cs" />
     <Compile Include="classes\ChessBoard.cs" />
@@ -159,6 +163,7 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="manageUsers\createChatOneFrame.cs" />
     <Compile Include="MatchInterface.cs">
       <SubType>Form</SubType>
     </Compile>
