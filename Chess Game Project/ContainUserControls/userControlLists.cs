@@ -133,6 +133,7 @@ namespace Chess_Game_Project.ContainUserControls
                 }
             }
         }
+
         private void btnCloseList_Click(object sender, EventArgs e)
         {
             btnCloseList_click?.Invoke(this, e);
@@ -157,6 +158,5 @@ namespace Chess_Game_Project.ContainUserControls
         {
             dtAcceptFriend_cellContentClick?.Invoke(sender, e);
         }
-
     }
 }
