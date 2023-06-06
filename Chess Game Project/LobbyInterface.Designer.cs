@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LobbyInterface));
             this.pnlCoverPage = new System.Windows.Forms.Panel();
+            this.ptbAvatarPage = new System.Windows.Forms.PictureBox();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlMultiChats = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlMultiChatFrame = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlContainsIcon = new System.Windows.Forms.Panel();
+            this.pnlContainsChild = new System.Windows.Forms.Panel();
+            this.pnlChatOne = new System.Windows.Forms.Panel();
             this.dtGridContainListRooms = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSendMessage = new Guna.UI2.WinForms.Guna2Button();
@@ -53,18 +56,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
             this.ptboxAvatar = new System.Windows.Forms.PictureBox();
-            this.ptbAvatarPage = new System.Windows.Forms.PictureBox();
-            this.pnlContainsChild = new System.Windows.Forms.Panel();
-            this.pnlChatOne = new System.Windows.Forms.Panel();
             this.pnlCoverPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).BeginInit();
             this.pnlContent.SuspendLayout();
             this.pnlMultiChats.SuspendLayout();
             this.pnlMultiChatFrame.SuspendLayout();
+            this.pnlContainsChild.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridContainListRooms)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptboxAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).BeginInit();
-            this.pnlContainsChild.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCoverPage
@@ -75,6 +75,15 @@
             this.pnlCoverPage.Name = "pnlCoverPage";
             this.pnlCoverPage.Size = new System.Drawing.Size(1473, 748);
             this.pnlCoverPage.TabIndex = 1;
+            // 
+            // ptbAvatarPage
+            // 
+            this.ptbAvatarPage.BackColor = System.Drawing.Color.NavajoWhite;
+            this.ptbAvatarPage.Location = new System.Drawing.Point(0, 0);
+            this.ptbAvatarPage.Name = "ptbAvatarPage";
+            this.ptbAvatarPage.Size = new System.Drawing.Size(1121, 658);
+            this.ptbAvatarPage.TabIndex = 0;
+            this.ptbAvatarPage.TabStop = false;
             // 
             // pnlContent
             // 
@@ -124,28 +133,46 @@
             this.pnlContainsIcon.Size = new System.Drawing.Size(397, 284);
             this.pnlContainsIcon.TabIndex = 65;
             // 
+            // pnlContainsChild
+            // 
+            this.pnlContainsChild.AutoSize = true;
+            this.pnlContainsChild.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pnlContainsChild.Controls.Add(this.pnlChatOne);
+            this.pnlContainsChild.Location = new System.Drawing.Point(374, 28);
+            this.pnlContainsChild.Name = "pnlContainsChild";
+            this.pnlContainsChild.Size = new System.Drawing.Size(1328, 651);
+            this.pnlContainsChild.TabIndex = 70;
+            // 
+            // pnlChatOne
+            // 
+            this.pnlChatOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pnlChatOne.Location = new System.Drawing.Point(287, 96);
+            this.pnlChatOne.Name = "pnlChatOne";
+            this.pnlChatOne.Size = new System.Drawing.Size(688, 459);
+            this.pnlChatOne.TabIndex = 6;
+            // 
             // dtGridContainListRooms
             // 
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            this.dtGridContainListRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridContainListRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtGridContainListRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridContainListRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtGridContainListRooms.ColumnHeadersHeight = 18;
             this.dtGridContainListRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridContainListRooms.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridContainListRooms.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtGridContainListRooms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtGridContainListRooms.Location = new System.Drawing.Point(442, 172);
             this.dtGridContainListRooms.Name = "dtGridContainListRooms";
@@ -411,38 +438,12 @@
             // 
             // ptboxAvatar
             // 
+            this.ptboxAvatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptboxAvatar.Location = new System.Drawing.Point(18, 16);
             this.ptboxAvatar.Name = "ptboxAvatar";
             this.ptboxAvatar.Size = new System.Drawing.Size(127, 104);
             this.ptboxAvatar.TabIndex = 50;
             this.ptboxAvatar.TabStop = false;
-            // 
-            // ptbAvatarPage
-            // 
-            this.ptbAvatarPage.BackColor = System.Drawing.Color.NavajoWhite;
-            this.ptbAvatarPage.Location = new System.Drawing.Point(0, 0);
-            this.ptbAvatarPage.Name = "ptbAvatarPage";
-            this.ptbAvatarPage.Size = new System.Drawing.Size(1121, 658);
-            this.ptbAvatarPage.TabIndex = 0;
-            this.ptbAvatarPage.TabStop = false;
-            // 
-            // pnlContainsChild
-            // 
-            this.pnlContainsChild.AutoSize = true;
-            this.pnlContainsChild.BackColor = System.Drawing.Color.NavajoWhite;
-            this.pnlContainsChild.Controls.Add(this.pnlChatOne);
-            this.pnlContainsChild.Location = new System.Drawing.Point(374, 28);
-            this.pnlContainsChild.Name = "pnlContainsChild";
-            this.pnlContainsChild.Size = new System.Drawing.Size(1328, 651);
-            this.pnlContainsChild.TabIndex = 70;
-            // 
-            // pnlChatOne
-            // 
-            this.pnlChatOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnlChatOne.Location = new System.Drawing.Point(411, 96);
-            this.pnlChatOne.Name = "pnlChatOne";
-            this.pnlChatOne.Size = new System.Drawing.Size(506, 459);
-            this.pnlChatOne.TabIndex = 6;
             // 
             // LobbyInterface
             // 
@@ -455,15 +456,15 @@
             this.Text = "LobbyInterface";
             this.Load += new System.EventHandler(this.LobbyInterface_Load);
             this.pnlCoverPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).EndInit();
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
             this.pnlMultiChats.ResumeLayout(false);
             this.pnlMultiChatFrame.ResumeLayout(false);
+            this.pnlContainsChild.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridContainListRooms)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptboxAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).EndInit();
-            this.pnlContainsChild.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

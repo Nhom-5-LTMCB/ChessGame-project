@@ -16,10 +16,6 @@ namespace Chess_Game_Project.ContainUserControls
         public userControlLists()
         {
             InitializeComponent();
-
-            dtAcceptFriend.RowTemplate.Height = 45;
-            dtListFriends.RowTemplate.Height = 45;
-            dtAllUsers.RowTemplate.Height = 45;
         }
         public void copyData(DataGridView dtgrv, DataGridView currentDtgrv)
         {
@@ -54,7 +50,7 @@ namespace Chess_Game_Project.ContainUserControls
                     currentDtgrv.Rows[rowIndex].Cells[cell.ColumnIndex].Value = cell.Value;
                 }
             }
-
+            currentDtgrv.RowTemplate.Height = 45;
             currentDtgrv.ReadOnly = true;
         }
         public void copyDataIntoGridAllUsers(DataGridView dtgrv)

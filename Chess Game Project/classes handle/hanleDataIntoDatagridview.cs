@@ -113,7 +113,8 @@ namespace Chess_Game_Project.classes_handle
                 buttonColumn2.UseColumnTextForButtonValue = true;
                 dtAllUsers.Columns.Add(buttonColumn1);
                 dtAllUsers.Columns.Add(buttonColumn2);
-
+                dtAllUsers.RowTemplate.Height = 45;
+                dtAllUsers.ReadOnly = true;
                 foreach (infoUser item in userLists)
                 {
                     string[] rowData = new string[] { item.id, item.userName };

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
             this.errorConfirmPasswordLabel = new System.Windows.Forms.Label();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.errorPasswordLabel = new System.Windows.Forms.Label();
             this.errorEmailLabel = new System.Windows.Forms.Label();
             this.errorUserNameLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
@@ -60,8 +60,8 @@
             // 
             this.pnlContent.AutoSize = true;
             this.pnlContent.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pnlContent.Controls.Add(this.label4);
             this.pnlContent.Controls.Add(this.errorConfirmPasswordLabel);
-            this.pnlContent.Controls.Add(this.guna2HtmlLabel1);
             this.pnlContent.Controls.Add(this.label3);
             this.pnlContent.Controls.Add(this.label2);
             this.pnlContent.Controls.Add(this.label1);
@@ -92,17 +92,6 @@
             this.errorConfirmPasswordLabel.Name = "errorConfirmPasswordLabel";
             this.errorConfirmPasswordLabel.Size = new System.Drawing.Size(0, 16);
             this.errorConfirmPasswordLabel.TabIndex = 91;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(154, 39);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(178, 45);
-            this.guna2HtmlLabel1.TabIndex = 89;
-            this.guna2HtmlLabel1.Text = "ĐĂNG KÝ";
             // 
             // label3
             // 
@@ -357,6 +346,17 @@
             this.errorUserNameLabel.Size = new System.Drawing.Size(0, 16);
             this.errorUserNameLabel.TabIndex = 16;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.label4.Location = new System.Drawing.Point(138, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 43);
+            this.label4.TabIndex = 92;
+            this.label4.Text = "ĐĂNG KÝ";
+            // 
             // RegisterInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -380,7 +380,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlContent;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -399,5 +398,6 @@
         private System.Windows.Forms.Label errorEmailLabel;
         private System.Windows.Forms.Label errorUserNameLabel;
         private System.Windows.Forms.Label errorConfirmPasswordLabel;
+        private System.Windows.Forms.Label label4;
     }
 }

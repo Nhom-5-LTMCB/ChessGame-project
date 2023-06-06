@@ -45,7 +45,7 @@ namespace Chess_Game_Project
         #region infoUser
         private infoUser user;
         private string linkAvatar;
-        private string ipAddress = "172.20.32.189";
+        private string ipAddress = "172.30.181.248";
         private string myIpAddress = "";
         private string difUsernameUser = "";
         #endregion
