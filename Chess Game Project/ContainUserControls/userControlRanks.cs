@@ -20,6 +20,8 @@ namespace Chess_Game_Project.ContainUserControls
         public userControlRanks()
         {
             InitializeComponent();
+
+            dtGridRank.RowTemplate.Height = 45;
         }
         public void copyDataIntoGridListRanks(DataGridView dtgrv)
         {

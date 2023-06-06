@@ -196,6 +196,8 @@ namespace Chess_Game_Project
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
 
+            dtGridContainListRooms.RowTemplate.Height = 45;
+
             int childX = (pnlCoverPage.Width - pnlContainsChild.Width) / 2;
             int childY = (pnlCoverPage.Height - pnlContainsChild.Height) / 2;
             pnlContainsChild.Location = new Point(childX, childY);

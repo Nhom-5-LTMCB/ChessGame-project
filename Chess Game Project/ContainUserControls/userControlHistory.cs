@@ -58,6 +58,7 @@ namespace Chess_Game_Project.ContainUserControls
             }
 
             dtGridViewHistory.ReadOnly = true;
+            dtGridViewHistory.RowTemplate.Height = 45;
         }
         public event EventHandler<EventArgs> btnCloseHistory_click;
         private void btnCloseHistory_Click(object sender, EventArgs e)

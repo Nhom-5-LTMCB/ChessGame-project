@@ -16,6 +16,10 @@ namespace Chess_Game_Project.ContainUserControls
         public userControlLists()
         {
             InitializeComponent();
+
+            dtAcceptFriend.RowTemplate.Height = 45;
+            dtListFriends.RowTemplate.Height = 45;
+            dtAllUsers.RowTemplate.Height = 45;
         }
         public void copyData(DataGridView dtgrv, DataGridView currentDtgrv)
         {
