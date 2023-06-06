@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pnlContent = new System.Windows.Forms.Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -55,7 +54,6 @@
             this.pnlContent.BackColor = System.Drawing.Color.NavajoWhite;
             this.pnlContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlContent.Controls.Add(this.guna2CirclePictureBox1);
-            this.pnlContent.Controls.Add(this.label2);
             this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.lbID);
             this.pnlContent.Controls.Add(this.guna2PictureBox2);
@@ -73,6 +71,7 @@
             // 
             // guna2CirclePictureBox1
             // 
+            this.guna2CirclePictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(221, 26);
@@ -82,15 +81,6 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 25;
             this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(218, 506);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 2);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "------------";
             // 
             // label1
             // 
@@ -243,8 +233,8 @@
             this.forgotPasswordLabel.AutoSize = true;
             this.forgotPasswordLabel.BackColor = System.Drawing.Color.NavajoWhite;
             this.forgotPasswordLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgotPasswordLabel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.forgotPasswordLabel.Location = new System.Drawing.Point(203, 475);
+            this.forgotPasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.forgotPasswordLabel.Location = new System.Drawing.Point(195, 471);
             this.forgotPasswordLabel.Name = "forgotPasswordLabel";
             this.forgotPasswordLabel.Size = new System.Drawing.Size(182, 31);
             this.forgotPasswordLabel.TabIndex = 13;
@@ -292,7 +282,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
     }
 }

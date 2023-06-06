@@ -34,7 +34,6 @@
             this.lbID = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtAuthEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnBack = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnNext = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -52,7 +51,6 @@
             this.pnlContent.Controls.Add(this.lbID);
             this.pnlContent.Controls.Add(this.guna2PictureBox2);
             this.pnlContent.Controls.Add(this.guna2PictureBox1);
-            this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.txtAuthEmail);
             this.pnlContent.Controls.Add(this.btnBack);
             this.pnlContent.Controls.Add(this.btnNext);
@@ -104,14 +102,6 @@
             this.guna2PictureBox1.TabIndex = 27;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(135, 323);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 10);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "-------------------------";
-            // 
             // txtAuthEmail
             // 
             this.txtAuthEmail.Animated = true;
@@ -149,7 +139,7 @@
             this.btnBack.FillColor2 = System.Drawing.Color.NavajoWhite;
             this.btnBack.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnBack.ForeColor = System.Drawing.Color.Red;
-            this.btnBack.Location = new System.Drawing.Point(128, 290);
+            this.btnBack.Location = new System.Drawing.Point(131, 290);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(127, 30);
             this.btnBack.TabIndex = 12;
@@ -236,7 +226,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtAuthUserName;
         private Guna.UI2.WinForms.Guna2TextBox txtAuthEmail;
         private System.Windows.Forms.Label errorHideLabel;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label2;
