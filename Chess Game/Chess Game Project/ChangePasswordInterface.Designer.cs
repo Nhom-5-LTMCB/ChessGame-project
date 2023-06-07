@@ -65,7 +65,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(201, 80);
+            this.label1.Location = new System.Drawing.Point(201, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 27);
             this.label1.TabIndex = 35;
@@ -96,7 +96,7 @@
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(138, 115);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(138, 89);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(48, 48);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,6 +127,7 @@
             this.txtConfirmPassword.SelectedText = "";
             this.txtConfirmPassword.Size = new System.Drawing.Size(372, 46);
             this.txtConfirmPassword.TabIndex = 31;
+            this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
             // 
             // btnNext
             // 
@@ -164,7 +165,7 @@
             this.txtNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.txtNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(206, 115);
+            this.txtNewPassword.Location = new System.Drawing.Point(206, 89);
             this.txtNewPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '\0';
@@ -187,7 +188,7 @@
             // 
             this.errorNewPassword.AutoSize = true;
             this.errorNewPassword.ForeColor = System.Drawing.Color.Red;
-            this.errorNewPassword.Location = new System.Drawing.Point(203, 167);
+            this.errorNewPassword.Location = new System.Drawing.Point(203, 144);
             this.errorNewPassword.Name = "errorNewPassword";
             this.errorNewPassword.Size = new System.Drawing.Size(0, 16);
             this.errorNewPassword.TabIndex = 19;
@@ -200,6 +201,7 @@
             this.Controls.Add(this.pnlContent);
             this.Name = "ChangePasswordInterface";
             this.Text = "ChangePasswordInterface";
+            this.Load += new System.EventHandler(this.ChangePasswordInterface_Load_1);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();

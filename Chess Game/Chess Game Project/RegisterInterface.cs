@@ -20,7 +20,7 @@ namespace Chess_Game_Project
         public RegisterInterface()
         {
             InitializeComponent();
-            txtConfirmPassword.PasswordChar = '*';
+            txtPassword.PasswordChar = '*';
             txtConfirmPassword.PasswordChar = '*';
         }
         public string apiUrlRegister = "https://chessmates.onrender.com/api/v1/auth/register";
@@ -89,12 +89,14 @@ namespace Chess_Game_Project
                 {
                     if (errorConfirmPasswordLabel.Text == "")
                     {
+                        JToken dataToken = JObject.Parse(await response.Content.ReadAsStringAsync())["data"];
+                        infoUser user = JsonConvert.DeserializeObject<infoUser>(dataToken.ToString());
                         MessageBox.Show("Đăng ký thành công");
                         //đóng form register
-                        this.Close();
+                        this.Close();   
 
-                        //mở lại form login
-                        Login.showFormAgain.Show();
+                        LobbyInterface lb = new LobbyInterface(user);
+                        lb.Show();
                     }
                     else
                     {
@@ -109,22 +111,27 @@ namespace Chess_Game_Project
 
                     // Lấy giá trị của thuộc tính "data"
                     JToken dataToken = jsonData["messageErrors"];
-                    JObject dataObject = dataToken.ToObject<JObject>();
-                    if(dataObject != null)
+                    if (dataToken != null)
                     {
-                        errorRegister errors = JsonConvert.DeserializeObject<errorRegister>(dataObject.ToString());
-                        //hiển thị lỗi lên trên giao diện
-                        displayError(errors);
-                        if (string.Equals(txtConfirmPassword.Text, txtPassword.Text))
-                            errorConfirmPasswordLabel.Text = "";
-                        else
+                        JObject dataObject = dataToken.ToObject<JObject>();
+                        if (dataObject != null)
                         {
-                            errorConfirmPasswordLabel.ForeColor = Color.Red;
-                            errorConfirmPasswordLabel.Text = "Mật khẩu không khớp";
+                            errorRegister errors = JsonConvert.DeserializeObject<errorRegister>(dataObject.ToString());
+                            //hiển thị lỗi lên trên giao diện
+                            displayError(errors);
+                            if (string.Equals(txtConfirmPassword.Text, txtPassword.Text))
+                                errorConfirmPasswordLabel.Text = "";
+                            else
+                            {
+                                errorConfirmPasswordLabel.ForeColor = Color.Red;
+                                errorConfirmPasswordLabel.Text = "Mật khẩu không khớp";
+                            }
                         }
-                    }else
+                    }
+                    else
                     {
                         MessageBox.Show("Tài khoản đã tồn tại, vui lòng thay đổi username khác");
+
                     }
                 }
             }
@@ -162,6 +169,7 @@ namespace Chess_Game_Project
             pnlContent.Location = new Point((this.Width - pnlContent.Width) / 2,
                                         (this.Height - pnlContent.Height) / 2);
             pnlContent.Parent = this;
+
         }
 
         private void RegisterInterface_Load_1(object sender, EventArgs e)

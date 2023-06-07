@@ -67,8 +67,11 @@ namespace Chess_Game_Project.classes_handle
                     if (tkData != null)
                     {
                         infoUser friend = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-                        if (item.status.ToLower() == status)
-                            lists.Add(friend);
+                        if(friend != null)
+                        {
+                            if (item.status.ToLower() == status)
+                                lists.Add(friend);
+                        }
                     }
                     else
                     {
@@ -102,8 +105,11 @@ namespace Chess_Game_Project.classes_handle
                             if (tkInfo != null)
                             {
                                 infoUser difUser = JsonConvert.DeserializeObject<infoUser>(tkInfo.ToString());
-                                if (difUser.statusActive == "online")
-                                    arraysUserName.Add(difUser.userName);
+                                if(difUser != null )
+                                {
+                                    if (difUser.statusActive == "online")
+                                        arraysUserName.Add(difUser.userName);
+                                }
                             }
                         }
                     }

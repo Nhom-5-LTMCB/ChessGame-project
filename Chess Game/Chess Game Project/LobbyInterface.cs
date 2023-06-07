@@ -45,7 +45,7 @@ namespace Chess_Game_Project
         #region infoUser
         private infoUser user;
         private string linkAvatar;
-        private string ipAddress = "172.30.181.248";
+        private string ipAddress = "192.168.95.136";
         private string myIpAddress = "";
         private string difUsernameUser = "";
         #endregion
@@ -69,6 +69,7 @@ namespace Chess_Game_Project
             unFriend = 7
         }
         public static int posY = 0;
+        public int countMsg = 0;
 
         userControlLists userControlLists = null;
         userControlHistory history = null;
@@ -98,6 +99,7 @@ namespace Chess_Game_Project
             pnlContainsIcon.BringToFront();
 
             await hanleDataIntoDatagridview.displayListMatches(dtGridContainListRooms, apiGetListMatches);
+
         }
         private void calLocationChildPanel(System.Windows.Forms.Panel parent, System.Windows.Forms.UserControl child)
         {
@@ -120,6 +122,7 @@ namespace Chess_Game_Project
             try
             {
                 apiGetUser += user.id;
+                posY = 0;
                 //cập nhật trạng thái thành offline
                 var data = new
                 {
@@ -223,10 +226,10 @@ namespace Chess_Game_Project
 
             userControlLists = new userControlLists();
             userControlLists.btnCloseList_click += UserControlLists_btnCloseList_click;
-            userControlLists.dtAcceptFriend_cellContentClick += UserControlLists_dtAcceptFriend_cellContentClick1; ;
+            userControlLists.dtAcceptFriend_cellContentClick += UserControlLists_dtAcceptFriend_cellContentClick1;
             userControlLists.dtAllUsers_cellContentClick += UserControlLists_dtAllUsers_cellContentClick1; ;
-            userControlLists.dtListFriends_cellContentClick += UserControlLists_dtListFriends_cellContentClick1; ;
-            userControlLists.btnFindUser_click += UserControlLists_btnFindUser_click; ;
+            userControlLists.dtListFriends_cellContentClick += UserControlLists_dtListFriends_cellContentClick1;
+            userControlLists.btnFindUser_click += UserControlLists_btnFindUser_click;
             history = new userControlHistory();
             history.btnCloseHistory_click += History_btnCloseHistory_click;
             rank = new userControlRanks();
@@ -340,6 +343,10 @@ namespace Chess_Game_Project
                             string[] lstMsg = listMsg[1].Split(':');
                             string difUsername = lstMsg[0].Substring(0, lstMsg[0].Length - 3);
 
+                            //tiến hành hiển thị button danh sách kiểu (1)
+                            countMsg++;
+                            btnListFriend.Text = $"Danh sách bạn bè ({countMsg})";
+
                             foreach (userControlChatOne userControlChatOne in createChatOneFrame.listChats)
                             {
                                 if (userControlChatOne.Tag.ToString().Contains(user.userName) && userControlChatOne.Tag.ToString().Contains(difUsername))
@@ -347,7 +354,7 @@ namespace Chess_Game_Project
                                     chat = userControlChatOne;
                                     if (listMsg[1].Contains("(1)"))
                                     {
-                                        handleChat.writeDataChatOne(null, lstMsg[2], lstMsg[1], 1, difUsername, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat);
+                                        handleChat.writeDataChatOne(null, lstMsg[2], lstMsg[1], 1, difUsername, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
                                     }
                                     else
                                     {
@@ -357,7 +364,7 @@ namespace Chess_Game_Project
                                         using (MemoryStream stream1 = new MemoryStream(convertedBytes))
                                         {
                                             System.Drawing.Image image = System.Drawing.Image.FromStream(stream1);
-                                            handleChat.writeDataChatOne(image, lstMsg[2], "", 2, difUsername, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat);
+                                            handleChat.writeDataChatOne(image, lstMsg[2], "", 2, difUsername, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
                                         }
                                     }
                                     break;
@@ -472,7 +479,7 @@ namespace Chess_Game_Project
                         //tiến hành gửi dữ liệu đi
                         string message = (int)setting.chatOne + "*" + user.userName + "(1):" + chat.TextBox.Text.Trim() + ":" + user.linkAvatar + ":" + difUsernameUser;
                         handleChat.sendData(client, message);
-                        handleChat.writeDataChatOne(null, user.linkAvatar, chat.TextBox.Text.Trim(), 1, user.userName, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat);
+                        handleChat.writeDataChatOne(null, user.linkAvatar, chat.TextBox.Text.Trim(), 1, user.userName, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
                     }
                     else
                     {
@@ -493,7 +500,7 @@ namespace Chess_Game_Project
             string message = (int)setting.chatOne + "*" + user.userName + "(2):" + Convert.ToBase64String(imageBytes) + ":" + user.linkAvatar + ":" + difUsernameUser;
             handleChat.sendData(client, message);
 
-            handleChat.writeDataChatOne(System.Drawing.Image.FromFile(path), user.linkAvatar, "", 2, user.userName, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat);
+            handleChat.writeDataChatOne(System.Drawing.Image.FromFile(path), user.linkAvatar, "", 2, user.userName, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
             chat.containsIcon.Hide();
             chat.listIcons.Clear();
         }
@@ -819,7 +826,7 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("loi UserControlLists_dtAcceptFriend_cellContentClick1: " + ex.Message);
+
             }
         }
 
@@ -856,6 +863,9 @@ namespace Chess_Game_Project
         {
             try
             {
+                countMsg = 0;
+                btnListFriend.Text = "Danh sách bạn bè";
+
                 await handleGetLists.getListAllUser(user.id, apiGetAllUser, userControlLists, user);
 
                 List<infoUser> getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);

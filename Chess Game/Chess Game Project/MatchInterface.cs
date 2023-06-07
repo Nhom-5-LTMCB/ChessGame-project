@@ -132,7 +132,7 @@ namespace Chess_Game_Project
         private Thread rcvDataUDPThread = null;
         private IPEndPoint ipEndPoint = null;
         private System.Windows.Forms.Timer timer = null;
-        private int posY = 0;
+        public static int posY = 0;
         #endregion
 
 
@@ -318,6 +318,8 @@ namespace Chess_Game_Project
                 server.Start();
                 threadWaiting = new Thread(new ThreadStart(waitingAnotherClient));
                 threadWaiting.Start();
+
+                MessageBox.Show("Bạn là quân cờ trắng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             else //đây sẽ là người sẽ tham gia vào phòng chơi
             {
@@ -358,6 +360,8 @@ namespace Chess_Game_Project
                     setUpTimerThread = true;
                     timer.Start();
                     player.players += 1;
+
+                    MessageBox.Show("Bạn là quân cờ đen", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                 }
                 catch (Exception ex)
                 {
@@ -983,6 +987,10 @@ namespace Chess_Game_Project
 
                     //tạo lại giao diện mới
                     MessageBox.Show("Bạn đã thắng");
+
+
+                    LobbyInterface newLobby = new LobbyInterface(currentPlayer);
+                    newLobby.Show();
                 }
                 gameOver = true;
                 sendMove(i, j, 0, 0, 0); // mode = 1 tương ứng với dùng để nhận thời gian đếm ngược, 0 là thực hiện với bàn cờ
@@ -1503,12 +1511,14 @@ namespace Chess_Game_Project
                         difIp = lst[2];
                         avtDifPlayer.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + difPlayer.linkAvatar);
                         avtDifPlayer.SizeMode = PictureBoxSizeMode.Zoom;
+
+                        MessageBox.Show($"{difPlayer.userName} đã tham gia vào phòng chơi!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                     }
                     else
                     {
                         string[] strs = data.Split(':');
                         if (strs[0].Contains("(1)"))    //đây là chat 
-                            handleChat.writeData(null, strs[2], strs[1], 1, strs[0].Substring(0, strs[0].Length - 3), listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
+                            handleChat.writeData1(null, strs[2], strs[1], 1, strs[0].Substring(0, strs[0].Length - 3), listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
                         else if (strs[0].Contains("(2)")) // đây là gửi icon
                         {
                             string imageData = strs[1];
@@ -1517,7 +1527,7 @@ namespace Chess_Game_Project
                             using (MemoryStream stream = new MemoryStream(convertedBytes))
                             {
                                 System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
-                                handleChat.writeData(image, strs[2], "", 2, strs[0].Substring(0, strs[0].Length - 3), listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
+                                handleChat.writeData1(image, strs[2], "", 2, strs[0].Substring(0, strs[0].Length - 3), listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
                             }
                         }
                     }
@@ -1546,7 +1556,7 @@ namespace Chess_Game_Project
 
                 clientUDP.Send(data, data.Length, ipEndPoint);
 
-                handleChat.writeData(System.Drawing.Image.FromFile(path), currentPlayer.linkAvatar, "", 2, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
+                handleChat.writeData1(System.Drawing.Image.FromFile(path), currentPlayer.linkAvatar, "", 2, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
             }
             pnlContainsIcon.Hide();
             buttonListIcons.Clear();
@@ -1561,7 +1571,7 @@ namespace Chess_Game_Project
                 ipEndPoint = new IPEndPoint(IPAddress.Parse(difIp), port);
                 byte[] send_buffer = Encoding.UTF8.GetBytes(data);
                 clientUDP.Send(send_buffer, send_buffer.Length, ipEndPoint);
-                handleChat.writeData(null, currentPlayer.linkAvatar, txtMessage.Text.Trim(), 1, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
+                handleChat.writeData1(null, currentPlayer.linkAvatar, txtMessage.Text.Trim(), 1, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
             }
             txtMessage.Clear();
         }

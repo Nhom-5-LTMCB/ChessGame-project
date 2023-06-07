@@ -86,7 +86,7 @@
             this.txtBetPoints.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtBetPoints.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBetPoints.Font = new System.Drawing.Font("Consolas", 10.8F);
-            this.txtBetPoints.ForeColor = System.Drawing.Color.White;
+            this.txtBetPoints.ForeColor = System.Drawing.Color.Gray;
             this.txtBetPoints.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBetPoints.Location = new System.Drawing.Point(40, 263);
             this.txtBetPoints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -112,7 +112,7 @@
             this.txtRoomName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtRoomName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRoomName.Font = new System.Drawing.Font("Consolas", 10.8F);
-            this.txtRoomName.ForeColor = System.Drawing.Color.White;
+            this.txtRoomName.ForeColor = System.Drawing.Color.Gray;
             this.txtRoomName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRoomName.Location = new System.Drawing.Point(40, 79);
             this.txtRoomName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);

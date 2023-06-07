@@ -72,7 +72,7 @@
             this.tbControls.Location = new System.Drawing.Point(0, 3);
             this.tbControls.Name = "tbControls";
             this.tbControls.SelectedIndex = 0;
-            this.tbControls.Size = new System.Drawing.Size(1239, 588);
+            this.tbControls.Size = new System.Drawing.Size(1054, 568);
             this.tbControls.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tbControls.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.tbControls.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -90,11 +90,11 @@
             this.tbControls.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
             this.tbControls.TabButtonSize = new System.Drawing.Size(180, 40);
             this.tbControls.TabIndex = 1;
-            this.tbControls.TabMenuBackColor = System.Drawing.Color.NavajoWhite;
+            this.tbControls.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             // 
             // tbFindUser
             // 
-            this.tbFindUser.BackColor = System.Drawing.Color.NavajoWhite;
+            this.tbFindUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.tbFindUser.Controls.Add(this.dtAllUsers);
             this.tbFindUser.Controls.Add(this.guna2CirclePictureBox1);
             this.tbFindUser.Controls.Add(this.txtFindUser);
@@ -103,7 +103,7 @@
             this.tbFindUser.Location = new System.Drawing.Point(184, 4);
             this.tbFindUser.Name = "tbFindUser";
             this.tbFindUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tbFindUser.Size = new System.Drawing.Size(1051, 580);
+            this.tbFindUser.Size = new System.Drawing.Size(866, 560);
             this.tbFindUser.TabIndex = 0;
             this.tbFindUser.Text = "Tìm kiếm";
             // 
@@ -130,12 +130,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtAllUsers.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtAllUsers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtAllUsers.Location = new System.Drawing.Point(17, 102);
+            this.dtAllUsers.Location = new System.Drawing.Point(6, 119);
             this.dtAllUsers.Name = "dtAllUsers";
             this.dtAllUsers.RowHeadersVisible = false;
             this.dtAllUsers.RowHeadersWidth = 51;
             this.dtAllUsers.RowTemplate.Height = 24;
-            this.dtAllUsers.Size = new System.Drawing.Size(1012, 455);
+            this.dtAllUsers.Size = new System.Drawing.Size(860, 435);
             this.dtAllUsers.TabIndex = 88;
             this.dtAllUsers.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtAllUsers.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -164,7 +164,7 @@
             // 
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(221, 47);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(129, 44);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(41, 39);
@@ -187,7 +187,7 @@
             this.txtFindUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFindUser.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtFindUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFindUser.Location = new System.Drawing.Point(268, 47);
+            this.txtFindUser.Location = new System.Drawing.Point(176, 44);
             this.txtFindUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFindUser.Name = "txtFindUser";
             this.txtFindUser.PasswordChar = '\0';
@@ -213,7 +213,7 @@
             this.btnFindUser.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnFindUser.Font = new System.Drawing.Font("Consolas", 10.8F);
             this.btnFindUser.ForeColor = System.Drawing.Color.White;
-            this.btnFindUser.Location = new System.Drawing.Point(681, 47);
+            this.btnFindUser.Location = new System.Drawing.Point(589, 44);
             this.btnFindUser.Name = "btnFindUser";
             this.btnFindUser.Size = new System.Drawing.Size(168, 40);
             this.btnFindUser.TabIndex = 7;
@@ -222,24 +222,25 @@
             // 
             // tbFriends
             // 
-            this.tbFriends.BackColor = System.Drawing.Color.NavajoWhite;
+            this.tbFriends.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.tbFriends.Controls.Add(this.dtListFriends);
             this.tbFriends.Controls.Add(this.label1);
             this.tbFriends.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFriends.Location = new System.Drawing.Point(184, 4);
             this.tbFriends.Name = "tbFriends";
             this.tbFriends.Padding = new System.Windows.Forms.Padding(3);
-            this.tbFriends.Size = new System.Drawing.Size(1051, 580);
+            this.tbFriends.Size = new System.Drawing.Size(866, 560);
             this.tbFriends.TabIndex = 1;
             this.tbFriends.Text = "Danh sách bạn bè";
             // 
             // dtListFriends
             // 
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtListFriends.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 9F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -256,12 +257,12 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtListFriends.DefaultCellStyle = dataGridViewCellStyle6;
             this.dtListFriends.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtListFriends.Location = new System.Drawing.Point(19, 98);
+            this.dtListFriends.Location = new System.Drawing.Point(3, 98);
             this.dtListFriends.Name = "dtListFriends";
             this.dtListFriends.RowHeadersVisible = false;
             this.dtListFriends.RowHeadersWidth = 51;
             this.dtListFriends.RowTemplate.Height = 24;
-            this.dtListFriends.Size = new System.Drawing.Size(1015, 455);
+            this.dtListFriends.Size = new System.Drawing.Size(861, 459);
             this.dtListFriends.TabIndex = 89;
             this.dtListFriends.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtListFriends.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -290,7 +291,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 13F, System.Drawing.FontStyle.Underline);
-            this.label1.Location = new System.Drawing.Point(439, 29);
+            this.label1.Location = new System.Drawing.Point(310, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(204, 26);
             this.label1.TabIndex = 2;
@@ -298,14 +299,14 @@
             // 
             // tbAccept
             // 
-            this.tbAccept.BackColor = System.Drawing.Color.NavajoWhite;
+            this.tbAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.tbAccept.Controls.Add(this.dtAcceptFriend);
             this.tbAccept.Controls.Add(this.label2);
             this.tbAccept.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAccept.Location = new System.Drawing.Point(184, 4);
             this.tbAccept.Name = "tbAccept";
             this.tbAccept.Padding = new System.Windows.Forms.Padding(3);
-            this.tbAccept.Size = new System.Drawing.Size(1051, 580);
+            this.tbAccept.Size = new System.Drawing.Size(866, 560);
             this.tbAccept.TabIndex = 2;
             this.tbAccept.Text = "Chấp nhận lời mời";
             // 
@@ -332,12 +333,12 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtAcceptFriend.DefaultCellStyle = dataGridViewCellStyle9;
             this.dtAcceptFriend.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtAcceptFriend.Location = new System.Drawing.Point(19, 98);
+            this.dtAcceptFriend.Location = new System.Drawing.Point(3, 98);
             this.dtAcceptFriend.Name = "dtAcceptFriend";
             this.dtAcceptFriend.RowHeadersVisible = false;
             this.dtAcceptFriend.RowHeadersWidth = 51;
             this.dtAcceptFriend.RowTemplate.Height = 24;
-            this.dtAcceptFriend.Size = new System.Drawing.Size(1009, 455);
+            this.dtAcceptFriend.Size = new System.Drawing.Size(863, 456);
             this.dtAcceptFriend.TabIndex = 90;
             this.dtAcceptFriend.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtAcceptFriend.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -366,7 +367,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 13F, System.Drawing.FontStyle.Underline);
-            this.label2.Location = new System.Drawing.Point(416, 39);
+            this.label2.Location = new System.Drawing.Point(370, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(192, 26);
             this.label2.TabIndex = 3;
@@ -380,9 +381,9 @@
             this.btnCloseList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCloseList.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseList.ForeColor = System.Drawing.Color.White;
-            this.btnCloseList.Location = new System.Drawing.Point(1238, 3);
+            this.btnCloseList.Location = new System.Drawing.Point(1056, 0);
             this.btnCloseList.Name = "btnCloseList";
-            this.btnCloseList.Size = new System.Drawing.Size(46, 46);
+            this.btnCloseList.Size = new System.Drawing.Size(66, 54);
             this.btnCloseList.TabIndex = 3;
             this.btnCloseList.Text = "X";
             this.btnCloseList.Click += new System.EventHandler(this.btnCloseList_Click);
@@ -394,7 +395,7 @@
             this.Controls.Add(this.btnCloseList);
             this.Controls.Add(this.tbControls);
             this.Name = "userControlLists";
-            this.Size = new System.Drawing.Size(1284, 590);
+            this.Size = new System.Drawing.Size(1123, 571);
             this.tbControls.ResumeLayout(false);
             this.tbFindUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtAllUsers)).EndInit();

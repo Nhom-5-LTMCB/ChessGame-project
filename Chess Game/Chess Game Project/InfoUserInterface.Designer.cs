@@ -345,7 +345,7 @@
             this.btnEditInfo.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnEditInfo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnEditInfo.ForeColor = System.Drawing.Color.White;
-            this.btnEditInfo.Location = new System.Drawing.Point(106, 359);
+            this.btnEditInfo.Location = new System.Drawing.Point(106, 401);
             this.btnEditInfo.Name = "btnEditInfo";
             this.btnEditInfo.Size = new System.Drawing.Size(205, 49);
             this.btnEditInfo.TabIndex = 32;
@@ -367,7 +367,7 @@
             this.btnChangeImage.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnChangeImage.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnChangeImage.ForeColor = System.Drawing.Color.White;
-            this.btnChangeImage.Location = new System.Drawing.Point(106, 266);
+            this.btnChangeImage.Location = new System.Drawing.Point(106, 310);
             this.btnChangeImage.Name = "btnChangeImage";
             this.btnChangeImage.Size = new System.Drawing.Size(205, 51);
             this.btnChangeImage.TabIndex = 31;
@@ -380,7 +380,7 @@
             this.ptboxAvatar.FillColor = System.Drawing.Color.Gainsboro;
             this.ptboxAvatar.Image = ((System.Drawing.Image)(resources.GetObject("ptboxAvatar.Image")));
             this.ptboxAvatar.ImageRotate = 0F;
-            this.ptboxAvatar.Location = new System.Drawing.Point(87, 23);
+            this.ptboxAvatar.Location = new System.Drawing.Point(87, 46);
             this.ptboxAvatar.Name = "ptboxAvatar";
             this.ptboxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.ptboxAvatar.Size = new System.Drawing.Size(224, 220);

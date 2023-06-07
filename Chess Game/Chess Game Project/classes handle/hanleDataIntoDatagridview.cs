@@ -83,6 +83,8 @@ namespace Chess_Game_Project.classes_handle
                     // Ẩn cột có chỉ số columnIndex trong DataGridView
                     dtGridContainListRooms.Columns.RemoveAt(6);
                     dtGridContainListRooms.ReadOnly = true;
+
+                    dtGridContainListRooms.RowTemplate.Height = 30;
                 }
             }
             catch (Exception ex)
@@ -113,7 +115,7 @@ namespace Chess_Game_Project.classes_handle
                 buttonColumn2.UseColumnTextForButtonValue = true;
                 dtAllUsers.Columns.Add(buttonColumn1);
                 dtAllUsers.Columns.Add(buttonColumn2);
-                dtAllUsers.RowTemplate.Height = 45;
+                dtAllUsers.RowTemplate.Height = 30;
                 dtAllUsers.ReadOnly = true;
                 foreach (infoUser item in userLists)
                 {
@@ -129,26 +131,29 @@ namespace Chess_Game_Project.classes_handle
                     string id = dtAllUsers.Rows[i].Cells[0].Value.ToString();
                     bool check = false;
                     //so sánh với từng user trong list "friend" or "waiting" của user
-                    for (int j = 0; j < user.lists.Count; j++)
+                    if(user.lists.Count != null)
                     {
-                        if (user.lists[j].listID.Contains(id))
+                        for (int j = 0; j < user.lists.Count; j++)
                         {
-                            check = true;
-                            break;
+                            if (user.lists[j].listID.Contains(id))
+                            {
+                                check = true;
+                                break;
+                            }
+                        }
+                        if (check)
+                        {
+                            cell.Style = new DataGridViewCellStyle { Padding = new Padding(500, 0, 0, 0) };
+                            cell.ReadOnly = true;
+                        }
+                        else
+                        {
+                            cell.Style = new DataGridViewCellStyle { Padding = new Padding(0, 0, 0, 0) };
+                            cell.ReadOnly = false;
                         }
                     }
-                    if (check)
-                    {
-                        cell.Style = new DataGridViewCellStyle { Padding = new Padding(500, 0, 0, 0) };
-                        cell.ReadOnly = true;
-                    }
-                    else
-                    {
-                        cell.Style = new DataGridViewCellStyle { Padding = new Padding(0, 0, 0, 0) };
-                        cell.ReadOnly = false;
-                    }
+                    userControlLists.copyDataIntoGridAllUsers(dtAllUsers);
                 }
-                userControlLists.copyDataIntoGridAllUsers(dtAllUsers);
             }
             catch (Exception ex)
             {
@@ -181,14 +186,20 @@ namespace Chess_Game_Project.classes_handle
                 dtListFriends.Columns.Add(buttonColumn2);
                 dtListFriends.Columns.Add(buttonColumn3);
                 dtListFriends.RowHeadersVisible = false;
+                dtListFriends.RowTemplate.Height = 30;
                 if (userLists != null)
                 {
                     foreach (infoUser item in userLists)
                     {
-                        string[] rowData = new string[] { item.id, item.userName, item.statusActive };
-                        dtListFriends.Rows.Add(rowData);
+                        if (item != null)
+                        {
+                            string[] rowData = new string[] { item.id, item.userName, item.statusActive };
+                            dtListFriends.Rows.Add(rowData);
+                        }
                     }
                 }
+                dtListFriends.RowTemplate.Height = 30;
+
                 //kiểm tra xem có nên hiện nút chat hay không
                 for (int i = 0; i < userLists.Count; i++)
                 {
@@ -227,16 +238,21 @@ namespace Chess_Game_Project.classes_handle
                 dtAcceptFriend.Columns.Add(buttonColumn1);
                 dtAcceptFriend.RowHeadersVisible = false;
                 dtAcceptFriend.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dtAcceptFriend.RowTemplate.Height = 30;
                 if (userLists != null)
                 {
                     foreach (infoUser item in userLists)
                     {
-                        string[] rowData = new string[] { item.id, item.userName };
-                        dtAcceptFriend.Rows.Add(rowData);
+                        if (item != null)
+                        {
+                            string[] rowData = new string[] { item.id, item.userName };
+                            dtAcceptFriend.Rows.Add(rowData);
+                        }
                     }
                 }
 
                 userControlLists.copyDataIntoGridAcceptFriends(dtAcceptFriend);
+
             }
             catch (Exception ex)
             {
@@ -268,6 +284,7 @@ namespace Chess_Game_Project.classes_handle
                         dtGridRank.Rows.Add(rowData);
                     }
                 }
+                dtGridRank.RowTemplate.Height = 30;
                 rank.currentRank.Text = currentRank.ToString();
 
                 rank.copyDataIntoGridListRanks(dtGridRank);
@@ -288,6 +305,7 @@ namespace Chess_Game_Project.classes_handle
                 dtGridViewHistory.Columns.Add("userName2", "Người chơi");
                 dtGridViewHistory.Columns.Add("result", "Kết quả");
                 dtGridViewHistory.RowHeadersVisible = false;
+                dtGridViewHistory.RowTemplate.Height = 30;
                 if (user != null)
                 {
                     foreach (match item in user.matches)

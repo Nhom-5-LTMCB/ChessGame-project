@@ -93,7 +93,59 @@ namespace Chess_Game_Project.classes_handle
 
             }
         }
-        public static void writeDataChatOne(Image imgContent, string linkAvt, string msg, int mode, string userName, Guna2Panel pnl, Form form, int posY, string owner, string pathImages, userControlChatOne chat)
+        public static void writeData1(Image imgContent, string linkAvt, string msg, int mode, string userName, Guna2Panel pnl, Form form, int posY, string owner, string pathImages, Panel pnlContainsIcon)
+        {
+            try
+            {
+                if (mode == 1)
+                {
+                    if (msg.Trim() == "")
+                        return;
+                    MethodInvoker invoker = new MethodInvoker(delegate
+                    {
+                        pnl.AutoScroll = false;
+                        userControlContentChatMessage userControl = new userControlContentChatMessage();
+                        userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, owner);
+                        int userControlWidth = pnl.Width * 70 / 100;
+                        userControl.Location = new System.Drawing.Point(0, posY);
+                        userControl.Size = new System.Drawing.Size(userControlWidth, userControl.Height);
+                        pnl.Controls.Add(userControl);
+                        userControl.content = msg;
+                        userControl.addMesageIntoFrame(userControlWidth);
+                        MatchInterface.posY += userControl.Height;
+                        pnl.ScrollControlIntoView(userControl);
+                        pnl.AutoScroll = true;
+                        pnl.HorizontalScroll.Visible = false;
+                    });
+                    form.Invoke(invoker);
+                }
+                else
+                {
+                    MethodInvoker invoker = new MethodInvoker(delegate
+                    {
+                        pnl.AutoScroll = false;
+                        userControlContentChatIcon userControl = new userControlContentChatIcon();
+                        userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, imgContent, owner);
+                        userControl.Location = new System.Drawing.Point(0, posY);
+                        pnl.Controls.Add(userControl);
+                        MatchInterface.posY += userControl.Height;
+                        pnl.ScrollControlIntoView(userControl);
+
+                        pnlContainsIcon.Hide();
+                        buttonListIcons.Clear();
+
+                        pnl.AutoScroll = true;
+                        pnl.HorizontalScroll.Visible = false;
+                    });
+                    form.Invoke(invoker);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        public static void writeDataChatOne(Image imgContent, string linkAvt, string msg, int mode, string userName, Guna2Panel pnl, Form form, int posY, string owner, string pathImages, userControlChatOne chat, Panel pnlContainsIcon)
         {
             try
             {
@@ -141,6 +193,7 @@ namespace Chess_Game_Project.classes_handle
                     });
                     form.Invoke(invoker);
                 }
+                pnlContainsIcon.Hide();
             }
             catch (Exception ex)
             {
@@ -177,6 +230,7 @@ namespace Chess_Game_Project.classes_handle
                 oldButton.Location = new System.Drawing.Point(0, 0);
                 containsIcon.Show();
             }
+
         }
     }
 }

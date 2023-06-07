@@ -23,7 +23,6 @@ namespace Chess_Game_Project.ContainUserControls
             currentDtgrv.Columns.Clear();
             currentDtgrv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             currentDtgrv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            currentDtgrv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             //xóa đi dòng cuối cùng trong dataGridView
             currentDtgrv.AllowUserToAddRows = false;
@@ -134,27 +133,22 @@ namespace Chess_Game_Project.ContainUserControls
                 }
             }
         }
-
         private void btnCloseList_Click(object sender, EventArgs e)
         {
             btnCloseList_click?.Invoke(this, e);
         }
-
         private void dtAllUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dtAllUsers_cellContentClick?.Invoke(sender, e);
         }
-
         private void btnFindUser_Click(object sender, EventArgs e)
         {
             btnFindUser_click?.Invoke(this, e);
         }
-
         private void dtListFriends_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dtListFriends_cellContentClick?.Invoke(sender, e);
         }
-
         private void dtAcceptFriend_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dtAcceptFriend_cellContentClick?.Invoke(sender, e);

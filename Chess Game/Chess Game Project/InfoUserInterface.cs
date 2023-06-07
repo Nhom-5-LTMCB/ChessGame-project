@@ -173,6 +173,9 @@ namespace Chess_Game_Project
                 ptboxAvatar.Image = Image.FromFile($"{directoryImagePath}\\" + preLinkAvatar);
                 ptboxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
 
+
+                user.linkAvatar = preLinkAvatar;
+
                 txtEmail.ReadOnly = true;
                 txtUsername.ReadOnly = true;
 
@@ -180,6 +183,16 @@ namespace Chess_Game_Project
                 btnEditInfo.Enabled = true;
                 btnChangeImage.Enabled = false;
                 btnSaveInfo.Enabled = false;
+
+                var resetData = new
+                {
+                    userName = txtUsername.Text,
+                    gmail = txtEmail.Text,
+                    linkAvatar = user.linkAvatar,
+                    statusActive = "online"
+                };
+
+                await manageApi.callApiUsingMethodPut(resetData, apiPath);
             }
         }
         private void btnChangeImage_Click(object sender, EventArgs e)

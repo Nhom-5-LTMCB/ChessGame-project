@@ -61,7 +61,8 @@ namespace Chess_Game_Project
                                         (this.Height - pnlContent.Height) / 2);
             pnlContent.Parent = this;
         }
-        private async void pnlContent_Paint(object sender, PaintEventArgs e)
+
+        private async void btnNext_Click(object sender, EventArgs e)
         {
             if (txtAuth.Text.Trim() == "") return;
             HttpClient client = new HttpClient();
@@ -82,20 +83,6 @@ namespace Chess_Game_Project
                 btnSendTokenAgain.Enabled = true;
                 txtAuth.Clear();
             }
-        }
-
-        private async void btnNext_Click(object sender, EventArgs e)
-        {
-            var data = new
-            {
-                userName,
-                gmail
-            };
-            string dataJson = JsonConvert.SerializeObject(data);
-            HttpClient client = new HttpClient();
-            await client.PostAsync(apiAuthAccount, new StringContent(dataJson, Encoding.UTF8, "application/json"));
-            btnSendTokenAgain.Enabled = false;
-            MessageBox.Show("Vui lòng kiểm tra email của bạn");
         }
     }
 }

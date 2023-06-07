@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LobbyInterface));
             this.pnlCoverPage = new System.Windows.Forms.Panel();
             this.ptbAvatarPage = new System.Windows.Forms.PictureBox();
@@ -39,7 +39,6 @@
             this.pnlMultiChatFrame = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlContainsIcon = new System.Windows.Forms.Panel();
             this.pnlContainsChild = new System.Windows.Forms.Panel();
-            this.pnlChatOne = new System.Windows.Forms.Panel();
             this.dtGridContainListRooms = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSendMessage = new Guna.UI2.WinForms.Guna2Button();
@@ -56,6 +55,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
             this.ptboxAvatar = new System.Windows.Forms.PictureBox();
+            this.pnlChatOne = new System.Windows.Forms.Panel();
             this.pnlCoverPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).BeginInit();
             this.pnlContent.SuspendLayout();
@@ -72,14 +72,16 @@
             this.pnlCoverPage.BackColor = System.Drawing.Color.NavajoWhite;
             this.pnlCoverPage.Controls.Add(this.ptbAvatarPage);
             this.pnlCoverPage.Location = new System.Drawing.Point(-61, 6);
+            this.pnlCoverPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlCoverPage.Name = "pnlCoverPage";
-            this.pnlCoverPage.Size = new System.Drawing.Size(1473, 748);
+            this.pnlCoverPage.Size = new System.Drawing.Size(1517, 748);
             this.pnlCoverPage.TabIndex = 1;
             // 
             // ptbAvatarPage
             // 
             this.ptbAvatarPage.BackColor = System.Drawing.Color.NavajoWhite;
             this.ptbAvatarPage.Location = new System.Drawing.Point(0, 0);
+            this.ptbAvatarPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbAvatarPage.Name = "ptbAvatarPage";
             this.ptbAvatarPage.Size = new System.Drawing.Size(1121, 658);
             this.ptbAvatarPage.TabIndex = 0;
@@ -103,15 +105,17 @@
             this.pnlContent.Controls.Add(this.lbUserName);
             this.pnlContent.Controls.Add(this.ptboxAvatar);
             this.pnlContent.Location = new System.Drawing.Point(12, 6);
+            this.pnlContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1349, 643);
+            this.pnlContent.Size = new System.Drawing.Size(1349, 642);
             this.pnlContent.TabIndex = 53;
             // 
             // pnlMultiChats
             // 
             this.pnlMultiChats.BackColor = System.Drawing.Color.NavajoWhite;
             this.pnlMultiChats.Controls.Add(this.pnlMultiChatFrame);
-            this.pnlMultiChats.Location = new System.Drawing.Point(18, 172);
+            this.pnlMultiChats.Location = new System.Drawing.Point(19, 172);
+            this.pnlMultiChats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMultiChats.Name = "pnlMultiChats";
             this.pnlMultiChats.Size = new System.Drawing.Size(397, 393);
             this.pnlMultiChats.TabIndex = 88;
@@ -121,14 +125,16 @@
             this.pnlMultiChatFrame.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnlMultiChatFrame.Controls.Add(this.pnlContainsIcon);
             this.pnlMultiChatFrame.Location = new System.Drawing.Point(0, 0);
+            this.pnlMultiChatFrame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMultiChatFrame.Name = "pnlMultiChatFrame";
             this.pnlMultiChatFrame.Size = new System.Drawing.Size(397, 390);
             this.pnlMultiChatFrame.TabIndex = 72;
             // 
             // pnlContainsIcon
             // 
-            this.pnlContainsIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlContainsIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pnlContainsIcon.Location = new System.Drawing.Point(0, 106);
+            this.pnlContainsIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlContainsIcon.Name = "pnlContainsIcon";
             this.pnlContainsIcon.Size = new System.Drawing.Size(397, 284);
             this.pnlContainsIcon.TabIndex = 65;
@@ -136,50 +142,44 @@
             // pnlContainsChild
             // 
             this.pnlContainsChild.AutoSize = true;
-            this.pnlContainsChild.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pnlContainsChild.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlContainsChild.Controls.Add(this.pnlChatOne);
-            this.pnlContainsChild.Location = new System.Drawing.Point(374, 28);
+            this.pnlContainsChild.Location = new System.Drawing.Point(74, 2);
+            this.pnlContainsChild.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlContainsChild.Name = "pnlContainsChild";
-            this.pnlContainsChild.Size = new System.Drawing.Size(1328, 651);
+            this.pnlContainsChild.Size = new System.Drawing.Size(1346, 642);
             this.pnlContainsChild.TabIndex = 70;
-            // 
-            // pnlChatOne
-            // 
-            this.pnlChatOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnlChatOne.Location = new System.Drawing.Point(287, 96);
-            this.pnlChatOne.Name = "pnlChatOne";
-            this.pnlChatOne.Size = new System.Drawing.Size(688, 459);
-            this.pnlChatOne.TabIndex = 6;
             // 
             // dtGridContainListRooms
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dtGridContainListRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridContainListRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dtGridContainListRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridContainListRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dtGridContainListRooms.ColumnHeadersHeight = 18;
             this.dtGridContainListRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridContainListRooms.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridContainListRooms.DefaultCellStyle = dataGridViewCellStyle9;
             this.dtGridContainListRooms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtGridContainListRooms.Location = new System.Drawing.Point(442, 172);
+            this.dtGridContainListRooms.Location = new System.Drawing.Point(443, 172);
+            this.dtGridContainListRooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtGridContainListRooms.Name = "dtGridContainListRooms";
             this.dtGridContainListRooms.RowHeadersVisible = false;
             this.dtGridContainListRooms.RowHeadersWidth = 51;
             this.dtGridContainListRooms.RowTemplate.Height = 24;
-            this.dtGridContainListRooms.Size = new System.Drawing.Size(889, 409);
+            this.dtGridContainListRooms.Size = new System.Drawing.Size(889, 393);
             this.dtGridContainListRooms.TabIndex = 87;
             this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -205,11 +205,12 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Controls.Add(this.btnSendMessage);
             this.guna2Panel1.Controls.Add(this.txtSendMessage);
             this.guna2Panel1.Controls.Add(this.btnSendIcon);
-            this.guna2Panel1.Location = new System.Drawing.Point(18, 574);
+            this.guna2Panel1.Location = new System.Drawing.Point(19, 574);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(397, 53);
             this.guna2Panel1.TabIndex = 86;
@@ -226,9 +227,10 @@
             this.btnSendMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSendMessage.ForeColor = System.Drawing.Color.White;
             this.btnSendMessage.Image = ((System.Drawing.Image)(resources.GetObject("btnSendMessage.Image")));
-            this.btnSendMessage.Location = new System.Drawing.Point(326, -3);
+            this.btnSendMessage.Location = new System.Drawing.Point(326, -1);
+            this.btnSendMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSendMessage.Name = "btnSendMessage";
-            this.btnSendMessage.Size = new System.Drawing.Size(71, 56);
+            this.btnSendMessage.Size = new System.Drawing.Size(71, 57);
             this.btnSendMessage.TabIndex = 84;
             this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
@@ -267,6 +269,7 @@
             this.btnSendIcon.ForeColor = System.Drawing.Color.White;
             this.btnSendIcon.Image = ((System.Drawing.Image)(resources.GetObject("btnSendIcon.Image")));
             this.btnSendIcon.Location = new System.Drawing.Point(259, -1);
+            this.btnSendIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSendIcon.Name = "btnSendIcon";
             this.btnSendIcon.Size = new System.Drawing.Size(67, 55);
             this.btnSendIcon.TabIndex = 83;
@@ -282,9 +285,10 @@
             this.btnRandomRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnRandomRoom.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRandomRoom.ForeColor = System.Drawing.Color.White;
-            this.btnRandomRoom.Location = new System.Drawing.Point(1022, 587);
+            this.btnRandomRoom.Location = new System.Drawing.Point(1021, 571);
+            this.btnRandomRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRandomRoom.Name = "btnRandomRoom";
-            this.btnRandomRoom.Size = new System.Drawing.Size(154, 40);
+            this.btnRandomRoom.Size = new System.Drawing.Size(155, 57);
             this.btnRandomRoom.TabIndex = 82;
             this.btnRandomRoom.Text = "Ngẫu nhiên";
             this.btnRandomRoom.Click += new System.EventHandler(this.btnRandomRoom_Click);
@@ -299,9 +303,10 @@
             this.btnCreateRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnCreateRoom.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateRoom.ForeColor = System.Drawing.Color.White;
-            this.btnCreateRoom.Location = new System.Drawing.Point(1177, 587);
+            this.btnCreateRoom.Location = new System.Drawing.Point(1177, 571);
+            this.btnCreateRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateRoom.Name = "btnCreateRoom";
-            this.btnCreateRoom.Size = new System.Drawing.Size(154, 40);
+            this.btnCreateRoom.Size = new System.Drawing.Size(155, 57);
             this.btnCreateRoom.TabIndex = 81;
             this.btnCreateRoom.Text = "Tạo phòng";
             this.btnCreateRoom.Click += new System.EventHandler(this.btnCreateRoom_Click);
@@ -310,7 +315,7 @@
             // 
             this.btnHistory.Animated = true;
             this.btnHistory.AutoRoundedCorners = true;
-            this.btnHistory.BorderRadius = 19;
+            this.btnHistory.BorderRadius = 18;
             this.btnHistory.BorderThickness = 2;
             this.btnHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -319,9 +324,10 @@
             this.btnHistory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnHistory.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHistory.ForeColor = System.Drawing.Color.White;
-            this.btnHistory.Location = new System.Drawing.Point(18, 126);
+            this.btnHistory.Location = new System.Drawing.Point(19, 126);
+            this.btnHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(204, 40);
+            this.btnHistory.Size = new System.Drawing.Size(204, 39);
             this.btnHistory.TabIndex = 80;
             this.btnHistory.Text = "Lịch sử đấu";
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
@@ -340,8 +346,9 @@
             this.btnRank.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnRank.ForeColor = System.Drawing.Color.White;
             this.btnRank.Location = new System.Drawing.Point(969, 79);
+            this.btnRank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRank.Name = "btnRank";
-            this.btnRank.Size = new System.Drawing.Size(157, 51);
+            this.btnRank.Size = new System.Drawing.Size(157, 50);
             this.btnRank.TabIndex = 79;
             this.btnRank.Text = "Bảng xếp hạng";
             this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
@@ -360,8 +367,9 @@
             this.btnListFriend.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnListFriend.ForeColor = System.Drawing.Color.White;
             this.btnListFriend.Location = new System.Drawing.Point(1132, 79);
+            this.btnListFriend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnListFriend.Name = "btnListFriend";
-            this.btnListFriend.Size = new System.Drawing.Size(180, 51);
+            this.btnListFriend.Size = new System.Drawing.Size(180, 50);
             this.btnListFriend.TabIndex = 78;
             this.btnListFriend.Text = "Danh sách bạn bè";
             this.btnListFriend.Click += new System.EventHandler(this.btnListFriend_Click);
@@ -380,8 +388,9 @@
             this.btnLogout.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Location = new System.Drawing.Point(1132, 16);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(180, 51);
+            this.btnLogout.Size = new System.Drawing.Size(180, 50);
             this.btnLogout.TabIndex = 77;
             this.btnLogout.Text = "Đăng xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -400,8 +409,9 @@
             this.btnContainInfoUser.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnContainInfoUser.ForeColor = System.Drawing.Color.White;
             this.btnContainInfoUser.Location = new System.Drawing.Point(969, 16);
+            this.btnContainInfoUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnContainInfoUser.Name = "btnContainInfoUser";
-            this.btnContainInfoUser.Size = new System.Drawing.Size(157, 51);
+            this.btnContainInfoUser.Size = new System.Drawing.Size(157, 50);
             this.btnContainInfoUser.TabIndex = 76;
             this.btnContainInfoUser.Text = "Xem thông tin";
             this.btnContainInfoUser.Click += new System.EventHandler(this.btnContainInfoUser_Click);
@@ -410,7 +420,7 @@
             // 
             this.lbScore.AutoSize = true;
             this.lbScore.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
-            this.lbScore.Location = new System.Drawing.Point(216, 83);
+            this.lbScore.Location = new System.Drawing.Point(216, 82);
             this.lbScore.Name = "lbScore";
             this.lbScore.Size = new System.Drawing.Size(30, 22);
             this.lbScore.TabIndex = 64;
@@ -420,7 +430,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(162, 83);
+            this.label2.Location = new System.Drawing.Point(163, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 22);
             this.label2.TabIndex = 63;
@@ -430,7 +440,7 @@
             // 
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
-            this.lbUserName.Location = new System.Drawing.Point(162, 60);
+            this.lbUserName.Location = new System.Drawing.Point(163, 60);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(80, 22);
             this.lbUserName.TabIndex = 62;
@@ -439,19 +449,30 @@
             // ptboxAvatar
             // 
             this.ptboxAvatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ptboxAvatar.Location = new System.Drawing.Point(18, 16);
+            this.ptboxAvatar.Location = new System.Drawing.Point(19, 16);
+            this.ptboxAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptboxAvatar.Name = "ptboxAvatar";
             this.ptboxAvatar.Size = new System.Drawing.Size(127, 104);
             this.ptboxAvatar.TabIndex = 50;
             this.ptboxAvatar.TabStop = false;
             // 
+            // pnlChatOne
+            // 
+            this.pnlChatOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pnlChatOne.Location = new System.Drawing.Point(179, 16);
+            this.pnlChatOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlChatOne.Name = "pnlChatOne";
+            this.pnlChatOne.Size = new System.Drawing.Size(803, 570);
+            this.pnlChatOne.TabIndex = 6;
+            // 
             // LobbyInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1426, 770);
+            this.ClientSize = new System.Drawing.Size(1444, 770);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlCoverPage);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LobbyInterface";
             this.Text = "LobbyInterface";
             this.Load += new System.EventHandler(this.LobbyInterface_Load);

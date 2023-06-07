@@ -47,7 +47,7 @@ namespace Chess_Game_Project.ContainUserControls
             this.txtSendMsgChatOne.BorderRadius = 10;
             this.txtSendMsgChatOne.BorderThickness = 3;
             this.txtSendMsgChatOne.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSendMsgChatOne.DefaultText = "Nhập nội dung...";
+            this.txtSendMsgChatOne.DefaultText = "";
             this.txtSendMsgChatOne.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtSendMsgChatOne.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtSendMsgChatOne.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -59,7 +59,7 @@ namespace Chess_Game_Project.ContainUserControls
             this.txtSendMsgChatOne.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSendMsgChatOne.Name = "txtSendMsgChatOne";
             this.txtSendMsgChatOne.PasswordChar = '\0';
-            this.txtSendMsgChatOne.PlaceholderText = "";
+            this.txtSendMsgChatOne.PlaceholderText = "Nhập nội dung...";
             this.txtSendMsgChatOne.SelectedText = "";
             this.txtSendMsgChatOne.Size = new System.Drawing.Size(402, 48);
             this.txtSendMsgChatOne.TabIndex = 12;
@@ -79,7 +79,7 @@ namespace Chess_Game_Project.ContainUserControls
             this.btnSendIconChatOne.Name = "btnSendIconChatOne";
             this.btnSendIconChatOne.Size = new System.Drawing.Size(82, 48);
             this.btnSendIconChatOne.TabIndex = 13;
-            this.btnSendIconChatOne.Click += new System.EventHandler(this.btnSendIcon_Click);
+            this.btnSendIconChatOne.Click += new System.EventHandler(this.btnSendIconChatOne_Click);
             // 
             // btnSendMsgChatOne
             // 
@@ -96,7 +96,7 @@ namespace Chess_Game_Project.ContainUserControls
             this.btnSendMsgChatOne.Name = "btnSendMsgChatOne";
             this.btnSendMsgChatOne.Size = new System.Drawing.Size(94, 48);
             this.btnSendMsgChatOne.TabIndex = 14;
-            this.btnSendMsgChatOne.Click += new System.EventHandler(this.btnSendMessage_Click);
+            this.btnSendMsgChatOne.Click += new System.EventHandler(this.btnSendMsgChatOne_Click);
             // 
             // btnCloseForm
             // 
@@ -114,7 +114,7 @@ namespace Chess_Game_Project.ContainUserControls
             this.btnCloseForm.Size = new System.Drawing.Size(53, 48);
             this.btnCloseForm.TabIndex = 87;
             this.btnCloseForm.Text = "X";
-            this.btnCloseForm.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
             // 
             // pnlChatOneFrame
             // 
@@ -130,16 +130,16 @@ namespace Chess_Game_Project.ContainUserControls
             this.pnlContentChatOne.Controls.Add(this.pnlContainIconsChatOne);
             this.pnlContentChatOne.Location = new System.Drawing.Point(-3, 3);
             this.pnlContentChatOne.Name = "pnlContentChatOne";
-            this.pnlContentChatOne.Size = new System.Drawing.Size(683, 338);
+            this.pnlContentChatOne.Size = new System.Drawing.Size(601, 317);
             this.pnlContentChatOne.TabIndex = 12;
             // 
             // pnlContainIconsChatOne
             // 
             this.pnlContainIconsChatOne.AutoScroll = true;
             this.pnlContainIconsChatOne.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlContainIconsChatOne.Location = new System.Drawing.Point(202, 54);
+            this.pnlContainIconsChatOne.Location = new System.Drawing.Point(359, 54);
             this.pnlContainIconsChatOne.Name = "pnlContainIconsChatOne";
-            this.pnlContainIconsChatOne.Size = new System.Drawing.Size(480, 285);
+            this.pnlContainIconsChatOne.Size = new System.Drawing.Size(242, 263);
             this.pnlContainIconsChatOne.TabIndex = 13;
             // 
             // userControlChatOne
@@ -160,20 +160,6 @@ namespace Chess_Game_Project.ContainUserControls
 
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void btnSendMessage_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void btnSendIcon_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
         private Guna.UI2.WinForms.Guna2TextBox txtSendMsgChatOne;

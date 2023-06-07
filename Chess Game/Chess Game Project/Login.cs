@@ -170,6 +170,9 @@ namespace Chess_Game_Project
             pnlContent.Location = new Point((this.Width - pnlContent.Width) / 2,
                                         (this.Height - pnlContent.Height) / 2);
             this.TransparencyKey = Color.Empty;
+
+            //txtPassword.Text = "123@Long";
+            //txtUserName.Text = "ltphilong";
         }
     }
 }

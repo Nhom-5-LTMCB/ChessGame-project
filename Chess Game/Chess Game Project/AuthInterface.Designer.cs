@@ -209,6 +209,7 @@
             this.Controls.Add(this.pnlContent);
             this.Name = "AuthInterface";
             this.Text = "AuthInterface";
+            this.Load += new System.EventHandler(this.AuthInterface_Load_1);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();

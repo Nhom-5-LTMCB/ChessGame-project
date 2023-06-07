@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\chessgame-server\\ServerChessGame\\ServerChessGame.csproj": {}
+    "D:\\ĐỒ ÁN MỚI NHẤT\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj": {}
   },
   "projects": {
-    "D:\\chessgame-server\\ServerChessGame\\ServerChessGame.csproj": {
+    "D:\\ĐỒ ÁN MỚI NHẤT\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\chessgame-server\\ServerChessGame\\ServerChessGame.csproj",
+        "projectUniqueName": "D:\\ĐỒ ÁN MỚI NHẤT\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj",
         "projectName": "ServerChessGame",
-        "projectPath": "D:\\chessgame-server\\ServerChessGame\\ServerChessGame.csproj",
+        "projectPath": "D:\\ĐỒ ÁN MỚI NHẤT\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj",
         "packagesPath": "C:\\Users\\ltphi\\.nuget\\packages\\",
-        "outputPath": "D:\\chessgame-server\\ServerChessGame\\obj\\",
+        "outputPath": "D:\\ĐỒ ÁN MỚI NHẤT\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ltphi\\AppData\\Roaming\\NuGet\\NuGet.Config",
