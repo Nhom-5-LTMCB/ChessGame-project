@@ -68,25 +68,5 @@ namespace Chess_Game_Project
         {
             handleLoadInterface.loadInterFace(this, null, pnlContent);
         }
-
-        private void AuthInterface_Load_1(object sender, EventArgs e)
-        {
-            // Thiết lập kích thước form
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            int formWidth = (int)(screenWidth * 0.8);
-            int formHeight = (int)(screenHeight * 0.8);
-            this.Size = new Size(formWidth, formHeight);
-
-            // Đặt vị trí của form để nằm chính giữa màn hình
-            int left = (screenWidth - formWidth) / 2;
-            int top = (screenHeight - formHeight) / 2;
-            this.Location = new Point(left, top);
-
-            // Đưa Panel vào chính giữa màn hình
-            pnlContent.Location = new Point((this.Width - pnlContent.Width) / 2,
-                                        (this.Height - pnlContent.Height) / 2);
-            pnlContent.Parent = this;
-        }
     }
 }

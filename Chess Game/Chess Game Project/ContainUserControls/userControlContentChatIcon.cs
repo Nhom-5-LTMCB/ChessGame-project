@@ -22,7 +22,7 @@ namespace Chess_Game_Project.ContainUserControls
             else lbUserName.ForeColor = Color.Black;
 
             ptvAvatar.Image = Image.FromFile(linkAvt);
-            ptvAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+            ptvAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbIcon.Image = img;
             ptbIcon.SizeMode = PictureBoxSizeMode.Zoom;
             lbUserName.Text = username;

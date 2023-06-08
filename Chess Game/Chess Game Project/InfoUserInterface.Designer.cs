@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoUserInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.btnEditInfo = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnChangeImage = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -43,8 +45,6 @@
             this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnBack = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSaveInfo = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnEditInfo = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnChangeImage = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ptboxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbDefeats = new System.Windows.Forms.Label();
             this.lbWins = new System.Windows.Forms.Label();
@@ -63,6 +63,8 @@
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pnlContent.Controls.Add(this.btnEditInfo);
+            this.pnlContent.Controls.Add(this.btnChangeImage);
             this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.guna2CirclePictureBox3);
             this.pnlContent.Controls.Add(this.guna2CirclePictureBox2);
@@ -76,8 +78,6 @@
             this.pnlContent.Controls.Add(this.txtID);
             this.pnlContent.Controls.Add(this.btnBack);
             this.pnlContent.Controls.Add(this.btnSaveInfo);
-            this.pnlContent.Controls.Add(this.btnEditInfo);
-            this.pnlContent.Controls.Add(this.btnChangeImage);
             this.pnlContent.Controls.Add(this.ptboxAvatar);
             this.pnlContent.Controls.Add(this.lbDefeats);
             this.pnlContent.Controls.Add(this.lbWins);
@@ -91,15 +91,58 @@
             this.pnlContent.TabIndex = 2;
             this.pnlContent.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnEditInfo
+            // 
+            this.btnEditInfo.Animated = true;
+            this.btnEditInfo.BorderRadius = 20;
+            this.btnEditInfo.BorderThickness = 2;
+            this.btnEditInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditInfo.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnEditInfo.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnEditInfo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnEditInfo.ForeColor = System.Drawing.Color.White;
+            this.btnEditInfo.Location = new System.Drawing.Point(71, 411);
+            this.btnEditInfo.Name = "btnEditInfo";
+            this.btnEditInfo.Size = new System.Drawing.Size(255, 61);
+            this.btnEditInfo.TabIndex = 44;
+            this.btnEditInfo.Text = "Chỉnh sửa hồ sơ";
+            this.btnEditInfo.Click += new System.EventHandler(this.btnEditInfo_Click);
+            // 
+            // btnChangeImage
+            // 
+            this.btnChangeImage.Animated = true;
+            this.btnChangeImage.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangeImage.BorderRadius = 20;
+            this.btnChangeImage.BorderThickness = 2;
+            this.btnChangeImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChangeImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChangeImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChangeImage.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChangeImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChangeImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnChangeImage.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnChangeImage.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChangeImage.ForeColor = System.Drawing.Color.White;
+            this.btnChangeImage.Location = new System.Drawing.Point(71, 334);
+            this.btnChangeImage.Name = "btnChangeImage";
+            this.btnChangeImage.Size = new System.Drawing.Size(255, 61);
+            this.btnChangeImage.TabIndex = 43;
+            this.btnChangeImage.Text = "Chỉnh sửa ảnh";
+            this.btnChangeImage.Click += new System.EventHandler(this.btnChangeImage_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(461, 104);
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(392, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 29);
+            this.label1.Size = new System.Drawing.Size(433, 46);
             this.label1.TabIndex = 42;
-            this.label1.Text = "Thông tin người dùng";
+            this.label1.Text = "Thông tin người chơi";
             // 
             // guna2CirclePictureBox3
             // 
@@ -231,7 +274,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtEmail.PlaceholderText = "Email";
+            this.txtEmail.PlaceholderText = "Email...";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(278, 37);
             this.txtEmail.TabIndex = 37;
@@ -256,7 +299,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtUsername.PlaceholderText = "Tên người dùng";
+            this.txtUsername.PlaceholderText = "Tên người dùng...";
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(278, 37);
             this.txtUsername.TabIndex = 36;
@@ -302,7 +345,7 @@
             this.btnBack.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnBack.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold);
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(1044, 13);
+            this.btnBack.Location = new System.Drawing.Point(1070, 0);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(56, 54);
             this.btnBack.TabIndex = 34;
@@ -331,49 +374,6 @@
             this.btnSaveInfo.Text = "Lưu";
             this.btnSaveInfo.Click += new System.EventHandler(this.btnSaveInfo_Click);
             // 
-            // btnEditInfo
-            // 
-            this.btnEditInfo.Animated = true;
-            this.btnEditInfo.BorderRadius = 20;
-            this.btnEditInfo.BorderThickness = 2;
-            this.btnEditInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEditInfo.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEditInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
-            this.btnEditInfo.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
-            this.btnEditInfo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnEditInfo.ForeColor = System.Drawing.Color.White;
-            this.btnEditInfo.Location = new System.Drawing.Point(106, 401);
-            this.btnEditInfo.Name = "btnEditInfo";
-            this.btnEditInfo.Size = new System.Drawing.Size(205, 49);
-            this.btnEditInfo.TabIndex = 32;
-            this.btnEditInfo.Text = "Chỉnh sửa hồ sơ";
-            this.btnEditInfo.Click += new System.EventHandler(this.btnEditInfo_Click);
-            // 
-            // btnChangeImage
-            // 
-            this.btnChangeImage.Animated = true;
-            this.btnChangeImage.BackColor = System.Drawing.Color.Transparent;
-            this.btnChangeImage.BorderRadius = 20;
-            this.btnChangeImage.BorderThickness = 2;
-            this.btnChangeImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChangeImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChangeImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChangeImage.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChangeImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChangeImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
-            this.btnChangeImage.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
-            this.btnChangeImage.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnChangeImage.ForeColor = System.Drawing.Color.White;
-            this.btnChangeImage.Location = new System.Drawing.Point(106, 310);
-            this.btnChangeImage.Name = "btnChangeImage";
-            this.btnChangeImage.Size = new System.Drawing.Size(205, 51);
-            this.btnChangeImage.TabIndex = 31;
-            this.btnChangeImage.Text = "Chỉnh sửa ảnh";
-            this.btnChangeImage.Click += new System.EventHandler(this.btnChangeImage_Click);
-            // 
             // ptboxAvatar
             // 
             this.ptboxAvatar.BackColor = System.Drawing.Color.Transparent;
@@ -392,7 +392,7 @@
             // 
             this.lbDefeats.AutoSize = true;
             this.lbDefeats.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDefeats.Location = new System.Drawing.Point(460, 522);
+            this.lbDefeats.Location = new System.Drawing.Point(461, 530);
             this.lbDefeats.Name = "lbDefeats";
             this.lbDefeats.Size = new System.Drawing.Size(168, 27);
             this.lbDefeats.TabIndex = 24;
@@ -402,7 +402,7 @@
             // 
             this.lbWins.AutoSize = true;
             this.lbWins.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWins.Location = new System.Drawing.Point(460, 445);
+            this.lbWins.Location = new System.Drawing.Point(461, 450);
             this.lbWins.Name = "lbWins";
             this.lbWins.Size = new System.Drawing.Size(181, 27);
             this.lbWins.TabIndex = 22;
@@ -422,7 +422,7 @@
             // 
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.Location = new System.Drawing.Point(460, 288);
+            this.lbUserName.Location = new System.Drawing.Point(460, 293);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(116, 27);
             this.lbUserName.TabIndex = 18;
@@ -432,7 +432,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(460, 211);
+            this.lbID.Location = new System.Drawing.Point(460, 216);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(38, 27);
             this.lbID.TabIndex = 16;
@@ -475,13 +475,13 @@
         private Guna.UI2.WinForms.Guna2TextBox txtID;
         private Guna.UI2.WinForms.Guna2GradientButton btnBack;
         private Guna.UI2.WinForms.Guna2GradientButton btnSaveInfo;
-        private Guna.UI2.WinForms.Guna2GradientButton btnEditInfo;
-        private Guna.UI2.WinForms.Guna2GradientButton btnChangeImage;
         private Guna.UI2.WinForms.Guna2CirclePictureBox ptboxAvatar;
         private System.Windows.Forms.Label lbDefeats;
         private System.Windows.Forms.Label lbWins;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.Label lbID;
+        private Guna.UI2.WinForms.Guna2GradientButton btnEditInfo;
+        private Guna.UI2.WinForms.Guna2GradientButton btnChangeImage;
     }
 }

@@ -25,6 +25,7 @@ namespace Chess_Game_Project
             btnLogin.Enabled = true;
             showFormAgain = this;   //gán form hiện tại cho 1 form
             txtPassword.PasswordChar = '*';
+
         }
 
         public Timer timer = null;
@@ -51,7 +52,7 @@ namespace Chess_Game_Project
         }
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text.Trim() == "" || txtPassword.Text.Trim() == "")
+            if (string.IsNullOrEmpty(txtUserName.Text.Trim()) || string.IsNullOrEmpty(txtPassword.Text.Trim()))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ username và password");
                 return;
@@ -171,8 +172,9 @@ namespace Chess_Game_Project
                                         (this.Height - pnlContent.Height) / 2);
             this.TransparencyKey = Color.Empty;
 
-            //txtPassword.Text = "123@Long";
-            //txtUserName.Text = "ltphilong";
+
+            txtUserName.Text = "longlee";
+            txtPassword.Text = "123@Long";
         }
     }
 }

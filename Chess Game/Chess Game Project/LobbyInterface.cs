@@ -45,7 +45,7 @@ namespace Chess_Game_Project
         #region infoUser
         private infoUser user;
         private string linkAvatar;
-        private string ipAddress = "192.168.224.136";
+        private string ipAddress = "172.20.27.231";
         private string myIpAddress = "";
         private string difUsernameUser = "";
         #endregion
@@ -82,21 +82,23 @@ namespace Chess_Game_Project
         {
             handleLoadInterface.loadInterFace(this, pnlCoverPage, pnlContent);
             ptbAvatarPage.Size = this.Size;
-            pnlContent.Parent = ptbAvatarPage;
             ptbAvatarPage.BackgroundImage = System.Drawing.Image.FromFile("Resources\\loginAvt.jpg");
             ptbAvatarPage.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlContent.Parent = ptbAvatarPage;
+
             pnlContent.BringToFront();
 
-            lbUserName.Text = user.userName;
-            lbScore.Text = user.point.ToString();
             if (user.linkAvatar == "")
                 user.linkAvatar = "defaultAvatar.jpg";
             ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + user.linkAvatar);
-            ptboxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+            ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
 
             pnlContainsIcon.Parent = pnlMultiChats;
             pnlMultiChatFrame.Parent = pnlMultiChats;
             pnlContainsIcon.BringToFront();
+
+
+            pnlCoverPage.BringToFront();
 
             await hanleDataIntoDatagridview.displayListMatches(dtGridContainListRooms, apiGetListMatches);
 
@@ -249,31 +251,38 @@ namespace Chess_Game_Project
         }
         public LobbyInterface(infoUser user) : this()
         {
-            ////lấy ra ipv4 bên trong máy
-            NetworkInterface wifiInterface = GetWifiInterface();
-            if (wifiInterface != null)
+            try
             {
-                IPAddress ipv4 = GetWifiIPv4Address(wifiInterface);
+                ////lấy ra ipv4 bên trong máy
+                NetworkInterface wifiInterface = GetWifiInterface();
+                if (wifiInterface != null)
+                {
+                    IPAddress ipv4 = GetWifiIPv4Address(wifiInterface);
 
-                if (ipv4 != null)
-                    this.myIpAddress = ipv4.ToString();
+                    if (ipv4 != null)
+                        this.myIpAddress = ipv4.ToString();
+                }
+                client = new TcpClient();
+                client.Connect(IPAddress.Parse(ipAddress), 8081);
+                rcvDataThread = new Thread(new ThreadStart(rcvData));
+                rcvDataThread.Start();
+
+                parentDirectory = Directory.GetParent(Application.StartupPath)?.Parent?.FullName + "\\Images";
+                this.user = user;
+                txtUserName.Text = user.userName;
+                txtScore.Text = user.point.ToString();
+                ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + user.linkAvatar);
+                ptboxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+                showInter = this;
+
+                //gửi thông điệp login lên server
+                string message = user.userName;
+                handleChat.sendData(client, message);
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Không thể kết nối tới server, vui lòng kiểm tra lại mạng của bạn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            client = new TcpClient();
-            client.Connect(IPAddress.Parse(ipAddress), 8081);
-            rcvDataThread = new Thread(new ThreadStart(rcvData));
-            rcvDataThread.Start();
-
-            parentDirectory = Directory.GetParent(Application.StartupPath)?.Parent?.FullName + "\\Images";
-            this.user = user;
-            lbUserName.Text = user.userName;
-            lbScore.Text = user.point.ToString();
-            ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + user.linkAvatar);
-            ptboxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
-            showInter = this;
-
-            //gửi thông điệp login lên server
-            string message = user.userName;
-            handleChat.sendData(client, message);
 
         }
         //=================================================================================================================================
@@ -450,7 +459,7 @@ namespace Chess_Game_Project
         }
         private void btnSendIcon_Click(object sender, EventArgs e)
         {
-            handleChat.displayListIconsIntoInterface(pnlContainsIcon, 7);
+            handleChat.displayListIconsIntoInterface(pnlContainsIcon, 8);
             foreach (System.Windows.Forms.Button btnChat in handleChat.buttonListIcons)
                 btnChat.Click += BtnChat_Click;
         }
@@ -867,19 +876,50 @@ namespace Chess_Game_Project
         {
             try
             {
+                userControlLists.selectTabControl(1);
+                
+
                 countMsg = 0;
                 btnListFriend.Text = "Danh sách bạn bè";
 
-                await handleGetLists.getListAllUser(user.id, apiGetAllUser, userControlLists, user);
-
+                //hiển thị danh sách bạn bè
                 List<infoUser> getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
-
                 hanleDataIntoDatagridview.displayListFriends(getFriends, userControlLists);
-                getFriends.Clear();
-                getFriends = await handleGetLists.getListUser("waiting", user, apiGetUserId);
+                loopChildPanel(userControlLists);
+
+                createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("loi btnListFriend_Click: " + ex.Message);
+            }
+        }
+
+        private async void btnListAllUsers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                userControlLists.selectTabControl(0);
+                //hiển thị danh sách bạn bè
+                await handleGetLists.getListAllUser(user.id, apiGetAllUser, userControlLists, user);
+                loopChildPanel(userControlLists);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("loi btnListFriend_Click: " + ex.Message);
+            }
+        }
+
+
+        private async void btnAcceptFriend_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                userControlLists.selectTabControl(2);
+
+                //hiển thị danh sách bạn bè
+                List<infoUser> getFriends = await handleGetLists.getListUser("waiting", user, apiGetUserId);
                 hanleDataIntoDatagridview.displayListWaitingAccept(getFriends, userControlLists);
-
-
                 loopChildPanel(userControlLists);
 
                 createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
@@ -1041,6 +1081,7 @@ namespace Chess_Game_Project
         {
             await handleLogOutRoom();
         }
+
         //==================================================================================================================================
     }
 }

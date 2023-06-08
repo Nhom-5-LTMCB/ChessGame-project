@@ -16,7 +16,7 @@ namespace Chess_Game_Project.classes_handle
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
             int formWidth = (int)(screenWidth * 0.8);
-            int formHeight = (int)(screenHeight * 0.8);
+            int formHeight = (int)(screenHeight * 0.9);
             form.Size = new Size(formWidth, formHeight);
 
             // Đặt vị trí của form để nằm chính giữa màn hình
@@ -30,8 +30,6 @@ namespace Chess_Game_Project.classes_handle
                 // Đưa Panel vào chính giữa màn hình
                 pnlContent.Location = new Point((pnlCoverPage.Width - pnlContent.Width) / 2,
                                             (pnlCoverPage.Height - pnlContent.Height) / 2);
-                pnlContent.BackColor = Color.Transparent;
-
                 form.TransparencyKey = Color.Empty;
             }
             else

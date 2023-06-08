@@ -28,7 +28,7 @@ namespace Chess_Game_Project.ContainUserControls
         public void addUsernameAndImage(string linkAvt, string username, string mainUsername)
         {
             ptvAvatar.Image = Image.FromFile(linkAvt);
-            ptvAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+            ptvAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
 
             if(username == mainUsername) lbUserName.ForeColor = Color.Red;
             else lbUserName.ForeColor = Color.Black;    

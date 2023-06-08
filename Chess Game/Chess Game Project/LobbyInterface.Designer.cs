@@ -28,22 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LobbyInterface));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlCoverPage = new System.Windows.Forms.Panel();
-            this.ptbAvatarPage = new System.Windows.Forms.PictureBox();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtScore = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnRefreshListMatches = new Guna.UI2.WinForms.Guna2Button();
+            this.btnListAllUsers = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAcceptFriend = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSendMessage = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnSendMessage = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSendIcon = new Guna.UI2.WinForms.Guna2Button();
             this.pnlMultiChats = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlMultiChatFrame = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlContainsIcon = new System.Windows.Forms.Panel();
             this.pnlContainsChild = new System.Windows.Forms.Panel();
+            this.pnlChatOne = new System.Windows.Forms.Panel();
             this.dtGridContainListRooms = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnSendMessage = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSendMessage = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSendIcon = new Guna.UI2.WinForms.Guna2Button();
             this.btnRandomRoom = new Guna.UI2.WinForms.Guna2Button();
             this.btnCreateRoom = new Guna.UI2.WinForms.Guna2Button();
             this.btnHistory = new Guna.UI2.WinForms.Guna2Button();
@@ -51,48 +56,45 @@
             this.btnListFriend = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.btnContainInfoUser = new Guna.UI2.WinForms.Guna2Button();
-            this.lbScore = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbUserName = new System.Windows.Forms.Label();
             this.ptboxAvatar = new System.Windows.Forms.PictureBox();
-            this.pnlChatOne = new System.Windows.Forms.Panel();
+            this.ptbAvatarPage = new System.Windows.Forms.PictureBox();
             this.pnlCoverPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).BeginInit();
             this.pnlContent.SuspendLayout();
             this.pnlMultiChats.SuspendLayout();
             this.pnlMultiChatFrame.SuspendLayout();
             this.pnlContainsChild.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridContainListRooms)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptboxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCoverPage
             // 
-            this.pnlCoverPage.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pnlCoverPage.BackColor = System.Drawing.Color.LightCoral;
+            this.pnlCoverPage.Controls.Add(this.pnlContent);
             this.pnlCoverPage.Controls.Add(this.ptbAvatarPage);
-            this.pnlCoverPage.Location = new System.Drawing.Point(-61, 6);
-            this.pnlCoverPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlCoverPage.Location = new System.Drawing.Point(0, 0);
+            this.pnlCoverPage.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCoverPage.Name = "pnlCoverPage";
-            this.pnlCoverPage.Size = new System.Drawing.Size(1517, 748);
+            this.pnlCoverPage.Size = new System.Drawing.Size(1447, 748);
             this.pnlCoverPage.TabIndex = 1;
-            // 
-            // ptbAvatarPage
-            // 
-            this.ptbAvatarPage.BackColor = System.Drawing.Color.NavajoWhite;
-            this.ptbAvatarPage.Location = new System.Drawing.Point(0, 0);
-            this.ptbAvatarPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ptbAvatarPage.Name = "ptbAvatarPage";
-            this.ptbAvatarPage.Size = new System.Drawing.Size(1121, 658);
-            this.ptbAvatarPage.TabIndex = 0;
-            this.ptbAvatarPage.TabStop = false;
             // 
             // pnlContent
             // 
+            this.pnlContent.BackColor = System.Drawing.Color.OldLace;
+            this.pnlContent.Controls.Add(this.label1);
+            this.pnlContent.Controls.Add(this.txtScore);
+            this.pnlContent.Controls.Add(this.txtUserName);
+            this.pnlContent.Controls.Add(this.btnRefreshListMatches);
+            this.pnlContent.Controls.Add(this.btnListAllUsers);
+            this.pnlContent.Controls.Add(this.btnAcceptFriend);
+            this.pnlContent.Controls.Add(this.txtSendMessage);
+            this.pnlContent.Controls.Add(this.btnSendMessage);
+            this.pnlContent.Controls.Add(this.btnSendIcon);
             this.pnlContent.Controls.Add(this.pnlMultiChats);
             this.pnlContent.Controls.Add(this.pnlContainsChild);
             this.pnlContent.Controls.Add(this.dtGridContainListRooms);
-            this.pnlContent.Controls.Add(this.guna2Panel1);
             this.pnlContent.Controls.Add(this.btnRandomRoom);
             this.pnlContent.Controls.Add(this.btnCreateRoom);
             this.pnlContent.Controls.Add(this.btnHistory);
@@ -100,139 +102,133 @@
             this.pnlContent.Controls.Add(this.btnListFriend);
             this.pnlContent.Controls.Add(this.btnLogout);
             this.pnlContent.Controls.Add(this.btnContainInfoUser);
-            this.pnlContent.Controls.Add(this.lbScore);
             this.pnlContent.Controls.Add(this.label2);
-            this.pnlContent.Controls.Add(this.lbUserName);
             this.pnlContent.Controls.Add(this.ptboxAvatar);
-            this.pnlContent.Location = new System.Drawing.Point(12, 6);
-            this.pnlContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.pnlContent.Location = new System.Drawing.Point(83, 2);
+            this.pnlContent.Margin = new System.Windows.Forms.Padding(0);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1349, 642);
+            this.pnlContent.Size = new System.Drawing.Size(1349, 763);
             this.pnlContent.TabIndex = 53;
             // 
-            // pnlMultiChats
+            // label1
             // 
-            this.pnlMultiChats.BackColor = System.Drawing.Color.NavajoWhite;
-            this.pnlMultiChats.Controls.Add(this.pnlMultiChatFrame);
-            this.pnlMultiChats.Location = new System.Drawing.Point(19, 172);
-            this.pnlMultiChats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlMultiChats.Name = "pnlMultiChats";
-            this.pnlMultiChats.Size = new System.Drawing.Size(397, 393);
-            this.pnlMultiChats.TabIndex = 88;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Indigo;
+            this.label1.Location = new System.Drawing.Point(514, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 22);
+            this.label1.TabIndex = 95;
+            this.label1.Text = "Người chơi";
             // 
-            // pnlMultiChatFrame
+            // txtScore
             // 
-            this.pnlMultiChatFrame.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlMultiChatFrame.Controls.Add(this.pnlContainsIcon);
-            this.pnlMultiChatFrame.Location = new System.Drawing.Point(0, 0);
-            this.pnlMultiChatFrame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlMultiChatFrame.Name = "pnlMultiChatFrame";
-            this.pnlMultiChatFrame.Size = new System.Drawing.Size(397, 390);
-            this.pnlMultiChatFrame.TabIndex = 72;
+            this.txtScore.BorderRadius = 10;
+            this.txtScore.BorderThickness = 3;
+            this.txtScore.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtScore.DefaultText = "";
+            this.txtScore.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtScore.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtScore.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtScore.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtScore.FillColor = System.Drawing.Color.OldLace;
+            this.txtScore.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtScore.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
+            this.txtScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtScore.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtScore.Location = new System.Drawing.Point(666, 31);
+            this.txtScore.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtScore.Name = "txtScore";
+            this.txtScore.PasswordChar = '\0';
+            this.txtScore.PlaceholderText = "";
+            this.txtScore.ReadOnly = true;
+            this.txtScore.SelectedText = "";
+            this.txtScore.Size = new System.Drawing.Size(79, 47);
+            this.txtScore.TabIndex = 93;
+            this.txtScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pnlContainsIcon
+            // txtUserName
             // 
-            this.pnlContainsIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pnlContainsIcon.Location = new System.Drawing.Point(0, 106);
-            this.pnlContainsIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlContainsIcon.Name = "pnlContainsIcon";
-            this.pnlContainsIcon.Size = new System.Drawing.Size(397, 284);
-            this.pnlContainsIcon.TabIndex = 65;
+            this.txtUserName.BorderRadius = 10;
+            this.txtUserName.BorderThickness = 3;
+            this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUserName.DefaultText = "";
+            this.txtUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUserName.FillColor = System.Drawing.Color.OldLace;
+            this.txtUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUserName.Location = new System.Drawing.Point(467, 31);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.PasswordChar = '\0';
+            this.txtUserName.PlaceholderText = "";
+            this.txtUserName.ReadOnly = true;
+            this.txtUserName.SelectedText = "";
+            this.txtUserName.Size = new System.Drawing.Size(191, 47);
+            this.txtUserName.TabIndex = 92;
+            this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pnlContainsChild
+            // btnRefreshListMatches
             // 
-            this.pnlContainsChild.AutoSize = true;
-            this.pnlContainsChild.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pnlContainsChild.Controls.Add(this.pnlChatOne);
-            this.pnlContainsChild.Location = new System.Drawing.Point(74, 2);
-            this.pnlContainsChild.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlContainsChild.Name = "pnlContainsChild";
-            this.pnlContainsChild.Size = new System.Drawing.Size(1346, 642);
-            this.pnlContainsChild.TabIndex = 70;
+            this.btnRefreshListMatches.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefreshListMatches.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefreshListMatches.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefreshListMatches.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefreshListMatches.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefreshListMatches.FillColor = System.Drawing.Color.Transparent;
+            this.btnRefreshListMatches.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRefreshListMatches.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshListMatches.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshListMatches.Image")));
+            this.btnRefreshListMatches.Location = new System.Drawing.Point(467, 270);
+            this.btnRefreshListMatches.Name = "btnRefreshListMatches";
+            this.btnRefreshListMatches.Size = new System.Drawing.Size(31, 24);
+            this.btnRefreshListMatches.TabIndex = 91;
             // 
-            // dtGridContainListRooms
+            // btnListAllUsers
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dtGridContainListRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridContainListRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dtGridContainListRooms.ColumnHeadersHeight = 18;
-            this.dtGridContainListRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridContainListRooms.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dtGridContainListRooms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtGridContainListRooms.Location = new System.Drawing.Point(443, 172);
-            this.dtGridContainListRooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtGridContainListRooms.Name = "dtGridContainListRooms";
-            this.dtGridContainListRooms.RowHeadersVisible = false;
-            this.dtGridContainListRooms.RowHeadersWidth = 51;
-            this.dtGridContainListRooms.RowTemplate.Height = 24;
-            this.dtGridContainListRooms.Size = new System.Drawing.Size(889, 393);
-            this.dtGridContainListRooms.TabIndex = 87;
-            this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dtGridContainListRooms.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dtGridContainListRooms.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.Height = 18;
-            this.dtGridContainListRooms.ThemeStyle.ReadOnly = false;
-            this.dtGridContainListRooms.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dtGridContainListRooms.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtGridContainListRooms.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtGridContainListRooms.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dtGridContainListRooms.ThemeStyle.RowsStyle.Height = 24;
-            this.dtGridContainListRooms.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtGridContainListRooms.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.btnListAllUsers.Animated = true;
+            this.btnListAllUsers.AutoRoundedCorners = true;
+            this.btnListAllUsers.BorderRadius = 24;
+            this.btnListAllUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnListAllUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnListAllUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnListAllUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnListAllUsers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnListAllUsers.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnListAllUsers.ForeColor = System.Drawing.Color.White;
+            this.btnListAllUsers.Location = new System.Drawing.Point(780, 227);
+            this.btnListAllUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnListAllUsers.Name = "btnListAllUsers";
+            this.btnListAllUsers.Size = new System.Drawing.Size(180, 50);
+            this.btnListAllUsers.TabIndex = 90;
+            this.btnListAllUsers.Text = "Danh sách người chơi";
+            this.btnListAllUsers.Click += new System.EventHandler(this.btnListAllUsers_Click);
             // 
-            // guna2Panel1
+            // btnAcceptFriend
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.Controls.Add(this.btnSendMessage);
-            this.guna2Panel1.Controls.Add(this.txtSendMessage);
-            this.guna2Panel1.Controls.Add(this.btnSendIcon);
-            this.guna2Panel1.Location = new System.Drawing.Point(19, 574);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(397, 53);
-            this.guna2Panel1.TabIndex = 86;
-            // 
-            // btnSendMessage
-            // 
-            this.btnSendMessage.BorderColor = System.Drawing.Color.Red;
-            this.btnSendMessage.BorderRadius = 10;
-            this.btnSendMessage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSendMessage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSendMessage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSendMessage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSendMessage.FillColor = System.Drawing.Color.Plum;
-            this.btnSendMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSendMessage.ForeColor = System.Drawing.Color.White;
-            this.btnSendMessage.Image = ((System.Drawing.Image)(resources.GetObject("btnSendMessage.Image")));
-            this.btnSendMessage.Location = new System.Drawing.Point(326, -1);
-            this.btnSendMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSendMessage.Name = "btnSendMessage";
-            this.btnSendMessage.Size = new System.Drawing.Size(71, 57);
-            this.btnSendMessage.TabIndex = 84;
-            this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
+            this.btnAcceptFriend.Animated = true;
+            this.btnAcceptFriend.AutoRoundedCorners = true;
+            this.btnAcceptFriend.BorderRadius = 24;
+            this.btnAcceptFriend.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAcceptFriend.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAcceptFriend.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAcceptFriend.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAcceptFriend.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.btnAcceptFriend.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnAcceptFriend.ForeColor = System.Drawing.Color.White;
+            this.btnAcceptFriend.Location = new System.Drawing.Point(1152, 227);
+            this.btnAcceptFriend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAcceptFriend.Name = "btnAcceptFriend";
+            this.btnAcceptFriend.Size = new System.Drawing.Size(180, 50);
+            this.btnAcceptFriend.TabIndex = 89;
+            this.btnAcceptFriend.Text = "Lời mời kết bạn";
+            this.btnAcceptFriend.Click += new System.EventHandler(this.btnAcceptFriend_Click);
             // 
             // txtSendMessage
             // 
@@ -248,14 +244,33 @@
             this.txtSendMessage.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSendMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSendMessage.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSendMessage.Location = new System.Drawing.Point(0, 0);
+            this.txtSendMessage.Location = new System.Drawing.Point(19, 700);
             this.txtSendMessage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSendMessage.Name = "txtSendMessage";
             this.txtSendMessage.PasswordChar = '\0';
             this.txtSendMessage.PlaceholderText = "";
             this.txtSendMessage.SelectedText = "";
-            this.txtSendMessage.Size = new System.Drawing.Size(263, 53);
+            this.txtSendMessage.Size = new System.Drawing.Size(284, 53);
             this.txtSendMessage.TabIndex = 85;
+            // 
+            // btnSendMessage
+            // 
+            this.btnSendMessage.BorderColor = System.Drawing.Color.Red;
+            this.btnSendMessage.BorderRadius = 10;
+            this.btnSendMessage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendMessage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendMessage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSendMessage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSendMessage.FillColor = System.Drawing.Color.Plum;
+            this.btnSendMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSendMessage.ForeColor = System.Drawing.Color.White;
+            this.btnSendMessage.Image = ((System.Drawing.Image)(resources.GetObject("btnSendMessage.Image")));
+            this.btnSendMessage.Location = new System.Drawing.Point(382, 698);
+            this.btnSendMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSendMessage.Name = "btnSendMessage";
+            this.btnSendMessage.Size = new System.Drawing.Size(71, 57);
+            this.btnSendMessage.TabIndex = 84;
+            this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
             // btnSendIcon
             // 
@@ -268,16 +283,118 @@
             this.btnSendIcon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSendIcon.ForeColor = System.Drawing.Color.White;
             this.btnSendIcon.Image = ((System.Drawing.Image)(resources.GetObject("btnSendIcon.Image")));
-            this.btnSendIcon.Location = new System.Drawing.Point(259, -1);
+            this.btnSendIcon.Location = new System.Drawing.Point(309, 700);
             this.btnSendIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSendIcon.Name = "btnSendIcon";
             this.btnSendIcon.Size = new System.Drawing.Size(67, 55);
             this.btnSendIcon.TabIndex = 83;
             this.btnSendIcon.Click += new System.EventHandler(this.btnSendIcon_Click);
             // 
+            // pnlMultiChats
+            // 
+            this.pnlMultiChats.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pnlMultiChats.Controls.Add(this.pnlMultiChatFrame);
+            this.pnlMultiChats.Location = new System.Drawing.Point(19, 214);
+            this.pnlMultiChats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlMultiChats.Name = "pnlMultiChats";
+            this.pnlMultiChats.Size = new System.Drawing.Size(434, 478);
+            this.pnlMultiChats.TabIndex = 88;
+            // 
+            // pnlMultiChatFrame
+            // 
+            this.pnlMultiChatFrame.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlMultiChatFrame.Controls.Add(this.pnlContainsIcon);
+            this.pnlMultiChatFrame.Location = new System.Drawing.Point(0, 0);
+            this.pnlMultiChatFrame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlMultiChatFrame.Name = "pnlMultiChatFrame";
+            this.pnlMultiChatFrame.Size = new System.Drawing.Size(434, 478);
+            this.pnlMultiChatFrame.TabIndex = 72;
+            // 
+            // pnlContainsIcon
+            // 
+            this.pnlContainsIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pnlContainsIcon.Location = new System.Drawing.Point(0, 194);
+            this.pnlContainsIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlContainsIcon.Name = "pnlContainsIcon";
+            this.pnlContainsIcon.Size = new System.Drawing.Size(434, 284);
+            this.pnlContainsIcon.TabIndex = 65;
+            // 
+            // pnlContainsChild
+            // 
+            this.pnlContainsChild.AutoSize = true;
+            this.pnlContainsChild.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlContainsChild.Controls.Add(this.pnlChatOne);
+            this.pnlContainsChild.Location = new System.Drawing.Point(288, 757);
+            this.pnlContainsChild.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlContainsChild.Name = "pnlContainsChild";
+            this.pnlContainsChild.Size = new System.Drawing.Size(1346, 642);
+            this.pnlContainsChild.TabIndex = 70;
+            // 
+            // pnlChatOne
+            // 
+            this.pnlChatOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.pnlChatOne.Location = new System.Drawing.Point(179, 16);
+            this.pnlChatOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlChatOne.Name = "pnlChatOne";
+            this.pnlChatOne.Size = new System.Drawing.Size(803, 570);
+            this.pnlChatOne.TabIndex = 6;
+            // 
+            // dtGridContainListRooms
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtGridContainListRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridContainListRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtGridContainListRooms.ColumnHeadersHeight = 35;
+            this.dtGridContainListRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridContainListRooms.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtGridContainListRooms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtGridContainListRooms.Location = new System.Drawing.Point(467, 299);
+            this.dtGridContainListRooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtGridContainListRooms.Name = "dtGridContainListRooms";
+            this.dtGridContainListRooms.RowHeadersVisible = false;
+            this.dtGridContainListRooms.RowHeadersWidth = 51;
+            this.dtGridContainListRooms.RowTemplate.Height = 24;
+            this.dtGridContainListRooms.Size = new System.Drawing.Size(865, 393);
+            this.dtGridContainListRooms.TabIndex = 87;
+            this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dtGridContainListRooms.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dtGridContainListRooms.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dtGridContainListRooms.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dtGridContainListRooms.ThemeStyle.HeaderStyle.Height = 35;
+            this.dtGridContainListRooms.ThemeStyle.ReadOnly = false;
+            this.dtGridContainListRooms.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtGridContainListRooms.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtGridContainListRooms.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtGridContainListRooms.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dtGridContainListRooms.ThemeStyle.RowsStyle.Height = 24;
+            this.dtGridContainListRooms.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtGridContainListRooms.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // btnRandomRoom
             // 
-            this.btnRandomRoom.BorderRadius = 5;
+            this.btnRandomRoom.BorderRadius = 15;
             this.btnRandomRoom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRandomRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRandomRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -285,7 +402,7 @@
             this.btnRandomRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnRandomRoom.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRandomRoom.ForeColor = System.Drawing.Color.White;
-            this.btnRandomRoom.Location = new System.Drawing.Point(1021, 571);
+            this.btnRandomRoom.Location = new System.Drawing.Point(991, 698);
             this.btnRandomRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRandomRoom.Name = "btnRandomRoom";
             this.btnRandomRoom.Size = new System.Drawing.Size(155, 57);
@@ -295,7 +412,7 @@
             // 
             // btnCreateRoom
             // 
-            this.btnCreateRoom.BorderRadius = 5;
+            this.btnCreateRoom.BorderRadius = 15;
             this.btnCreateRoom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCreateRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCreateRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -303,7 +420,7 @@
             this.btnCreateRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnCreateRoom.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateRoom.ForeColor = System.Drawing.Color.White;
-            this.btnCreateRoom.Location = new System.Drawing.Point(1177, 571);
+            this.btnCreateRoom.Location = new System.Drawing.Point(1177, 698);
             this.btnCreateRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreateRoom.Name = "btnCreateRoom";
             this.btnCreateRoom.Size = new System.Drawing.Size(155, 57);
@@ -315,8 +432,7 @@
             // 
             this.btnHistory.Animated = true;
             this.btnHistory.AutoRoundedCorners = true;
-            this.btnHistory.BorderRadius = 18;
-            this.btnHistory.BorderThickness = 2;
+            this.btnHistory.BorderRadius = 26;
             this.btnHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHistory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -324,10 +440,10 @@
             this.btnHistory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnHistory.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHistory.ForeColor = System.Drawing.Color.White;
-            this.btnHistory.Location = new System.Drawing.Point(19, 126);
+            this.btnHistory.Location = new System.Drawing.Point(19, 143);
             this.btnHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(204, 39);
+            this.btnHistory.Size = new System.Drawing.Size(172, 54);
             this.btnHistory.TabIndex = 80;
             this.btnHistory.Text = "Lịch sử đấu";
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
@@ -337,7 +453,6 @@
             this.btnRank.Animated = true;
             this.btnRank.AutoRoundedCorners = true;
             this.btnRank.BorderRadius = 24;
-            this.btnRank.BorderThickness = 2;
             this.btnRank.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRank.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRank.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -345,10 +460,10 @@
             this.btnRank.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnRank.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnRank.ForeColor = System.Drawing.Color.White;
-            this.btnRank.Location = new System.Drawing.Point(969, 79);
+            this.btnRank.Location = new System.Drawing.Point(209, 147);
             this.btnRank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRank.Name = "btnRank";
-            this.btnRank.Size = new System.Drawing.Size(157, 50);
+            this.btnRank.Size = new System.Drawing.Size(167, 50);
             this.btnRank.TabIndex = 79;
             this.btnRank.Text = "Bảng xếp hạng";
             this.btnRank.Click += new System.EventHandler(this.btnRank_Click);
@@ -358,7 +473,6 @@
             this.btnListFriend.Animated = true;
             this.btnListFriend.AutoRoundedCorners = true;
             this.btnListFriend.BorderRadius = 24;
-            this.btnListFriend.BorderThickness = 2;
             this.btnListFriend.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnListFriend.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnListFriend.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -366,7 +480,7 @@
             this.btnListFriend.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnListFriend.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnListFriend.ForeColor = System.Drawing.Color.White;
-            this.btnListFriend.Location = new System.Drawing.Point(1132, 79);
+            this.btnListFriend.Location = new System.Drawing.Point(966, 227);
             this.btnListFriend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnListFriend.Name = "btnListFriend";
             this.btnListFriend.Size = new System.Drawing.Size(180, 50);
@@ -379,7 +493,6 @@
             this.btnLogout.Animated = true;
             this.btnLogout.AutoRoundedCorners = true;
             this.btnLogout.BorderRadius = 24;
-            this.btnLogout.BorderThickness = 2;
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -387,7 +500,7 @@
             this.btnLogout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnLogout.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(1132, 16);
+            this.btnLogout.Location = new System.Drawing.Point(1152, 16);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(180, 50);
@@ -400,7 +513,6 @@
             this.btnContainInfoUser.Animated = true;
             this.btnContainInfoUser.AutoRoundedCorners = true;
             this.btnContainInfoUser.BorderRadius = 24;
-            this.btnContainInfoUser.BorderThickness = 2;
             this.btnContainInfoUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnContainInfoUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnContainInfoUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -408,84 +520,66 @@
             this.btnContainInfoUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnContainInfoUser.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnContainInfoUser.ForeColor = System.Drawing.Color.White;
-            this.btnContainInfoUser.Location = new System.Drawing.Point(969, 16);
+            this.btnContainInfoUser.Location = new System.Drawing.Point(957, 16);
             this.btnContainInfoUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnContainInfoUser.Name = "btnContainInfoUser";
-            this.btnContainInfoUser.Size = new System.Drawing.Size(157, 50);
+            this.btnContainInfoUser.Size = new System.Drawing.Size(180, 50);
             this.btnContainInfoUser.TabIndex = 76;
-            this.btnContainInfoUser.Text = "Xem thông tin";
+            this.btnContainInfoUser.Text = "Thông tin";
             this.btnContainInfoUser.Click += new System.EventHandler(this.btnContainInfoUser_Click);
-            // 
-            // lbScore
-            // 
-            this.lbScore.AutoSize = true;
-            this.lbScore.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
-            this.lbScore.Location = new System.Drawing.Point(216, 82);
-            this.lbScore.Name = "lbScore";
-            this.lbScore.Size = new System.Drawing.Size(30, 22);
-            this.lbScore.TabIndex = 64;
-            this.lbScore.Text = "10";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(163, 82);
+            this.label2.ForeColor = System.Drawing.Color.Indigo;
+            this.label2.Location = new System.Drawing.Point(678, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 22);
+            this.label2.Size = new System.Drawing.Size(50, 22);
             this.label2.TabIndex = 63;
-            this.label2.Text = "Điểm:";
-            // 
-            // lbUserName
-            // 
-            this.lbUserName.AutoSize = true;
-            this.lbUserName.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
-            this.lbUserName.Location = new System.Drawing.Point(163, 60);
-            this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(80, 22);
-            this.lbUserName.TabIndex = 62;
-            this.lbUserName.Text = "Longlee";
+            this.label2.Text = "Điểm";
             // 
             // ptboxAvatar
             // 
             this.ptboxAvatar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ptboxAvatar.Location = new System.Drawing.Point(19, 16);
+            this.ptboxAvatar.Location = new System.Drawing.Point(34, 16);
             this.ptboxAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptboxAvatar.Name = "ptboxAvatar";
-            this.ptboxAvatar.Size = new System.Drawing.Size(127, 104);
+            this.ptboxAvatar.Size = new System.Drawing.Size(157, 123);
+            this.ptboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptboxAvatar.TabIndex = 50;
             this.ptboxAvatar.TabStop = false;
             // 
-            // pnlChatOne
+            // ptbAvatarPage
             // 
-            this.pnlChatOne.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnlChatOne.Location = new System.Drawing.Point(179, 16);
-            this.pnlChatOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlChatOne.Name = "pnlChatOne";
-            this.pnlChatOne.Size = new System.Drawing.Size(803, 570);
-            this.pnlChatOne.TabIndex = 6;
+            this.ptbAvatarPage.BackColor = System.Drawing.Color.Sienna;
+            this.ptbAvatarPage.Location = new System.Drawing.Point(0, 0);
+            this.ptbAvatarPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbAvatarPage.Name = "ptbAvatarPage";
+            this.ptbAvatarPage.Size = new System.Drawing.Size(1121, 658);
+            this.ptbAvatarPage.TabIndex = 0;
+            this.ptbAvatarPage.TabStop = false;
             // 
             // LobbyInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1444, 770);
-            this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlCoverPage);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LobbyInterface";
             this.Text = "LobbyInterface";
             this.Load += new System.EventHandler(this.LobbyInterface_Load);
             this.pnlCoverPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).EndInit();
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
             this.pnlMultiChats.ResumeLayout(false);
             this.pnlMultiChatFrame.ResumeLayout(false);
             this.pnlContainsChild.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridContainListRooms)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptboxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatarPage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,9 +588,7 @@
 
         private System.Windows.Forms.Panel pnlCoverPage;
         private System.Windows.Forms.Panel pnlContent;
-        private System.Windows.Forms.Label lbScore;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.PictureBox ptboxAvatar;
         private System.Windows.Forms.PictureBox ptbAvatarPage;
         private System.Windows.Forms.Panel pnlContainsChild;
@@ -507,14 +599,19 @@
         private Guna.UI2.WinForms.Guna2Button btnHistory;
         private Guna.UI2.WinForms.Guna2Button btnRandomRoom;
         private Guna.UI2.WinForms.Guna2Button btnCreateRoom;
-        private Guna.UI2.WinForms.Guna2TextBox txtSendMessage;
-        private Guna.UI2.WinForms.Guna2Button btnSendMessage;
-        private Guna.UI2.WinForms.Guna2Button btnSendIcon;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2DataGridView dtGridContainListRooms;
         private Guna.UI2.WinForms.Guna2Panel pnlMultiChats;
         private Guna.UI2.WinForms.Guna2Panel pnlMultiChatFrame;
         private System.Windows.Forms.Panel pnlContainsIcon;
         private System.Windows.Forms.Panel pnlChatOne;
+        private Guna.UI2.WinForms.Guna2TextBox txtSendMessage;
+        private Guna.UI2.WinForms.Guna2Button btnSendMessage;
+        private Guna.UI2.WinForms.Guna2Button btnSendIcon;
+        private Guna.UI2.WinForms.Guna2Button btnRefreshListMatches;
+        private Guna.UI2.WinForms.Guna2Button btnListAllUsers;
+        private Guna.UI2.WinForms.Guna2Button btnAcceptFriend;
+        private Guna.UI2.WinForms.Guna2TextBox txtScore;
+        private Guna.UI2.WinForms.Guna2TextBox txtUserName;
+        private System.Windows.Forms.Label label1;
     }
 }

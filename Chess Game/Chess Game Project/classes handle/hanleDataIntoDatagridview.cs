@@ -24,6 +24,9 @@ namespace Chess_Game_Project.classes_handle
                 //tạo ra đối tượng để căn giữa nội dung trong từng ô
                 dtGridContainListRooms.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dtGridContainListRooms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dtGridContainListRooms.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dtGridContainListRooms.RowTemplate.Height = 25;
+
                 //ngăn không cho người dùng kéo giãn
                 foreach (DataGridViewColumn column in dtGridContainListRooms.Columns)
                 {
@@ -38,6 +41,7 @@ namespace Chess_Game_Project.classes_handle
 
                 //xóa đi dòng cuối cùng trong dataGridView
                 dtGridContainListRooms.AllowUserToAddRows = false;
+              
 
                 dtGridContainListRooms.Columns.Add("id", "Mã phòng");
                 dtGridContainListRooms.Columns.Add("roomName", "Tên phòng");
@@ -46,7 +50,6 @@ namespace Chess_Game_Project.classes_handle
                 dtGridContainListRooms.Columns.Add("betPoint", "Điểm cược");
                 dtGridContainListRooms.Columns.Add("status", "Trạng thái");
                 dtGridContainListRooms.Columns.Add("ip", "");
-
                 dtGridContainListRooms.Columns["ip"].Visible = false;
 
                 DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
@@ -56,6 +59,12 @@ namespace Chess_Game_Project.classes_handle
                 dtGridContainListRooms.Columns.Add(buttonColumn);
                 dtGridContainListRooms.RowHeadersVisible = false;
                 dtGridContainListRooms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
+                foreach (DataGridViewColumn column in dtGridContainListRooms.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
 
                 JToken dataToken = await manageApi.callApiUsingMethodGet(apiGetListMatches);
                 if (dataToken != null)
@@ -84,7 +93,6 @@ namespace Chess_Game_Project.classes_handle
                     dtGridContainListRooms.Columns.RemoveAt(6);
                     dtGridContainListRooms.ReadOnly = true;
 
-                    dtGridContainListRooms.RowTemplate.Height = 30;
                 }
             }
             catch (Exception ex)
@@ -186,7 +194,6 @@ namespace Chess_Game_Project.classes_handle
                 dtListFriends.Columns.Add(buttonColumn2);
                 dtListFriends.Columns.Add(buttonColumn3);
                 dtListFriends.RowHeadersVisible = false;
-                dtListFriends.RowTemplate.Height = 30;
                 if (userLists != null)
                 {
                     foreach (infoUser item in userLists)
@@ -201,18 +208,21 @@ namespace Chess_Game_Project.classes_handle
                 dtListFriends.RowTemplate.Height = 30;
 
                 //kiểm tra xem có nên hiện nút chat hay không
-                for (int i = 0; i < userLists.Count; i++)
+                if(userLists == null)
                 {
-                    DataGridViewCell cell = dtListFriends.Rows[i].Cells[4];
-                    if (userLists[i].statusActive.ToLower() == "offline")
+                    for (int i = 0; i < userLists.Count; i++)
                     {
-                        cell.Style = new DataGridViewCellStyle { Padding = new Padding(500, 0, 0, 0) };
-                        cell.ReadOnly = true;
-                    }
-                    else if (userLists[i].statusActive.ToLower() == "online")
-                    {
-                        cell.Style = new DataGridViewCellStyle { Padding = new Padding(0, 0, 0, 0) };
-                        cell.ReadOnly = false;
+                        DataGridViewCell cell = dtListFriends.Rows[i].Cells[4];
+                        if (userLists[i].statusActive.ToLower() == "offline")
+                        {
+                            cell.Style = new DataGridViewCellStyle { Padding = new Padding(500, 0, 0, 0) };
+                            cell.ReadOnly = true;
+                        }
+                        else if (userLists[i].statusActive.ToLower() == "online")
+                        {
+                            cell.Style = new DataGridViewCellStyle { Padding = new Padding(0, 0, 0, 0) };
+                            cell.ReadOnly = false;
+                        }
                     }
                 }
                 userControlLists.copyDataIntoGridListFriends(dtListFriends);

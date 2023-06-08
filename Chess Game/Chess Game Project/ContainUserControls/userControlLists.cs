@@ -12,10 +12,27 @@ namespace Chess_Game_Project.ContainUserControls
 {
     public partial class userControlLists : UserControl
     {
-       
+        public event EventHandler<EventArgs> btnCloseList_click;
+        public event DataGridViewCellEventHandler dtAllUsers_cellContentClick;
+        public event DataGridViewCellEventHandler dtListFriends_cellContentClick;
+        public event DataGridViewCellEventHandler dtAcceptFriend_cellContentClick;
+        public event EventHandler<EventArgs> btnFindUser_click;
+        public string username
+        {
+            get { return txtFindUser.Text; }
+        }
+        public DataGridView getDtGridViewAllUsers()
+        {
+            return dtAllUsers;
+        }
         public userControlLists()
         {
             InitializeComponent();
+        }
+
+        public void selectTabControl(int index)
+        {
+            tbControls.SelectedIndex = index;
         }
         public void copyData(DataGridView dtgrv, DataGridView currentDtgrv)
         {
@@ -85,19 +102,7 @@ namespace Chess_Game_Project.ContainUserControls
                 MessageBox.Show("loi copyDataIntoGridAllUsers: " + ex.Message);
             }
         }
-        public event EventHandler<EventArgs> btnCloseList_click;
-        public event DataGridViewCellEventHandler dtAllUsers_cellContentClick;
-        public event DataGridViewCellEventHandler dtListFriends_cellContentClick;
-        public event DataGridViewCellEventHandler dtAcceptFriend_cellContentClick;
-        public event EventHandler<EventArgs> btnFindUser_click;
-        public string username
-        {
-            get { return txtFindUser.Text; }
-        }
-        public DataGridView getDtGridViewAllUsers()
-        {
-            return dtAllUsers;
-        }
+     
         public void hideBtnMakeFriend(string userName)
         {
             for (int row = 0; row < dtAllUsers.Rows.Count; row++)

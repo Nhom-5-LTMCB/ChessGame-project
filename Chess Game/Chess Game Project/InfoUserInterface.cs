@@ -30,7 +30,16 @@ namespace Chess_Game_Project
         {
             InitializeComponent();
         }
+        private void InfoUserInterface_Load(object sender, EventArgs e)
+        {
+            txtDefeats.ReadOnly = true;
+            txtEmail.ReadOnly = true;
+            txtID.ReadOnly = true;
+            txtUsername.ReadOnly = true;
+            txtWins.ReadOnly = true;
 
+            handleLoadInterface.loadInterFace(this, null, pnlContent);
+        }
         public InfoUserInterface(infoUser user, bool checkModify) : this()
         {
             try
@@ -88,31 +97,7 @@ namespace Chess_Game_Project
                 MessageBox.Show(ex.Message);
             }
         }
-        private void InfoUserInterface_Load(object sender, EventArgs e)
-        {
-            txtDefeats.ReadOnly = true;
-            txtEmail.ReadOnly = true;
-            txtID.ReadOnly = true;
-            txtUsername.ReadOnly = true;
-            txtWins.ReadOnly = true;
-
-            // Thiết lập kích thước form
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            int formWidth = (int)(screenWidth * 0.8);
-            int formHeight = (int)(screenHeight * 0.8);
-            this.Size = new Size(formWidth, formHeight);
-
-            // Đặt vị trí của form để nằm chính giữa màn hình
-            int left = (screenWidth - formWidth) / 2;
-            int top = (screenHeight - formHeight) / 2;
-            this.Location = new Point(left, top);
-
-            // Đưa Panel vào chính giữa màn hình
-            pnlContent.Location = new Point((this.Width - pnlContent.Width) / 2,
-                                        (this.Height - pnlContent.Height) / 2);
-            pnlContent.Parent = this;
-        }
+    
         private void btnEditInfo_Click(object sender, EventArgs e)
         {
             txtUsername.ReadOnly = false;
