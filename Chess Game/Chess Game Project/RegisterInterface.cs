@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Chess_Game_Project.classes_handle;
 
 namespace Chess_Game_Project
 {
@@ -22,58 +23,52 @@ namespace Chess_Game_Project
             InitializeComponent();
             txtPassword.PasswordChar = '*';
             txtConfirmPassword.PasswordChar = '*';
+
+
+            clearError();
+            errorUserNameLabel.ForeColor = Color.Red;
+            errorPasswordLabel.ForeColor = Color.Red;
+            errorEmailLabel.ForeColor = Color.Red;
+            errorConfirmPasswordLabel.ForeColor = Color.Red;
+        }
+
+        public void clearError()
+        {
+            errorUserNameLabel.Text = "";
+            errorPasswordLabel.Text = "";
+            errorEmailLabel.Text = "";
+            errorConfirmPasswordLabel.Text = "";
         }
         public string apiUrlRegister = "https://chessmates.onrender.com/api/v1/auth/register";
         private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
         {
             if (string.Equals(txtConfirmPassword.Text, txtPassword.Text))
-            {
                 errorConfirmPasswordLabel.Text = "";
-            }
             else
             {
                 errorConfirmPasswordLabel.ForeColor = Color.Red;
                 errorConfirmPasswordLabel.Text = "Mật khẩu không khớp";
             }
-
         }
         private void displayError(errorRegister errors)
         {
-            errorUserNameLabel.Text = "";
-            errorPasswordLabel.Text = "";
-            errorEmailLabel.Text = "";
-            errorUserNameLabel.ForeColor = Color.Red;
-            errorPasswordLabel.ForeColor = Color.Red;
-            errorEmailLabel.ForeColor = Color.Red;
-
-            if (errorUserNameLabel.Text == "")
-                if (errors.userName != null)
-                    foreach (string error in errors.userName)
-                        errorUserNameLabel.Text += error + "\n";
-            if (errorPasswordLabel.Text == "")
-                if (errors.password != null)
-                    foreach (string error in errors.password)
-                        errorPasswordLabel.Text += error + "\n";
-            if (errorEmailLabel.Text == "")
-                if (errors.gmail != null)
-                    foreach (string error in errors.gmail)
-                        errorEmailLabel.Text += error + "\n";
+            clearError();
+            //Truong hop doi voi userName
+            if (string.IsNullOrEmpty(txtConfirmPassword.Text)) errorConfirmPasswordLabel.Text = "Thông tin không được bỏ trống";
+            else errorConfirmPasswordLabel.Text = "Mật khẩu không khớp";
+            if (errors.userName != null) errorUserNameLabel.Text = errors.userName[0];
+            if (errors.gmail != null) errorEmailLabel.Text = errors.gmail[0];
+            if(errors.password != null) errorPasswordLabel.Text = errors.password[0];    
 
         }
         private async void btnRegister_Click(object sender, EventArgs e)
         {
-
             try
             {
                 string userName = txtUserName.Text.Trim();
                 string gmail = txtEmail.Text.Trim();
                 string password = txtPassword.Text.Trim();
                 string confirmPassowrd = txtConfirmPassword.Text.Trim();
-                if (userName == "" || gmail == "" || password == "" || confirmPassowrd == "")
-                {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi bấm nút đăng ký");
-                    return;
-                }
                 var data = new
                 {
                     userName,
@@ -87,20 +82,18 @@ namespace Chess_Game_Project
                 //thực hiện đăng ký thành công
                 if (response.StatusCode == System.Net.HttpStatusCode.Created)
                 {
-                    if (errorConfirmPasswordLabel.Text == "")
+                    if (string.IsNullOrEmpty(errorConfirmPasswordLabel.Text))
                     {
                         JToken dataToken = JObject.Parse(await response.Content.ReadAsStringAsync())["data"];
                         infoUser user = JsonConvert.DeserializeObject<infoUser>(dataToken.ToString());
+                      
+                        clearError();
                         MessageBox.Show("Đăng ký thành công");
-                        //đóng form register
-                        this.Close();   
-
                         LobbyInterface lb = new LobbyInterface(user);
                         lb.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đăng ký thất bại, vui lòng kiểm tra lại");
+
+                        //đóng form register
+                        this.Close();
                     }
                 }
                 else
@@ -119,20 +112,19 @@ namespace Chess_Game_Project
                             errorRegister errors = JsonConvert.DeserializeObject<errorRegister>(dataObject.ToString());
                             //hiển thị lỗi lên trên giao diện
                             displayError(errors);
-                            if (string.Equals(txtConfirmPassword.Text, txtPassword.Text))
-                                errorConfirmPasswordLabel.Text = "";
+
+                            if (string.IsNullOrEmpty(txtConfirmPassword.Text)) errorConfirmPasswordLabel.Text = "Thông tin không được bỏ trống";
                             else
                             {
-                                errorConfirmPasswordLabel.ForeColor = Color.Red;
-                                errorConfirmPasswordLabel.Text = "Mật khẩu không khớp";
+                                if (string.Equals(txtConfirmPassword.Text, txtPassword.Text))
+                                    errorConfirmPasswordLabel.Text = "";
+                                else
+                                    errorConfirmPasswordLabel.Text = "Mật khẩu không khớp";
                             }
                         }
                     }
                     else
-                    {
-                        MessageBox.Show("Tài khoản đã tồn tại, vui lòng thay đổi username khác");
-
-                    }
+                        errorUserNameLabel.Text = "Username đã tồn tại, vui lòng thay đổi username khác";
                 }
             }
             catch (Exception ex)
@@ -153,43 +145,7 @@ namespace Chess_Game_Project
 
         private void RegisterInterface_Load(object sender, EventArgs e)
         {
-            // Thiết lập kích thước form
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            int formWidth = (int)(screenWidth * 0.8);
-            int formHeight = (int)(screenHeight * 0.8);
-            this.Size = new Size(formWidth, formHeight);
-
-            // Đặt vị trí của form để nằm chính giữa màn hình
-            int left = (screenWidth - formWidth) / 2;
-            int top = (screenHeight - formHeight) / 2;
-            this.Location = new Point(left, top);
-
-            // Đưa Panel vào chính giữa màn hình
-            pnlContent.Location = new Point((this.Width - pnlContent.Width) / 2,
-                                        (this.Height - pnlContent.Height) / 2);
-            pnlContent.Parent = this;
-
-        }
-
-        private void RegisterInterface_Load_1(object sender, EventArgs e)
-        {
-            // Thiết lập kích thước form
-            int screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            int formWidth = (int)(screenWidth * 0.8);
-            int formHeight = (int)(screenHeight * 0.8);
-            this.Size = new Size(formWidth, formHeight);
-
-            // Đặt vị trí của form để nằm chính giữa màn hình
-            int left = (screenWidth - formWidth) / 2;
-            int top = (screenHeight - formHeight) / 2;
-            this.Location = new Point(left, top);
-
-            // Đưa Panel vào chính giữa màn hình
-            pnlContent.Location = new Point((this.Width - pnlContent.Width) / 2,
-                                        (this.Height - pnlContent.Height) / 2);
-            pnlContent.Parent = this;
+            handleLoadInterface.loadInterFace(this, null, pnlContent);
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Chess_Game_Project
         #region infoUser
         private infoUser user;
         private string linkAvatar;
-        private string ipAddress = "192.168.95.136";
+        private string ipAddress = "192.168.224.136";
         private string myIpAddress = "";
         private string difUsernameUser = "";
         #endregion
@@ -460,7 +460,6 @@ namespace Chess_Game_Project
             System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
             string path = btn.Text;
 
-
             //tiến hành gửi dữ liệu đi
             byte[] imageBytes = File.ReadAllBytes(path);
             string message = (int)setting.chatMulti + "*" + user.userName + "(2):" + Convert.ToBase64String(imageBytes) + "," + user.linkAvatar; ;
@@ -836,9 +835,14 @@ namespace Chess_Game_Project
         private void btnContainInfoUser_Click(object sender, EventArgs e)
         {
             //ẩn giao diện chính đi
-            this.Hide();
+            this.Close();
             InfoUserInterface info = new InfoUserInterface(user, true);
             info.Show();
+
+            //gửi thông điệp logout lên server
+            string message = (int)setting.logout + "*" + user.userName + "," + user.id;
+            handleChat.sendData(client, message);
+            client = null;
         }
         private async void btnLogout_Click(object sender, EventArgs e)
         {

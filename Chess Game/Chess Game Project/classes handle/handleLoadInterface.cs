@@ -23,13 +23,23 @@ namespace Chess_Game_Project.classes_handle
             int left = (screenWidth - formWidth) / 2;
             int top = (screenHeight - formHeight) / 2;
             form.Location = new Point(left, top);
-            pnlCoverPage.Size = form.Size;
-            // Đưa Panel vào chính giữa màn hình
-            pnlContent.Location = new Point((pnlCoverPage.Width - pnlContent.Width) / 2,
-                                        (pnlCoverPage.Height - pnlContent.Height) / 2);
-            pnlContent.BackColor = Color.Transparent;
 
-            form.TransparencyKey = Color.Empty;
+            if (pnlCoverPage != null)
+            {
+                pnlCoverPage.Size = form.Size;
+                // Đưa Panel vào chính giữa màn hình
+                pnlContent.Location = new Point((pnlCoverPage.Width - pnlContent.Width) / 2,
+                                            (pnlCoverPage.Height - pnlContent.Height) / 2);
+                pnlContent.BackColor = Color.Transparent;
+
+                form.TransparencyKey = Color.Empty;
+            }
+            else
+            {
+                // Đưa Panel vào chính giữa màn hình
+                pnlContent.Location = new Point((form.Width - pnlContent.Width) / 2,
+                                            (form.Height - pnlContent.Height) / 2);
+            }
         }
     }
 }

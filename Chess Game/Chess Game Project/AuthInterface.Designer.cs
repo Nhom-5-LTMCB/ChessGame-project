@@ -130,6 +130,7 @@
             // btnBack
             // 
             this.btnBack.BorderRadius = 10;
+            this.btnBack.DefaultAutoSize = true;
             this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -141,7 +142,7 @@
             this.btnBack.ForeColor = System.Drawing.Color.Red;
             this.btnBack.Location = new System.Drawing.Point(131, 290);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(127, 30);
+            this.btnBack.Size = new System.Drawing.Size(123, 35);
             this.btnBack.TabIndex = 12;
             this.btnBack.Text = "Quay lại";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -209,7 +210,7 @@
             this.Controls.Add(this.pnlContent);
             this.Name = "AuthInterface";
             this.Text = "AuthInterface";
-            this.Load += new System.EventHandler(this.AuthInterface_Load_1);
+            this.Load += new System.EventHandler(this.AuthInterface_Load);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();

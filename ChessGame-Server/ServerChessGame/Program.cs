@@ -30,14 +30,19 @@ namespace ServerChessGame
                 int length = stream.Read(buffer, 0, buffer.Length);
                 string userName = Encoding.UTF8.GetString(buffer, 0, length);
                 if (clients.ContainsKey(userName))
+                {
                     clients.Remove(userName);
+                    Console.WriteLine("Da xoa: " + userName);
+                }
                 clients.Add(userName, client);
-                Console.WriteLine(userName + ": da tham gia vao phong chat");
 
                 //khởi chạy toàn bộ luồng dữ liệu
                 manageClientThread = new Thread(new ParameterizedThreadStart(rcvData));
                 if (manageChatThread.ContainsKey(userName))
+                {
                     manageChatThread.Remove(userName);
+                    Console.WriteLine("Luong cua: " + userName + " da bi xoa");
+                }
                 manageChatThread.Add(userName, manageClientThread);
 
                 Thread thread = (Thread)manageChatThread[userName];
@@ -65,7 +70,6 @@ namespace ServerChessGame
                             {
                                 if (key != listMsg[1])
                                 {
-                                    Console.WriteLine(listMsg[1] + ": dang tao phong choi");
                                     TcpClient client1 = (TcpClient)clients[key];
                                     stream = client1.GetStream();
                                     byte[] buffer2 = Encoding.UTF8.GetBytes(message);
@@ -75,7 +79,6 @@ namespace ServerChessGame
                             break;
                         case 1:
                             string[] lst = listMsg[1].Split(':');
-                            Console.WriteLine(lst[1] + ": da gui loi moi ket ban cho" + lst[0]);
 
                             TcpClient clientRcv = (TcpClient)clients[lst[0]];
                             if (clientRcv != null)
@@ -86,7 +89,6 @@ namespace ServerChessGame
                             }
                             break;
                         case 2:
-                            Console.WriteLine(listMsg[1] + ": da tao phong");
                             TcpClient clientRcv1 = (TcpClient)clients[listMsg[1]];
                             if (clientRcv1 != null)
                             {
@@ -96,7 +98,6 @@ namespace ServerChessGame
                             }
                             break;
                         case 3:
-                            Console.WriteLine(listMsg[1] + ": da tao phong");
                             TcpClient clientRcv2 = (TcpClient)clients[listMsg[1]];
                             if (clientRcv2 != null)
                             {
@@ -107,7 +108,6 @@ namespace ServerChessGame
                             break;
                         case 4: //dùng để tạo ra các luồng chat 1-1
                             string[] lstInfo = listMsg[1].Split(":");
-                            Console.WriteLine("user " + lstInfo[0] + " dang thuc hien chat 1-1 voi " + lstInfo[3]);
                             TcpClient currentClient = (TcpClient)clients[lstInfo[3]];
                             if (currentClient != null)
                             {
@@ -135,13 +135,11 @@ namespace ServerChessGame
                             break;
                         case 6: //xử lý logout
                             string[] msgs = listMsg[1].Split(",");
-                            Console.WriteLine(msgs[0] + ": da roi phong chat");
                             //gửi dữ liệu đến các client còn lại
                             foreach (string key in clients.Keys)
                             {
                                 if (key != msgs[0])
                                 {
-                                    Console.WriteLine(msgs[0] + ": da roi phong chat");
                                     TcpClient currentCl = (TcpClient)clients[key];
                                     if (currentCl != null)
                                     {
@@ -167,7 +165,6 @@ namespace ServerChessGame
                             break;
                         case 7:
                             string[] lst1 = listMsg[1].Split(':');
-                            Console.WriteLine(lst1[1] + ": da huy loi moi ket ban voi " + lst1[0]);
                             TcpClient clientRcv3 = (TcpClient)clients[lst1[0]];
                             if (clientRcv3 != null)
                             {
@@ -186,14 +183,12 @@ namespace ServerChessGame
         }
         static void Main(string[] args)
         {
-            server = new TcpListener(System.Net.IPAddress.Any, 8081);
-            server.Start();
+            //server = new TcpListener(System.Net.IPAddress.Any, 8081);
+            //server.Start();
 
 
-            acceptClientThread = new Thread(new ThreadStart(acceptClient));
-            acceptClientThread.Start();
-
+            //acceptClientThread = new Thread(new ThreadStart(acceptClient));
+            //acceptClientThread.Start();
         }
-
     }
 }

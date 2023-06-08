@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.errorConfirmPasswordLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.errorPasswordLabel = new System.Windows.Forms.Label();
             this.errorEmailLabel = new System.Windows.Forms.Label();
             this.errorUserNameLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
@@ -84,11 +84,22 @@
             this.pnlContent.Size = new System.Drawing.Size(493, 589);
             this.pnlContent.TabIndex = 21;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.label4.Location = new System.Drawing.Point(145, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 43);
+            this.label4.TabIndex = 92;
+            this.label4.Text = "ĐĂNG KÝ";
+            // 
             // errorConfirmPasswordLabel
             // 
             this.errorConfirmPasswordLabel.AutoSize = true;
             this.errorConfirmPasswordLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorConfirmPasswordLabel.Location = new System.Drawing.Point(96, 490);
+            this.errorConfirmPasswordLabel.Location = new System.Drawing.Point(116, 484);
             this.errorConfirmPasswordLabel.Name = "errorConfirmPasswordLabel";
             this.errorConfirmPasswordLabel.Size = new System.Drawing.Size(0, 16);
             this.errorConfirmPasswordLabel.TabIndex = 91;
@@ -346,26 +357,15 @@
             this.errorUserNameLabel.Size = new System.Drawing.Size(0, 16);
             this.errorUserNameLabel.TabIndex = 16;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 18F);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
-            this.label4.Location = new System.Drawing.Point(145, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 43);
-            this.label4.TabIndex = 92;
-            this.label4.Text = "ĐĂNG KÝ";
-            // 
             // RegisterInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 662);
+            this.ClientSize = new System.Drawing.Size(579, 662);
             this.Controls.Add(this.pnlContent);
             this.Name = "RegisterInterface";
             this.Text = "RegisterInterface";
-            this.Load += new System.EventHandler(this.RegisterInterface_Load_1);
+            this.Load += new System.EventHandler(this.RegisterInterface_Load);
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
