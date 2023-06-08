@@ -61,7 +61,7 @@
             this.ptbIcon.ImageRotate = 0F;
             this.ptbIcon.Location = new System.Drawing.Point(40, 28);
             this.ptbIcon.Name = "ptbIcon";
-            this.ptbIcon.Size = new System.Drawing.Size(65, 60);
+            this.ptbIcon.Size = new System.Drawing.Size(53, 49);
             this.ptbIcon.TabIndex = 6;
             this.ptbIcon.TabStop = false;
             // 
@@ -74,7 +74,7 @@
             this.Controls.Add(this.lbUserName);
             this.Controls.Add(this.ptvAvatar);
             this.Name = "userControlContentChatIcon";
-            this.Size = new System.Drawing.Size(110, 96);
+            this.Size = new System.Drawing.Size(101, 84);
             ((System.ComponentModel.ISupportInitialize)(this.ptvAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).EndInit();
             this.ResumeLayout(false);

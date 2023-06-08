@@ -183,12 +183,12 @@ namespace ServerChessGame
         }
         static void Main(string[] args)
         {
-            //server = new TcpListener(System.Net.IPAddress.Any, 8081);
-            //server.Start();
+            server = new TcpListener(System.Net.IPAddress.Any, 8081);
+            server.Start();
 
 
-            //acceptClientThread = new Thread(new ThreadStart(acceptClient));
-            //acceptClientThread.Start();
+            acceptClientThread = new Thread(new ThreadStart(acceptClient));
+            acceptClientThread.Start();
         }
     }
 }

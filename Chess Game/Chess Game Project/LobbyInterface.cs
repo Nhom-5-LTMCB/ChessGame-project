@@ -75,34 +75,51 @@ namespace Chess_Game_Project
         userControlHistory history = null;
         userControlRanks rank = null;
         userControlCreateRoom createRoom = null;
+
+
+        bool canCallApiListAllUsers = true;
+        bool canCallApiListFriends = true;
+        bool canCallApiListAcceptFriend = true;
         #endregion
 
         //============================================  CÁC HÀM XỬ LÝ RIÊNG BIỆT =========================================================
         private async void LobbyInterface_Load(object sender, EventArgs e)
         {
-            handleLoadInterface.loadInterFace(this, pnlCoverPage, pnlContent);
-            ptbAvatarPage.Size = this.Size;
-            ptbAvatarPage.BackgroundImage = System.Drawing.Image.FromFile("Resources\\loginAvt.jpg");
-            ptbAvatarPage.BackgroundImageLayout = ImageLayout.Stretch;
-            pnlContent.Parent = ptbAvatarPage;
+            try
+            {
+                handleLoadInterface.loadInterFace(this, pnlCoverPage, pnlContent);
+                ptbAvatarPage.Size = this.Size;
+                ptbAvatarPage.BackgroundImage = System.Drawing.Image.FromFile("Resources\\loginAvt.jpg");
+                ptbAvatarPage.BackgroundImageLayout = ImageLayout.Stretch;
+                pnlContent.Parent = ptbAvatarPage;
 
-            pnlContent.BringToFront();
+                pnlContent.BringToFront();
 
-            if (user.linkAvatar == "")
-                user.linkAvatar = "defaultAvatar.jpg";
-            ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + user.linkAvatar);
-            ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                if (user.linkAvatar == "")
+                    user.linkAvatar = "defaultAvatar.jpg";
+                ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + user.linkAvatar);
+                ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            pnlContainsIcon.Parent = pnlMultiChats;
-            pnlMultiChatFrame.Parent = pnlMultiChats;
-            pnlContainsIcon.BringToFront();
+                pnlContainsIcon.Parent = pnlMultiChats;
+                pnlMultiChatFrame.Parent = pnlMultiChats;
+                pnlContainsIcon.BringToFront();
 
 
-            pnlCoverPage.BringToFront();
+                pnlCoverPage.BringToFront();
 
-            await hanleDataIntoDatagridview.displayListMatches(dtGridContainListRooms, apiGetListMatches);
+                await hanleDataIntoDatagridview.displayListMatches(dtGridContainListRooms, apiGetListMatches);
+                List<infoUser> getFriends = await handleGetLists.getListUser("waiting", user, apiGetUserId);
+                hanleDataIntoDatagridview.displayListWaitingAccept(getFriends, userControlLists);
+                await handleGetLists.getListAllUser(user.id, apiGetAllUser, userControlLists, user);
 
+                getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
+                hanleDataIntoDatagridview.displayListFriends(getFriends, userControlLists);
+            }catch(Exception ex)
+            {
+
+            }
         }
+       
         private void calLocationChildPanel(System.Windows.Forms.Panel parent, System.Windows.Forms.UserControl child)
         {
             // Tính toán vị trí để đặt Panel con vào giữa Panel cha
@@ -229,9 +246,12 @@ namespace Chess_Game_Project
             userControlLists = new userControlLists();
             userControlLists.btnCloseList_click += UserControlLists_btnCloseList_click;
             userControlLists.dtAcceptFriend_cellContentClick += UserControlLists_dtAcceptFriend_cellContentClick1;
-            userControlLists.dtAllUsers_cellContentClick += UserControlLists_dtAllUsers_cellContentClick1; ;
+            userControlLists.dtAllUsers_cellContentClick += UserControlLists_dtAllUsers_cellContentClick1;
             userControlLists.dtListFriends_cellContentClick += UserControlLists_dtListFriends_cellContentClick1;
             userControlLists.btnFindUser_click += UserControlLists_btnFindUser_click;
+            userControlLists.btnLoadListAcceptFriends_click += UserControlLists_btnLoadListAcceptFriends_click;
+            userControlLists.btnLoadListAllUsers_click += UserControlLists_btnLoadListAllUsers_click;
+            userControlLists.btnLoadListFriends_click += UserControlLists_btnLoadListFriends_click;
             history = new userControlHistory();
             history.btnCloseHistory_click += History_btnCloseHistory_click;
             rank = new userControlRanks();
@@ -249,6 +269,9 @@ namespace Chess_Game_Project
 
             pnlMultiChatFrame.AutoScroll = true;
         }
+
+       
+
         public LobbyInterface(infoUser user) : this()
         {
             try
@@ -278,7 +301,8 @@ namespace Chess_Game_Project
                 //gửi thông điệp login lên server
                 string message = user.userName;
                 handleChat.sendData(client, message);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Không thể kết nối tới server, vui lòng kiểm tra lại mạng của bạn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -872,57 +896,25 @@ namespace Chess_Game_Project
 
             loopChildPanel(rank);
         }
-        private async void btnListFriend_Click(object sender, EventArgs e)
+        private void btnListFriend_Click(object sender, EventArgs e)
         {
-            try
-            {
-                userControlLists.selectTabControl(1);
-                
-
-                countMsg = 0;
-                btnListFriend.Text = "Danh sách bạn bè";
-
-                //hiển thị danh sách bạn bè
-                List<infoUser> getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
-                hanleDataIntoDatagridview.displayListFriends(getFriends, userControlLists);
-                loopChildPanel(userControlLists);
-
-                createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("loi btnListFriend_Click: " + ex.Message);
-            }
+            loopChildPanel(userControlLists);
+            userControlLists.selectTabControl(1);
         }
 
-        private async void btnListAllUsers_Click(object sender, EventArgs e)
+        private void btnListAllUsers_Click(object sender, EventArgs e)
         {
-            try
-            {
-                userControlLists.selectTabControl(0);
-                //hiển thị danh sách bạn bè
-                await handleGetLists.getListAllUser(user.id, apiGetAllUser, userControlLists, user);
-                loopChildPanel(userControlLists);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("loi btnListFriend_Click: " + ex.Message);
-            }
+            userControlLists.selectTabControl(0);
+            loopChildPanel(userControlLists);
         }
 
 
-        private async void btnAcceptFriend_Click(object sender, EventArgs e)
+        private void btnAcceptFriend_Click(object sender, EventArgs e)
         {
             try
             {
                 userControlLists.selectTabControl(2);
-
-                //hiển thị danh sách bạn bè
-                List<infoUser> getFriends = await handleGetLists.getListUser("waiting", user, apiGetUserId);
-                hanleDataIntoDatagridview.displayListWaitingAccept(getFriends, userControlLists);
                 loopChildPanel(userControlLists);
-
-                createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
             }
             catch (Exception ex)
             {
@@ -939,6 +931,29 @@ namespace Chess_Game_Project
                 loopChildPanel(history);
             }
         }
+
+        private async void btnRefreshListMatches_Click(object sender, EventArgs e)
+        {
+            await hanleDataIntoDatagridview.displayListMatches(dtGridContainListRooms, apiGetListMatches);
+        }
+
+        private async void UserControlLists_btnLoadListFriends_click(object sender, EventArgs e)
+        {
+            List<infoUser> getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
+            hanleDataIntoDatagridview.displayListFriends(getFriends, userControlLists);
+        }
+
+        private async void UserControlLists_btnLoadListAllUsers_click(object sender, EventArgs e)
+        {
+            await handleGetLists.getListAllUser(user.id, apiGetAllUser, userControlLists, user);
+        }
+
+        private async void UserControlLists_btnLoadListAcceptFriends_click(object sender, EventArgs e)
+        {
+            List<infoUser> getFriends = await handleGetLists.getListUser("waiting", user, apiGetUserId);
+            hanleDataIntoDatagridview.displayListWaitingAccept(getFriends, userControlLists);
+        }
+
         private async void btnRandomRoom_Click(object sender, EventArgs e)
         {
             try
@@ -1055,32 +1070,30 @@ namespace Chess_Game_Project
         }
         private void CreateRoom_btnCloseCreateRoom_click(object sender, EventArgs e)
         {
-            pnlContainsChild.Hide();
             createRoom.Hide();
+            pnlContainsChild.Hide();
         }
         private void Rank_btnCloseRank_click(object sender, EventArgs e)
         {
-            pnlContainsChild.Hide();
             rank.Hide();
+            pnlContainsChild.Hide();
         }
         private void History_btnCloseHistory_click(object sender, EventArgs e)
         {
-            pnlContainsChild.Hide();
             history.Hide();
+            pnlContainsChild.Hide();
         }
         private void UserControlLists_btnCloseList_click(object sender, EventArgs e)
         {
-            pnlContainsChild.Hide();
-            rank.Hide();
             if (pnlChatOne.Visible)
-            {
                 pnlChatOne.Hide();
-            }
+            pnlContainsChild.Hide();
         }
         private async void LobbyInterface_FormClosed(object sender, FormClosedEventArgs e)
         {
             await handleLogOutRoom();
         }
+
 
         //==================================================================================================================================
     }

@@ -304,3 +304,5 @@ D:\ĐỒ ÁN MỚI NHẤT\ChessGame-project\Chess Game\Chess Game Project\obj\De
 D:\ĐỒ ÁN MỚI NHẤT\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.csproj.CopyComplete
 D:\ĐỒ ÁN MỚI NHẤT\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.exe
 D:\ĐỒ ÁN MỚI NHẤT\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.pdb
+D:\ĐỒ ÁN MỚI NHẤT\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlChatIconRight.resources
+D:\ĐỒ ÁN MỚI NHẤT\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlChatMsgRight.resources

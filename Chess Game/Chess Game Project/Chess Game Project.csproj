@@ -91,6 +91,18 @@
     <Compile Include="classes\matchPlayer.cs" />
     <Compile Include="classes\player.cs" />
     <Compile Include="classes\typeOfMovesChess.cs" />
+    <Compile Include="ContainUserControls\userControlChatIconRight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlChatIconRight.Designer.cs">
+      <DependentUpon>userControlChatIconRight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlChatMsgRight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainUserControls\userControlChatMsgRight.Designer.cs">
+      <DependentUpon>userControlChatMsgRight.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContainUserControls\userControlContentChatMessage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +209,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordInterface.resx">
       <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainUserControls\userControlChatIconRight.resx">
+      <DependentUpon>userControlChatIconRight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainUserControls\userControlChatMsgRight.resx">
+      <DependentUpon>userControlChatMsgRight.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContainUserControls\userControlClick.resx">
       <DependentUpon>userControlClick.cs</DependentUpon>

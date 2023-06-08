@@ -97,7 +97,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi displayListMatches: " + ex.Message);
             }
         }
         public static void displayListUsers(List<infoUser> userLists, userControlLists userControlLists, infoUser user)
@@ -131,36 +130,39 @@ namespace Chess_Game_Project.classes_handle
                     dtAllUsers.Rows.Add(rowData);
                 }
                 //lặp qua từng dòng dữ liệu để kiểm tra xem có nên hiển thị nút kết bạn hay không
-                for (int i = 0; i < userLists.Count; i++)
+                if(userLists != null)
                 {
-                    //lấy ra từng dòng dữ liệu
-                    DataGridViewCell cell = dtAllUsers.Rows[i].Cells[3];    //lấy ra cái nút kết bạn
-                                                                            //lấy ra giá trị id của từng user
-                    string id = dtAllUsers.Rows[i].Cells[0].Value.ToString();
-                    bool check = false;
-                    //so sánh với từng user trong list "friend" or "waiting" của user
-                    if(user.lists.Count != null)
+                    for (int i = 0; i < userLists.Count; i++)
                     {
-                        for (int j = 0; j < user.lists.Count; j++)
+                        //lấy ra từng dòng dữ liệu
+                        DataGridViewCell cell = dtAllUsers.Rows[i].Cells[3];    //lấy ra cái nút kết bạn
+                                                                                //lấy ra giá trị id của từng user
+                        string id = dtAllUsers.Rows[i].Cells[0].Value.ToString();
+                        bool check = false;
+                        //so sánh với từng user trong list "friend" or "waiting" của user
+                        if (user.lists.Count != null)
                         {
-                            if (user.lists[j].listID.Contains(id))
+                            for (int j = 0; j < user.lists.Count; j++)
                             {
-                                check = true;
-                                break;
+                                if (user.lists[j].listID.Contains(id))
+                                {
+                                    check = true;
+                                    break;
+                                }
+                            }
+                            if (check)
+                            {
+                                cell.Style = new DataGridViewCellStyle { Padding = new Padding(500, 0, 0, 0) };
+                                cell.ReadOnly = true;
+                            }
+                            else
+                            {
+                                cell.Style = new DataGridViewCellStyle { Padding = new Padding(0, 0, 0, 0) };
+                                cell.ReadOnly = false;
                             }
                         }
-                        if (check)
-                        {
-                            cell.Style = new DataGridViewCellStyle { Padding = new Padding(500, 0, 0, 0) };
-                            cell.ReadOnly = true;
-                        }
-                        else
-                        {
-                            cell.Style = new DataGridViewCellStyle { Padding = new Padding(0, 0, 0, 0) };
-                            cell.ReadOnly = false;
-                        }
+                        userControlLists.copyDataIntoGridAllUsers(dtAllUsers);
                     }
-                    userControlLists.copyDataIntoGridAllUsers(dtAllUsers);
                 }
             }
             catch (Exception ex)
@@ -208,7 +210,7 @@ namespace Chess_Game_Project.classes_handle
                 dtListFriends.RowTemplate.Height = 30;
 
                 //kiểm tra xem có nên hiện nút chat hay không
-                if(userLists == null)
+                if(userLists != null)
                 {
                     for (int i = 0; i < userLists.Count; i++)
                     {

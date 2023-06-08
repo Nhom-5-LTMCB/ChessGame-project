@@ -48,41 +48,40 @@ namespace Chess_Game_Project.classes_handle
                 {
                     //tiến hành lấy ra listID
                     List<string> listid = item.listID;
-                    string apiPath = "";
-                    if (status == "waiting")
+                    string apiPath = null;
+                    if (string.Equals(item.status.ToLower(), "waiting") && string.Equals(status.ToLower(), "waiting"))
                     {
                         if (listid[0] != user.id)
                             apiPath = apiGetUserId + listid[0];
                         else
                             continue;
                     }
-                    else if (status == "friend")
+                    else if (string.Equals(item.status.ToLower(), "friend") && string.Equals(status.ToLower(), "friend"))
                     {
                         string id = "";
                         foreach (string item1 in listid)
                             if (item1 != user.id) id = item1;
                         apiPath = apiGetUserId + id;
                     }
-                    JToken tkData = await manageApi.callApiUsingGetMethodID(apiPath);
-                    if (tkData != null)
+                    if(!string.IsNullOrEmpty(apiPath))
                     {
-                        infoUser friend = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-                        if(friend != null)
+                        JToken tkData = await manageApi.callApiUsingGetMethodID(apiPath);
+                        if (tkData != null)
                         {
-                            if (item.status.ToLower() == status)
-                                lists.Add(friend);
+                            infoUser friend = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
+                            if (friend != null)
+                            {
+                                if (item.status.ToLower() == status)
+                                    lists.Add(friend);
+                            }
                         }
-                    }
-                    else
-                    {
-                        return null;
                     }
                 }
                 return lists;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi getListUser: " + ex.Message);
+                MessageBox.Show(ex.Message);
                 return null;
             }
         }

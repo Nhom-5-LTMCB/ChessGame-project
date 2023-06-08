@@ -17,6 +17,11 @@ namespace Chess_Game_Project.ContainUserControls
         public event DataGridViewCellEventHandler dtListFriends_cellContentClick;
         public event DataGridViewCellEventHandler dtAcceptFriend_cellContentClick;
         public event EventHandler<EventArgs> btnFindUser_click;
+
+
+        public event EventHandler<EventArgs> btnLoadListAllUsers_click;
+        public event EventHandler<EventArgs> btnLoadListFriends_click;
+        public event EventHandler<EventArgs> btnLoadListAcceptFriends_click;
         public string username
         {
             get { return txtFindUser.Text; }
@@ -157,6 +162,21 @@ namespace Chess_Game_Project.ContainUserControls
         private void dtAcceptFriend_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dtAcceptFriend_cellContentClick?.Invoke(sender, e);
+        }
+
+        private void btnLoadListAllUsers_Click(object sender, EventArgs e)
+        {
+            btnLoadListAllUsers_click?.Invoke(this, e);
+        }
+
+        private void btnLoadListFriends_Click(object sender, EventArgs e)
+        {
+            btnLoadListFriends_click?.Invoke(this, e);
+        }
+
+        private void btnLoadListAcceptFriends_Click(object sender, EventArgs e)
+        {
+            btnLoadListAcceptFriends_click?.Invoke(this, e);
         }
     }
 }

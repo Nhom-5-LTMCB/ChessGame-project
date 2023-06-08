@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LobbyInterface));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlCoverPage = new System.Windows.Forms.Panel();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,6 +59,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ptboxAvatar = new System.Windows.Forms.PictureBox();
             this.ptbAvatarPage = new System.Windows.Forms.PictureBox();
+            this.userControlChatOne1 = new Chess_Game_Project.ContainUserControls.userControlChatOne();
+            this.userControlChatOne2 = new Chess_Game_Project.ContainUserControls.userControlChatOne();
+            this.userControlChatOne3 = new Chess_Game_Project.ContainUserControls.userControlChatOne();
+            this.userControlChatOne4 = new Chess_Game_Project.ContainUserControls.userControlChatOne();
             this.pnlCoverPage.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlMultiChats.SuspendLayout();
@@ -189,6 +193,7 @@
             this.btnRefreshListMatches.Name = "btnRefreshListMatches";
             this.btnRefreshListMatches.Size = new System.Drawing.Size(31, 24);
             this.btnRefreshListMatches.TabIndex = 91;
+            this.btnRefreshListMatches.Click += new System.EventHandler(this.btnRefreshListMatches_Click);
             // 
             // btnListAllUsers
             // 
@@ -341,26 +346,26 @@
             // 
             // dtGridContainListRooms
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dtGridContainListRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridContainListRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dtGridContainListRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridContainListRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dtGridContainListRooms.ColumnHeadersHeight = 35;
             this.dtGridContainListRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridContainListRooms.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridContainListRooms.DefaultCellStyle = dataGridViewCellStyle12;
             this.dtGridContainListRooms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtGridContainListRooms.Location = new System.Drawing.Point(467, 299);
             this.dtGridContainListRooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -560,6 +565,42 @@
             this.ptbAvatarPage.TabIndex = 0;
             this.ptbAvatarPage.TabStop = false;
             // 
+            // userControlChatOne1
+            // 
+            this.userControlChatOne1.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.userControlChatOne1.Location = new System.Drawing.Point(0, 0);
+            this.userControlChatOne1.Name = "userControlChatOne1";
+            this.userControlChatOne1.pos = 0;
+            this.userControlChatOne1.Size = new System.Drawing.Size(598, 442);
+            this.userControlChatOne1.TabIndex = 0;
+            // 
+            // userControlChatOne2
+            // 
+            this.userControlChatOne2.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.userControlChatOne2.Location = new System.Drawing.Point(0, 0);
+            this.userControlChatOne2.Name = "userControlChatOne2";
+            this.userControlChatOne2.pos = 0;
+            this.userControlChatOne2.Size = new System.Drawing.Size(598, 442);
+            this.userControlChatOne2.TabIndex = 0;
+            // 
+            // userControlChatOne3
+            // 
+            this.userControlChatOne3.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.userControlChatOne3.Location = new System.Drawing.Point(0, 0);
+            this.userControlChatOne3.Name = "userControlChatOne3";
+            this.userControlChatOne3.pos = 0;
+            this.userControlChatOne3.Size = new System.Drawing.Size(598, 442);
+            this.userControlChatOne3.TabIndex = 0;
+            // 
+            // userControlChatOne4
+            // 
+            this.userControlChatOne4.Font = new System.Drawing.Font("Consolas", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.userControlChatOne4.Location = new System.Drawing.Point(0, 0);
+            this.userControlChatOne4.Name = "userControlChatOne4";
+            this.userControlChatOne4.pos = 0;
+            this.userControlChatOne4.Size = new System.Drawing.Size(598, 442);
+            this.userControlChatOne4.TabIndex = 0;
+            // 
             // LobbyInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -613,5 +654,9 @@
         private Guna.UI2.WinForms.Guna2TextBox txtScore;
         private Guna.UI2.WinForms.Guna2TextBox txtUserName;
         private System.Windows.Forms.Label label1;
+        private ContainUserControls.userControlChatOne userControlChatOne1;
+        private ContainUserControls.userControlChatOne userControlChatOne2;
+        private ContainUserControls.userControlChatOne userControlChatOne3;
+        private ContainUserControls.userControlChatOne userControlChatOne4;
     }
 }

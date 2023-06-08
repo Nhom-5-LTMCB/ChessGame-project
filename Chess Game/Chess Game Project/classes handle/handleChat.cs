@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+
 namespace Chess_Game_Project.classes_handle
 {
     internal class handleChat
@@ -51,19 +53,40 @@ namespace Chess_Game_Project.classes_handle
                         return;
                     MethodInvoker invoker = new MethodInvoker(delegate
                     {
-                        pnl.AutoScroll = false;
-                        userControlContentChatMessage userControl = new userControlContentChatMessage();
-                        userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, owner);
-                        int userControlWidth = pnl.Width * 70 / 100;
-                        userControl.Location = new System.Drawing.Point(0, posY);
-                        userControl.Size = new System.Drawing.Size(userControlWidth, userControl.Height);
-                        pnl.Controls.Add(userControl);
-                        userControl.content = msg;
-                        userControl.addMesageIntoFrame(userControlWidth);
-                        LobbyInterface.posY += userControl.Height;
-                        pnl.ScrollControlIntoView(userControl);
-                        pnl.AutoScroll = true;
-                        pnl.HorizontalScroll.Visible = false;
+                       if(userName != owner)
+                        {
+                            pnl.AutoScroll = false;
+                            userControlContentChatMessage userControl = new userControlContentChatMessage();
+                            userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, owner);
+                            int userControlWidth = pnl.Width * 70 / 100;
+                            userControl.Location = new System.Drawing.Point(10, posY);
+                            userControl.Size = new System.Drawing.Size(userControlWidth, userControl.Height);
+                            pnl.Controls.Add(userControl);
+                            userControl.content = msg;
+                            userControl.addMesageIntoFrame(userControlWidth);
+                            LobbyInterface.posY += userControl.Height;
+                            pnl.ScrollControlIntoView(userControl);
+                            pnl.AutoScroll = true;
+                            pnl.HorizontalScroll.Visible = false;
+                        }
+                        else
+                        {
+                            pnl.AutoScroll = false;
+                            userControlChatMsgRight userControl = new userControlChatMsgRight();
+                            userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, owner);
+                            int userControlWidth = pnl.Width * 70 / 100;
+                            pnl.Controls.Add(userControl);
+                            userControl.Size = new System.Drawing.Size(0, userControl.Height);
+                            userControl.content = msg;
+                            userControl.addMesageIntoFrame(userControlWidth);
+                            int sizeX = pnl.Width - userControl.Width - 20;
+                            userControl.Location = new System.Drawing.Point(sizeX, posY);
+                            LobbyInterface.posY += userControl.Height;
+
+                            pnl.ScrollControlIntoView(userControl);
+                            pnl.AutoScroll = true;
+                            pnl.HorizontalScroll.Visible = false;
+                        }
                     });
                     form.Invoke(invoker);
                 }
@@ -71,19 +94,38 @@ namespace Chess_Game_Project.classes_handle
                 {
                     MethodInvoker invoker = new MethodInvoker(delegate
                     {
-                        pnl.AutoScroll = false;
-                        userControlContentChatIcon userControl = new userControlContentChatIcon();
-                        userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, imgContent, owner);
-                        userControl.Location = new System.Drawing.Point(0, posY);
-                        pnl.Controls.Add(userControl);
-                        LobbyInterface.posY += userControl.Height;
-                        pnl.ScrollControlIntoView(userControl);
+                        if(userName != owner)
+                        {
+                            pnl.AutoScroll = false;
+                            userControlContentChatIcon userControl = new userControlContentChatIcon();
+                            userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, imgContent, owner);
+                            userControl.Location = new System.Drawing.Point(10, posY);
+                            pnl.Controls.Add(userControl);
+                            LobbyInterface.posY += userControl.Height;
+                            pnl.ScrollControlIntoView(userControl);
 
-                        pnlContainsIcon.Hide();
-                        buttonListIcons.Clear();
+                            pnlContainsIcon.Hide();
+                            buttonListIcons.Clear();
 
-                        pnl.AutoScroll = true;
-                        pnl.HorizontalScroll.Visible = false;
+                            pnl.AutoScroll = true;
+                            pnl.HorizontalScroll.Visible = false;
+                        }else
+                        {
+                            pnl.AutoScroll = false;
+                            userControlChatIconRight userControl = new userControlChatIconRight();
+                            userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, imgContent, owner);
+                            pnl.Controls.Add(userControl);
+                            userControl.Location = new System.Drawing.Point(pnl.Width - userControl.Width - 20, posY);
+                            LobbyInterface.posY += userControl.Height;
+                            pnl.ScrollControlIntoView(userControl);
+
+                            pnlContainsIcon.Hide();
+                            buttonListIcons.Clear();
+
+                            pnl.AutoScroll = true;
+                            pnl.HorizontalScroll.Visible = false;
+                            
+                        }
                     });
                     form.Invoke(invoker);
                 }
