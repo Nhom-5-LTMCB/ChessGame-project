@@ -250,7 +250,7 @@ namespace Chess_Game_Project.classes_handle
                 buttonColumn1.UseColumnTextForButtonValue = true;
                 dtAcceptFriend.Columns.Add(buttonColumn1);
                 dtAcceptFriend.RowHeadersVisible = false;
-                dtAcceptFriend.RowTemplate.Height = 30;
+                dtAcceptFriend.RowTemplate.Height = 25;
                 if (userLists != null)
                 {
                     foreach (infoUser item in userLists)
@@ -279,8 +279,8 @@ namespace Chess_Game_Project.classes_handle
                 //chứa danh sách điểm user từ cao đến thấp
                 //xóa đi dòng cuối cùng trong dataGridView
                 dtGridRank.AllowUserToAddRows = false;
-                dtGridRank.Rows.Clear();
-                dtGridRank.Columns.Clear();
+                dtGridRank.RowTemplate.Height = 25;
+
                 List<infoUser> sortList = userLists.OrderByDescending(item => item.point).ToList();
                 int currentRank = 0;
 
@@ -299,7 +299,6 @@ namespace Chess_Game_Project.classes_handle
                         dtGridRank.Rows.Add(rowData);
                     }
                 }
-                dtGridRank.RowTemplate.Height = 30;
                 rank.currentRank.Text = currentRank.ToString();
 
                 rank.copyDataIntoGridListRanks(dtGridRank);
@@ -320,7 +319,7 @@ namespace Chess_Game_Project.classes_handle
                 dtGridViewHistory.Columns.Add("userName2", "Người chơi");
                 dtGridViewHistory.Columns.Add("result", "Kết quả");
                 dtGridViewHistory.RowHeadersVisible = false;
-                dtGridViewHistory.RowTemplate.Height = 30;
+                dtGridViewHistory.RowTemplate.Height = 25;
                 if (user != null)
                 {
                     foreach (match item in user.matches)

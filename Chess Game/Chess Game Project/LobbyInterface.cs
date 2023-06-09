@@ -75,11 +75,6 @@ namespace Chess_Game_Project
         userControlHistory history = null;
         userControlRanks rank = null;
         userControlCreateRoom createRoom = null;
-
-
-        bool canCallApiListAllUsers = true;
-        bool canCallApiListFriends = true;
-        bool canCallApiListAcceptFriend = true;
         #endregion
 
         //============================================  CÁC HÀM XỬ LÝ RIÊNG BIỆT =========================================================
@@ -119,7 +114,6 @@ namespace Chess_Game_Project
 
             }
         }
-       
         private void calLocationChildPanel(System.Windows.Forms.Panel parent, System.Windows.Forms.UserControl child)
         {
             // Tính toán vị trí để đặt Panel con vào giữa Panel cha
@@ -269,9 +263,6 @@ namespace Chess_Game_Project
 
             pnlMultiChatFrame.AutoScroll = true;
         }
-
-       
-
         public LobbyInterface(infoUser user) : this()
         {
             try
@@ -487,7 +478,6 @@ namespace Chess_Game_Project
             foreach (System.Windows.Forms.Button btnChat in handleChat.buttonListIcons)
                 btnChat.Click += BtnChat_Click;
         }
-
         private void BtnChat_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
@@ -901,14 +891,11 @@ namespace Chess_Game_Project
             loopChildPanel(userControlLists);
             userControlLists.selectTabControl(1);
         }
-
         private void btnListAllUsers_Click(object sender, EventArgs e)
         {
             userControlLists.selectTabControl(0);
             loopChildPanel(userControlLists);
         }
-
-
         private void btnAcceptFriend_Click(object sender, EventArgs e)
         {
             try
@@ -931,27 +918,34 @@ namespace Chess_Game_Project
                 loopChildPanel(history);
             }
         }
-
         private async void btnRefreshListMatches_Click(object sender, EventArgs e)
         {
             await hanleDataIntoDatagridview.displayListMatches(dtGridContainListRooms, apiGetListMatches);
+
+            MessageBox.Show("Làm mới thành công");
         }
 
         private async void UserControlLists_btnLoadListFriends_click(object sender, EventArgs e)
         {
             List<infoUser> getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
             hanleDataIntoDatagridview.displayListFriends(getFriends, userControlLists);
+
+            MessageBox.Show("Làm mới thành công");
         }
 
         private async void UserControlLists_btnLoadListAllUsers_click(object sender, EventArgs e)
         {
             await handleGetLists.getListAllUser(user.id, apiGetAllUser, userControlLists, user);
+
+            MessageBox.Show("Làm mới thành công");
         }
 
         private async void UserControlLists_btnLoadListAcceptFriends_click(object sender, EventArgs e)
         {
             List<infoUser> getFriends = await handleGetLists.getListUser("waiting", user, apiGetUserId);
             hanleDataIntoDatagridview.displayListWaitingAccept(getFriends, userControlLists);
+
+            MessageBox.Show("Làm mới thành công");
         }
 
         private async void btnRandomRoom_Click(object sender, EventArgs e)

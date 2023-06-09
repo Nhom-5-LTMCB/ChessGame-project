@@ -34,7 +34,6 @@ namespace Chess_Game_Project.ContainUserControls
         {
             InitializeComponent();
         }
-
         public void selectTabControl(int index)
         {
             tbControls.SelectedIndex = index;
@@ -101,7 +100,6 @@ namespace Chess_Game_Project.ContainUserControls
                 MessageBox.Show("loi copyDataIntoGridAllUsers: " + ex.Message);
             }
         }
-     
         public void hideBtnMakeFriend(string userName)
         {
             for (int row = 0; row < dtAllUsers.Rows.Count; row++)

@@ -32,7 +32,6 @@
             this.pnlContent = new System.Windows.Forms.Panel();
             this.btnEditInfo = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnChangeImage = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -51,6 +50,7 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -63,9 +63,9 @@
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.btnEditInfo);
             this.pnlContent.Controls.Add(this.btnChangeImage);
-            this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Controls.Add(this.guna2CirclePictureBox3);
             this.pnlContent.Controls.Add(this.guna2CirclePictureBox2);
             this.pnlContent.Controls.Add(this.guna2CirclePictureBox1);
@@ -95,7 +95,6 @@
             // 
             this.btnEditInfo.Animated = true;
             this.btnEditInfo.BorderRadius = 20;
-            this.btnEditInfo.BorderThickness = 2;
             this.btnEditInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEditInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEditInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -117,7 +116,6 @@
             this.btnChangeImage.Animated = true;
             this.btnChangeImage.BackColor = System.Drawing.Color.Transparent;
             this.btnChangeImage.BorderRadius = 20;
-            this.btnChangeImage.BorderThickness = 2;
             this.btnChangeImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnChangeImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChangeImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -133,16 +131,6 @@
             this.btnChangeImage.TabIndex = 43;
             this.btnChangeImage.Text = "Chỉnh sửa ảnh";
             this.btnChangeImage.Click += new System.EventHandler(this.btnChangeImage_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(392, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(433, 46);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Thông tin người chơi";
             // 
             // guna2CirclePictureBox3
             // 
@@ -357,7 +345,6 @@
             this.btnSaveInfo.Animated = true;
             this.btnSaveInfo.AutoRoundedCorners = true;
             this.btnSaveInfo.BorderRadius = 25;
-            this.btnSaveInfo.BorderThickness = 2;
             this.btnSaveInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSaveInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSaveInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -438,6 +425,17 @@
             this.lbID.TabIndex = 16;
             this.lbID.Text = "ID";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(416, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(469, 50);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Thông tin người chơi";
+            // 
             // InfoUserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -462,7 +460,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlContent;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
@@ -483,5 +480,6 @@
         private System.Windows.Forms.Label lbID;
         private Guna.UI2.WinForms.Guna2GradientButton btnEditInfo;
         private Guna.UI2.WinForms.Guna2GradientButton btnChangeImage;
+        private System.Windows.Forms.Label label1;
     }
 }

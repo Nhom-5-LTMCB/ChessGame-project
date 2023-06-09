@@ -34,6 +34,7 @@ namespace ServerChessGame
                     clients.Remove(userName);
                     Console.WriteLine("Da xoa: " + userName);
                 }
+                Console.WriteLine("---> " + userName + ": da tham gia vao phong chat");
                 clients.Add(userName, client);
 
                 //khởi chạy toàn bộ luồng dữ liệu
@@ -66,6 +67,7 @@ namespace ServerChessGame
                     switch (int.Parse(listMsg[0]))
                     {
                         case 0: //cập nhật lại danh sách phòng chơi
+                            Console.WriteLine(listMsg[1] + ": da tao phong choi");
                             foreach (string key in clients.Keys)
                             {
                                 if (key != listMsg[1])
@@ -79,7 +81,7 @@ namespace ServerChessGame
                             break;
                         case 1:
                             string[] lst = listMsg[1].Split(':');
-
+                            Console.WriteLine(lst[1] + ": da gui loi moi ket ban toi " + lst[0]);
                             TcpClient clientRcv = (TcpClient)clients[lst[0]];
                             if (clientRcv != null)
                             {
@@ -90,6 +92,7 @@ namespace ServerChessGame
                             break;
                         case 2:
                             TcpClient clientRcv1 = (TcpClient)clients[listMsg[1]];
+                            Console.WriteLine("da chap nhan loi moi ket ban voi " + listMsg[1]);
                             if (clientRcv1 != null)
                             {
                                 stream = clientRcv1.GetStream();
@@ -135,6 +138,7 @@ namespace ServerChessGame
                             break;
                         case 6: //xử lý logout
                             string[] msgs = listMsg[1].Split(",");
+                            Console.WriteLine("<---- " + msgs[0] + " da dang xuat");
                             //gửi dữ liệu đến các client còn lại
                             foreach (string key in clients.Keys)
                             {

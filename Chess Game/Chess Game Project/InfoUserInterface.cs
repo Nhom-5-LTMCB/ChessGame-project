@@ -80,7 +80,7 @@ namespace Chess_Game_Project
 
                 //hiển thị hình ảnh lên giao diện
                 ptboxAvatar.Image = Image.FromFile($"{directoryImagePath}\\" + user.linkAvatar);
-                ptboxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+                ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 txtDefeats.Text = numberOfLosses.ToString();
                 txtWins.Text = numberOfWins.ToString();
@@ -156,7 +156,7 @@ namespace Chess_Game_Project
                 txtEmail.Text = preEmail;
 
                 ptboxAvatar.Image = Image.FromFile($"{directoryImagePath}\\" + preLinkAvatar);
-                ptboxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+                ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
                 user.linkAvatar = preLinkAvatar;
@@ -182,16 +182,22 @@ namespace Chess_Game_Project
         }
         private void btnChangeImage_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.ShowDialog();
-            if (openFileDialog.FileName == "") return;
-            string[] paths = openFileDialog.FileName.Split('\\');
-            preLinkAvatar = user.linkAvatar;
-            user.linkAvatar = paths[paths.Length - 1];
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.ShowDialog();
+                if (openFileDialog.FileName == "") return;
+                string[] paths = openFileDialog.FileName.Split('\\');
+                preLinkAvatar = user.linkAvatar;
+                user.linkAvatar = paths[paths.Length - 1];
 
-            ptboxAvatar.Image = Image.FromFile(openFileDialog.FileName);
-            ptboxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
-            pathImage = openFileDialog.FileName;
+                ptboxAvatar.Image = Image.FromFile(openFileDialog.FileName);
+                ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                pathImage = openFileDialog.FileName;
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Ảnh không hợp lệ, vui lòng chọn lại ảnh khác", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
