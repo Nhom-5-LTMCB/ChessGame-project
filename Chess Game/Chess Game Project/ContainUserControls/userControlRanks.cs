@@ -30,23 +30,20 @@ namespace Chess_Game_Project.ContainUserControls
             dtGridRank.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtGridRank.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dtGridRank.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+            dtGridRank.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            dtGridRank.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //xóa đi dòng cuối cùng trong dataGridView
             dtGridRank.AllowUserToAddRows = false;
             dtGridRank.RowHeadersVisible = false;
             //ngăn không cho người dùng kéo giãn
             foreach (DataGridViewColumn column in dtGridRank.Columns)
-            {
                 column.Resizable = DataGridViewTriState.False;
-            }
+            foreach (DataGridViewColumn column in dtGridRank.Columns)
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
             foreach (DataGridViewRow row in dtGridRank.Rows)
-            {
                 row.Resizable = DataGridViewTriState.False;
-            }
             foreach (DataGridViewColumn column in dtgrv.Columns)
-            {
                 dtGridRank.Columns.Add(column.Clone() as DataGridViewColumn);
-            }
 
             foreach (DataGridViewRow row in dtgrv.Rows)
             {

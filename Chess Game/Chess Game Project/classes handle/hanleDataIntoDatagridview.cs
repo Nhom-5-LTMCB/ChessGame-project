@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Web.UI.WebControls;
 
 namespace Chess_Game_Project.classes_handle
 {
@@ -26,7 +28,7 @@ namespace Chess_Game_Project.classes_handle
                 dtGridContainListRooms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dtGridContainListRooms.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dtGridContainListRooms.RowTemplate.Height = 25;
-
+                dtGridContainListRooms.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
                 //ngăn không cho người dùng kéo giãn
                 foreach (DataGridViewColumn column in dtGridContainListRooms.Columns)
                 {
@@ -104,12 +106,8 @@ namespace Chess_Game_Project.classes_handle
             try
             {
                 DataGridView dtAllUsers = new DataGridView();
-
-                dtAllUsers.Rows.Clear();
-                dtAllUsers.Columns.Clear();
                 //xóa đi dòng cuối cùng trong dataGridView
                 dtAllUsers.AllowUserToAddRows = false;
-
                 dtAllUsers.Columns.Add("id", "ID");
                 dtAllUsers.Columns.Add("userName", "Tên người dùng");
                 DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
@@ -124,6 +122,7 @@ namespace Chess_Game_Project.classes_handle
                 dtAllUsers.Columns.Add(buttonColumn2);
                 dtAllUsers.RowTemplate.Height = 30;
                 dtAllUsers.ReadOnly = true;
+
                 foreach (infoUser item in userLists)
                 {
                     string[] rowData = new string[] { item.id, item.userName };
@@ -140,7 +139,7 @@ namespace Chess_Game_Project.classes_handle
                         string id = dtAllUsers.Rows[i].Cells[0].Value.ToString();
                         bool check = false;
                         //so sánh với từng user trong list "friend" or "waiting" của user
-                        if (user.lists.Count != null)
+                        if (user.lists.Count != 0)
                         {
                             for (int j = 0; j < user.lists.Count; j++)
                             {
@@ -175,7 +174,7 @@ namespace Chess_Game_Project.classes_handle
             try
             {
                 DataGridView dtListFriends = new DataGridView();
-                //xóa đi dòng cuối cùng trong dataGridView
+                dtListFriends.RowTemplate.Height = 25;
                 dtListFriends.AllowUserToAddRows = false;
                 dtListFriends.Columns.Add("id", "ID");
                 dtListFriends.Columns.Add("userName", "Tên người dùng");
@@ -241,6 +240,8 @@ namespace Chess_Game_Project.classes_handle
                 DataGridView dtAcceptFriend = new DataGridView();
                 //xóa đi dòng cuối cùng trong dataGridView
                 dtAcceptFriend.AllowUserToAddRows = false;
+                dtAcceptFriend.Rows.Clear();
+                dtAcceptFriend.Columns.Clear();
                 dtAcceptFriend.Columns.Add("id", "ID");
                 dtAcceptFriend.Columns.Add("userName", "Tên người dùng");
                 DataGridViewButtonColumn buttonColumn1 = new DataGridViewButtonColumn();
@@ -249,7 +250,6 @@ namespace Chess_Game_Project.classes_handle
                 buttonColumn1.UseColumnTextForButtonValue = true;
                 dtAcceptFriend.Columns.Add(buttonColumn1);
                 dtAcceptFriend.RowHeadersVisible = false;
-                dtAcceptFriend.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dtAcceptFriend.RowTemplate.Height = 30;
                 if (userLists != null)
                 {
@@ -279,12 +279,15 @@ namespace Chess_Game_Project.classes_handle
                 //chứa danh sách điểm user từ cao đến thấp
                 //xóa đi dòng cuối cùng trong dataGridView
                 dtGridRank.AllowUserToAddRows = false;
+                dtGridRank.Rows.Clear();
+                dtGridRank.Columns.Clear();
                 List<infoUser> sortList = userLists.OrderByDescending(item => item.point).ToList();
                 int currentRank = 0;
 
                 dtGridRank.Columns.Add("userName", "Tên người dùng");
                 dtGridRank.Columns.Add("point", "Điểm");
                 dtGridRank.Columns.Add("currentRank", "Hạng");
+                dtGridRank.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
                 if (userLists != null)
                 {
 
@@ -311,7 +314,7 @@ namespace Chess_Game_Project.classes_handle
             try
             {
                 DataGridView dtGridViewHistory = new DataGridView();
-                //xóa đi dòng cuối cùng trong dataGridView
+                //xóa đi dòng cuối cùng trong dataGridView  
                 dtGridViewHistory.AllowUserToAddRows = false;
                 dtGridViewHistory.Columns.Add("userName1", "Bạn");
                 dtGridViewHistory.Columns.Add("userName2", "Người chơi");

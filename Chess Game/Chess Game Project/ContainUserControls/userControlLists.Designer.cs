@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(userControlLists));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbControls = new Guna.UI2.WinForms.Guna2TabControl();
             this.tbFindUser = new System.Windows.Forms.TabPage();
+            this.btnLoadListAllUsers = new Guna.UI2.WinForms.Guna2Button();
             this.dtAllUsers = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txtFindUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnFindUser = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tbFriends = new System.Windows.Forms.TabPage();
+            this.btnLoadListFriends = new Guna.UI2.WinForms.Guna2Button();
             this.dtListFriends = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tbAccept = new System.Windows.Forms.TabPage();
+            this.btnLoadListAcceptFriends = new Guna.UI2.WinForms.Guna2Button();
             this.dtAcceptFriend = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCloseList = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLoadListAllUsers = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLoadListFriends = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLoadListAcceptFriends = new Guna.UI2.WinForms.Guna2Button();
             this.tbControls.SuspendLayout();
             this.tbFindUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtAllUsers)).BeginInit();
@@ -75,7 +75,7 @@
             this.tbControls.Location = new System.Drawing.Point(0, 3);
             this.tbControls.Name = "tbControls";
             this.tbControls.SelectedIndex = 0;
-            this.tbControls.Size = new System.Drawing.Size(1054, 568);
+            this.tbControls.Size = new System.Drawing.Size(1086, 568);
             this.tbControls.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tbControls.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.tbControls.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -97,7 +97,7 @@
             // 
             // tbFindUser
             // 
-            this.tbFindUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.tbFindUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.tbFindUser.Controls.Add(this.btnLoadListAllUsers);
             this.tbFindUser.Controls.Add(this.dtAllUsers);
             this.tbFindUser.Controls.Add(this.guna2CirclePictureBox1);
@@ -107,39 +107,56 @@
             this.tbFindUser.Location = new System.Drawing.Point(184, 4);
             this.tbFindUser.Name = "tbFindUser";
             this.tbFindUser.Padding = new System.Windows.Forms.Padding(3);
-            this.tbFindUser.Size = new System.Drawing.Size(866, 560);
+            this.tbFindUser.Size = new System.Drawing.Size(898, 560);
             this.tbFindUser.TabIndex = 0;
             this.tbFindUser.Text = "Tìm kiếm";
             // 
+            // btnLoadListAllUsers
+            // 
+            this.btnLoadListAllUsers.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadListAllUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadListAllUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadListAllUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoadListAllUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoadListAllUsers.FillColor = System.Drawing.Color.Transparent;
+            this.btnLoadListAllUsers.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoadListAllUsers.ForeColor = System.Drawing.Color.White;
+            this.btnLoadListAllUsers.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadListAllUsers.Image")));
+            this.btnLoadListAllUsers.Location = new System.Drawing.Point(31, 92);
+            this.btnLoadListAllUsers.Name = "btnLoadListAllUsers";
+            this.btnLoadListAllUsers.Size = new System.Drawing.Size(31, 24);
+            this.btnLoadListAllUsers.TabIndex = 92;
+            this.btnLoadListAllUsers.Click += new System.EventHandler(this.btnLoadListAllUsers_Click);
+            // 
             // dtAllUsers
             // 
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.dtAllUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtAllUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            this.dtAllUsers.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtAllUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtAllUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtAllUsers.ColumnHeadersHeight = 35;
             this.dtAllUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtAllUsers.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtAllUsers.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtAllUsers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtAllUsers.Location = new System.Drawing.Point(6, 119);
+            this.dtAllUsers.Location = new System.Drawing.Point(31, 122);
             this.dtAllUsers.Name = "dtAllUsers";
             this.dtAllUsers.RowHeadersVisible = false;
             this.dtAllUsers.RowHeadersWidth = 51;
             this.dtAllUsers.RowTemplate.Height = 24;
-            this.dtAllUsers.Size = new System.Drawing.Size(860, 435);
+            this.dtAllUsers.Size = new System.Drawing.Size(784, 435);
             this.dtAllUsers.TabIndex = 88;
             this.dtAllUsers.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtAllUsers.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -153,7 +170,7 @@
             this.dtAllUsers.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtAllUsers.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dtAllUsers.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtAllUsers.ThemeStyle.HeaderStyle.Height = 30;
+            this.dtAllUsers.ThemeStyle.HeaderStyle.Height = 35;
             this.dtAllUsers.ThemeStyle.ReadOnly = false;
             this.dtAllUsers.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dtAllUsers.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -168,7 +185,7 @@
             // 
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(129, 44);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(105, 44);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(41, 39);
@@ -191,7 +208,7 @@
             this.txtFindUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFindUser.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtFindUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFindUser.Location = new System.Drawing.Point(176, 44);
+            this.txtFindUser.Location = new System.Drawing.Point(152, 44);
             this.txtFindUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFindUser.Name = "txtFindUser";
             this.txtFindUser.PasswordChar = '\0';
@@ -206,7 +223,6 @@
             this.btnFindUser.AutoRoundedCorners = true;
             this.btnFindUser.BackColor = System.Drawing.Color.Transparent;
             this.btnFindUser.BorderRadius = 19;
-            this.btnFindUser.BorderThickness = 2;
             this.btnFindUser.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.btnFindUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnFindUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -215,18 +231,18 @@
             this.btnFindUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnFindUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnFindUser.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
-            this.btnFindUser.Font = new System.Drawing.Font("Consolas", 10.8F);
+            this.btnFindUser.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFindUser.ForeColor = System.Drawing.Color.White;
-            this.btnFindUser.Location = new System.Drawing.Point(589, 44);
+            this.btnFindUser.Location = new System.Drawing.Point(565, 44);
             this.btnFindUser.Name = "btnFindUser";
-            this.btnFindUser.Size = new System.Drawing.Size(168, 40);
+            this.btnFindUser.Size = new System.Drawing.Size(178, 40);
             this.btnFindUser.TabIndex = 7;
             this.btnFindUser.Text = "TÌm kiếm";
             this.btnFindUser.Click += new System.EventHandler(this.btnFindUser_Click);
             // 
             // tbFriends
             // 
-            this.tbFriends.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.tbFriends.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.tbFriends.Controls.Add(this.btnLoadListFriends);
             this.tbFriends.Controls.Add(this.dtListFriends);
             this.tbFriends.Controls.Add(this.label1);
@@ -234,40 +250,57 @@
             this.tbFriends.Location = new System.Drawing.Point(184, 4);
             this.tbFriends.Name = "tbFriends";
             this.tbFriends.Padding = new System.Windows.Forms.Padding(3);
-            this.tbFriends.Size = new System.Drawing.Size(866, 560);
+            this.tbFriends.Size = new System.Drawing.Size(898, 560);
             this.tbFriends.TabIndex = 1;
             this.tbFriends.Text = "Danh sách bạn bè";
             // 
+            // btnLoadListFriends
+            // 
+            this.btnLoadListFriends.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadListFriends.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadListFriends.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadListFriends.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoadListFriends.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoadListFriends.FillColor = System.Drawing.Color.Transparent;
+            this.btnLoadListFriends.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoadListFriends.ForeColor = System.Drawing.Color.White;
+            this.btnLoadListFriends.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadListFriends.Image")));
+            this.btnLoadListFriends.Location = new System.Drawing.Point(30, 71);
+            this.btnLoadListFriends.Name = "btnLoadListFriends";
+            this.btnLoadListFriends.Size = new System.Drawing.Size(31, 24);
+            this.btnLoadListFriends.TabIndex = 93;
+            this.btnLoadListFriends.Click += new System.EventHandler(this.btnLoadListFriends_Click);
+            // 
             // dtListFriends
             // 
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtListFriends.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtListFriends.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
-            this.dtListFriends.ColumnHeadersHeight = 18;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtListFriends.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtListFriends.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dtListFriends.ColumnHeadersHeight = 35;
             this.dtListFriends.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtListFriends.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtListFriends.DefaultCellStyle = dataGridViewCellStyle6;
             this.dtListFriends.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtListFriends.Location = new System.Drawing.Point(3, 98);
+            this.dtListFriends.Location = new System.Drawing.Point(30, 101);
             this.dtListFriends.Name = "dtListFriends";
             this.dtListFriends.RowHeadersVisible = false;
             this.dtListFriends.RowHeadersWidth = 51;
             this.dtListFriends.RowTemplate.Height = 24;
-            this.dtListFriends.Size = new System.Drawing.Size(861, 459);
+            this.dtListFriends.Size = new System.Drawing.Size(771, 456);
             this.dtListFriends.TabIndex = 89;
             this.dtListFriends.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtListFriends.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -281,7 +314,7 @@
             this.dtListFriends.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtListFriends.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dtListFriends.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtListFriends.ThemeStyle.HeaderStyle.Height = 18;
+            this.dtListFriends.ThemeStyle.HeaderStyle.Height = 35;
             this.dtListFriends.ThemeStyle.ReadOnly = false;
             this.dtListFriends.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dtListFriends.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -295,16 +328,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 13F, System.Drawing.FontStyle.Underline);
-            this.label1.Location = new System.Drawing.Point(310, 35);
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 22.2F);
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(275, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 26);
+            this.label1.Size = new System.Drawing.Size(341, 42);
             this.label1.TabIndex = 2;
             this.label1.Text = "Danh sách bạn bè";
             // 
             // tbAccept
             // 
-            this.tbAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.tbAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.tbAccept.Controls.Add(this.btnLoadListAcceptFriends);
             this.tbAccept.Controls.Add(this.dtAcceptFriend);
             this.tbAccept.Controls.Add(this.label2);
@@ -312,39 +346,56 @@
             this.tbAccept.Location = new System.Drawing.Point(184, 4);
             this.tbAccept.Name = "tbAccept";
             this.tbAccept.Padding = new System.Windows.Forms.Padding(3);
-            this.tbAccept.Size = new System.Drawing.Size(866, 560);
+            this.tbAccept.Size = new System.Drawing.Size(898, 560);
             this.tbAccept.TabIndex = 2;
             this.tbAccept.Text = "Chấp nhận lời mời";
             // 
+            // btnLoadListAcceptFriends
+            // 
+            this.btnLoadListAcceptFriends.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadListAcceptFriends.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadListAcceptFriends.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadListAcceptFriends.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoadListAcceptFriends.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoadListAcceptFriends.FillColor = System.Drawing.Color.Transparent;
+            this.btnLoadListAcceptFriends.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoadListAcceptFriends.ForeColor = System.Drawing.Color.White;
+            this.btnLoadListAcceptFriends.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadListAcceptFriends.Image")));
+            this.btnLoadListAcceptFriends.Location = new System.Drawing.Point(47, 68);
+            this.btnLoadListAcceptFriends.Name = "btnLoadListAcceptFriends";
+            this.btnLoadListAcceptFriends.Size = new System.Drawing.Size(31, 24);
+            this.btnLoadListAcceptFriends.TabIndex = 93;
+            this.btnLoadListAcceptFriends.Click += new System.EventHandler(this.btnLoadListAcceptFriends_Click);
+            // 
             // dtAcceptFriend
             // 
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.dtAcceptFriend.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtAcceptFriend.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            this.dtAcceptFriend.ColumnHeadersHeight = 18;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dtAcceptFriend.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtAcceptFriend.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dtAcceptFriend.ColumnHeadersHeight = 35;
             this.dtAcceptFriend.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtAcceptFriend.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtAcceptFriend.DefaultCellStyle = dataGridViewCellStyle9;
             this.dtAcceptFriend.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtAcceptFriend.Location = new System.Drawing.Point(3, 98);
+            this.dtAcceptFriend.Location = new System.Drawing.Point(47, 98);
             this.dtAcceptFriend.Name = "dtAcceptFriend";
             this.dtAcceptFriend.RowHeadersVisible = false;
             this.dtAcceptFriend.RowHeadersWidth = 51;
             this.dtAcceptFriend.RowTemplate.Height = 24;
-            this.dtAcceptFriend.Size = new System.Drawing.Size(863, 456);
+            this.dtAcceptFriend.Size = new System.Drawing.Size(760, 456);
             this.dtAcceptFriend.TabIndex = 90;
             this.dtAcceptFriend.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtAcceptFriend.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -358,7 +409,7 @@
             this.dtAcceptFriend.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtAcceptFriend.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dtAcceptFriend.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtAcceptFriend.ThemeStyle.HeaderStyle.Height = 18;
+            this.dtAcceptFriend.ThemeStyle.HeaderStyle.Height = 35;
             this.dtAcceptFriend.ThemeStyle.ReadOnly = false;
             this.dtAcceptFriend.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dtAcceptFriend.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -372,10 +423,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 13F, System.Drawing.FontStyle.Underline);
-            this.label2.Location = new System.Drawing.Point(370, 39);
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label2.Location = new System.Drawing.Point(312, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 26);
+            this.label2.Size = new System.Drawing.Size(304, 42);
             this.label2.TabIndex = 3;
             this.label2.Text = "Lời mời kết bạn";
             // 
@@ -387,63 +439,12 @@
             this.btnCloseList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCloseList.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseList.ForeColor = System.Drawing.Color.White;
-            this.btnCloseList.Location = new System.Drawing.Point(1056, 0);
+            this.btnCloseList.Location = new System.Drawing.Point(1088, 0);
             this.btnCloseList.Name = "btnCloseList";
             this.btnCloseList.Size = new System.Drawing.Size(66, 54);
             this.btnCloseList.TabIndex = 3;
             this.btnCloseList.Text = "X";
             this.btnCloseList.Click += new System.EventHandler(this.btnCloseList_Click);
-            // 
-            // btnLoadListAllUsers
-            // 
-            this.btnLoadListAllUsers.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoadListAllUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoadListAllUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoadListAllUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLoadListAllUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLoadListAllUsers.FillColor = System.Drawing.Color.Transparent;
-            this.btnLoadListAllUsers.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLoadListAllUsers.ForeColor = System.Drawing.Color.White;
-            this.btnLoadListAllUsers.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadListAllUsers.Image")));
-            this.btnLoadListAllUsers.Location = new System.Drawing.Point(6, 89);
-            this.btnLoadListAllUsers.Name = "btnLoadListAllUsers";
-            this.btnLoadListAllUsers.Size = new System.Drawing.Size(31, 24);
-            this.btnLoadListAllUsers.TabIndex = 92;
-            this.btnLoadListAllUsers.Click += new System.EventHandler(this.btnLoadListAllUsers_Click);
-            // 
-            // btnLoadListFriends
-            // 
-            this.btnLoadListFriends.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoadListFriends.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoadListFriends.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoadListFriends.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLoadListFriends.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLoadListFriends.FillColor = System.Drawing.Color.Transparent;
-            this.btnLoadListFriends.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLoadListFriends.ForeColor = System.Drawing.Color.White;
-            this.btnLoadListFriends.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadListFriends.Image")));
-            this.btnLoadListFriends.Location = new System.Drawing.Point(3, 68);
-            this.btnLoadListFriends.Name = "btnLoadListFriends";
-            this.btnLoadListFriends.Size = new System.Drawing.Size(31, 24);
-            this.btnLoadListFriends.TabIndex = 93;
-            this.btnLoadListFriends.Click += new System.EventHandler(this.btnLoadListFriends_Click);
-            // 
-            // btnLoadListAcceptFriends
-            // 
-            this.btnLoadListAcceptFriends.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoadListAcceptFriends.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoadListAcceptFriends.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoadListAcceptFriends.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLoadListAcceptFriends.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLoadListAcceptFriends.FillColor = System.Drawing.Color.Transparent;
-            this.btnLoadListAcceptFriends.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLoadListAcceptFriends.ForeColor = System.Drawing.Color.White;
-            this.btnLoadListAcceptFriends.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadListAcceptFriends.Image")));
-            this.btnLoadListAcceptFriends.Location = new System.Drawing.Point(0, 68);
-            this.btnLoadListAcceptFriends.Name = "btnLoadListAcceptFriends";
-            this.btnLoadListAcceptFriends.Size = new System.Drawing.Size(31, 24);
-            this.btnLoadListAcceptFriends.TabIndex = 93;
-            this.btnLoadListAcceptFriends.Click += new System.EventHandler(this.btnLoadListAcceptFriends_Click);
             // 
             // userControlLists
             // 
@@ -452,7 +453,7 @@
             this.Controls.Add(this.btnCloseList);
             this.Controls.Add(this.tbControls);
             this.Name = "userControlLists";
-            this.Size = new System.Drawing.Size(1123, 571);
+            this.Size = new System.Drawing.Size(1154, 571);
             this.tbControls.ResumeLayout(false);
             this.tbFindUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtAllUsers)).EndInit();

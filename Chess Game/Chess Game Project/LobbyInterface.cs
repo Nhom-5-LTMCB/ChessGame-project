@@ -387,7 +387,7 @@ namespace Chess_Game_Project
                                     chat = userControlChatOne;
                                     if (listMsg[1].Contains("(1)"))
                                     {
-                                        handleChat.writeDataChatOne(null, lstMsg[2], lstMsg[1], 1, difUsername, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
+                                        handleChat.writeData(null, lstMsg[2], lstMsg[1], 1, difUsername, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
                                     }
                                     else
                                     {
@@ -397,7 +397,7 @@ namespace Chess_Game_Project
                                         using (MemoryStream stream1 = new MemoryStream(convertedBytes))
                                         {
                                             System.Drawing.Image image = System.Drawing.Image.FromStream(stream1);
-                                            handleChat.writeDataChatOne(image, lstMsg[2], "", 2, difUsername, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
+                                            handleChat.writeData(image, lstMsg[2], "", 2, difUsername, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
                                         }
                                     }
                                     break;
@@ -408,7 +408,7 @@ namespace Chess_Game_Project
                             string[] msg = listMsg[1].Split(':');
                             string[] lsts = msg[1].Split(',');
                             if (listMsg[1].Contains("(1)"))
-                                handleChat.writeData(null, lsts[1], lsts[0], 1, msg[0].Substring(0, msg[0].Length - 3), pnlMultiChatFrame, this, posY, user.userName, parentDirectory, pnlContainsIcon);
+                                handleChat.writeData(null, lsts[1], lsts[0], 1, msg[0].Substring(0, msg[0].Length - 3), pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
                             else
                             {
                                 string imageData = lsts[0];
@@ -417,7 +417,7 @@ namespace Chess_Game_Project
                                 using (MemoryStream stream1 = new MemoryStream(convertedBytes))
                                 {
                                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream1);
-                                    handleChat.writeData(image, lsts[1], "", 2, msg[0].Substring(0, msg[0].Length - 3), pnlMultiChatFrame, this, posY, user.userName, parentDirectory, pnlContainsIcon);
+                                    handleChat.writeData(image, lsts[1], "", 2, msg[0].Substring(0, msg[0].Length - 3), pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
                                 }
                             }
                             break;
@@ -498,7 +498,7 @@ namespace Chess_Game_Project
             string message = (int)setting.chatMulti + "*" + user.userName + "(2):" + Convert.ToBase64String(imageBytes) + "," + user.linkAvatar; ;
             handleChat.sendData(client, message);
 
-            handleChat.writeData(System.Drawing.Image.FromFile(path), user.linkAvatar, "", 2, user.userName, pnlMultiChatFrame, this, posY, user.userName, parentDirectory, pnlContainsIcon);
+            handleChat.writeData(System.Drawing.Image.FromFile(path), user.linkAvatar, "", 2, user.userName, pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
         }
         private void Chat_btnSendMsgChatOne_click(object sender, EventArgs e)
         {
@@ -511,7 +511,7 @@ namespace Chess_Game_Project
                         //tiến hành gửi dữ liệu đi
                         string message = (int)setting.chatOne + "*" + user.userName + "(1):" + chat.TextBox.Text.Trim() + ":" + user.linkAvatar + ":" + difUsernameUser;
                         handleChat.sendData(client, message);
-                        handleChat.writeDataChatOne(null, user.linkAvatar, chat.TextBox.Text.Trim(), 1, user.userName, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
+                        handleChat.writeData(null, user.linkAvatar, chat.TextBox.Text.Trim(), 1, user.userName, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
                     }
                     else
                     {
@@ -532,7 +532,7 @@ namespace Chess_Game_Project
             string message = (int)setting.chatOne + "*" + user.userName + "(2):" + Convert.ToBase64String(imageBytes) + ":" + user.linkAvatar + ":" + difUsernameUser;
             handleChat.sendData(client, message);
 
-            handleChat.writeDataChatOne(System.Drawing.Image.FromFile(path), user.linkAvatar, "", 2, user.userName, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
+            handleChat.writeData(System.Drawing.Image.FromFile(path), user.linkAvatar, "", 2, user.userName, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
             chat.containsIcon.Hide();
             chat.listIcons.Clear();
         }
@@ -554,7 +554,7 @@ namespace Chess_Game_Project
                     //tiến hành gửi dữ liệu đi
                     string message = (int)setting.chatMulti + "*" + user.userName + "(1):" + txtSendMessage.Text.Trim() + "," + user.linkAvatar;
                     handleChat.sendData(client, message);
-                    handleChat.writeData(null, user.linkAvatar, txtSendMessage.Text.Trim(), 1, user.userName, pnlMultiChatFrame, this, posY, user.userName, parentDirectory, pnlContainsIcon);
+                    handleChat.writeData(null, user.linkAvatar, txtSendMessage.Text.Trim(), 1, user.userName, pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
                     if (pnlContainsIcon.Visible)
                     {
                         pnlContainsIcon.Hide();

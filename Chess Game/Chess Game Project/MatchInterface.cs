@@ -133,6 +133,7 @@ namespace Chess_Game_Project
         private IPEndPoint ipEndPoint = null;
         private System.Windows.Forms.Timer timer = null;
         public static int posY = 0;
+        public static MatchInterface showInter = null;
         #endregion
 
 
@@ -212,6 +213,9 @@ namespace Chess_Game_Project
         public MatchInterface()
         {
             InitializeComponent();
+
+            showInter = this;
+
             pnlContainsIcon.Hide();
             txtCountTime.ReadOnly = true;
             txtCountTime.Text = countTime.ToString();
@@ -1518,7 +1522,7 @@ namespace Chess_Game_Project
                     {
                         string[] strs = data.Split(':');
                         if (strs[0].Contains("(1)"))    //đây là chat 
-                            handleChat.writeData1(null, strs[2], strs[1], 1, strs[0].Substring(0, strs[0].Length - 3), listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
+                            handleChat.writeData(null, strs[2], strs[1], 1, strs[0].Substring(0, strs[0].Length - 3), listChat, this, posY, currentPlayer.userName, parentDirectory, null, pnlContainsIcon);
                         else if (strs[0].Contains("(2)")) // đây là gửi icon
                         {
                             string imageData = strs[1];
@@ -1527,7 +1531,7 @@ namespace Chess_Game_Project
                             using (MemoryStream stream = new MemoryStream(convertedBytes))
                             {
                                 System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
-                                handleChat.writeData1(image, strs[2], "", 2, strs[0].Substring(0, strs[0].Length - 3), listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
+                                handleChat.writeData(image, strs[2], "", 2, strs[0].Substring(0, strs[0].Length - 3), listChat, this, posY, currentPlayer.userName, parentDirectory, null, pnlContainsIcon);
                             }
                         }
                     }
@@ -1556,7 +1560,7 @@ namespace Chess_Game_Project
 
                 clientUDP.Send(data, data.Length, ipEndPoint);
 
-                handleChat.writeData1(System.Drawing.Image.FromFile(path), currentPlayer.linkAvatar, "", 2, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
+                handleChat.writeData(System.Drawing.Image.FromFile(path), currentPlayer.linkAvatar, "", 2, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, null, pnlContainsIcon);
             }
             pnlContainsIcon.Hide();
             buttonListIcons.Clear();
@@ -1571,7 +1575,7 @@ namespace Chess_Game_Project
                 ipEndPoint = new IPEndPoint(IPAddress.Parse(difIp), port);
                 byte[] send_buffer = Encoding.UTF8.GetBytes(data);
                 clientUDP.Send(send_buffer, send_buffer.Length, ipEndPoint);
-                handleChat.writeData1(null, currentPlayer.linkAvatar, txtMessage.Text.Trim(), 1, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, pnlContainsIcon);
+                handleChat.writeData(null, currentPlayer.linkAvatar, txtMessage.Text.Trim(), 1, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, null, pnlContainsIcon);
             }
             txtMessage.Clear();
         }

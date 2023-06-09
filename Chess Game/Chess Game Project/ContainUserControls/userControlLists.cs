@@ -45,33 +45,27 @@ namespace Chess_Game_Project.ContainUserControls
             currentDtgrv.Columns.Clear();
             currentDtgrv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             currentDtgrv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            currentDtgrv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            currentDtgrv.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            foreach (DataGridViewColumn column in currentDtgrv.Columns)
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
             //xóa đi dòng cuối cùng trong dataGridView
             currentDtgrv.AllowUserToAddRows = false;
             currentDtgrv.RowHeadersVisible = false;
             //ngăn không cho người dùng kéo giãn
             foreach (DataGridViewColumn column in currentDtgrv.Columns)
-            {
                 column.Resizable = DataGridViewTriState.False;
-            }
             foreach (DataGridViewRow row in currentDtgrv.Rows)
-            {
                 row.Resizable = DataGridViewTriState.False;
-            }
             foreach (DataGridViewColumn column in dtgrv.Columns)
-            {
                 currentDtgrv.Columns.Add(column.Clone() as DataGridViewColumn);
-            }
 
             foreach (DataGridViewRow row in dtgrv.Rows)
             {
                 int rowIndex = currentDtgrv.Rows.Add(row.Clone() as DataGridViewRow);
                 foreach (DataGridViewCell cell in row.Cells)
-                {
                     currentDtgrv.Rows[rowIndex].Cells[cell.ColumnIndex].Value = cell.Value;
-                }
             }
-            currentDtgrv.RowTemplate.Height = 45;
             currentDtgrv.ReadOnly = true;
         }
         public void copyDataIntoGridAllUsers(DataGridView dtgrv)
