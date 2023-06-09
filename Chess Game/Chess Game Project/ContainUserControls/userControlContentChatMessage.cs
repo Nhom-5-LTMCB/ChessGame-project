@@ -68,6 +68,7 @@ namespace Chess_Game_Project.ContainUserControls
                 }
                 txtContent.ReadOnly = true;
             }
+            txtContent.Height -= 5;
         }
 
     }

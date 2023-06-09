@@ -38,19 +38,19 @@
             // ptbAvatar
             // 
             this.ptbAvatar.ImageRotate = 0F;
-            this.ptbAvatar.Location = new System.Drawing.Point(45, 24);
+            this.ptbAvatar.Location = new System.Drawing.Point(59, 28);
             this.ptbAvatar.Name = "ptbAvatar";
             this.ptbAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ptbAvatar.Size = new System.Drawing.Size(28, 29);
+            this.ptbAvatar.Size = new System.Drawing.Size(31, 31);
             this.ptbAvatar.TabIndex = 7;
             this.ptbAvatar.TabStop = false;
             // 
             // ptbIcon
             // 
             this.ptbIcon.ImageRotate = 0F;
-            this.ptbIcon.Location = new System.Drawing.Point(0, 24);
+            this.ptbIcon.Location = new System.Drawing.Point(3, 24);
             this.ptbIcon.Name = "ptbIcon";
-            this.ptbIcon.Size = new System.Drawing.Size(39, 40);
+            this.ptbIcon.Size = new System.Drawing.Size(53, 49);
             this.ptbIcon.TabIndex = 10;
             this.ptbIcon.TabStop = false;
             // 
@@ -59,7 +59,7 @@
             this.lbUserName.AutoSize = true;
             this.lbUserName.BackColor = System.Drawing.Color.Transparent;
             this.lbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.lbUserName.Location = new System.Drawing.Point(29, 5);
+            this.lbUserName.Location = new System.Drawing.Point(40, 5);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(50, 16);
             this.lbUserName.TabIndex = 11;
@@ -70,13 +70,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.Controls.Add(this.lbUserName);
             this.Controls.Add(this.ptbIcon);
             this.Controls.Add(this.ptbAvatar);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "userControlChatIconRight";
-            this.Size = new System.Drawing.Size(82, 71);
+            this.Size = new System.Drawing.Size(101, 84);
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).EndInit();
             this.ResumeLayout(false);

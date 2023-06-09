@@ -32,8 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlChildContainHistory = new System.Windows.Forms.Panel();
-            this.btnCloseHistory = new Guna.UI2.WinForms.Guna2Button();
             this.dtGridViewHistory = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btnCloseHistory = new Guna.UI2.WinForms.Guna2Button();
             this.pnlChildContainHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewHistory)).BeginInit();
             this.SuspendLayout();
@@ -47,21 +47,6 @@
             this.pnlChildContainHistory.Size = new System.Drawing.Size(866, 552);
             this.pnlChildContainHistory.TabIndex = 6;
             // 
-            // btnCloseHistory
-            // 
-            this.btnCloseHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCloseHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCloseHistory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCloseHistory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCloseHistory.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseHistory.ForeColor = System.Drawing.Color.White;
-            this.btnCloseHistory.Location = new System.Drawing.Point(804, 0);
-            this.btnCloseHistory.Name = "btnCloseHistory";
-            this.btnCloseHistory.Size = new System.Drawing.Size(62, 59);
-            this.btnCloseHistory.TabIndex = 3;
-            this.btnCloseHistory.Text = "X";
-            this.btnCloseHistory.Click += new System.EventHandler(this.btnCloseHistory_Click);
-            // 
             // dtGridViewHistory
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -74,7 +59,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtGridViewHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtGridViewHistory.ColumnHeadersHeight = 18;
+            this.dtGridViewHistory.ColumnHeadersHeight = 35;
             this.dtGridViewHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -104,7 +89,7 @@
             this.dtGridViewHistory.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtGridViewHistory.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dtGridViewHistory.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dtGridViewHistory.ThemeStyle.HeaderStyle.Height = 18;
+            this.dtGridViewHistory.ThemeStyle.HeaderStyle.Height = 35;
             this.dtGridViewHistory.ThemeStyle.ReadOnly = false;
             this.dtGridViewHistory.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dtGridViewHistory.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -113,6 +98,21 @@
             this.dtGridViewHistory.ThemeStyle.RowsStyle.Height = 24;
             this.dtGridViewHistory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtGridViewHistory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // btnCloseHistory
+            // 
+            this.btnCloseHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCloseHistory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCloseHistory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCloseHistory.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseHistory.ForeColor = System.Drawing.Color.White;
+            this.btnCloseHistory.Location = new System.Drawing.Point(804, 0);
+            this.btnCloseHistory.Name = "btnCloseHistory";
+            this.btnCloseHistory.Size = new System.Drawing.Size(62, 59);
+            this.btnCloseHistory.TabIndex = 3;
+            this.btnCloseHistory.Text = "X";
+            this.btnCloseHistory.Click += new System.EventHandler(this.btnCloseHistory_Click);
             // 
             // userControlHistory
             // 

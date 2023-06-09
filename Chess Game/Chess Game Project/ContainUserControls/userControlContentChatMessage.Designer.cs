@@ -51,7 +51,7 @@
             this.lbUserName.BackColor = System.Drawing.Color.Transparent;
             this.lbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUserName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbUserName.Location = new System.Drawing.Point(3, 3);
+            this.lbUserName.Location = new System.Drawing.Point(0, 9);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(63, 18);
             this.lbUserName.TabIndex = 1;
@@ -85,12 +85,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.RosyBrown;
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.lbUserName);
             this.Controls.Add(this.ptvAvatar);
             this.Name = "userControlContentChatMessage";
-            this.Size = new System.Drawing.Size(74, 72);
+            this.Size = new System.Drawing.Size(75, 71);
             ((System.ComponentModel.ISupportInitialize)(this.ptvAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

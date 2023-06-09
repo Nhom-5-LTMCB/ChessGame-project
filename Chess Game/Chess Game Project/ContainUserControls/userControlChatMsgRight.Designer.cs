@@ -83,7 +83,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.Controls.Add(this.lbUserName);
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.ptvAvatar);

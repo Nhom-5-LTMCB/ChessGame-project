@@ -67,7 +67,7 @@ namespace Chess_Game_Project.ContainUserControls
                 
             }
             this.Width = txtContent.Location.X;
-            lbUserName.Location = new Point(txtContent.Width + 20, lbUserName.Location.Y);
+            lbUserName.Location = new Point(txtContent.Width + 10, lbUserName.Location.Y);
             ptvAvatar.Location = new Point(txtContent.Width + 25, ptvAvatar.Location.Y);
         }
     }

@@ -53,14 +53,14 @@ namespace Chess_Game_Project.classes_handle
                         return;
                     MethodInvoker invoker = new MethodInvoker(delegate
                     {
-                       if(userName != owner)
+                        if (userName != owner)
                         {
                             pnl.AutoScroll = false;
                             userControlContentChatMessage userControl = new userControlContentChatMessage();
                             userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, owner);
                             int userControlWidth = pnl.Width * 70 / 100;
-                            userControl.Location = new System.Drawing.Point(10, posY);
-                            userControl.Size = new System.Drawing.Size(userControlWidth, userControl.Height);
+                            userControl.Location = new System.Drawing.Point(10, posY == 0 ? 0 : posY - posY / 4);
+                            userControl.Size = new System.Drawing.Size(0, userControl.Height);
                             pnl.Controls.Add(userControl);
                             userControl.content = msg;
                             userControl.addMesageIntoFrame(userControlWidth);
@@ -68,9 +68,16 @@ namespace Chess_Game_Project.classes_handle
                                 chat.pos = posY;
                             else
                             {
-                                if(form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
-                                else if(form == MatchInterface.showInter) MatchInterface.posY += userControl.Height;
-                            }   
+                                if (form == LobbyInterface.showInter)
+                                {
+                                    userControl.Height -= 10;
+                                    LobbyInterface.posY += userControl.Height + 5;
+                                }
+                                else if (form == MatchInterface.showInter)
+                                {
+                                    MatchInterface.posY += userControl.Height;
+                                }
+                            }
                             pnl.ScrollControlIntoView(userControl);
                             pnl.AutoScroll = true;
                             pnl.HorizontalScroll.Visible = false;
@@ -91,8 +98,10 @@ namespace Chess_Game_Project.classes_handle
                                 chat.pos = posY;
                             else
                             {
-                                if (form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
-                                else if (form == MatchInterface.showInter) MatchInterface.posY += userControl.Height;
+                                if (form == LobbyInterface.showInter)
+                                    LobbyInterface.posY += userControl.Height;
+                                else if (form == MatchInterface.showInter)
+                                    MatchInterface.posY += userControl.Height;
                             }
                             pnl.ScrollControlIntoView(userControl);
                             pnl.AutoScroll = true;
@@ -105,12 +114,13 @@ namespace Chess_Game_Project.classes_handle
                 {
                     MethodInvoker invoker = new MethodInvoker(delegate
                     {
-                        if(userName != owner)
+
+                        if (userName != owner)
                         {
                             pnl.AutoScroll = false;
                             userControlContentChatIcon userControl = new userControlContentChatIcon();
                             userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, imgContent, owner);
-                            userControl.Location = new System.Drawing.Point(10, posY);
+                            userControl.Location = new System.Drawing.Point(10, posY == 0 ? 0 : posY - posY / 4);
                             pnl.Controls.Add(userControl);
                             if (chat != null)
                                 chat.pos = posY;
@@ -126,7 +136,8 @@ namespace Chess_Game_Project.classes_handle
 
                             pnl.AutoScroll = true;
                             pnl.HorizontalScroll.Visible = false;
-                        }else
+                        }
+                        else
                         {
                             pnl.AutoScroll = false;
                             userControlChatIconRight userControl = new userControlChatIconRight();
@@ -147,7 +158,7 @@ namespace Chess_Game_Project.classes_handle
 
                             pnl.AutoScroll = true;
                             pnl.HorizontalScroll.Visible = false;
-                            
+
                         }
                     });
                     form.Invoke(invoker);
