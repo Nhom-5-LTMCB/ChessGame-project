@@ -65,18 +65,16 @@ namespace Chess_Game_Project.classes_handle
                             userControl.content = msg;
                             userControl.addMesageIntoFrame(userControlWidth);
                             if (chat != null)
-                                chat.pos = posY;
+                                chat.pos = posY + userControl.Height;
                             else
                             {
                                 if (form == LobbyInterface.showInter)
                                 {
                                     userControl.Height -= 10;
                                     LobbyInterface.posY += userControl.Height + 5;
-                                }
+                                }    
                                 else if (form == MatchInterface.showInter)
-                                {
                                     MatchInterface.posY += userControl.Height;
-                                }
                             }
                             pnl.ScrollControlIntoView(userControl);
                             pnl.AutoScroll = true;
@@ -95,7 +93,7 @@ namespace Chess_Game_Project.classes_handle
                             int sizeX = pnl.Width - userControl.Width - 20;
                             userControl.Location = new System.Drawing.Point(sizeX, posY);
                             if (chat != null)
-                                chat.pos = posY;
+                                chat.pos = posY + userControl.Height;
                             else
                             {
                                 if (form == LobbyInterface.showInter)
@@ -123,7 +121,7 @@ namespace Chess_Game_Project.classes_handle
                             userControl.Location = new System.Drawing.Point(10, posY == 0 ? 0 : posY - posY / 4);
                             pnl.Controls.Add(userControl);
                             if (chat != null)
-                                chat.pos = posY;
+                                chat.pos = posY + userControl.Height;
                             else
                             {
                                 if (form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
@@ -145,7 +143,7 @@ namespace Chess_Game_Project.classes_handle
                             pnl.Controls.Add(userControl);
                             userControl.Location = new System.Drawing.Point(pnl.Width - userControl.Width - 20, posY);
                             if (chat != null)
-                                chat.pos = posY;
+                                chat.pos = posY + userControl.Height;
                             else
                             {
                                 if (form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
@@ -158,7 +156,6 @@ namespace Chess_Game_Project.classes_handle
 
                             pnl.AutoScroll = true;
                             pnl.HorizontalScroll.Visible = false;
-
                         }
                     });
                     form.Invoke(invoker);
