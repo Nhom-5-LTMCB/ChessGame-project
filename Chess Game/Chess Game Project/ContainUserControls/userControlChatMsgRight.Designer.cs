@@ -39,7 +39,7 @@
             this.txtContent.BorderRadius = 10;
             this.txtContent.BorderThickness = 3;
             this.txtContent.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtContent.DefaultText = "anh long cua em pro qua di thoi";
+            this.txtContent.DefaultText = "";
             this.txtContent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtContent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtContent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));

@@ -251,6 +251,8 @@ namespace Chess_Game_Project.classes_handle
                 dtAcceptFriend.Columns.Add(buttonColumn1);
                 dtAcceptFriend.RowHeadersVisible = false;
                 dtAcceptFriend.RowTemplate.Height = 25;
+                foreach (DataGridViewColumn column in dtGridViewHistory.Columns)
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 if (userLists != null)
                 {
                     foreach (infoUser item in userLists)
