@@ -87,5 +87,10 @@ namespace Chess_Game_Project.ContainUserControls
         {
             changeUserName(dtGridView, username, preUsername);
         }
+        public event EventHandler<EventArgs> btnLoadListHistory_click;
+        private void btnLoadListHistory_Click(object sender, EventArgs e)
+        {
+            btnLoadListHistory_click?.Invoke(this, e);
+        }
     }
 }

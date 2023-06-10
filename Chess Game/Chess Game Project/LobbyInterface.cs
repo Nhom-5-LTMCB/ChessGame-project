@@ -237,8 +237,10 @@ namespace Chess_Game_Project
             userControlLists.btnLoadListFriends_click += UserControlLists_btnLoadListFriends_click;
             history = new userControlHistory();
             history.btnCloseHistory_click += History_btnCloseHistory_click;
+            history.btnLoadListHistory_click += History_btnLoadListHistory_click;
             rank = new userControlRanks();
             rank.btnCloseRank_click += Rank_btnCloseRank_click;
+            rank.btnLoadListRank_click += Rank_btnLoadListRank_click;
             createRoom = new userControlCreateRoom();
             createRoom.btnCloseCreateRoom_click += CreateRoom_btnCloseCreateRoom_click;
             createRoom.btnAcceptCreateRoom_click += CreateRoom_btnAcceptCreateRoom_click;
@@ -252,6 +254,9 @@ namespace Chess_Game_Project
 
             pnlMultiChatFrame.AutoScroll = true;
         }
+
+        
+
         public LobbyInterface(infoUser user) : this()
         {
             try
@@ -312,12 +317,10 @@ namespace Chess_Game_Project
                             await hanleDataIntoDatagridview.displayListMatches(dtGridContainListRooms, apiGetListMatches);
                             break;
                         case 1:
-                            MessageBox.Show(listMsg[1] + " \nCount: " + user.lists.Count);
                             string[] lstAcceptFriend = listMsg[1].Split('+');
                             listFriends newPairOfAccept = JsonConvert.DeserializeObject<listFriends>(lstAcceptFriend[2]);
                             user.lists.Add(newPairOfAccept);
 
-                            MessageBox.Show("Sau khi them vao: " + user.lists.Count);
 
                             if (newPairOfAccept != null)
                             {
@@ -337,7 +340,6 @@ namespace Chess_Game_Project
                                     MessageBox.Show(JsonConvert.SerializeObject(item) + "\n difUserID: " + difUserID + "\n myID: " + user.id);
                                     if (item.listID.Contains(user.id) && item.listID.Contains(difUserID))
                                     {
-                                        MessageBox.Show("Đã vào bên trong này hàm rcv");
                                         temp = item;
                                         break;
                                     }
@@ -460,11 +462,19 @@ namespace Chess_Game_Project
                             //nhan duoc 1 chuoi va tien hanh lay ra id cua nguoi choi can xoa
                             string[] lstStr = listMsg[1].Split(':');
                             string difUserID1 = lstStr[2];
-                            var pairOfFriends = user.lists.Where(item => item.listID.Contains(user.id) && item.listID.Contains((difUserID1)));
-                            if (parentDirectory != null)
+                            listFriends friend = null;
+                            foreach (listFriends item in user.lists)
+                            {
+                                if (item.listID.Contains(user.id) && item.listID.Contains((difUserID1)))
+                                {
+                                    friend = item;
+                                    break;
+                                }
+                            }
+                            if (friend != null)
                             {
                                 //tien hanh xoa khoi danh sach
-                                user.lists.Remove((listFriends)pairOfFriends);
+                                user.lists.Remove(friend);
                                 userControlLists.showBtnMakeFriend(lstStr[1]);
 
                                 List<infoUser> lists2 = await handleGetLists.getListUser("friend", user, apiGetUserId);
@@ -493,9 +503,8 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                //await handleLogOutRoom();
-                //Login.showFormAgain.Show();
+                await handleLogOutRoom();
+                Login.showFormAgain.Show();
             }
         }
         private void btnSendIcon_Click(object sender, EventArgs e)
@@ -674,7 +683,7 @@ namespace Chess_Game_Project
                             this.Hide();
                         }
                     }
-                    else if (e.ColumnIndex == 4)
+                    else if (e.ColumnIndex == 4)    //Nhắn tin
                     {
                         pnlChatOne.Controls.Clear();
                         foreach (userControlChatOne userControl in createChatOneFrame.listChats)
@@ -699,17 +708,16 @@ namespace Chess_Game_Project
                             }
                         }
                     }
-                    else if (e.ColumnIndex == 5)    //HỦY LỜI MỜI KẾT BẠN
+                    else if (e.ColumnIndex == 5)    //Hủy lời mời kết bạn
                     {
 
-                        var listFriends = user.lists.Where(item => string.Equals(item.status.ToLower(), "friend"));
                         string id1 = user.id;
                         string id2 = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
                         string difUsername = dataGridView.Rows[e.RowIndex].Cells["userName"].Value.ToString();
                         string newId = "";
-                        foreach (var item in listFriends)
+                        foreach (listFriends item in user.lists) 
                         {
-                            if (item.listID.Contains(id1) && item.listID.Contains(id2))
+                            if (item.listID.Contains(id1) && item.listID.Contains(id2) && string.Equals(item.status.ToLower(), "friend"))
                             {
                                 newId = item._id;
                                 break;
@@ -720,7 +728,7 @@ namespace Chess_Game_Project
                             string apiPath = apiDeleteFriend + newId;
                             //tiến hành lấy ra _id thỏa mãn
                             JToken tkData = await manageApi.callApiUsingDeleteMethod(apiPath);
-                            if (!string.IsNullOrEmpty(tkData.ToString()))
+                            if (tkData != null)
                             {
                                 string message = (int)manageChooseCases.setting.unFriend + "*" + dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString() + ":" + user.userName + ":" + user.id;
                                 handleChat.sendData(client, message);
@@ -729,18 +737,15 @@ namespace Chess_Game_Project
                                 //tiến hành xóa cặp người dùng này
                                 listFriends item = JsonConvert.DeserializeObject<listFriends>(tkData.ToString());
                                 user.lists.Remove(item);
-
-                                dataGridView.Rows.RemoveAt(e.RowIndex);
                                 //cập nhật lại danh sách tất cả người dùng
-                                await handleGetLists.getListAllUser(user.id, apiGetAllUser, userControlLists, user);
-
+                                userControlLists.showBtnMakeFriend(dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
+                                dataGridView.Rows.RemoveAt(e.RowIndex);
                                 //xóa bạn bè thì cũng coi như mất luồng chat 
                                 foreach (userControlChatOne control in createChatOneFrame.listChats)
                                 {
                                     if (control.Tag.ToString().Contains(user.userName) && control.Tag.ToString().Contains(difUsername))
                                     {
                                         createChatOneFrame.listChats.Remove(control);
-                                        MessageBox.Show("Đã hủy luồng chat với người chơi này");
                                         break;
                                     }
                                 }
@@ -784,7 +789,7 @@ namespace Chess_Game_Project
                         };
 
                         JToken tkData = await manageApi.callApiUsingMethodPost(data, apiMakeFriend);
-                        if (!string.IsNullOrEmpty(tkData.ToString()))
+                        if (tkData != null)
                         {
                             listFriends lstFriend = JsonConvert.DeserializeObject<listFriends>(tkData.ToString());
                             user.lists.Add(lstFriend);
@@ -986,6 +991,31 @@ namespace Chess_Game_Project
             }
 
         }
+        private async void Rank_btnLoadListRank_click(object sender, EventArgs e)
+        {
+            JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + user.id);
+            if (!string.IsNullOrEmpty(tkData.ToString()))
+            {
+                JToken tkData1 = await manageApi.callApiUsingMethodGet(apiGetAllUser);
+                List<infoUser> users = JsonConvert.DeserializeObject<List<infoUser>>(tkData1.ToString());
+                this.user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
+                hanleDataIntoDatagridview.displayListRank(users, user, rank);
+
+                MessageBox.Show("Làm mới thành công");
+            }
+        }
+
+        private async void History_btnLoadListHistory_click(object sender, EventArgs e)
+        {
+            JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + user.id);
+            if (!string.IsNullOrEmpty(tkData.ToString()))
+            {
+                this.user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
+                await hanleDataIntoDatagridview.displayListHistoryMatch(user, history, apiGetUserId);
+
+                MessageBox.Show("Làm mới thành công");
+            }
+        }
         private async void btnRandomRoom_Click(object sender, EventArgs e)
         {
             try
@@ -1125,8 +1155,6 @@ namespace Chess_Game_Project
         {
             await handleLogOutRoom();
         }
-
-
         //==================================================================================================================================
     }
 }

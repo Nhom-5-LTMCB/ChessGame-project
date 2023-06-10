@@ -13,7 +13,7 @@ namespace Chess_Game_Project.ContainUserControls
 {
     public partial class userControlRanks : UserControl
     {
-        public Label currentRank
+        public System.Windows.Forms.Label currentRank
         {
             get { return lbCurrentRank; }
             set { lbCurrentRank = value; }
@@ -58,6 +58,7 @@ namespace Chess_Game_Project.ContainUserControls
             dtGridRank.ReadOnly = true;
         }
         public event EventHandler<EventArgs> btnCloseRank_click;
+        public event EventHandler<EventArgs> btnLoadListRank_click;
         private void btnCloseRank_Click(object sender, EventArgs e)
         {
             btnCloseRank_click?.Invoke(this, e);
@@ -81,6 +82,11 @@ namespace Chess_Game_Project.ContainUserControls
         public void changeUserNameIntoDataRank(string username, string preUsername)
         {
             changeUserName(dtGridRank, username, preUsername);
+        }
+
+        private void btnLoadListRank_Click(object sender, EventArgs e)
+        {
+            btnLoadListRank_click?.Invoke(this, e);
         }
     }
 }

@@ -31,15 +31,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(userControlHistory));
             this.pnlChildContainHistory = new System.Windows.Forms.Panel();
             this.dtGridViewHistory = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnCloseHistory = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLoadListHistory = new Guna.UI2.WinForms.Guna2Button();
             this.pnlChildContainHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlChildContainHistory
             // 
+            this.pnlChildContainHistory.Controls.Add(this.btnLoadListHistory);
             this.pnlChildContainHistory.Controls.Add(this.dtGridViewHistory);
             this.pnlChildContainHistory.Controls.Add(this.btnCloseHistory);
             this.pnlChildContainHistory.Location = new System.Drawing.Point(0, 0);
@@ -114,6 +117,23 @@
             this.btnCloseHistory.Text = "X";
             this.btnCloseHistory.Click += new System.EventHandler(this.btnCloseHistory_Click);
             // 
+            // btnLoadListHistory
+            // 
+            this.btnLoadListHistory.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadListHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadListHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoadListHistory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoadListHistory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoadListHistory.FillColor = System.Drawing.Color.Transparent;
+            this.btnLoadListHistory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoadListHistory.ForeColor = System.Drawing.Color.White;
+            this.btnLoadListHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadListHistory.Image")));
+            this.btnLoadListHistory.Location = new System.Drawing.Point(0, 35);
+            this.btnLoadListHistory.Name = "btnLoadListHistory";
+            this.btnLoadListHistory.Size = new System.Drawing.Size(31, 24);
+            this.btnLoadListHistory.TabIndex = 93;
+            this.btnLoadListHistory.Click += new System.EventHandler(this.btnLoadListHistory_Click);
+            // 
             // userControlHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -132,5 +152,6 @@
         private System.Windows.Forms.Panel pnlChildContainHistory;
         private Guna.UI2.WinForms.Guna2Button btnCloseHistory;
         private Guna.UI2.WinForms.Guna2DataGridView dtGridViewHistory;
+        private Guna.UI2.WinForms.Guna2Button btnLoadListHistory;
     }
 }
