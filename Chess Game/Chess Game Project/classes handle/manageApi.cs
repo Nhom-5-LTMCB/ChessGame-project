@@ -28,6 +28,22 @@ namespace Chess_Game_Project.classes_handle
 
             return null;
         }
+        public static async Task<JToken> callApiUsingDeleteMethod(string apiPath)
+        {
+            //làm mới lại danh sách khi có phần tử mới được thêm vào
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = await client.DeleteAsync(apiPath);
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                string jsonData = await response.Content.ReadAsStringAsync();
+                JObject objData = JObject.Parse(jsonData);
+                JToken tkData = objData["data"];
+
+                return tkData;
+            }
+
+            return null;
+        }
         public static async Task<JToken> callApiUsingMethodGet(string apiPath)
         {
             HttpClient client = new HttpClient();

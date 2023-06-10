@@ -34,7 +34,7 @@ namespace ServerChessGame
                     clients.Remove(userName);
                     Console.WriteLine("Da xoa: " + userName);
                 }
-                Console.WriteLine("---> " + userName + ": da tham gia vao phong chat");
+                Console.WriteLine("---> " + userName + ": da tham gia vao phong chat"); 
                 clients.Add(userName, client);
 
                 //khởi chạy toàn bộ luồng dữ liệu
@@ -80,7 +80,7 @@ namespace ServerChessGame
                             }
                             break;
                         case 1:
-                            string[] lst = listMsg[1].Split(':');
+                            string[] lst = listMsg[1].Split('+');
                             Console.WriteLine(lst[1] + ": da gui loi moi ket ban toi " + lst[0]);
                             TcpClient clientRcv = (TcpClient)clients[lst[0]];
                             if (clientRcv != null)
@@ -91,8 +91,8 @@ namespace ServerChessGame
                             }
                             break;
                         case 2:
-                            TcpClient clientRcv1 = (TcpClient)clients[listMsg[1]];
-                            Console.WriteLine("da chap nhan loi moi ket ban voi " + listMsg[1]);
+                            TcpClient clientRcv1 = (TcpClient)clients[listMsg[1].Split(':')[0]];
+                            Console.WriteLine("da chap nhan loi moi ket ban voi " + listMsg[1].Split(':')[0]);
                             if (clientRcv1 != null)
                             {
                                 stream = clientRcv1.GetStream();
@@ -175,6 +175,35 @@ namespace ServerChessGame
                                 stream = clientRcv3.GetStream();
                                 byte[] buffer1 = Encoding.UTF8.GetBytes(message);
                                 stream.Write(buffer1, 0, buffer1.Length);
+                            }
+                            break;
+                        case 8:
+
+                            //lay ra tcpClient cua nguoi choi nay
+                            string[] lst2 = listMsg[1].Split("+");
+                            string username = lst2[1];
+                            string preUsername = lst2[0];
+                            if(!string.Equals(username, preUsername))
+                            {
+                                Console.WriteLine(preUsername + " da doi ten thanh " + username);
+                                TcpClient currentTcpClient = (TcpClient)clients[preUsername];
+                                clients.Remove(preUsername);
+                                clients.Add(username, currentTcpClient);
+
+                                Thread currentThread = (Thread)manageChatThread[preUsername];
+                                manageChatThread.Remove(preUsername);
+                                manageChatThread.Add(username, currentThread);
+                            }
+
+                            foreach (string key in clients.Keys)
+                            {
+                                TcpClient client1 = (TcpClient)clients[key];
+                                if(client1 != null)
+                                {
+                                    stream = client1.GetStream();
+                                    byte[] buffer2 = Encoding.UTF8.GetBytes(message);
+                                    stream.Write(buffer2, 0, buffer2.Length);
+                                }
                             }
                             break;
                     }

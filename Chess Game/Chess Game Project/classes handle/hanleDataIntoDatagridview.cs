@@ -122,6 +122,8 @@ namespace Chess_Game_Project.classes_handle
                 dtAllUsers.Columns.Add(buttonColumn2);
                 dtAllUsers.RowTemplate.Height = 30;
                 dtAllUsers.ReadOnly = true;
+                foreach (DataGridViewColumn column in dtAllUsers.Columns)
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
 
                 foreach (infoUser item in userLists)
                 {
@@ -251,7 +253,7 @@ namespace Chess_Game_Project.classes_handle
                 dtAcceptFriend.Columns.Add(buttonColumn1);
                 dtAcceptFriend.RowHeadersVisible = false;
                 dtAcceptFriend.RowTemplate.Height = 25;
-                foreach (DataGridViewColumn column in dtGridViewHistory.Columns)
+                foreach (DataGridViewColumn column in dtAcceptFriend.Columns)
                     column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 if (userLists != null)
                 {
@@ -290,6 +292,8 @@ namespace Chess_Game_Project.classes_handle
                 dtGridRank.Columns.Add("point", "Điểm");
                 dtGridRank.Columns.Add("currentRank", "Hạng");
                 dtGridRank.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+                foreach (DataGridViewColumn column in dtGridRank.Columns)
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 if (userLists != null)
                 {
 
@@ -322,6 +326,8 @@ namespace Chess_Game_Project.classes_handle
                 dtGridViewHistory.Columns.Add("result", "Kết quả");
                 dtGridViewHistory.RowHeadersVisible = false;
                 dtGridViewHistory.RowTemplate.Height = 25;
+                foreach (DataGridViewColumn column in dtGridViewHistory.Columns)
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
                 if (user != null)
                 {
                     foreach (match item in user.matches)
