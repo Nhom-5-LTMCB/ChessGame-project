@@ -69,6 +69,7 @@ namespace Chess_Game_Project
                 JToken tkData = await manageApi.callApiUsingMethodPost(data, apiUrlLogin);
                 if (tkData != null)
                 {
+                    btnLogin.Enabled = true;
                     // Chuyển đổi sang đối tượng JSON
                     classes.infoUser user = JsonConvert.DeserializeObject<classes.infoUser>(tkData.ToString());
                     //if (user.statusActive == "online")
@@ -93,7 +94,6 @@ namespace Chess_Game_Project
                     await manageApi.callApiUsingMethodPut(data1, apiUser);
                     this.Hide();
 
-                    btnLogin.Enabled = true;
 
                     //tạo ra giao diện chính
                     LobbyInterface inter = new LobbyInterface(user);

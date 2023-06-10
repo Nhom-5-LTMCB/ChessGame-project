@@ -111,6 +111,7 @@ namespace ServerChessGame
                             break;
                         case 4: //dùng để tạo ra các luồng chat 1-1
                             string[] lstInfo = listMsg[1].Split(":");
+                            Console.WriteLine("Dang thuc hien chat 1-1 voi " + lstInfo[3]);
                             TcpClient currentClient = (TcpClient)clients[lstInfo[3]];
                             if (currentClient != null)
                             {
@@ -214,8 +215,6 @@ namespace ServerChessGame
                                     stream.Write(buffer2, 0, buffer2.Length);
                                 }
                             }
-
-
                             break;
                     }
                 }

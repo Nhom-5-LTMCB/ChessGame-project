@@ -60,17 +60,15 @@ namespace Chess_Game_Project.classes_handle
                             userControlContentChatMessage userControl = new userControlContentChatMessage();
                             userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, owner);
                             int userControlWidth = pnl.Width * 70 / 100;
-                            userControl.Location = new System.Drawing.Point(chat != null ? 25 : 10, posY == 0 ? 0 : posY - posY / 4);
+                            userControl.Location = new System.Drawing.Point(chat != null ? 25 : 10, posY == 0 ? 0 : chat == null ? posY - posY / 4 : posY);
                             userControl.Size = new System.Drawing.Size(0, userControl.Height);
                             pnl.Controls.Add(userControl);
                             userControl.content = msg;
                             userControl.addMesageIntoFrame(userControlWidth, chat);
                             if (chat != null)
                             {
-                                MessageBox.Show("Trước khi cộng: " + posY);
-                                chat.pos = posY + userControl.Height + 20;
-                                userControl.Width = userControlWidth;
-                                MessageBox.Show("Sau khi cộng: " + chat.pos);
+                                userControl.Height += 10;
+                                chat.pos = posY + userControl.Height;
                             }
                             else
                             {
@@ -100,7 +98,9 @@ namespace Chess_Game_Project.classes_handle
                             int sizeX = pnl.Width - userControl.Width - 20;
                             userControl.Location = new System.Drawing.Point(sizeX, posY);
                             if (chat != null)
+                            {
                                 chat.pos = posY + userControl.Height;
+                            }    
                             else
                             {
                                 if (form == LobbyInterface.showInter)

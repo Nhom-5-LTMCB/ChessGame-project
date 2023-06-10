@@ -196,5 +196,36 @@ namespace Chess_Game_Project.ContainUserControls
         {
             changeUserName(dtAcceptFriend, username, preUsername);
         }
+        public void changeTextInButtonChat(string difUserName, bool isRead)
+        {
+            foreach (DataGridViewRow row in dtListFriends.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    // Lấy giá trị trong một cột của dòng hiện tại
+                    string value = row.Cells["userName"].Value.ToString();
+                    if (string.Equals(value, difUserName))
+                    {
+                        DataGridViewButtonCell buttonCell = new DataGridViewButtonCell();
+                        if (!isRead) buttonCell.Value = "Nhắn tin (*)";
+                        else buttonCell.Value = "Nhắn tin";
+                        row.Cells[4] = buttonCell;
+                    }
+
+                }
+            }
+        }
+        public bool checkReadMessageIntoChat()
+        {
+            foreach (DataGridViewRow row in dtListFriends.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    if (string.Equals(row.Cells[4].Value.ToString(), "Nhắn tin (*)"))
+                        return false;
+                }
+            }
+            return true;
+        }
     }
 }

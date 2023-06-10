@@ -183,9 +183,9 @@
             this.btnLoadListRank.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLoadListRank.ForeColor = System.Drawing.Color.White;
             this.btnLoadListRank.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadListRank.Image")));
-            this.btnLoadListRank.Location = new System.Drawing.Point(0, 24);
+            this.btnLoadListRank.Location = new System.Drawing.Point(0, 3);
             this.btnLoadListRank.Name = "btnLoadListRank";
-            this.btnLoadListRank.Size = new System.Drawing.Size(31, 24);
+            this.btnLoadListRank.Size = new System.Drawing.Size(31, 41);
             this.btnLoadListRank.TabIndex = 93;
             this.btnLoadListRank.Click += new System.EventHandler(this.btnLoadListRank_Click);
             // 

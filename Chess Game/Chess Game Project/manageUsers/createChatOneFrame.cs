@@ -34,6 +34,7 @@ namespace Chess_Game_Project.manageUsers
                     if (!check)
                     {
                         chat = new userControlChatOne();
+                        chat.Hide();
                         chat.Tag = $"{user.userName},{userName}";
                         chat.Dock = DockStyle.Bottom;
                         listChats.Add(chat);

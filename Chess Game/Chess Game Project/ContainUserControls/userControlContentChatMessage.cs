@@ -70,6 +70,9 @@ namespace Chess_Game_Project.ContainUserControls
             {
                 lbUserName.Location = new Point(lbUserName.Location.X, lbUserName.Location.Y - 5);
                 lbUserName.AutoSize = true;
+                txtContent.Height += 5;
+                txtContent.Location = new Point(txtContent.Location.X + 10, txtContent.Location.Y);
+                ptvAvatar.Size = new Size(31, 31);
             }
         }
 

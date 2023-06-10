@@ -371,14 +371,31 @@ namespace Chess_Game_Project
                             break;
                         case 4:
                             //tiến hành lấy ra nội dung dạng "content, linkAvatar, difUsername"
-                            MessageBox.Show("Đã nhận được tin nhắn với nội dung: " + message);
                             string[] lstMsg = listMsg[1].Split(':');
                             string difUsername = lstMsg[0].Substring(0, lstMsg[0].Length - 3);
-
                             //tiến hành hiển thị button danh sách kiểu (1)
-                            countMsg++;
-                            btnListFriend.Text = $"Danh sách bạn bè ({countMsg})";
-
+                            bool checkCount = true;
+                            foreach (userControlChatOne userControlChatOne in createChatOneFrame.listChats)
+                            {
+                                if (userControlChatOne.Tag.ToString().Contains(user.userName) && userControlChatOne.Tag.ToString().Contains(difUsername))
+                                {
+                                    if (userControlChatOne.Visible)
+                                    {
+                                        checkCount = false;
+                                        break;
+                                    }
+                                }
+                            }
+                            if(!checkCount)
+                            {
+                                btnListFriend.Text = "Danh sách bạn bè";
+                                userControlLists.changeTextInButtonChat(difUsername, true);
+                            }
+                            else
+                            {
+                                btnListFriend.Text = "Danh sách bạn bè (*)";
+                                userControlLists.changeTextInButtonChat(difUsername, false);
+                            }
                             foreach (userControlChatOne userControlChatOne in createChatOneFrame.listChats)
                             {
                                 if (userControlChatOne.Tag.ToString().Contains(user.userName) && userControlChatOne.Tag.ToString().Contains(difUsername))
@@ -686,11 +703,15 @@ namespace Chess_Game_Project
                     else if (e.ColumnIndex == 4)    //Nhắn tin
                     {
                         pnlChatOne.Controls.Clear();
+
                         foreach (userControlChatOne userControl in createChatOneFrame.listChats)
                         {
                             if (userControl.Tag.ToString().Contains(user.userName) && userControl.Tag.ToString().Contains(dataGridView.Rows[e.RowIndex].Cells["userName"].Value.ToString()))
                             {
-                                pnlChatOne.Show();
+                                //khi bấm vào thì đổi về lại trạng thái cũ
+                                userControlLists.changeTextInButtonChat(dataGridView.Rows[e.RowIndex].Cells["userName"].Value.ToString(), true);
+                                if (userControlLists.checkReadMessageIntoChat())
+                                    btnListFriend.Text = "Danh sách bạn bè";
                                 foreach (System.Windows.Forms.UserControl userControl1 in createChatOneFrame.listChats)
                                     userControl1.Hide();
                                 chat = userControl;
@@ -704,6 +725,7 @@ namespace Chess_Game_Project
                                 difUsernameUser = dataGridView.Rows[e.RowIndex].Cells["userName"].Value.ToString();
                                 pnlChatOne.Controls.Add(chat);
                                 chat.Show();
+                                pnlChatOne.Show();
                                 break;
                             }
                         }
@@ -920,6 +942,8 @@ namespace Chess_Game_Project
         }
         private void btnListFriend_Click(object sender, EventArgs e)
         {
+            if (userControlLists.checkReadMessageIntoChat())
+                btnListFriend.Text = "Danh sách bạn bè";
             loopChildPanel(userControlLists);
             userControlLists.selectTabControl(1);
         }
@@ -952,68 +976,28 @@ namespace Chess_Game_Project
         }
         private async void btnRefreshListMatches_Click(object sender, EventArgs e)
         {
-            await hanleDataIntoDatagridview.displayListMatches(dtGridContainListRooms, apiGetListMatches);
-
-            MessageBox.Show("Làm mới thành công");
+            await handleReloadList.reloadListMatches(dtGridContainListRooms, apiGetUserId);
         }
         private async void UserControlLists_btnLoadListFriends_click(object sender, EventArgs e)
         {
-            JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + user.id);
-            if (!string.IsNullOrEmpty(tkData.ToString()))
-            {
-                this.user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-                List<infoUser> getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
-                hanleDataIntoDatagridview.displayListFriends(getFriends, userControlLists);
-                MessageBox.Show("Làm mới thành công");
-            }
+            await handleReloadList.reloadListFriends(apiGetUserId, user, userControlLists, chat);
         }
         private async void UserControlLists_btnLoadListAllUsers_click(object sender, EventArgs e)
         {
-            JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + user.id);
-            if (!string.IsNullOrEmpty(tkData.ToString()))
-            {
-                this.user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-                await handleGetLists.getListAllUser(user.id, apiGetAllUser, userControlLists, user);
-                MessageBox.Show("Làm mới thành công");
-            }
+            await handleReloadList.reloadListAllUsers(apiGetUserId, apiGetAllUser, user, userControlLists);
 
         }
         private async void UserControlLists_btnLoadListAcceptFriends_click(object sender, EventArgs e)
         {
-            JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + user.id);
-            if (!string.IsNullOrEmpty(tkData.ToString()))
-            {
-                this.user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-                List<infoUser> getFriends = await handleGetLists.getListUser("waiting", user, apiGetUserId);
-                hanleDataIntoDatagridview.displayListWaitingAccept(getFriends, userControlLists);
-
-                MessageBox.Show("Làm mới thành công");
-            }
-
+            await handleReloadList.reloadListAcceptFriends(apiGetUserId, user, userControlLists);
         }
         private async void Rank_btnLoadListRank_click(object sender, EventArgs e)
         {
-            JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + user.id);
-            if (!string.IsNullOrEmpty(tkData.ToString()))
-            {
-                JToken tkData1 = await manageApi.callApiUsingMethodGet(apiGetAllUser);
-                List<infoUser> users = JsonConvert.DeserializeObject<List<infoUser>>(tkData1.ToString());
-                this.user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-                hanleDataIntoDatagridview.displayListRank(users, user, rank);
-
-                MessageBox.Show("Làm mới thành công");
-            }
+            await handleReloadList.reloadListRanks(apiGetUserId, apiGetAllUser, user, userControlLists, rank);
         }
         private async void History_btnLoadListHistory_click(object sender, EventArgs e)
         {
-            JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + user.id);
-            if (!string.IsNullOrEmpty(tkData.ToString()))
-            {
-                this.user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-                await hanleDataIntoDatagridview.displayListHistoryMatch(user, history, apiGetUserId);
-
-                MessageBox.Show("Làm mới thành công");
-            }
+            await handleReloadList.reloadListHistories(apiGetUserId, user, userControlLists, history);
         }
         private async void btnRandomRoom_Click(object sender, EventArgs e)
         {
@@ -1071,6 +1055,9 @@ namespace Chess_Game_Project
         {
             pnlChatOne.Hide();
             loopChildPanel(userControlLists);
+            //đóng các user control chat one
+            foreach(userControlChatOne item in createChatOneFrame.listChats)
+                item.Hide();
         }
         private async void CreateRoom_btnAcceptCreateRoom_click(object sender, EventArgs e)
         {

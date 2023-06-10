@@ -79,6 +79,7 @@
     <Compile Include="classes handle\handleChat.cs" />
     <Compile Include="classes handle\handleGetLists.cs" />
     <Compile Include="classes handle\handleLoadInterface.cs" />
+    <Compile Include="classes handle\handleReloadList.cs" />
     <Compile Include="classes handle\hanleDataIntoDatagridview.cs" />
     <Compile Include="classes handle\manageApi.cs" />
     <Compile Include="classes\button.cs" />
