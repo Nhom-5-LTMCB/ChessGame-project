@@ -173,7 +173,7 @@ namespace Chess_Game_Project
             this.TransparencyKey = Color.Empty;
 
 
-            txtUserName.Text = "longlee";
+            txtUserName.Text = "ltphilong123";
             txtPassword.Text = "123@Long";
         }
     }

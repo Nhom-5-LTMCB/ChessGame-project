@@ -99,6 +99,9 @@ namespace Chess_Game_Project
 
                 getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
                 hanleDataIntoDatagridview.displayListFriends(getFriends, userControlLists);
+
+                //tạo ra luồng chat giữa các client 
+                createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
             }
             catch (Exception ex)
             {
@@ -254,9 +257,6 @@ namespace Chess_Game_Project
 
             pnlMultiChatFrame.AutoScroll = true;
         }
-
-        
-
         public LobbyInterface(infoUser user) : this()
         {
             try
@@ -286,6 +286,7 @@ namespace Chess_Game_Project
                 //gửi thông điệp login lên server
                 string message = user.userName;
                 handleChat.sendData(client, message);
+
             }
             catch (Exception ex)
             {
@@ -295,7 +296,6 @@ namespace Chess_Game_Project
 
         }
         //=================================================================================================================================
-
 
         //============================================ CÁC HÀM DÙNG ĐỂ GỬI VÀ NHẬN DỮ LIỆU =================================================
         public async void rcvData()
@@ -337,7 +337,6 @@ namespace Chess_Game_Project
                                 listFriends temp = null;
                                 foreach (listFriends item in user.lists)
                                 {
-                                    MessageBox.Show(JsonConvert.SerializeObject(item) + "\n difUserID: " + difUserID + "\n myID: " + user.id);
                                     if (item.listID.Contains(user.id) && item.listID.Contains(difUserID))
                                     {
                                         temp = item;
@@ -372,6 +371,7 @@ namespace Chess_Game_Project
                             break;
                         case 4:
                             //tiến hành lấy ra nội dung dạng "content, linkAvatar, difUsername"
+                            MessageBox.Show("Đã nhận được tin nhắn với nội dung: " + message);
                             string[] lstMsg = listMsg[1].Split(':');
                             string difUsername = lstMsg[0].Substring(0, lstMsg[0].Length - 3);
 
@@ -1004,7 +1004,6 @@ namespace Chess_Game_Project
                 MessageBox.Show("Làm mới thành công");
             }
         }
-
         private async void History_btnLoadListHistory_click(object sender, EventArgs e)
         {
             JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + user.id);

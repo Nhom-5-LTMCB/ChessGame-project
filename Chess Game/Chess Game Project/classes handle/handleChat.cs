@@ -53,26 +53,33 @@ namespace Chess_Game_Project.classes_handle
                         return;
                     MethodInvoker invoker = new MethodInvoker(delegate
                     {
+
                         if (userName != owner)
                         {
                             pnl.AutoScroll = false;
                             userControlContentChatMessage userControl = new userControlContentChatMessage();
                             userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, owner);
                             int userControlWidth = pnl.Width * 70 / 100;
-                            userControl.Location = new System.Drawing.Point(10, posY == 0 ? 0 : posY - posY / 4);
+                            userControl.Location = new System.Drawing.Point(chat != null ? 25 : 10, posY == 0 ? 0 : posY - posY / 4);
                             userControl.Size = new System.Drawing.Size(0, userControl.Height);
                             pnl.Controls.Add(userControl);
                             userControl.content = msg;
-                            userControl.addMesageIntoFrame(userControlWidth);
+                            userControl.addMesageIntoFrame(userControlWidth, chat);
                             if (chat != null)
-                                chat.pos = posY + userControl.Height;
+                            {
+                                MessageBox.Show("Trước khi cộng: " + posY);
+                                chat.pos = posY + userControl.Height + 20;
+                                userControl.Width = userControlWidth;
+                                MessageBox.Show("Sau khi cộng: " + chat.pos);
+                            }
                             else
                             {
                                 if (form == LobbyInterface.showInter)
                                 {
+
                                     userControl.Height -= 10;
                                     LobbyInterface.posY += userControl.Height + 5;
-                                }    
+                                }
                                 else if (form == MatchInterface.showInter)
                                     MatchInterface.posY += userControl.Height;
                             }

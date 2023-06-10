@@ -30,12 +30,9 @@ namespace Chess_Game_Project.ContainUserControls
             ptvAvatar.Image = Image.FromFile(linkAvt);
             ptvAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            if(username == mainUsername) lbUserName.ForeColor = Color.Red;
-            else lbUserName.ForeColor = Color.Black;    
-
             lbUserName.Text = username; 
         }
-        public void addMesageIntoFrame(int userControlWidth)
+        public void addMesageIntoFrame(int userControlWidth, userControlChatOne chat)
         {
             txtContent.ScrollBars = ScrollBars.None;
             txtContent.Text = _content;
@@ -68,7 +65,12 @@ namespace Chess_Game_Project.ContainUserControls
                 }
                 txtContent.ReadOnly = true;
             }
-            txtContent.Height -= 5;
+            if(chat == null) txtContent.Height -= 5;
+            else
+            {
+                lbUserName.Location = new Point(lbUserName.Location.X, lbUserName.Location.Y - 5);
+                lbUserName.AutoSize = true;
+            }
         }
 
     }
