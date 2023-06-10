@@ -475,19 +475,17 @@ namespace Chess_Game_Project
                             string[] lst1 = listMsg[1].Split('+');
                             if (string.Equals(user.id, lst1[2])) //kiem tra xem neu chinh user do nhan duoc thong tin thi chi can thay the lai thong tin cu
                             {
-                                MessageBox.Show(user.linkAvatar);
                                 txtUserName.Text = user.userName;
                                 ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + user.linkAvatar);
-                                ptboxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+                                ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
                             }
                             else //neu nhung client dang online khac nhan duoc thi se reload lai danh sach
                             {
-                                List<infoUser> getFriends = await handleGetLists.getListUser("waiting", user, apiGetUserId);
-                                hanleDataIntoDatagridview.displayListWaitingAccept(getFriends, userControlLists);
-                                await handleGetLists.getListAllUser(user.id, apiGetAllUser, userControlLists, user);
-
-                                getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
-                                hanleDataIntoDatagridview.displayListFriends(getFriends, userControlLists);
+                                userControlLists.changeUserNameIntoDataAcceptFriend(lst1[1], lst1[0]);
+                                userControlLists.changeUserNameIntoDataAllUser(lst1[1], lst1[0]);
+                                userControlLists.changeUserNameIntoDataListFriends(lst1[1], lst1[0]);
+                                rank.changeUserNameIntoDataRank(lst1[1], lst1[0]);
+                                history.changeUserNameIntoDataHistory(lst1[1], lst1[0]);
                             }
                             break;
                     }

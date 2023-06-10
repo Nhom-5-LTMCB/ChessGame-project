@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Chess_Game_Project.ContainUserControls
 {
@@ -17,8 +18,6 @@ namespace Chess_Game_Project.ContainUserControls
         public event DataGridViewCellEventHandler dtListFriends_cellContentClick;
         public event DataGridViewCellEventHandler dtAcceptFriend_cellContentClick;
         public event EventHandler<EventArgs> btnFindUser_click;
-
-
         public event EventHandler<EventArgs> btnLoadListAllUsers_click;
         public event EventHandler<EventArgs> btnLoadListFriends_click;
         public event EventHandler<EventArgs> btnLoadListAcceptFriends_click;
@@ -155,20 +154,46 @@ namespace Chess_Game_Project.ContainUserControls
         {
             dtAcceptFriend_cellContentClick?.Invoke(sender, e);
         }
-
         private void btnLoadListAllUsers_Click(object sender, EventArgs e)
         {
             btnLoadListAllUsers_click?.Invoke(this, e);
         }
-
         private void btnLoadListFriends_Click(object sender, EventArgs e)
         {
             btnLoadListFriends_click?.Invoke(this, e);
         }
-
         private void btnLoadListAcceptFriends_Click(object sender, EventArgs e)
         {
             btnLoadListAcceptFriends_click?.Invoke(this, e);
+        }
+        public void changeUserName(DataGridView currentDgv, string username, string preUsername)
+        {
+            foreach (DataGridViewRow row in currentDgv.Rows)
+            {
+                // Kiểm tra nếu hàng không phải là hàng header
+                if (!row.IsNewRow)
+                {
+                    // Lấy giá trị trong một cột của dòng hiện tại
+                    string value = row.Cells["userName"].Value.ToString();
+                    if (string.Equals(value, preUsername))
+                    {
+                        row.Cells["userName"].Value = username;
+                    }
+
+                }
+            }
+        }
+        public void changeUserNameIntoDataAllUser(string username, string preUsername)
+        {
+            changeUserName(dtAllUsers, username, preUsername);
+        }
+        public void changeUserNameIntoDataListFriends(string username, string preUsername)
+        {
+            changeUserName(dtListFriends, username, preUsername);
+        }
+        public void changeUserNameIntoDataAcceptFriend(string username, string preUsername)
+        {
+            changeUserName(dtAcceptFriend, username, preUsername);
         }
     }
 }

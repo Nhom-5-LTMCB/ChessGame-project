@@ -357,6 +357,8 @@ namespace Chess_Game_Project.classes_handle
                 MessageBox.Show("Loi displayListHistoryMatch: " + ex.Message);
             }
         }
+
+
         //==================================================================================================================================
     }
 }

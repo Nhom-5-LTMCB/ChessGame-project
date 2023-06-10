@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace Chess_Game_Project.ContainUserControls
@@ -60,6 +61,26 @@ namespace Chess_Game_Project.ContainUserControls
         private void btnCloseRank_Click(object sender, EventArgs e)
         {
             btnCloseRank_click?.Invoke(this, e);
+        }
+        public void changeUserName(DataGridView currentDgv, string username, string preUsername)
+        {
+            foreach (DataGridViewRow row in currentDgv.Rows)
+            {
+                // Kiểm tra nếu hàng không phải là hàng header
+                if (!row.IsNewRow)
+                {
+                    // Lấy giá trị trong một cột của dòng hiện tại
+                    string value = row.Cells["userName"].Value.ToString();
+                    if (string.Equals(value, preUsername))
+                    {
+                        row.Cells["userName"].Value = username;
+                    }
+                }
+            }
+        }
+        public void changeUserNameIntoDataRank(string username, string preUsername)
+        {
+            changeUserName(dtGridRank, username, preUsername);
         }
     }
 }

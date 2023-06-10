@@ -34,7 +34,7 @@ namespace ServerChessGame
                     clients.Remove(userName);
                     Console.WriteLine("Da xoa: " + userName);
                 }
-                Console.WriteLine("---> " + userName + ": da tham gia vao phong chat"); 
+                Console.WriteLine("---> " + userName + ": da tham gia vao phong chat");
                 clients.Add(userName, client);
 
                 //khởi chạy toàn bộ luồng dữ liệu
@@ -183,7 +183,7 @@ namespace ServerChessGame
                             string[] lst2 = listMsg[1].Split("+");
                             string username = lst2[1];
                             string preUsername = lst2[0];
-                            if(!string.Equals(username, preUsername))
+                            if (!string.Equals(username, preUsername))
                             {
                                 Console.WriteLine(preUsername + " da doi ten thanh " + username);
                                 TcpClient currentTcpClient = (TcpClient)clients[preUsername];
@@ -193,18 +193,29 @@ namespace ServerChessGame
                                 Thread currentThread = (Thread)manageChatThread[preUsername];
                                 manageChatThread.Remove(preUsername);
                                 manageChatThread.Add(username, currentThread);
+                                foreach (string key in clients.Keys)
+                                {
+                                    TcpClient client1 = (TcpClient)clients[key];
+                                    if (client1 != null)
+                                    {
+                                        stream = client1.GetStream();
+                                        byte[] buffer2 = Encoding.UTF8.GetBytes(message);
+                                        stream.Write(buffer2, 0, buffer2.Length);
+                                    }
+                                }
                             }
-
-                            foreach (string key in clients.Keys)
+                            else
                             {
-                                TcpClient client1 = (TcpClient)clients[key];
-                                if(client1 != null)
+                                TcpClient client1 = (TcpClient)clients[preUsername];
+                                if (client1 != null)
                                 {
                                     stream = client1.GetStream();
                                     byte[] buffer2 = Encoding.UTF8.GetBytes(message);
                                     stream.Write(buffer2, 0, buffer2.Length);
                                 }
                             }
+
+
                             break;
                     }
                 }

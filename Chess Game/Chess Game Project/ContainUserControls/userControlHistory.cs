@@ -62,5 +62,30 @@ namespace Chess_Game_Project.ContainUserControls
         {
             btnCloseHistory_click?.Invoke(this, e);
         }
+        public void changeUserName(DataGridView currentDgv, string username, string preUsername)
+        {
+            foreach (DataGridViewRow row in currentDgv.Rows)
+            {
+                // Kiểm tra nếu hàng không phải là hàng header
+                if (!row.IsNewRow)
+                {
+                    // Lấy giá trị trong một cột của dòng hiện tại
+                    string value1 = row.Cells["userName1"].Value.ToString();
+                    if (string.Equals(value1, preUsername))
+                    {
+                        row.Cells["userName1"].Value = username;
+                    }
+                    string value2 = row.Cells["userName2"].Value.ToString();
+                    if (string.Equals(value2, preUsername))
+                    {
+                        row.Cells["userName2"].Value = username;
+                    }
+                }
+            }
+        }
+        public void changeUserNameIntoDataHistory(string username, string preUsername)
+        {
+            changeUserName(dtGridView, username, preUsername);
+        }
     }
 }
