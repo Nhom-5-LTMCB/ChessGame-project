@@ -75,7 +75,7 @@ namespace Chess_Game_Project.classes_handle
 
                     foreach (matches item in list)
                     {
-                        if (!(string.Equals(item.status.ToLower(), "finished") || string.Equals(item.status.ToLower(), "fighting")))
+                        if (!(string.Equals(item.status, "finished") || string.Equals(item.status, "fighting")))
                         {
                             string[] rowData = new string[] { item._id, item.roomName, item.ownerRoom, item.count.ToString() + "/2", item.betPoints.ToString(), item.status, item.ipRoom };
                             dtGridContainListRooms.Rows.Add(rowData);

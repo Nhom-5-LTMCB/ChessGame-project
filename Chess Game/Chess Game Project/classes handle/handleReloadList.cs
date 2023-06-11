@@ -23,7 +23,7 @@ namespace Chess_Game_Project.classes_handle
                 List<infoUser> getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
                 hanleDataIntoDatagridview.displayListFriends(getFriends, lists);
 
-                createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
+                await createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
 
                 MessageBox.Show("Làm mới thành công");
             }

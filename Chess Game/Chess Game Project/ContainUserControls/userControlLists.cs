@@ -260,5 +260,16 @@ namespace Chess_Game_Project.ContainUserControls
                 }
             }
         }
+        public bool checkExistsUsernameIntoDataListFriends(string username)
+        {
+            foreach (DataGridViewRow row in dtListFriends.Rows)
+                if (!row.IsNewRow)
+                {
+                    string value = row.Cells["userName"].Value.ToString();
+                    if (string.Equals(value, username))
+                        return true;
+                }
+            return false;
+        }
     }
 }

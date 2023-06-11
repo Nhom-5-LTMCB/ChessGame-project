@@ -138,7 +138,7 @@ namespace Chess_Game_Project.classes_handle
                 MessageBox.Show("Loi UserControlLists_dtAllUsers_cellContentClick1: " + ex.Message);
             }
         }
-        public async static Task<userControlChatOne> cellClickContent_ListFriends(DataGridView sender, infoUser user, DataGridViewCellEventArgs e, string apiGetUserId, Form form, Panel pnlChatOne, userControlLists lists, Guna2Button btnListFriend, userControlChatOne chat, string difUsernameUser, TcpClient client, string apiDeleteFriend)
+        public async static Task<userControlChatOne> cellClickContent_ListFriends(DataGridView sender, infoUser user, DataGridViewCellEventArgs e, string apiGetUserId, Form form, Panel pnlChatOne, userControlLists lists, Guna2Button btnListFriend, userControlChatOne chat, TcpClient client, string apiDeleteFriend)
         {
             try
             {
@@ -174,15 +174,9 @@ namespace Chess_Game_Project.classes_handle
                                 foreach (System.Windows.Forms.UserControl userControl1 in createChatOneFrame.listChats)
                                     userControl1.Hide();
                                 chat = userControl;
-                                difUsernameUser = dataGridView.Rows[e.RowIndex].Cells["userName"].Value.ToString();
                                 pnlChatOne.Controls.Add(chat);
                                 chat.Show();
                                 pnlChatOne.Show();
-                                //if (!userControl.eventActive)
-                                //{
-                                //    userControl.eventActive = true;
-                                //    return
-                                //}
                                 return chat;
                             }
                         }
@@ -289,10 +283,13 @@ namespace Chess_Game_Project.classes_handle
                                     {
                                         infoUser difUser = JsonConvert.DeserializeObject<infoUser>(userPlayer.ToString());
                                         //gửi sự kiện tới server và cập nhật lại biến user.players lên 2 đơn vị
-                                        string message = (int)manageChooseCases.setting.joinRoom + "*" + difUser.userName;
+                                        string message = (int)manageChooseCases.setting.joinRoom + "*" + difUser.userName + "+" + idMatch;
                                         handleChat.sendData(client, message);
-                                        MatchInterface player = new MatchInterface(myIpAddress, hanleDataIntoDatagridview.columnData[e.RowIndex].ToString(), idMatch, hanleDataIntoDatagridview.columnData[e.RowIndex].ToString(), false, false, 1, match.betPoints, difUser, user);  //chủ phòng sẽ là cờ trắng
+
+                                        string ipServer = hanleDataIntoDatagridview.columnData[e.RowIndex].ToString();
+                                        MatchInterface player = new MatchInterface(myIpAddress, ipServer, idMatch, ipServer, false, false, 1, match.betPoints, difUser, user, client);  //chủ phòng sẽ là cờ trắng
                                         player.Show();
+
                                         form.Hide();
                                     }
                                 }

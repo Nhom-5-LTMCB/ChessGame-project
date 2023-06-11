@@ -14,7 +14,7 @@ namespace Chess_Game_Project.manageUsers
     {
         public static List<userControlChatOne> listChats = new List<userControlChatOne>();
 
-        public static async void createChatBetweenClientAndClient(string apiGetUserId, infoUser user, userControlChatOne chat)
+        public static async Task createChatBetweenClientAndClient(string apiGetUserId, infoUser user, userControlChatOne chat)
         {
             //thêm tập hợp các bạn bè vào để chat
             List<string> listFriends = await handleGetLists.getListFriends(apiGetUserId, user);

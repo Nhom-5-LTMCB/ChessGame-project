@@ -141,7 +141,7 @@ namespace Chess_Game_Project
             this.txtCountTime.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCountTime.ForeColor = System.Drawing.Color.Black;
             this.txtCountTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCountTime.Location = new System.Drawing.Point(617, 29);
+            this.txtCountTime.Location = new System.Drawing.Point(615, 49);
             this.txtCountTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCountTime.Name = "txtCountTime";
             this.txtCountTime.PasswordChar = '\0';
@@ -207,23 +207,29 @@ namespace Chess_Game_Project
             // lbDifPlayer
             // 
             this.lbDifPlayer.AutoSize = true;
-            this.lbDifPlayer.Location = new System.Drawing.Point(916, -5);
+            this.lbDifPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDifPlayer.Location = new System.Drawing.Point(910, 10);
             this.lbDifPlayer.Name = "lbDifPlayer";
-            this.lbDifPlayer.Size = new System.Drawing.Size(0, 16);
+            this.lbDifPlayer.Size = new System.Drawing.Size(68, 20);
             this.lbDifPlayer.TabIndex = 29;
+            this.lbDifPlayer.Text = "Client2";
+            this.lbDifPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbCurrentPlayer
             // 
             this.lbCurrentPlayer.AutoSize = true;
-            this.lbCurrentPlayer.Location = new System.Drawing.Point(426, -5);
+            this.lbCurrentPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lbCurrentPlayer.Location = new System.Drawing.Point(413, 11);
             this.lbCurrentPlayer.Name = "lbCurrentPlayer";
-            this.lbCurrentPlayer.Size = new System.Drawing.Size(0, 16);
+            this.lbCurrentPlayer.Size = new System.Drawing.Size(68, 20);
             this.lbCurrentPlayer.TabIndex = 28;
+            this.lbCurrentPlayer.Text = "Client1";
+            this.lbCurrentPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // avtDifPlayer
             // 
             this.avtDifPlayer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.avtDifPlayer.Location = new System.Drawing.Point(910, 14);
+            this.avtDifPlayer.Location = new System.Drawing.Point(905, 34);
             this.avtDifPlayer.Name = "avtDifPlayer";
             this.avtDifPlayer.Size = new System.Drawing.Size(85, 71);
             this.avtDifPlayer.TabIndex = 27;
@@ -232,7 +238,7 @@ namespace Chess_Game_Project
             // avtCurrentPlayer
             // 
             this.avtCurrentPlayer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.avtCurrentPlayer.Location = new System.Drawing.Point(412, 14);
+            this.avtCurrentPlayer.Location = new System.Drawing.Point(405, 34);
             this.avtCurrentPlayer.Name = "avtCurrentPlayer";
             this.avtCurrentPlayer.Size = new System.Drawing.Size(85, 71);
             this.avtCurrentPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

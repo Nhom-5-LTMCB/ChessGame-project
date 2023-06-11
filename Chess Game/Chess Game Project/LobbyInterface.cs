@@ -24,6 +24,7 @@ using System.Runtime.Remoting.Contexts;
 using Chess_Game_Project.classes_handle;
 using System.Xml.Linq;
 using Chess_Game_Project.manageUsers;
+using System.Text.RegularExpressions;
 
 namespace Chess_Game_Project
 {
@@ -101,7 +102,7 @@ namespace Chess_Game_Project
                 hanleDataIntoDatagridview.displayListFriends(getFriends, userControlLists);
 
                 //tạo ra luồng chat giữa các client 
-                createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
+                await createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
             }
             catch (Exception ex)
             {
@@ -195,6 +196,18 @@ namespace Chess_Game_Project
             }
 
             return null;
+        }
+
+        private void deleteRoom(string idMatch)
+        {
+            foreach (DataGridViewRow row in dtGridContainListRooms.Rows)
+            {
+                if (string.Equals(row.Cells["id"].Value.ToString(), idMatch))
+                {
+                    dtGridContainListRooms.Rows.Remove(row);
+                    break;
+                }
+            }
         }
         //=================================================================================================================================
 
@@ -353,9 +366,9 @@ namespace Chess_Game_Project
                                 List<infoUser> lists1 = await handleGetLists.getListUser("friend", user, apiGetUserId);
                                 hanleDataIntoDatagridview.displayListFriends(lists1, userControlLists);
 
-                                Action myAction = () =>
+                                Action myAction = async () =>
                                 {
-                                    createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
+                                    await createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
                                 };
 
                                 // Sử dụng phương thức Invoke để thực thi đoạn mã trên luồng giao diện người dùng
@@ -367,7 +380,10 @@ namespace Chess_Game_Project
 
                             break;
                         case 3:
-                            player.players = 2;
+                            if (string.Equals(user.userName, listMsg[1].Split('+')[0]))
+                                player.players = 2;
+                            else
+                                deleteRoom(listMsg[1].Split('+')[1]);
                             break;
                         case 4:
                             //tiến hành lấy ra nội dung dạng "content, linkAvatar, difUsername"
@@ -386,7 +402,7 @@ namespace Chess_Game_Project
                                     }
                                 }
                             }
-                            if(!checkCount)
+                            if (!checkCount)
                             {
                                 btnListFriend.Text = "Danh sách bạn bè";
                                 userControlLists.changeTextInButtonChat(difUsername, true);
@@ -510,9 +526,26 @@ namespace Chess_Game_Project
                             break;
                         case 9:
                             string difUsername1 = listMsg[1];
-                            userControlLists.changeTextStatusActiveOnline(difUsername1);
-                            //tạo ra luồng chat giữa các client 
-                            createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
+                            //kiểm tra xem trong datagridview danh sách bạn bè có chứa user này hay không
+                            if (userControlLists.checkExistsUsernameIntoDataListFriends(difUsername1))
+                            {
+                                userControlLists.changeTextStatusActiveOnline(difUsername1);
+                                chat = new userControlChatOne();
+                                chat.Hide();
+                                chat.Tag = $"{user.userName},{difUsername1}";
+                                chat.Dock = DockStyle.Bottom;
+                                createChatOneFrame.listChats.Add(chat);
+                            }
+                            break;
+                        case 10:    //xu ly ket thuc phong dau
+                            string[] lstMsgRcv = listMsg[1].Split('+');
+                            this.user = JsonConvert.DeserializeObject<infoUser>(lstMsgRcv[1]);
+                            txtScore.Text = user.point.ToString();
+
+                            deleteRoom(lstMsgRcv[2]);
+                            break;
+                        case 11:    //xoa phong choi nay khi chu phong thoat ra
+                            deleteRoom(listMsg[1]);
                             break;
                     }
                 }
@@ -618,11 +651,12 @@ namespace Chess_Game_Project
         }
         private async void UserControlLists_dtListFriends_cellContentClick1(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
-                chat = await handleCellContentClicks.cellClickContent_ListFriends((DataGridView)sender, user, e, apiGetUserId, this, pnlChatOne, userControlLists, btnListFriend, chat, difUsernameUser, client, apiDeleteFriend);
-                if(chat != null)
+                chat = await handleCellContentClicks.cellClickContent_ListFriends((DataGridView)sender, user, e, apiGetUserId, this, pnlChatOne, userControlLists, btnListFriend, chat, client, apiDeleteFriend);
+                if (chat != null)
                 {
+                    difUsernameUser = chat.Tag.ToString().Split(',')[1];
                     chat.btnSendMsgChatOne_click += Chat_btnSendMsgChatOne_click;
                     chat.btnSendIconChatOne_click += Chat_btnSendIconChatOne_click;
                     chat.btnCloseForm_click += Chat_btnCloseForm_click;
@@ -710,7 +744,7 @@ namespace Chess_Game_Project
         }
         private async void btnRefreshListMatches_Click(object sender, EventArgs e)
         {
-            await handleReloadList.reloadListMatches(dtGridContainListRooms, apiGetUserId);
+            await handleReloadList.reloadListMatches(dtGridContainListRooms, apiGetListMatches);
         }
         private async void UserControlLists_btnLoadListFriends_click(object sender, EventArgs e)
         {
@@ -737,31 +771,45 @@ namespace Chess_Game_Project
         {
             try
             {
-                string apiPath = apiGetListMatches;
-                JToken tkdata = await manageApi.callApiUsingMethodGet(apiPath);
-                if (tkdata != null)
+                Random random = new Random();
+
+                // Random ra một số từ 0 đến số dòng hiện có trong DataGridView
+                int randomRowIndex = random.Next(0, dtGridContainListRooms.Rows.Count);
+
+
+                string idMatch = dtGridContainListRooms.Rows[randomRowIndex].Cells["id"].Value.ToString();
+                MessageBox.Show("Đã tham gia vào phòng của người chơi: " + dtGridContainListRooms.Rows[randomRowIndex].Cells["ownerRoom"].Value.ToString());
+                //tiến hành lấy ra mã phòng khi click vào
+                JToken tkData = await manageApi.callApiUsingMethodPut(new { option = "adduser", id = user.id }, apiAddUserIntoMatch + idMatch);
+                if (tkData != null)
                 {
-                    List<matches> listsOfMatches = JsonConvert.DeserializeObject<List<matches>>(tkdata.ToString());
-                    List<string> idList = new List<string>();
-                    foreach (string id in idList)
+                    matches match = JsonConvert.DeserializeObject<matches>(tkData.ToString());
+
+                    //lặp qua để kiếm ra id của chủ phòng
+                    string id = "";
+                    foreach (matchPlayer match1 in match.players)
                     {
-                        foreach (matches matchItem in listsOfMatches)
+                        if (match1.user != user.id)
                         {
-                            if (matchItem.status == "waiting")
-                            {
-                                idList.Add(matchItem._id);//matchid
-                            }
+                            id = match1.user;
+                            break;
                         }
                     }
-                    Random random = new Random();
-                    string RandomID = idList[random.Next(0, idList.Count)];
+                    JToken userPlayer = await manageApi.callApiUsingGetMethodID(apiGetUserId + id);
 
-                    matches match = new matches();
-                    match._id = RandomID;
+                    if (userPlayer != null)
+                    {
+                        infoUser difUser = JsonConvert.DeserializeObject<infoUser>(userPlayer.ToString());
+                        //gửi sự kiện tới server và cập nhật lại biến user.players lên 2 đơn vị
+                        string message = (int)manageChooseCases.setting.joinRoom + "*" + difUser.userName + "+" + idMatch;
+                        handleChat.sendData(client, message);
 
-                    this.Hide();
-                    //MatchInterface admin = new MatchInterface(2000, 1000, match._id, match.ipRoom, false, false, 1, match.betPoints, user.linkAvatar, user.point, user.userName, user.id);
-                    //admin.Show();
+                        string ipServer = hanleDataIntoDatagridview.columnData[randomRowIndex].ToString();
+                        MatchInterface player = new MatchInterface(myIpAddress, ipServer, idMatch, ipServer, false, false, 1, match.betPoints, difUser, user, client);  //chủ phòng sẽ là cờ trắng
+                        player.Show();
+
+                        this.Hide();
+                    }
                 }
             }
             catch (Exception ex)
@@ -833,7 +881,7 @@ namespace Chess_Game_Project
 
                         //tạo và tham gia vào phòng
                         this.Hide();
-                        MatchInterface admin = new MatchInterface(myIpAddress, null, match._id, myIpAddress, true, true, 0, betPoint, null, user);  //chủ phòng sẽ là cờ trắng
+                        MatchInterface admin = new MatchInterface(myIpAddress, null, match._id, myIpAddress, true, true, 0, betPoint, null, user, client);  //chủ phòng sẽ là cờ trắng
                         admin.Show();
 
                         pnlContainsChild.Hide();

@@ -19,7 +19,9 @@ namespace Chess_Game_Project.classes
             logout = 6,
             unFriend = 7,
             updateInfo = 8,
-            login = 9
+            login = 9,
+            finishedRoom = 10,
+            deleteRoom = 11
         }
     }
 }

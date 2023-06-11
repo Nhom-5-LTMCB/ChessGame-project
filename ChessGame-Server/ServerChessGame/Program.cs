@@ -37,7 +37,6 @@ namespace ServerChessGame
                     clients.Remove(userName);
                     Console.WriteLine("Da xoa: " + userName);
                 }
-                Console.WriteLine("---> " + userName + ": da tham gia vao phong chat");
                 clients.Add(userName, client);
 
 
@@ -121,12 +120,12 @@ namespace ServerChessGame
                             }
                             break;
                         case 3:
-                            TcpClient clientRcv2 = (TcpClient)clients[listMsg[1]];
-                            if (clientRcv2 != null)
+                            foreach (string key in clients.Keys)
                             {
-                                stream = clientRcv2.GetStream();
-                                byte[] buffer1 = Encoding.UTF8.GetBytes(message);
-                                stream.Write(buffer1, 0, buffer1.Length);
+                                TcpClient client1 = (TcpClient)clients[key];
+                                stream = client1.GetStream();
+                                byte[] buffer2 = Encoding.UTF8.GetBytes(message);
+                                stream.Write(buffer2, 0, buffer2.Length);
                             }
                             break;
                         case 4: //dùng để tạo ra các luồng chat 1-1
@@ -234,6 +233,25 @@ namespace ServerChessGame
                                     byte[] buffer2 = Encoding.UTF8.GetBytes(message);
                                     stream.Write(buffer2, 0, buffer2.Length);
                                 }
+                            }
+                            break;
+                        case 10:
+                            TcpClient client2 = (TcpClient)clients[listMsg[1].Split('+')[0]];
+                            if (client2 != null)
+                            {
+                                stream = client2.GetStream();
+                                byte[] buffer2 = Encoding.UTF8.GetBytes(message);
+                                stream.Write(buffer2, 0, buffer2.Length);
+                            }
+                            break;
+
+                        case 11:
+                            foreach (string key in clients.Keys)
+                            {
+                                TcpClient client1 = (TcpClient)clients[key];
+                                stream = client1.GetStream();
+                                byte[] buffer2 = Encoding.UTF8.GetBytes(message);
+                                stream.Write(buffer2, 0, buffer2.Length);
                             }
                             break;
                     }

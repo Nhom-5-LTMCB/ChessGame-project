@@ -134,6 +134,7 @@ namespace Chess_Game_Project
         private System.Windows.Forms.Timer timer = null;
         public static int posY = 0;
         public static MatchInterface showInter = null;
+        public TcpClient currentTcpClient = null;
         #endregion
 
 
@@ -291,7 +292,7 @@ namespace Chess_Game_Project
                 }
             }
         }
-        public MatchInterface(string myIp, string difIp, string matchId, string ipConnectRoom, bool isCreated, bool turn, int piece, int betPoint, infoUser difPlayer, infoUser currentPlayer) : this()
+        public MatchInterface(string myIp, string difIp, string matchId, string ipConnectRoom, bool isCreated, bool turn, int piece, int betPoint, infoUser difPlayer, infoUser currentPlayer, TcpClient currentTcpClient) : this()
         {
             this.myIp = myIp;
             this.difIp = difIp;
@@ -301,6 +302,7 @@ namespace Chess_Game_Project
             this.difPlayer = difPlayer;
             this.currentPlayer = currentPlayer;
             this.ipConnectRoom = ipConnectRoom;
+            this.currentTcpClient = currentTcpClient;
 
             //chủ phòng sẽ là cờ trắng và biến piece = 0
             lbCurrentPlayer.Text = currentPlayer.userName;
@@ -322,8 +324,6 @@ namespace Chess_Game_Project
                 server.Start();
                 threadWaiting = new Thread(new ThreadStart(waitingAnotherClient));
                 threadWaiting.Start();
-
-                MessageBox.Show("Bạn là quân cờ trắng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             else //đây sẽ là người sẽ tham gia vào phòng chơi
             {
@@ -365,7 +365,6 @@ namespace Chess_Game_Project
                     timer.Start();
                     player.players += 1;
 
-                    MessageBox.Show("Bạn là quân cờ đen", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                 }
                 catch (Exception ex)
                 {
@@ -385,6 +384,11 @@ namespace Chess_Game_Project
                     choose(i, j);
                 }
             }
+
+            if (isCreated)
+                MessageBox.Show("Bạn là quân cờ trắng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+            else
+                MessageBox.Show("Bạn là quân cờ đen", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -976,30 +980,18 @@ namespace Chess_Game_Project
                     JToken tkData = JObject.Parse(await response.Content.ReadAsStringAsync())["data"];
                     infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
                     this.currentPlayer = user;
-
-
-                    string apiUser = apiGetUserId + currentPlayer.id;
-                    var data = new
-                    {
-                        userName = currentPlayer.userName,
-                        gmail = currentPlayer.gmail,
-                        linkAvatar = currentPlayer.linkAvatar,
-                        statusActive = "online",
-                    };
-                    currentPlayer.statusActive = "online";
-                    await manageApi.callApiUsingMethodPut(data, apiUser);
-
                     //tạo lại giao diện mới
                     MessageBox.Show("Bạn đã thắng");
 
-
-                    LobbyInterface newLobby = new LobbyInterface(currentPlayer);
-                    newLobby.Show();
+                    gameOver = true;
+                    sendMove(i, j, 0, 0, 0); // mode = 1 tương ứng với dùng để nhận thời gian đếm ngược, 0 là thực hiện với bàn cờ
+                    StopGame();
+                    string message = (int)manageChooseCases.setting.finishedRoom + "*" + currentPlayer.userName + "+" + JsonConvert.SerializeObject(currentPlayer) + "+" + matchId;
+                    handleChat.sendData(currentTcpClient, message);
+                    this.Close();
+                    LobbyInterface.showInter.Show();
                 }
-                gameOver = true;
-                sendMove(i, j, 0, 0, 0); // mode = 1 tương ứng với dùng để nhận thời gian đếm ngược, 0 là thực hiện với bàn cờ
-                StopGame();
-                this.Close();
+                
             }
         }
         //hàm được sử dụng cho việc nhập thành và khi quân tốt đến cuối bàn cờ địch thì sẽ được chọn quân mới
@@ -1601,21 +1593,20 @@ namespace Chess_Game_Project
             {
                 HttpClient client = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync(apiGetUserId + currentPlayer.id);
-                if (response.StatusCode == HttpStatusCode.OK)
+
+                if (response.IsSuccessStatusCode)
                 {
-                    string jsonData = await response.Content.ReadAsStringAsync();
-                    JToken jToken = JObject.Parse(jsonData)["data"];
+                    JToken tkData = JObject.Parse(await response.Content.ReadAsStringAsync())["data"];
+                    infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
+                    this.currentPlayer = user;
 
-                    infoUser user = JsonConvert.DeserializeObject<infoUser>(jToken.ToString());
 
+                    //gửi sự kiện tới server 
+                    string message = (int)manageChooseCases.setting.finishedRoom + "*" + currentPlayer.userName + "+" + JsonConvert.SerializeObject(currentPlayer) + "+" + matchId;
+                    handleChat.sendData(currentTcpClient, message);
                     StopGame();
-
-                    LobbyInterface.showInter.Close();
-
-                    LobbyInterface lbInter = new LobbyInterface(user);
-                    lbInter.Show();
-
                     this.Close();
+                    LobbyInterface.showInter.Show();
                 }
             }
             else
@@ -1652,8 +1643,12 @@ namespace Chess_Game_Project
                             this.currentPlayer = user;
                             //tạo lại giao diện mới
                             MessageBox.Show("Bạn đã thua");
+
+                            sendMove(0, 0, 0, 0, 1);
+                            //gửi sự kiện tới server 
+                            string message = (int)manageChooseCases.setting.finishedRoom + "*" + currentPlayer.userName + "+" + JsonConvert.SerializeObject(currentPlayer) + "+" + matchId;
+                            handleChat.sendData(currentTcpClient, message);
                         }
-                        sendMove(0, 0, 0, 0, 1);
                     }
                     else
                     {
@@ -1661,34 +1656,15 @@ namespace Chess_Game_Project
                         HttpClient client = new HttpClient();
                         await client.DeleteAsync(apiDeleteRoom + matchId);
 
-                        HttpResponseMessage response = await client.GetAsync(apiGetUserId + currentPlayer.id);
-
-                        if (response.IsSuccessStatusCode)
-                        {
-                            JToken tkData = JObject.Parse(await response.Content.ReadAsStringAsync())["data"];
-                            infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-                            this.currentPlayer = user;
-                        }
+                        //xoa phong doi voi tat ca nguoi choi dang online
+                        string message = (int)manageChooseCases.setting.deleteRoom + "*" + matchId;
+                        handleChat.sendData(currentTcpClient, message);
                     }
-
-                    string apiUser = apiGetUserId + currentPlayer.id;
-                    var data = new
-                    {
-                        userName = currentPlayer.userName,
-                        gmail = currentPlayer.gmail,
-                        linkAvatar = currentPlayer.linkAvatar,
-                        statusActive = "online",
-                    };
-                    currentPlayer.statusActive = "online";
-                    await manageApi.callApiUsingMethodPut(data, apiUser);
-
 
                     gameOver = true;
                     StopGame();
-                    LobbyInterface.showInter.Close();
-                    LobbyInterface lbInterface = new LobbyInterface(currentPlayer);
-                    lbInterface.Show();
                     this.Close();
+                    LobbyInterface.showInter.Show();
                 }
             }
         }
