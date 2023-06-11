@@ -22,13 +22,11 @@ namespace Chess_Game_Project.ContainUserControls
         {
             InitializeComponent();
         }
-        public void addUsernameAndImage(string linkAvt, string username, string mainUsername)
+        public void addUsernameAndImage(string linkAvt, string username)
         {
             ptvAvatar.Image = Image.FromFile(linkAvt);
             ptvAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            if (username == mainUsername) lbUserName.ForeColor = Color.Red;
-            else lbUserName.ForeColor = Color.Black;
 
             lbUserName.Text = username;
             AutoSize = true;

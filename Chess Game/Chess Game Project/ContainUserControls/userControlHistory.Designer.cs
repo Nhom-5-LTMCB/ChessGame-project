@@ -128,7 +128,7 @@
             this.btnLoadListHistory.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLoadListHistory.ForeColor = System.Drawing.Color.White;
             this.btnLoadListHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadListHistory.Image")));
-            this.btnLoadListHistory.Location = new System.Drawing.Point(0, 35);
+            this.btnLoadListHistory.Location = new System.Drawing.Point(0, 25);
             this.btnLoadListHistory.Name = "btnLoadListHistory";
             this.btnLoadListHistory.Size = new System.Drawing.Size(31, 24);
             this.btnLoadListHistory.TabIndex = 93;

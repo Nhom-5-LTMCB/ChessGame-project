@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace Chess_Game_Project.ContainUserControls
@@ -16,16 +17,22 @@ namespace Chess_Game_Project.ContainUserControls
         {
             InitializeComponent();
         }
-        public void addUsernameAndImage(string linkAvt, string username, System.Drawing.Image img, string mainUsername)
+        public void addUsernameAndImage(string linkAvt, string username, System.Drawing.Image img, userControlChatOne chat)
         {
-            if (username == mainUsername) lbUserName.ForeColor = Color.Red;
-            else lbUserName.ForeColor = Color.Black;
-
-            ptvAvatar.Image = Image.FromFile(linkAvt);
+            ptvAvatar.Image = System.Drawing.Image.FromFile(linkAvt);
             ptvAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbIcon.Image = img;
             ptbIcon.SizeMode = PictureBoxSizeMode.Zoom;
             lbUserName.Text = username;
+            lbUserName.AutoSize = true;
+
+            if (chat != null)
+            {
+                this.Width += 100;
+                ptvAvatar.Size = new Size(38, 35);
+                ptbIcon.Size = new Size(53, 49);
+                ptbIcon.Location = new Point(ptbIcon.Location.X + 10, ptbIcon.Location.Y);
+            }
         }
     }
 }

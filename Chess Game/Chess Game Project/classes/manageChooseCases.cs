@@ -18,7 +18,8 @@ namespace Chess_Game_Project.classes
             chatMulti = 5,
             logout = 6,
             unFriend = 7,
-            updateInfo = 8
+            updateInfo = 8,
+            login = 9
         }
     }
 }

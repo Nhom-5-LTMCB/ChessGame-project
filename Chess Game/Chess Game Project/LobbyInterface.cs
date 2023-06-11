@@ -284,7 +284,7 @@ namespace Chess_Game_Project
                 showInter = this;
 
                 //gửi thông điệp login lên server
-                string message = user.userName;
+                string message = (int)manageChooseCases.setting.login + "*" + user.userName;
                 handleChat.sendData(client, message);
 
             }
@@ -456,15 +456,8 @@ namespace Chess_Game_Project
                             }
                             if (check)
                             {
-                                List<infoUser> lst = await handleGetLists.getListUser("friend", user, apiGetUserId);
-                                if (lst != null)
-                                {
-                                    hanleDataIntoDatagridview.displayListFriends(lst, userControlLists);
-
-                                    //tiến hành xóa đi phòng chat của user này 
-                                    await handleGetLists.getListFriends(apiGetUserId, user);
-                                }
-
+                                userControlLists.changeTextStatusActiveOffline(username);
+                                //tiến hành xóa đi phòng chat của user này 
                                 foreach (userControlChatOne control in createChatOneFrame.listChats)
                                 {
                                     if (control.Tag.ToString().Contains(user.userName) && control.Tag.ToString().Contains(username))
@@ -514,6 +507,12 @@ namespace Chess_Game_Project
                                 rank.changeUserNameIntoDataRank(lst1[1], lst1[0]);
                                 history.changeUserNameIntoDataHistory(lst1[1], lst1[0]);
                             }
+                            break;
+                        case 9:
+                            string difUsername1 = listMsg[1];
+                            userControlLists.changeTextStatusActiveOnline(difUsername1);
+                            //tạo ra luồng chat giữa các client 
+                            createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
                             break;
                     }
                 }
@@ -615,293 +614,28 @@ namespace Chess_Game_Project
         //========================================= HÀM DÙNG ĐỂ THAO TÁC VỚI SỰ KIỆN BẤM VÀO DATAGRIDVIEW ==================================
         private async void dtGridContainListRooms_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-                {
-                    DataGridView dataGridView = (DataGridView)sender;
-
-                    if (e.ColumnIndex == 6)
-                    {
-                        if (dataGridView.Rows[e.RowIndex].Cells["Count"].Value.ToString() == "2/2")
-                        {
-                            MessageBox.Show("Phòng đã đầy, vui lòng chọn phòng khác");
-                            return;
-                        }
-                        else
-                        {
-                            if (user.point < int.Parse(dataGridView.Rows[e.RowIndex].Cells["betPoint"].Value.ToString()))
-                            {
-                                MessageBox.Show("Điểm của bạn không đủ để tham gia phòng chơi này");
-                                return;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Tham gia thành công");
-                                //tạo và tham gia vào phòng
-                                string idMatch = dataGridView.Rows[e.RowIndex].Cells["id"].Value.ToString();
-                                //tiến hành lấy ra mã phòng khi click vào
-                                JToken tkData = await manageApi.callApiUsingMethodPut(new { option = "adduser", id = user.id }, apiAddUserIntoMatch + idMatch);
-                                if (tkData != null)
-                                {
-                                    matches match = JsonConvert.DeserializeObject<matches>(tkData.ToString());
-
-                                    //lặp qua để kiếm ra id của chủ phòng
-                                    string id = "";
-                                    foreach (matchPlayer match1 in match.players)
-                                    {
-                                        if (match1.user != user.id)
-                                        {
-                                            id = match1.user;
-                                            break;
-                                        }
-                                    }
-                                    JToken userPlayer = await manageApi.callApiUsingGetMethodID(apiGetUserId + id);
-
-                                    if (userPlayer != null)
-                                    {
-                                        infoUser difUser = JsonConvert.DeserializeObject<infoUser>(userPlayer.ToString());
-                                        //gửi sự kiện tới server và cập nhật lại biến user.players lên 2 đơn vị
-                                        string message = (int)manageChooseCases.setting.joinRoom + "*" + difUser.userName;
-                                        handleChat.sendData(client, message);
-                                        MatchInterface player = new MatchInterface(myIpAddress, hanleDataIntoDatagridview.columnData[e.RowIndex].ToString(), idMatch, hanleDataIntoDatagridview.columnData[e.RowIndex].ToString(), false, false, 1, match.betPoints, difUser, user);  //chủ phòng sẽ là cờ trắng
-                                        player.Show();
-                                        this.Hide();
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Loi dtGridContainListRooms_CellContentClick: " + ex.Message);
-            }
+            await handleCellContentClicks.cellClickContent_ListMatches((DataGridView)sender, user, e, apiAddUserIntoMatch, apiGetUserId, myIpAddress, this, client);
         }
         private async void UserControlLists_dtListFriends_cellContentClick1(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if(e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                chat = await handleCellContentClicks.cellClickContent_ListFriends((DataGridView)sender, user, e, apiGetUserId, this, pnlChatOne, userControlLists, btnListFriend, chat, difUsernameUser, client, apiDeleteFriend);
+                if(chat != null)
                 {
-                    DataGridView dataGridView = (DataGridView)sender;
-                    if (e.ColumnIndex == 3) //xem thông tin người chơi
-                    {
-                        string apiPath = apiGetUserId + dataGridView.Rows[e.RowIndex].Cells["id"].Value.ToString();
-                        JToken tkData = await manageApi.callApiUsingGetMethodID(apiPath);
-                        if (tkData != null)
-                        {
-                            infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-
-                            InfoUserInterface infoUser = new InfoUserInterface(user, false, null);
-                            infoUser.Show();
-
-                            this.Hide();
-                        }
-                    }
-                    else if (e.ColumnIndex == 4)    //Nhắn tin
-                    {
-                        pnlChatOne.Controls.Clear();
-
-                        foreach (userControlChatOne userControl in createChatOneFrame.listChats)
-                        {
-                            if (userControl.Tag.ToString().Contains(user.userName) && userControl.Tag.ToString().Contains(dataGridView.Rows[e.RowIndex].Cells["userName"].Value.ToString()))
-                            {
-                                //khi bấm vào thì đổi về lại trạng thái cũ
-                                userControlLists.changeTextInButtonChat(dataGridView.Rows[e.RowIndex].Cells["userName"].Value.ToString(), true);
-                                if (userControlLists.checkReadMessageIntoChat())
-                                    btnListFriend.Text = "Danh sách bạn bè";
-                                foreach (System.Windows.Forms.UserControl userControl1 in createChatOneFrame.listChats)
-                                    userControl1.Hide();
-                                chat = userControl;
-                                if (!userControl.eventActive)
-                                {
-                                    chat.btnSendMsgChatOne_click += Chat_btnSendMsgChatOne_click;
-                                    chat.btnSendIconChatOne_click += Chat_btnSendIconChatOne_click;
-                                    chat.btnCloseForm_click += Chat_btnCloseForm_click;
-                                    userControl.eventActive = true;
-                                }
-                                difUsernameUser = dataGridView.Rows[e.RowIndex].Cells["userName"].Value.ToString();
-                                pnlChatOne.Controls.Add(chat);
-                                chat.Show();
-                                pnlChatOne.Show();
-                                break;
-                            }
-                        }
-                    }
-                    else if (e.ColumnIndex == 5)    //Hủy lời mời kết bạn
-                    {
-
-                        string id1 = user.id;
-                        string id2 = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        string difUsername = dataGridView.Rows[e.RowIndex].Cells["userName"].Value.ToString();
-                        string newId = "";
-                        foreach (listFriends item in user.lists) 
-                        {
-                            if (item.listID.Contains(id1) && item.listID.Contains(id2) && string.Equals(item.status.ToLower(), "friend"))
-                            {
-                                newId = item._id;
-                                break;
-                            }
-                        }
-                        if (!string.IsNullOrEmpty(newId))
-                        {
-                            string apiPath = apiDeleteFriend + newId;
-                            //tiến hành lấy ra _id thỏa mãn
-                            JToken tkData = await manageApi.callApiUsingDeleteMethod(apiPath);
-                            if (tkData != null)
-                            {
-                                string message = (int)manageChooseCases.setting.unFriend + "*" + dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString() + ":" + user.userName + ":" + user.id;
-                                handleChat.sendData(client, message);
-                                MessageBox.Show("Đã hủy kết bạn với người chơi này");
-
-                                //tiến hành xóa cặp người dùng này
-                                listFriends item = JsonConvert.DeserializeObject<listFriends>(tkData.ToString());
-                                user.lists.Remove(item);
-                                //cập nhật lại danh sách tất cả người dùng
-                                userControlLists.showBtnMakeFriend(dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
-                                dataGridView.Rows.RemoveAt(e.RowIndex);
-                                //xóa bạn bè thì cũng coi như mất luồng chat 
-                                foreach (userControlChatOne control in createChatOneFrame.listChats)
-                                {
-                                    if (control.Tag.ToString().Contains(user.userName) && control.Tag.ToString().Contains(difUsername))
-                                    {
-                                        createChatOneFrame.listChats.Remove(control);
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    chat.btnSendMsgChatOne_click += Chat_btnSendMsgChatOne_click;
+                    chat.btnSendIconChatOne_click += Chat_btnSendIconChatOne_click;
+                    chat.btnCloseForm_click += Chat_btnCloseForm_click;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Loi UserControlLists_dtListFriends_cellContentClick1: " + ex.Message);
             }
         }
         private async void UserControlLists_dtAllUsers_cellContentClick1(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-                {
-                    DataGridView dataGridView = (DataGridView)sender;
-                    if (e.ColumnIndex == 2) //xem thông tin người chơi
-                    {
-                        string apiPath = apiGetUserId + dataGridView.Rows[e.RowIndex].Cells["id"].Value.ToString();
-                        JToken tkData = await manageApi.callApiUsingGetMethodID(apiPath);
-                        if (tkData != null)
-                        {
-                            infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-
-                            InfoUserInterface infoUser = new InfoUserInterface(user, false, null);
-                            infoUser.Show();
-
-                            this.Hide();
-                        }
-                    }
-                    else if (e.ColumnIndex == 3) // kết bạn
-                    {
-                        var data = new
-                        {
-                            id_user1 = user.id,
-                            id_user2 = dataGridView.Rows[e.RowIndex].Cells["id"].Value.ToString()
-                        };
-
-                        JToken tkData = await manageApi.callApiUsingMethodPost(data, apiMakeFriend);
-                        if (tkData != null)
-                        {
-                            listFriends lstFriend = JsonConvert.DeserializeObject<listFriends>(tkData.ToString());
-                            user.lists.Add(lstFriend);
-                            DataGridViewCell cell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                            cell.Style = new DataGridViewCellStyle { Padding = new Padding(500, 0, 0, 0) };
-                            cell.ReadOnly = true;
-                            dataGridView.Update();
-                            //gửi sự kiện lên server để reload lại form
-                            string message = (int)manageChooseCases.setting.makeFriend + "*" + dataGridView.Rows[e.RowIndex].Cells["userName"].Value.ToString() + "+" + user.userName + "+" + JsonConvert.SerializeObject(lstFriend);
-                            handleChat.sendData(client, message);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Loi UserControlLists_dtAllUsers_cellContentClick1: " + ex.Message);
-            }
+            await handleCellContentClicks.cellClickContent_AllUsers((DataGridView)sender, user, e, apiGetUserId, this, client, apiMakeFriend);
         }
         private async void UserControlLists_dtAcceptFriend_cellContentClick1(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-                {
-                    DataGridView dataGridView = (DataGridView)sender;
-                    if (e.ColumnIndex == 2) // chấp nhận lời mời
-                    {
-
-                        //chấp nhận lời mời kết bạn nghĩa là kiếm trong danh sách bạn bè của mình 
-                        List<listFriends> listFriends = user.lists;
-                        string id1 = user.id;
-                        string id2 = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-                        string idPairOfFriends = "";
-                        //Chấp nhận lời mời kêt bạn
-                        foreach (listFriends item in user.lists)
-                        {
-                            if (item.listID.Contains(id1) && item.listID.Contains(id2))
-                            {
-                                idPairOfFriends = item._id;
-                                break;
-                            }
-                        }
-                        if (!string.IsNullOrEmpty(idPairOfFriends))
-                        {
-                            string apiPath = apiUpdaStatusFriend + idPairOfFriends;
-                            var data = new { };
-                            JToken tkData = await manageApi.callApiUsingMethodPut(data, apiPath);
-
-                            if (!string.IsNullOrEmpty(tkData.ToString()))
-                            {
-                                string difUser = dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-                                string difUserId = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                                string message = (int)manageChooseCases.setting.acceptFriend + "*" + difUser + ":" + user.id;
-                                handleChat.sendData(client, message);
-                                //xóa dòng đó khỏi dữ liệu
-                                dataGridView.Rows.RemoveAt(e.RowIndex);
-                                //tiến hành cập nhật lại thông tin bên trong user
-
-                                listFriends temp = null;
-                                foreach (listFriends item in user.lists)
-                                {
-                                    if (item.listID.Contains(user.id) && item.listID.Contains(difUserId))
-                                    {
-                                        temp = item;
-                                        break;
-                                    }
-                                }
-                                if (temp != null)
-                                {
-                                    user.lists.Remove(temp);
-                                    temp.status = "friend";
-                                    user.lists.Add(temp);
-                                }
-
-                                //cập nhật lại danh sách bạn bè
-                                List<infoUser> getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
-                                hanleDataIntoDatagridview.displayListFriends(getFriends, userControlLists);
-
-                                createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
+            await handleCellContentClicks.cellClickContent_AcceptFriend((DataGridView)sender, user, e, apiUpdaStatusFriend, client, apiGetUserId, userControlLists, chat);
         }
 
         //==================================================================================================================================
@@ -949,15 +683,15 @@ namespace Chess_Game_Project
         }
         private void btnListAllUsers_Click(object sender, EventArgs e)
         {
-            userControlLists.selectTabControl(0);
             loopChildPanel(userControlLists);
+            userControlLists.selectTabControl(0);
         }
         private void btnAcceptFriend_Click(object sender, EventArgs e)
         {
             try
             {
-                userControlLists.selectTabControl(2);
                 loopChildPanel(userControlLists);
+                userControlLists.selectTabControl(2);
             }
             catch (Exception ex)
             {
@@ -1056,7 +790,7 @@ namespace Chess_Game_Project
             pnlChatOne.Hide();
             loopChildPanel(userControlLists);
             //đóng các user control chat one
-            foreach(userControlChatOne item in createChatOneFrame.listChats)
+            foreach (userControlChatOne item in createChatOneFrame.listChats)
                 item.Hide();
         }
         private async void CreateRoom_btnAcceptCreateRoom_click(object sender, EventArgs e)
@@ -1135,6 +869,7 @@ namespace Chess_Game_Project
         {
             if (pnlChatOne.Visible)
                 pnlChatOne.Hide();
+            userControlLists.Hide();
             pnlContainsChild.Hide();
         }
         private async void LobbyInterface_FormClosed(object sender, FormClosedEventArgs e)

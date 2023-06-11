@@ -123,9 +123,8 @@ namespace Chess_Game_Project.ContainUserControls
                 for (int col = 0; col < dtAllUsers.Rows.Count; col++)
                 {
                     DataGridViewCell cell = dtAllUsers.Rows[row].Cells["userName"];
-                    if (cell.Value.ToString() == userName)
+                    if (string.Equals(cell.Value.ToString(), userName))
                     {
-                        MessageBox.Show("Đã vào đây");
                         //lay ra cot ket ban
                         DataGridViewCell cellMakeFriend = dtAllUsers.Rows[row].Cells[3];
                         cellMakeFriend.Style = new DataGridViewCellStyle { Padding = new Padding(0, 0, 0, 0) };
@@ -178,7 +177,7 @@ namespace Chess_Game_Project.ContainUserControls
                     string value = row.Cells["userName"].Value.ToString();
                     if (string.Equals(value, preUsername))
                     {
-                        row.Cells["userName"].Value = username;
+                        row.Cells["userName"].Value = username; 
                     }
 
                 }
@@ -226,6 +225,40 @@ namespace Chess_Game_Project.ContainUserControls
                 }
             }
             return true;
+        }
+        public void changeTextStatusActiveOffline(string username)
+        {
+            foreach (DataGridViewRow row in dtListFriends.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    string value = row.Cells["userName"].Value.ToString();
+                    if(string.Equals(value, username))
+                    {
+                        row.Cells["statusActive"].Value = "offline";
+                        DataGridViewCell cellMakeFriend = row.Cells[4];
+                        cellMakeFriend.Style = new DataGridViewCellStyle { Padding = new Padding(500, 0, 0, 0) };
+                        cellMakeFriend.ReadOnly = true;
+                    }
+                }
+            }
+        }
+        public void changeTextStatusActiveOnline(string username)
+        {
+            foreach (DataGridViewRow row in dtListFriends.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    string value = row.Cells["userName"].Value.ToString();
+                    if (string.Equals(value, username))
+                    {
+                        row.Cells["statusActive"].Value = "online";
+                        DataGridViewCell cellMakeFriend = row.Cells[4];
+                        cellMakeFriend.Style = new DataGridViewCellStyle { Padding = new Padding(0, 0, 0, 0) };
+                        cellMakeFriend.ReadOnly = true;
+                    }
+                }
+            }
         }
     }
 }

@@ -76,6 +76,7 @@
     <Compile Include="ChangePasswordInterface.Designer.cs">
       <DependentUpon>ChangePasswordInterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="classes handle\handleCellContentClicks.cs" />
     <Compile Include="classes handle\handleChat.cs" />
     <Compile Include="classes handle\handleGetLists.cs" />
     <Compile Include="classes handle\handleLoadInterface.cs" />

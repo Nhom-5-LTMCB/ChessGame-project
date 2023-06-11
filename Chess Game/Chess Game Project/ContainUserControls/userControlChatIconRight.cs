@@ -16,16 +16,29 @@ namespace Chess_Game_Project.ContainUserControls
         {
             InitializeComponent();
         }
-        public void addUsernameAndImage(string linkAvt, string username, System.Drawing.Image img, string mainUsername)
+        public void addUsernameAndImage(string linkAvt, string username, System.Drawing.Image img, userControlChatOne chat)
         {
             ptbAvatar.Image = Image.FromFile(linkAvt);
             ptbAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbIcon.Image = img;
             ptbIcon.SizeMode = PictureBoxSizeMode.Zoom;
             lbUserName.Text = username;
-            lbUserName.Location = new Point(lbUserName.Location.X + 20, lbUserName.Location.Y);
-            ptbAvatar.Location = new Point(ptbAvatar.Location.X  + 15, ptbAvatar.Location.Y);
-            ptbIcon.Location = new Point(ptbIcon.Location.X + 15, ptbIcon.Location.Y);
+            
+            if(chat != null)
+            {
+                this.Width += 100;
+                ptbAvatar.Size = new Size(38, 35);
+                ptbIcon.Size = new Size(53, 49);
+                ptbIcon.Location = new Point(ptbIcon.Location.X + 40, ptbIcon.Location.Y);
+                ptbAvatar.Location = new Point(ptbAvatar.Location.X + 60, ptbAvatar.Location.Y);
+                lbUserName.Location = new Point(lbUserName.Location.X + 60, lbUserName.Location.Y);
+            }
+            else
+            {
+                lbUserName.Location = new Point(lbUserName.Location.X + 20, lbUserName.Location.Y);
+                ptbAvatar.Location = new Point(ptbAvatar.Location.X + 15, ptbAvatar.Location.Y);
+                ptbIcon.Location = new Point(ptbIcon.Location.X + 15, ptbIcon.Location.Y);
+            }
         }
     }
 }

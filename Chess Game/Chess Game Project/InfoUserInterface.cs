@@ -223,8 +223,8 @@ namespace Chess_Game_Project
                 string message = (int)manageChooseCases.setting.updateInfo + "*" + preUserame + "+" + user.userName + "+" + user.id;
                 handleChat.sendData(client, message);
             }
-            LobbyInterface.showInter.Show();
             this.Close();
+            LobbyInterface.showInter.Show();
         }
     }
 }

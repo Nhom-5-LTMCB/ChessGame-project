@@ -28,7 +28,10 @@ namespace ServerChessGame
                 NetworkStream stream = client.GetStream();
                 byte[] buffer = new byte[1024 * 500];
                 int length = stream.Read(buffer, 0, buffer.Length);
-                string userName = Encoding.UTF8.GetString(buffer, 0, length);
+                string message = Encoding.UTF8.GetString(buffer, 0, length);
+                string[] lst = message.Split('*');
+                string userName = lst[1];
+
                 if (clients.ContainsKey(userName))
                 {
                     clients.Remove(userName);
@@ -36,6 +39,8 @@ namespace ServerChessGame
                 }
                 Console.WriteLine("---> " + userName + ": da tham gia vao phong chat");
                 clients.Add(userName, client);
+
+
 
                 //khởi chạy toàn bộ luồng dữ liệu
                 manageClientThread = new Thread(new ParameterizedThreadStart(rcvData));
@@ -45,6 +50,21 @@ namespace ServerChessGame
                     Console.WriteLine("Luong cua: " + userName + " da bi xoa");
                 }
                 manageChatThread.Add(userName, manageClientThread);
+
+
+                //phân phối tin nhắn về cho các client còn lại
+                Console.WriteLine("<----.---->" + userName + " da dang nhap thanh cong");
+                foreach (string item in clients.Keys)
+                {
+                    if(item != userName)
+                    {
+                        TcpClient cl = (TcpClient)clients[item];
+                        stream = cl.GetStream();
+                        byte[] buffer2 = Encoding.UTF8.GetBytes(message);
+                        stream.Write(buffer2, 0, buffer2.Length);
+                    }
+                }
+
 
                 Thread thread = (Thread)manageChatThread[userName];
                 thread.Start(client);

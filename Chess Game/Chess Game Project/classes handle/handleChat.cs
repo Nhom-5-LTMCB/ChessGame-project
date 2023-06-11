@@ -51,6 +51,7 @@ namespace Chess_Game_Project.classes_handle
                 {
                     if (msg.Trim() == "")
                         return;
+                    owner = "abc";
                     MethodInvoker invoker = new MethodInvoker(delegate
                     {
 
@@ -58,7 +59,7 @@ namespace Chess_Game_Project.classes_handle
                         {
                             pnl.AutoScroll = false;
                             userControlContentChatMessage userControl = new userControlContentChatMessage();
-                            userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, owner);
+                            userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName);
                             int userControlWidth = pnl.Width * 70 / 100;
                             userControl.Location = new System.Drawing.Point(chat != null ? 25 : 10, posY == 0 ? 0 : chat == null ? posY - posY / 4 : posY);
                             userControl.Size = new System.Drawing.Size(0, userControl.Height);
@@ -89,7 +90,7 @@ namespace Chess_Game_Project.classes_handle
                         {
                             pnl.AutoScroll = false;
                             userControlChatMsgRight userControl = new userControlChatMsgRight();
-                            userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, owner);
+                            userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName);
                             int userControlWidth = pnl.Width * 70 / 100;
                             pnl.Controls.Add(userControl);
                             userControl.Size = new System.Drawing.Size(0, userControl.Height);
@@ -119,51 +120,74 @@ namespace Chess_Game_Project.classes_handle
                 {
                     MethodInvoker invoker = new MethodInvoker(delegate
                     {
-
-                        if (userName != owner)
+                        pnl.AutoScroll = false;
+                        userControlContentChatIcon userControl = new userControlContentChatIcon();
+                        userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, imgContent, chat);
+                        userControl.Location = new System.Drawing.Point(chat != null ? 25 : 10, posY == 0 ? 0 : chat == null ? posY - posY / 4 : posY);
+                        userControl.AutoSize = true;
+                        pnl.Controls.Add(userControl);
+                        if (chat != null)
                         {
-                            pnl.AutoScroll = false;
-                            userControlContentChatIcon userControl = new userControlContentChatIcon();
-                            userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, imgContent, owner);
-                            userControl.Location = new System.Drawing.Point(10, posY == 0 ? 0 : posY - posY / 4);
-                            pnl.Controls.Add(userControl);
-                            if (chat != null)
-                                chat.pos = posY + userControl.Height;
-                            else
-                            {
-                                if (form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
-                                else if (form == MatchInterface.showInter) MatchInterface.posY += userControl.Height;
-                            }
-                            pnl.ScrollControlIntoView(userControl);
-
-                            pnlContainsIcon.Hide();
-                            buttonListIcons.Clear();
-
-                            pnl.AutoScroll = true;
-                            pnl.HorizontalScroll.Visible = false;
+                            chat.pos = posY + userControl.Height + 10;
                         }
                         else
                         {
-                            pnl.AutoScroll = false;
-                            userControlChatIconRight userControl = new userControlChatIconRight();
-                            userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, imgContent, owner);
-                            pnl.Controls.Add(userControl);
-                            userControl.Location = new System.Drawing.Point(pnl.Width - userControl.Width - 20, posY);
-                            if (chat != null)
-                                chat.pos = posY + userControl.Height;
-                            else
-                            {
-                                if (form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
-                                else if (form == MatchInterface.showInter) MatchInterface.posY += userControl.Height;
-                            }
-                            pnl.ScrollControlIntoView(userControl);
-
-                            pnlContainsIcon.Hide();
-                            buttonListIcons.Clear();
-
-                            pnl.AutoScroll = true;
-                            pnl.HorizontalScroll.Visible = false;
+                            if (form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
+                            else if (form == MatchInterface.showInter) MatchInterface.posY += userControl.Height;
                         }
+                        pnl.ScrollControlIntoView(userControl);
+
+                        pnlContainsIcon.Hide();
+                        buttonListIcons.Clear();
+
+                        pnl.AutoScroll = true;
+                        pnl.HorizontalScroll.Visible = false;
+                        //if (userName != owner)
+                        //{
+                        //    pnl.AutoScroll = false;
+                        //    userControlContentChatIcon userControl = new userControlContentChatIcon();
+                        //    userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, imgContent, chat);
+                        //    userControl.Location = new System.Drawing.Point(10, posY == 0 ? 0 : posY - posY / 4);
+                        //    userControl.AutoSize = true;
+                        //    pnl.Controls.Add(userControl);
+                        //    if (chat != null)
+                        //        chat.pos = posY + userControl.Height;
+                        //    else
+                        //    {
+                        //        if (form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
+                        //        else if (form == MatchInterface.showInter) MatchInterface.posY += userControl.Height;
+                        //    }
+                        //    pnl.ScrollControlIntoView(userControl);
+
+                        //    pnlContainsIcon.Hide();
+                        //    buttonListIcons.Clear();
+
+                        //    pnl.AutoScroll = true;
+                        //    pnl.HorizontalScroll.Visible = false;
+                        //}
+                        //else
+                        //{
+                        //    pnl.AutoScroll = false;
+                        //    userControlChatIconRight userControl = new userControlChatIconRight();
+                        //    userControl.addUsernameAndImage($"{pathImages}\\{linkAvt}", userName, imgContent, chat);
+                        //    pnl.Controls.Add(userControl);
+                        //    userControl.AutoSize = true;
+                        //    userControl.Location = new System.Drawing.Point(pnl.Width - userControl.Width - 20, posY);
+                        //    if (chat != null)
+                        //        chat.pos = posY + userControl.Height;
+                        //    else
+                        //    {
+                        //        if (form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
+                        //        else if (form == MatchInterface.showInter) MatchInterface.posY += userControl.Height;
+                        //    }
+                        //    pnl.ScrollControlIntoView(userControl);
+
+                        //    pnlContainsIcon.Hide();
+                        //    buttonListIcons.Clear();
+
+                        //    pnl.AutoScroll = true;
+                        //    pnl.HorizontalScroll.Visible = false;
+                        //}
                     });
                     form.Invoke(invoker);
                 }

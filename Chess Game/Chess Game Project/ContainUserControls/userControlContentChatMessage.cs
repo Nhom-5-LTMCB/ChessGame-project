@@ -25,7 +25,7 @@ namespace Chess_Game_Project.ContainUserControls
         {
             InitializeComponent();
         }
-        public void addUsernameAndImage(string linkAvt, string username, string mainUsername)
+        public void addUsernameAndImage(string linkAvt, string username)
         {
             ptvAvatar.Image = Image.FromFile(linkAvt);
             ptvAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
