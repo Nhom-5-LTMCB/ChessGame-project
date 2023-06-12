@@ -188,7 +188,7 @@
             this.btnSignUp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnSignUp.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnSignUp.Font = new System.Drawing.Font("Consolas", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnSignUp.ForeColor = System.Drawing.Color.Moccasin;
+            this.btnSignUp.ForeColor = System.Drawing.Color.White;
             this.btnSignUp.Location = new System.Drawing.Point(302, 390);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(206, 57);
@@ -210,7 +210,7 @@
             this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnLogin.Font = new System.Drawing.Font("Consolas", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnLogin.ForeColor = System.Drawing.Color.Moccasin;
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(67, 390);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(206, 57);
@@ -233,7 +233,7 @@
             this.forgotPasswordLabel.AutoSize = true;
             this.forgotPasswordLabel.BackColor = System.Drawing.Color.NavajoWhite;
             this.forgotPasswordLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgotPasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
+            this.forgotPasswordLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.forgotPasswordLabel.Location = new System.Drawing.Point(195, 471);
             this.forgotPasswordLabel.Name = "forgotPasswordLabel";
             this.forgotPasswordLabel.Size = new System.Drawing.Size(182, 31);

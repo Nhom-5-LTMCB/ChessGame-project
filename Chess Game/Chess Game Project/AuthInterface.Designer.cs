@@ -160,7 +160,7 @@
             this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnNext.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnNext.Font = new System.Drawing.Font("Consolas", 12F);
-            this.btnNext.ForeColor = System.Drawing.Color.Moccasin;
+            this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Location = new System.Drawing.Point(103, 239);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(182, 45);

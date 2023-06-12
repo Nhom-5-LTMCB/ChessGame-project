@@ -99,7 +99,7 @@
             // 
             this.errorConfirmPasswordLabel.AutoSize = true;
             this.errorConfirmPasswordLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorConfirmPasswordLabel.Location = new System.Drawing.Point(116, 484);
+            this.errorConfirmPasswordLabel.Location = new System.Drawing.Point(119, 478);
             this.errorConfirmPasswordLabel.Name = "errorConfirmPasswordLabel";
             this.errorConfirmPasswordLabel.Size = new System.Drawing.Size(0, 16);
             this.errorConfirmPasswordLabel.TabIndex = 91;
@@ -138,7 +138,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold);
-            this.lbID.Location = new System.Drawing.Point(112, 414);
+            this.lbID.Location = new System.Drawing.Point(115, 408);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(162, 20);
             this.lbID.TabIndex = 85;
@@ -157,7 +157,7 @@
             this.btnComeback.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnComeback.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnComeback.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnComeback.ForeColor = System.Drawing.Color.Moccasin;
+            this.btnComeback.ForeColor = System.Drawing.Color.White;
             this.btnComeback.Location = new System.Drawing.Point(51, 516);
             this.btnComeback.Name = "btnComeback";
             this.btnComeback.Size = new System.Drawing.Size(182, 45);
@@ -178,7 +178,7 @@
             this.btnRegister.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnRegister.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(121)))), ((int)(((byte)(94)))));
             this.btnRegister.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnRegister.ForeColor = System.Drawing.Color.Moccasin;
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(261, 516);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(182, 45);
@@ -200,7 +200,7 @@
             this.txtConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtConfirmPassword.Font = new System.Drawing.Font("Consolas", 10.2F);
             this.txtConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(116, 438);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(119, 432);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '\0';
@@ -216,7 +216,7 @@
             this.guna2PictureBox4.ErrorImage = null;
             this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
             this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(71, 437);
+            this.guna2PictureBox4.Location = new System.Drawing.Point(74, 431);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
             this.guna2PictureBox4.Size = new System.Drawing.Size(41, 42);
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

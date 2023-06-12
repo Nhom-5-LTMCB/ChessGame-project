@@ -178,7 +178,7 @@ namespace Chess_Game_Project
             this.btnOutRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnOutRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnOutRoom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnOutRoom.ForeColor = System.Drawing.Color.Navy;
+            this.btnOutRoom.ForeColor = System.Drawing.Color.Black;
             this.btnOutRoom.Location = new System.Drawing.Point(1281, 29);
             this.btnOutRoom.Name = "btnOutRoom";
             this.btnOutRoom.Size = new System.Drawing.Size(166, 56);

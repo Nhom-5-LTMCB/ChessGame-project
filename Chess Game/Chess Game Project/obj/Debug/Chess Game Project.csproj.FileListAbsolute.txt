@@ -306,3 +306,35 @@ D:\ĐỒ ÁN MỚI NHẤT\ChessGame-project\Chess Game\Chess Game Project\obj\De
 D:\ĐỒ ÁN MỚI NHẤT\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.pdb
 D:\ĐỒ ÁN MỚI NHẤT\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlChatIconRight.resources
 D:\ĐỒ ÁN MỚI NHẤT\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlChatMsgRight.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\bin\Debug\Chess Game Project.exe.config
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\bin\Debug\Chess Game Project.exe
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\bin\Debug\Chess Game Project.pdb
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\bin\Debug\Guna.UI2.dll
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.AuthInterface.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ChangePasswordInterface.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlChatIconRight.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlChatMsgRight.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlClick.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlContentChatMessage.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlChatOne.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlContentChatIcon.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlCreateRoom.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlHistory.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlLists.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.ContainUserControls.userControlRanks.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.InfoUserInterface.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.InputTokenForm1.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.LobbyInterface.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.Login.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.MatchInterface.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.Properties.Resources.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess_Game_Project.RegisterInterface.resources
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.csproj.CopyComplete
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.exe
+C:\Users\ASUS\Desktop\ChessGame-project\Chess Game\Chess Game Project\obj\Debug\Chess Game Project.pdb
