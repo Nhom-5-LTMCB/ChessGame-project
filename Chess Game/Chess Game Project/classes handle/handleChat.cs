@@ -53,7 +53,6 @@ namespace Chess_Game_Project.classes_handle
                         return;
                     MethodInvoker invoker = new MethodInvoker(delegate
                     {
-
                         if (userName != owner)
                         {
                             pnl.AutoScroll = false;
@@ -79,7 +78,10 @@ namespace Chess_Game_Project.classes_handle
                                     LobbyInterface.posY += userControl.Height + 5;
                                 }
                                 else if (form == MatchInterface.showInter)
+                                {
+                                    userControl.Location = new System.Drawing.Point(userControl.Location.X, posY);
                                     MatchInterface.posY += userControl.Height;
+                                }
                             }
                             pnl.ScrollControlIntoView(userControl);
                             pnl.AutoScroll = true;
@@ -106,7 +108,9 @@ namespace Chess_Game_Project.classes_handle
                                 if (form == LobbyInterface.showInter)
                                     LobbyInterface.posY += userControl.Height;
                                 else if (form == MatchInterface.showInter)
+                                {
                                     MatchInterface.posY += userControl.Height;
+                                }
                             }
                             pnl.ScrollControlIntoView(userControl);
                             pnl.AutoScroll = true;
@@ -135,7 +139,11 @@ namespace Chess_Game_Project.classes_handle
                             else
                             {
                                 if (form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
-                                else if (form == MatchInterface.showInter) MatchInterface.posY += userControl.Height;
+                                if (form == MatchInterface.showInter)
+                                {
+                                    userControl.Location = new System.Drawing.Point(userControl.Location.X, posY);
+                                    MatchInterface.posY += userControl.Height;
+                                }
                             }
                             pnl.ScrollControlIntoView(userControl);
 

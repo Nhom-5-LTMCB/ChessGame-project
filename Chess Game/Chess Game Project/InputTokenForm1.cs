@@ -38,11 +38,17 @@ namespace Chess_Game_Project
                 userName,
                 gmail
             };
-            string dataJson = JsonConvert.SerializeObject(data);
-            HttpClient client = new HttpClient();
-            await client.PostAsync(apiAuthAccount, new StringContent(dataJson, Encoding.UTF8, "application/json"));
-            btnSendTokenAgain.Enabled = false;
-            MessageBox.Show("Vui lòng kiểm tra email của bạn");
+            JToken dtToken = await manageApi.callApiUsingMethodPost(data, apiAuthAccount);
+            if(dtToken != null)
+            {
+                btnSendTokenAgain.Enabled = false;
+                MessageBox.Show("Vui lòng kiểm tra email của bạn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }else
+            {
+                btnSendTokenAgain.Enabled = true;
+                MessageBox.Show("Gửi thất bại, vui lòng thực hiện lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         private void InputTokenForm1_Load(object sender, EventArgs e)
         {
@@ -52,21 +58,18 @@ namespace Chess_Game_Project
         private async void btnNext_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtAuth.Text.Trim())) return;
-            HttpClient client = new HttpClient();
             string api = apiInputToken + txtAuth.Text.Trim();
-            HttpResponseMessage response = await client.PostAsync(api, new StringContent("", Encoding.UTF8, "application/json"));
-            string responseJson = await response.Content.ReadAsStringAsync();
-            JObject dataObj = JObject.Parse(responseJson);
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            JToken tkData = await manageApi.callApiUsingMethodPost(null, api);
+            if(tkData != null)
             {
-                MessageBox.Show(dataObj["notify"].ToString());
+                MessageBox.Show("Xác nhận thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                 ChangePasswordInterface pw = new ChangePasswordInterface();
                 pw.Show();
                 this.Close();
             }
             else
             {
-                MessageBox.Show(dataObj["notify"].ToString());
+                MessageBox.Show("Mã đã hết hạn, vui lòng thực hiện lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                 btnSendTokenAgain.Enabled = true;
                 txtAuth.Clear();
             }

@@ -85,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.RosyBrown;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.lbUserName);
             this.Controls.Add(this.ptvAvatar);

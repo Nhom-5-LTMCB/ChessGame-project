@@ -57,7 +57,7 @@ namespace Chess_Game_Project
             // 
             // pnlContent
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.LightCyan;
+            this.pnlContent.BackColor = System.Drawing.Color.Gray;
             this.pnlContent.Controls.Add(this.pnlChatClientFrame);
             this.pnlContent.Controls.Add(this.txtMessage);
             this.pnlContent.Controls.Add(this.txtCountTime);
@@ -71,9 +71,9 @@ namespace Chess_Game_Project
             this.pnlContent.Controls.Add(this.label3);
             this.pnlContent.Controls.Add(this.txtTurnUser);
             this.pnlContent.Controls.Add(this.pnlContainPieces);
-            this.pnlContent.Location = new System.Drawing.Point(12, -1);
+            this.pnlContent.Location = new System.Drawing.Point(12, 5);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1470, 685);
+            this.pnlContent.Size = new System.Drawing.Size(1476, 679);
             this.pnlContent.TabIndex = 1;
             // 
             // pnlChatClientFrame
@@ -87,7 +87,7 @@ namespace Chess_Game_Project
             // 
             // listChat
             // 
-            this.listChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.listChat.BackColor = System.Drawing.Color.LightYellow;
             this.listChat.Controls.Add(this.pnlContainsIcon);
             this.listChat.Location = new System.Drawing.Point(0, 0);
             this.listChat.Name = "listChat";
@@ -96,7 +96,7 @@ namespace Chess_Game_Project
             // 
             // pnlContainsIcon
             // 
-            this.pnlContainsIcon.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlContainsIcon.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pnlContainsIcon.Location = new System.Drawing.Point(0, 123);
             this.pnlContainsIcon.Name = "pnlContainsIcon";
             this.pnlContainsIcon.Size = new System.Drawing.Size(381, 323);
@@ -122,12 +122,12 @@ namespace Chess_Game_Project
             this.txtMessage.PasswordChar = '\0';
             this.txtMessage.PlaceholderText = "";
             this.txtMessage.SelectedText = "";
-            this.txtMessage.Size = new System.Drawing.Size(253, 55);
+            this.txtMessage.Size = new System.Drawing.Size(259, 55);
             this.txtMessage.TabIndex = 38;
             // 
             // txtCountTime
             // 
-            this.txtCountTime.BorderColor = System.Drawing.Color.LightCyan;
+            this.txtCountTime.BorderColor = System.Drawing.Color.Gray;
             this.txtCountTime.BorderRadius = 5;
             this.txtCountTime.BorderThickness = 0;
             this.txtCountTime.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -136,10 +136,10 @@ namespace Chess_Game_Project
             this.txtCountTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtCountTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCountTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCountTime.FillColor = System.Drawing.Color.LightCyan;
+            this.txtCountTime.FillColor = System.Drawing.Color.Gray;
             this.txtCountTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCountTime.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCountTime.ForeColor = System.Drawing.Color.Black;
+            this.txtCountTime.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.txtCountTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCountTime.Location = new System.Drawing.Point(615, 49);
             this.txtCountTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -172,14 +172,13 @@ namespace Chess_Game_Project
             // btnOutRoom
             // 
             this.btnOutRoom.BorderRadius = 15;
-            this.btnOutRoom.BorderThickness = 1;
             this.btnOutRoom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnOutRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnOutRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnOutRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnOutRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnOutRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnOutRoom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnOutRoom.ForeColor = System.Drawing.Color.White;
+            this.btnOutRoom.ForeColor = System.Drawing.Color.Navy;
             this.btnOutRoom.Location = new System.Drawing.Point(1281, 29);
             this.btnOutRoom.Name = "btnOutRoom";
             this.btnOutRoom.Size = new System.Drawing.Size(166, 56);
@@ -210,9 +209,8 @@ namespace Chess_Game_Project
             this.lbDifPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDifPlayer.Location = new System.Drawing.Point(910, 10);
             this.lbDifPlayer.Name = "lbDifPlayer";
-            this.lbDifPlayer.Size = new System.Drawing.Size(68, 20);
+            this.lbDifPlayer.Size = new System.Drawing.Size(0, 20);
             this.lbDifPlayer.TabIndex = 29;
-            this.lbDifPlayer.Text = "Client2";
             this.lbDifPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbCurrentPlayer
@@ -221,9 +219,8 @@ namespace Chess_Game_Project
             this.lbCurrentPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.lbCurrentPlayer.Location = new System.Drawing.Point(413, 11);
             this.lbCurrentPlayer.Name = "lbCurrentPlayer";
-            this.lbCurrentPlayer.Size = new System.Drawing.Size(68, 20);
+            this.lbCurrentPlayer.Size = new System.Drawing.Size(0, 20);
             this.lbCurrentPlayer.TabIndex = 28;
-            this.lbCurrentPlayer.Text = "Client1";
             this.lbCurrentPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // avtDifPlayer
@@ -238,7 +235,7 @@ namespace Chess_Game_Project
             // avtCurrentPlayer
             // 
             this.avtCurrentPlayer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.avtCurrentPlayer.Location = new System.Drawing.Point(405, 34);
+            this.avtCurrentPlayer.Location = new System.Drawing.Point(379, 34);
             this.avtCurrentPlayer.Name = "avtCurrentPlayer";
             this.avtCurrentPlayer.Size = new System.Drawing.Size(85, 71);
             this.avtCurrentPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -248,10 +245,11 @@ namespace Chess_Game_Project
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(92, 4);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Info;
+            this.label3.Location = new System.Drawing.Point(55, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 19);
+            this.label3.Size = new System.Drawing.Size(138, 38);
             this.label3.TabIndex = 24;
             this.label3.Text = "Lượt của";
             // 
@@ -259,7 +257,7 @@ namespace Chess_Game_Project
             // 
             this.txtTurnUser.BackColor = System.Drawing.Color.White;
             this.txtTurnUser.Enabled = false;
-            this.txtTurnUser.Location = new System.Drawing.Point(51, 26);
+            this.txtTurnUser.Location = new System.Drawing.Point(52, 56);
             this.txtTurnUser.Multiline = true;
             this.txtTurnUser.Name = "txtTurnUser";
             this.txtTurnUser.Size = new System.Drawing.Size(141, 94);
@@ -267,17 +265,17 @@ namespace Chess_Game_Project
             // 
             // pnlContainPieces
             // 
-            this.pnlContainPieces.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlContainPieces.BackColor = System.Drawing.Color.LightYellow;
             this.pnlContainPieces.Location = new System.Drawing.Point(0, 156);
             this.pnlContainPieces.Name = "pnlContainPieces";
-            this.pnlContainPieces.Size = new System.Drawing.Size(290, 497);
+            this.pnlContainPieces.Size = new System.Drawing.Size(296, 497);
             this.pnlContainPieces.TabIndex = 17;
             // 
             // MatchInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightCyan;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1487, 683);
             this.Controls.Add(this.pnlContent);
             this.Name = "MatchInterface";

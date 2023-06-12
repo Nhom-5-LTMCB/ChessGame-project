@@ -86,14 +86,16 @@ namespace Chess_Game_Project
                     {
                         JToken dataToken = JObject.Parse(await response.Content.ReadAsStringAsync())["data"];
                         infoUser user = JsonConvert.DeserializeObject<infoUser>(dataToken.ToString());
-                      
+
+                        //đóng form register
+                        this.Close();
+
                         clearError();
                         MessageBox.Show("Đăng ký thành công");
                         LobbyInterface lb = new LobbyInterface(user);
                         lb.Show();
 
-                        //đóng form register
-                        this.Close();
+             
                     }
                 }
                 else

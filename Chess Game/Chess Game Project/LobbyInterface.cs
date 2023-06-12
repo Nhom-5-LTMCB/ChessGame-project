@@ -46,7 +46,7 @@ namespace Chess_Game_Project
         #region infoUser
         private infoUser user;
         private string linkAvatar;
-        private string ipAddress = "172.20.23.199";
+        private string ipAddress = "172.20.50.47";
         private string myIpAddress = "";
         private string difUsernameUser = "";
         #endregion
@@ -75,16 +75,18 @@ namespace Chess_Game_Project
             {
                 handleLoadInterface.loadInterFace(this, pnlCoverPage, pnlContent);
                 ptbAvatarPage.Size = this.Size;
-                ptbAvatarPage.BackgroundImage = System.Drawing.Image.FromFile("Resources\\loginAvt.jpg");
+                ptbAvatarPage.BackgroundImage = System.Drawing.Image.FromFile("Resources\\lobbyImage.jpg");
                 ptbAvatarPage.BackgroundImageLayout = ImageLayout.Stretch;
                 pnlContent.Parent = ptbAvatarPage;
 
                 pnlContent.BringToFront();
 
                 if (!string.IsNullOrEmpty(user.linkAvatar))
+                {
                     user.linkAvatar = "defaultAvatar.jpg";
-                ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + user.linkAvatar);
-                ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + user.linkAvatar);
+                    ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
 
                 pnlContainsIcon.Parent = pnlMultiChats;
                 pnlMultiChatFrame.Parent = pnlMultiChats;

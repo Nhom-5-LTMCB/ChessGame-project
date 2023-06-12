@@ -189,7 +189,7 @@ namespace Chess_Game_Project
                 tb.TextAlign = HorizontalAlignment.Center;
                 tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
                 tb.Font = new Font(tb.Font, FontStyle.Bold);
-                tb.Text = Convert.ToString((char)('A' + i));
+                tb.Text = Convert.ToString((char)('a' + i));
                 tb.BackColor = Color.LemonChiffon;
                 tb.ReadOnly = true;
                 pnl.Controls.Add(tb);
@@ -389,11 +389,6 @@ namespace Chess_Game_Project
                     choose(i, j);
                 }
             }
-
-            if (isCreated)
-                MessageBox.Show("Bạn là quân cờ trắng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
-            else
-                MessageBox.Show("Bạn là quân cờ đen", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -969,20 +964,16 @@ namespace Chess_Game_Project
                     player2 = difPlayer.id + '-' + "lose"
                 };
                 string jsonData = JsonConvert.SerializeObject(obj);
-                HttpClient client = new HttpClient();
-                await client.PutAsync(apiResultMatch + matchId, new StringContent(jsonData, Encoding.UTF8, "application/json"));
+                await manageApi.callApiUsingMethodPut(obj, apiResultMatch + matchId);
                 //cập nhật lại điểmm cho người thắng
-                await client.PutAsync(apiUpdateScore + currentPlayer.id, new StringContent(JsonConvert.SerializeObject(new { point = currentPlayer.point + betPoint }), Encoding.UTF8, "application/json"));
+                await manageApi.callApiUsingMethodPut(new { point = currentPlayer.point + betPoint }, apiUpdateScore + currentPlayer.id);
                 //cập nhật lại điểm cho người thua
-                await client.PutAsync(apiUpdateScore + difPlayer.id, new StringContent(JsonConvert.SerializeObject(new { point = difPlayer.point - betPoint }), Encoding.UTF8, "application/json"));
+                await manageApi.callApiUsingMethodPut(new { point = difPlayer.point - betPoint }, apiUpdateScore + difPlayer.id);
                 //thực hiện gửi dữ liệu xử lý thoát khỏi phòng
 
-
-                HttpResponseMessage response = await client.GetAsync(apiGetUserId + currentPlayer.id);
-
-                if (response.IsSuccessStatusCode)
+                JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + currentPlayer.id);
+                if(tkData != null)
                 {
-                    JToken tkData = JObject.Parse(await response.Content.ReadAsStringAsync())["data"];
                     infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
                     this.currentPlayer = user;
                     //tạo lại giao diện mới
@@ -996,7 +987,6 @@ namespace Chess_Game_Project
                     this.Close();
                     LobbyInterface.showInter.Show();
                 }
-                
             }
         }
         //hàm được sử dụng cho việc nhập thành và khi quân tốt đến cuối bàn cờ địch thì sẽ được chọn quân mới
@@ -1566,7 +1556,7 @@ namespace Chess_Game_Project
         {
             if (player.players == 2)
             {
-                if (txtMessage.Text.Trim() == "")
+                if (string.Equals(txtMessage.Text.Trim(), ""))
                     return;
                 string data = $"{currentPlayer.userName}(1):" + txtMessage.Text.Trim() + ":" + currentPlayer.linkAvatar;
                 ipEndPoint = new IPEndPoint(IPAddress.Parse(difIp), port);
@@ -1596,12 +1586,9 @@ namespace Chess_Game_Project
         {
             if (gameOver)
             {
-                HttpClient client = new HttpClient();
-                HttpResponseMessage response = await client.GetAsync(apiGetUserId + currentPlayer.id);
-
-                if (response.IsSuccessStatusCode)
+                JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + currentPlayer.id);
+                if(tkData != null)
                 {
-                    JToken tkData = JObject.Parse(await response.Content.ReadAsStringAsync())["data"];
                     infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
                     this.currentPlayer = user;
 
@@ -1629,21 +1616,17 @@ namespace Chess_Game_Project
                             player1 = difPlayer.id + '-' + "win",
                             player2 = currentPlayer.id + '-' + "lose"
                         };
-                        string jsonData = JsonConvert.SerializeObject(obj);
-                        HttpClient client = new HttpClient();
-                        await client.PutAsync(apiResultMatch + matchId, new StringContent(jsonData, Encoding.UTF8, "application/json"));
+                        await manageApi.callApiUsingMethodPut(null, apiResultMatch + matchId);
                         //cập nhật lại điểmm cho người thắng
-                        await client.PutAsync(apiUpdateScore + difPlayer.id, new StringContent(JsonConvert.SerializeObject(new { point = difPlayer.point + betPoint }), Encoding.UTF8, "application/json"));
+                        await manageApi.callApiUsingMethodPut(new { point = difPlayer.point + betPoint }, apiUpdateScore + difPlayer.id);
                         //cập nhật lại điểm cho người thua
-                        await client.PutAsync(apiUpdateScore + currentPlayer.id, new StringContent(JsonConvert.SerializeObject(new { point = currentPlayer.point - betPoint }), Encoding.UTF8, "application/json"));
+                        await manageApi.callApiUsingMethodPut(new { point = currentPlayer.point - betPoint }, apiUpdateScore + currentPlayer.id);
                         //thực hiện gửi dữ liệu xử lý thoát khỏi phòng
 
 
-                        HttpResponseMessage response = await client.GetAsync(apiGetUserId + currentPlayer.id);
-
-                        if (response.IsSuccessStatusCode)
+                        JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + currentPlayer.id);
+                        if(tkData != null)
                         {
-                            JToken tkData = JObject.Parse(await response.Content.ReadAsStringAsync())["data"];
                             infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
                             this.currentPlayer = user;
                             //tạo lại giao diện mới
@@ -1658,9 +1641,7 @@ namespace Chess_Game_Project
                     else
                     {
                         //nếu phòng chỉ có 1 người thì xóa luôn phòng này
-                        HttpClient client = new HttpClient();
-                        await client.DeleteAsync(apiDeleteRoom + matchId);
-
+                        await manageApi.callApiUsingDeleteMethod(apiDeleteRoom + matchId);
                         //xoa phong doi voi tat ca nguoi choi dang online
                         string message = (int)manageChooseCases.setting.deleteRoom + "*" + matchId;
                         handleChat.sendData(currentTcpClient, message);
