@@ -162,6 +162,11 @@ namespace Chess_Game_Project
             listChat.Parent = pnlChatClientFrame;
             pnlContainsIcon.Parent = pnlChatClientFrame;
             pnlContainsIcon.BringToFront();
+
+            if (isCreated)
+                MessageBox.Show("Bạn là quân cờ trắng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+            else
+                MessageBox.Show("Bạn là quân cờ đen", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
         private void displayAnncount(bool whiteTurn, bool blackTurn)
         {

@@ -331,6 +331,7 @@ namespace Chess_Game_Project
                             break;
                         case 1:
                             string[] lstAcceptFriend = listMsg[1].Split('+');
+
                             listFriends newPairOfAccept = JsonConvert.DeserializeObject<listFriends>(lstAcceptFriend[2]);
                             user.lists.Add(newPairOfAccept);
 
@@ -338,6 +339,7 @@ namespace Chess_Game_Project
                             if (newPairOfAccept != null)
                             {
                                 userControlLists.hideBtnMakeFriend(lstAcceptFriend[1]);
+
                                 List<infoUser> lists = await handleGetLists.getListUser("waiting", user, apiGetUserId);
                                 hanleDataIntoDatagridview.displayListWaitingAccept(lists, userControlLists);
                             }
@@ -345,6 +347,7 @@ namespace Chess_Game_Project
                         case 2:
                             string[] lstBecomeFriend = listMsg[1].Split(':');
                             string difUserID = lstBecomeFriend[1];
+                            string difUsername1 = lstBecomeFriend[2];
                             if (!string.IsNullOrEmpty(difUserID))
                             {
                                 listFriends temp = null;
@@ -366,10 +369,19 @@ namespace Chess_Game_Project
                                 List<infoUser> lists1 = await handleGetLists.getListUser("friend", user, apiGetUserId);
                                 hanleDataIntoDatagridview.displayListFriends(lists1, userControlLists);
 
-                                Action myAction = async () =>
+                                Action myAction = () =>
                                 {
-                                    await createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
+                                    if (userControlLists.checkExistsUsernameIntoDataListFriends(difUsername1))
+                                    {
+                                        userControlLists.changeTextStatusActiveOnline(difUsername1);
+                                        chat = new userControlChatOne();
+                                        chat.Hide();
+                                        chat.Tag = $"{user.userName},{difUsername1}";
+                                        chat.Dock = DockStyle.Bottom;
+                                        createChatOneFrame.listChats.Add(chat);
+                                    }
                                 };
+
 
                                 // Sử dụng phương thức Invoke để thực thi đoạn mã trên luồng giao diện người dùng
                                 if (this.InvokeRequired)
@@ -525,14 +537,14 @@ namespace Chess_Game_Project
                             }
                             break;
                         case 9:
-                            string difUsername1 = listMsg[1];
+                            string difUsername2 = listMsg[1];
                             //kiểm tra xem trong datagridview danh sách bạn bè có chứa user này hay không
-                            if (userControlLists.checkExistsUsernameIntoDataListFriends(difUsername1))
+                            if (userControlLists.checkExistsUsernameIntoDataListFriends(difUsername2))
                             {
-                                userControlLists.changeTextStatusActiveOnline(difUsername1);
+                                userControlLists.changeTextStatusActiveOnline(difUsername2);
                                 chat = new userControlChatOne();
                                 chat.Hide();
-                                chat.Tag = $"{user.userName},{difUsername1}";
+                                chat.Tag = $"{user.userName},{difUsername2}";
                                 chat.Dock = DockStyle.Bottom;
                                 createChatOneFrame.listChats.Add(chat);
                             }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ĐỒ ÁN MỚI NHẤT\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj": {}
+    "E:\\lập trình c#\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj": {}
   },
   "projects": {
-    "D:\\ĐỒ ÁN MỚI NHẤT\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj": {
+    "E:\\lập trình c#\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ĐỒ ÁN MỚI NHẤT\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj",
+        "projectUniqueName": "E:\\lập trình c#\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj",
         "projectName": "ServerChessGame",
-        "projectPath": "D:\\ĐỒ ÁN MỚI NHẤT\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj",
+        "projectPath": "E:\\lập trình c#\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj",
         "packagesPath": "C:\\Users\\ltphi\\.nuget\\packages\\",
-        "outputPath": "D:\\ĐỒ ÁN MỚI NHẤT\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\obj\\",
+        "outputPath": "E:\\lập trình c#\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ltphi\\AppData\\Roaming\\NuGet\\NuGet.Config",

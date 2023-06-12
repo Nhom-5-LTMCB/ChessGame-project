@@ -51,7 +51,7 @@ namespace Chess_Game_Project.classes_handle
                             {
                                 string difUser = dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
                                 string difUserId = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                                string message = (int)manageChooseCases.setting.acceptFriend + "*" + difUser + ":" + user.id;
+                                string message = (int)manageChooseCases.setting.acceptFriend + "*" + difUser + ":" + user.id + "+" + user.userName;
                                 handleChat.sendData(client, message);
                                 //xóa dòng đó khỏi dữ liệu
                                 dataGridView.Rows.RemoveAt(e.RowIndex);
@@ -77,7 +77,7 @@ namespace Chess_Game_Project.classes_handle
                                 List<infoUser> getFriends = await handleGetLists.getListUser("friend", user, apiGetUserId);
                                 hanleDataIntoDatagridview.displayListFriends(getFriends, lists);
 
-                                createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
+                                await createChatOneFrame.createChatBetweenClientAndClient(apiGetUserId, user, chat);
                             }
                         }
                     }
