@@ -215,7 +215,7 @@ namespace Chess_Game_Project
                         {
                             MessageBox.Show(notify);
                         }
-                        chat.Hide();
+                        control.Hide();
                         pnlChatOne.Hide();
                         createChatOneFrame.listChats.Remove(control);
                         break;
@@ -573,6 +573,8 @@ namespace Chess_Game_Project
                                     {
                                         if (oldChat.Tag.ToString().Contains(preUserName))
                                         {
+                                            oldChat.pos = 0;
+                                            oldChat.pnlChatOne.Controls.Clear();
                                             oldChat.Tag = oldChat.Tag.ToString().Replace(preUserName, user.userName);
                                         }
                                     }
@@ -602,7 +604,10 @@ namespace Chess_Game_Project
                                             item.Hide();
                                             pnlChatOne.Hide();
                                         }
+                                        item.pos = 0;
+                                        item.pnlChatOne.Controls.Clear();
                                         newChat = item;
+        
                                         break;
                                     }
                                 }
@@ -664,6 +669,7 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Đã có lỗi xảy ra trong việc truyền dữ liệu, vui lòng đăng nhập lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Login.showFormAgain.Show();
                 await handleLogOutRoom();
                 this.Close();
@@ -697,7 +703,7 @@ namespace Chess_Game_Project
                     {
                         //tiến hành gửi dữ liệu đi
                         string message = (int)manageChooseCases.setting.chatOne + "*" + user.userName + "(1):" + chat.TextBox.Text.Trim() + ":" + user.linkAvatar + ":" + difUsernameUser;
-                        if (message.Contains(':'))
+                        if (chat.TextBox.Text.Contains(':'))
                         {
                             MessageBox.Show("Không được phép nhập kí tự \":\"", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                         }
@@ -747,7 +753,7 @@ namespace Chess_Game_Project
                 {
                     //tiến hành gửi dữ liệu đi
                     string message = (int)manageChooseCases.setting.chatMulti + "*" + user.userName + "(1):" + txtSendMessage.Text.Trim() + ":" + user.linkAvatar;
-                    if (message.Contains(':'))
+                    if (txtSendMessage.Text.Contains(':'))
                     {
                         MessageBox.Show("Không được phép nhập kí tự \":\"", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                     }

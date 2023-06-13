@@ -71,6 +71,10 @@ namespace Chess_Game_Project.classes_handle
                 JObject jsonData = JObject.Parse(responseData);
                 // Lấy giá trị của thuộc tính "data"
                 JToken dataToken = jsonData["data"];
+                if(dataToken == null)
+                {
+                    dataToken = jsonData["notify"];
+                }
                 return dataToken;
             }
             return null;

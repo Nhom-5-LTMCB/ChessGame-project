@@ -44,9 +44,9 @@ namespace Chess_Game_Project
         {
             clearError();
             //Truong hop doi voi userName
-            if (string.IsNullOrEmpty(txtConfirmPassword.Text)) errorConfirmPassword.Text = "Thông tin không được bỏ trống";
+            if (string.IsNullOrEmpty(txtConfirmPassword.Text)) errorNewPassword.Text = "Thông tin không được bỏ trống";
             else errorConfirmPassword.Text = "Mật khẩu không khớp";
-            if (errors.password != null) errorConfirmPassword.Text = errors.password[0];
+            if (errors.password != null) errorNewPassword.Text = errors.password[0];
         }
         private async void btnNext_Click(object sender, EventArgs e)
         {

@@ -179,7 +179,7 @@
             // 
             this.errorConfirmPassword.AutoSize = true;
             this.errorConfirmPassword.ForeColor = System.Drawing.Color.Red;
-            this.errorConfirmPassword.Location = new System.Drawing.Point(207, 290);
+            this.errorConfirmPassword.Location = new System.Drawing.Point(207, 276);
             this.errorConfirmPassword.Name = "errorConfirmPassword";
             this.errorConfirmPassword.Size = new System.Drawing.Size(0, 16);
             this.errorConfirmPassword.TabIndex = 20;

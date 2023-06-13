@@ -59,13 +59,13 @@ namespace Chess_Game_Project
         {
             if (string.IsNullOrEmpty(txtAuth.Text.Trim())) return;
             string api = apiInputToken + txtAuth.Text.Trim();
-            JToken tkData = await manageApi.callApiUsingMethodPost(null, api);
+            JToken tkData = await manageApi.callApiUsingMethodPost(new {}, api);
             if(tkData != null)
             {
-                MessageBox.Show("Xác nhận thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                this.Close();
+                MessageBox.Show("Xác nhận thành công, vui lòng thực hiện bước tiếp theo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                 ChangePasswordInterface pw = new ChangePasswordInterface();
                 pw.Show();
-                this.Close();
             }
             else
             {

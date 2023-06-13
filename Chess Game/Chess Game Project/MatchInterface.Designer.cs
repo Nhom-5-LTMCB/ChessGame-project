@@ -33,6 +33,7 @@ namespace Chess_Game_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.pnlContainChessBoard = new System.Windows.Forms.Panel();
             this.pnlChatClientFrame = new Guna.UI2.WinForms.Guna2Panel();
             this.listChat = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlContainsIcon = new System.Windows.Forms.Panel();
@@ -48,7 +49,6 @@ namespace Chess_Game_Project
             this.label3 = new System.Windows.Forms.Label();
             this.txtTurnUser = new System.Windows.Forms.TextBox();
             this.pnlContainPieces = new System.Windows.Forms.Panel();
-            this.pnlContainChessBoard = new System.Windows.Forms.Panel();
             this.pnlContent.SuspendLayout();
             this.pnlChatClientFrame.SuspendLayout();
             this.listChat.SuspendLayout();
@@ -73,10 +73,18 @@ namespace Chess_Game_Project
             this.pnlContent.Controls.Add(this.label3);
             this.pnlContent.Controls.Add(this.txtTurnUser);
             this.pnlContent.Controls.Add(this.pnlContainPieces);
-            this.pnlContent.Location = new System.Drawing.Point(12, 5);
+            this.pnlContent.Location = new System.Drawing.Point(12, 12);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1471, 746);
+            this.pnlContent.Size = new System.Drawing.Size(1471, 739);
             this.pnlContent.TabIndex = 1;
+            // 
+            // pnlContainChessBoard
+            // 
+            this.pnlContainChessBoard.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.pnlContainChessBoard.Location = new System.Drawing.Point(305, 185);
+            this.pnlContainChessBoard.Name = "pnlContainChessBoard";
+            this.pnlContainChessBoard.Size = new System.Drawing.Size(755, 566);
+            this.pnlContainChessBoard.TabIndex = 40;
             // 
             // pnlChatClientFrame
             // 
@@ -274,14 +282,6 @@ namespace Chess_Game_Project
             this.pnlContainPieces.Size = new System.Drawing.Size(296, 508);
             this.pnlContainPieces.TabIndex = 17;
             // 
-            // pnlContainChessBoard
-            // 
-            this.pnlContainChessBoard.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.pnlContainChessBoard.Location = new System.Drawing.Point(305, 185);
-            this.pnlContainChessBoard.Name = "pnlContainChessBoard";
-            this.pnlContainChessBoard.Size = new System.Drawing.Size(755, 566);
-            this.pnlContainChessBoard.TabIndex = 40;
-            // 
             // MatchInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,7 +289,6 @@ namespace Chess_Game_Project
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(1486, 751);
             this.Controls.Add(this.pnlContent);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MatchInterface";
             this.Text = "MatchInterface";
             this.Load += new System.EventHandler(this.MatchInterface_Load);

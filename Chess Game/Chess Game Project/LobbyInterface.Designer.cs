@@ -78,10 +78,10 @@
             this.pnlCoverPage.BackColor = System.Drawing.Color.LightCoral;
             this.pnlCoverPage.Controls.Add(this.pnlContent);
             this.pnlCoverPage.Controls.Add(this.ptbAvatarPage);
-            this.pnlCoverPage.Location = new System.Drawing.Point(0, 0);
+            this.pnlCoverPage.Location = new System.Drawing.Point(0, -3);
             this.pnlCoverPage.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCoverPage.Name = "pnlCoverPage";
-            this.pnlCoverPage.Size = new System.Drawing.Size(1447, 748);
+            this.pnlCoverPage.Size = new System.Drawing.Size(1447, 751);
             this.pnlCoverPage.TabIndex = 1;
             // 
             // pnlContent
@@ -559,10 +559,10 @@
             // ptbAvatarPage
             // 
             this.ptbAvatarPage.BackColor = System.Drawing.Color.Sienna;
-            this.ptbAvatarPage.Location = new System.Drawing.Point(0, 0);
+            this.ptbAvatarPage.Location = new System.Drawing.Point(0, 2);
             this.ptbAvatarPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbAvatarPage.Name = "ptbAvatarPage";
-            this.ptbAvatarPage.Size = new System.Drawing.Size(1121, 658);
+            this.ptbAvatarPage.Size = new System.Drawing.Size(1121, 656);
             this.ptbAvatarPage.TabIndex = 0;
             this.ptbAvatarPage.TabStop = false;
             // 
@@ -609,7 +609,6 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1444, 770);
             this.Controls.Add(this.pnlCoverPage);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LobbyInterface";
             this.Text = "LobbyInterface";

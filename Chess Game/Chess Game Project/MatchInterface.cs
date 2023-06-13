@@ -1561,11 +1561,19 @@ namespace Chess_Game_Project
                 if (string.Equals(txtMessage.Text.Trim(), ""))
                     return;
                 string data = $"{currentPlayer.userName}(1):" + txtMessage.Text.Trim() + ":" + currentPlayer.linkAvatar;
-                string encryptData = encryptAndDecryptData.EncryptMessage(data);
-                ipEndPoint = new IPEndPoint(IPAddress.Parse(difIp), port);
-                byte[] send_buffer = Encoding.UTF8.GetBytes(encryptData);
-                clientUDP.Send(send_buffer, send_buffer.Length, ipEndPoint);
-                handleChat.writeData(null, currentPlayer.linkAvatar, txtMessage.Text.Trim(), 1, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, null, pnlContainsIcon);
+                if (txtMessage.Text.Trim().Contains(':'))
+                {
+                    MessageBox.Show("Không được phép nhập kí tự \":\"", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+                else
+                {
+                    string encryptData = encryptAndDecryptData.EncryptMessage(data);
+                    ipEndPoint = new IPEndPoint(IPAddress.Parse(difIp), port);
+                    byte[] send_buffer = Encoding.UTF8.GetBytes(encryptData);
+                    clientUDP.Send(send_buffer, send_buffer.Length, ipEndPoint);
+                    handleChat.writeData(null, currentPlayer.linkAvatar, txtMessage.Text.Trim(), 1, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, null, pnlContainsIcon);
+                }
+
             }
             txtMessage.Clear();
         }
@@ -1585,7 +1593,7 @@ namespace Chess_Game_Project
         //==================================================================================================================================
 
         //============================================  CÁC SỰ KIỆN KHÁC ===================================================================
-        
+
         private async void btnOutRoom_Click(object sender, EventArgs e)
         {
             if (gameOver)
@@ -1598,7 +1606,7 @@ namespace Chess_Game_Project
 
 
                     //gửi sự kiện tới server 
-                    string message = (int)manageChooseCases.setting.finishedRoom + "*" + currentPlayer.userName + "+" + JsonConvert.SerializeObject(currentPlayer) + "+" + matchId + "+";
+                    string message = (int)manageChooseCases.setting.finishedRoom + "*" + currentPlayer.userName + "+" + JsonConvert.SerializeObject(currentPlayer) + "+" + matchId;
                     handleChat.sendData(currentTcpClient, message);
                     StopGame();
                     this.Close();
@@ -1683,8 +1691,8 @@ namespace Chess_Game_Project
             if (clientUDP != null)//đóng kết nối UDP
             {
                 clientUDP.Close();
-            }  
-            if(rcvDataUDPThread != null)
+            }
+            if (rcvDataUDPThread != null)
             {
                 rcvDataUDPThread.Abort();
             }  //đóng luồng dữ liệu của việc nhận dữ liệu chat 
