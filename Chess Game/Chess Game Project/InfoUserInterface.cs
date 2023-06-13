@@ -176,17 +176,6 @@ namespace Chess_Game_Project
 
                     txtEmail.ReadOnly = true;
                     txtUsername.ReadOnly = true;
-
-
-                    var resetData = new
-                    {
-                        userName = txtUsername.Text,
-                        gmail = txtEmail.Text,
-                        linkAvatar = user.linkAvatar,
-                        statusActive = "online"
-                    };
-
-                    await manageApi.callApiUsingMethodPut(resetData, apiPath);
                 }
             }
 
@@ -219,7 +208,7 @@ namespace Chess_Game_Project
             if (client != null && isUpdate)
             {
                 //gui thong diep cap nhat thong tin cua user
-                string message = (int)manageChooseCases.setting.updateInfo + "*" + preUserame + "+" + user.userName + "+" + user.id;
+                string message = (int)manageChooseCases.setting.updateInfo + "*" + preUserame + "+" + user.userName + "+" + user.id + "+" + user.linkAvatar + "+" + user.gmail;
                 handleChat.sendData(client, message);
             }
             this.Close();

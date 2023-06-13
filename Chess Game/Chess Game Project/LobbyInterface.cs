@@ -202,6 +202,34 @@ namespace Chess_Game_Project
             return null;
         }
 
+        private void deleteFrameChat(string difUserName, string notify)
+        {
+            Action myAction = () =>
+            {
+                //tiến hành xóa đi phòng chat của user này 
+                foreach (userControlChatOne control in createChatOneFrame.listChats)
+                {
+                    if (control.Tag.ToString().Contains(user.userName) && control.Tag.ToString().Contains(difUserName))
+                    {
+                        if (control.Visible)
+                        {
+                            MessageBox.Show(notify);
+                        }
+                        chat.Hide();
+                        pnlChatOne.Hide();
+                        createChatOneFrame.listChats.Remove(control);
+                        break;
+                    }
+                }
+            };
+
+            // Sử dụng phương thức Invoke để thực thi đoạn mã trên luồng giao diện người dùng
+            if (this.InvokeRequired)
+                this.Invoke(myAction);
+            else
+                myAction();
+        }
+
         private void deleteRoom(string idMatch)
         {
             foreach (DataGridViewRow row in dtGridContainListRooms.Rows)
@@ -356,7 +384,7 @@ namespace Chess_Game_Project
                             if (!string.IsNullOrEmpty(difUserID))
                             {
                                 listFriends temp = null;
-                                if(user.lists != null)
+                                if (user.lists != null)
                                 {
                                     foreach (listFriends item in user.lists)
                                     {
@@ -458,18 +486,17 @@ namespace Chess_Game_Project
                             break;
                         case 5:
                             string[] msg = listMsg[1].Split(':');
-                            string[] lsts = msg[1].Split(',');
                             if (listMsg[1].Contains("(1)"))
-                                handleChat.writeData(null, lsts[1], lsts[0], 1, msg[0].Substring(0, msg[0].Length - 3), pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
+                                handleChat.writeData(null, msg[2], msg[1], 1, msg[0].Substring(0, msg[0].Length - 3), pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
                             else
                             {
-                                string imageData = lsts[0];
+                                string imageData = msg[1];
                                 byte[] convertedBytes = Convert.FromBase64String(imageData);
                                 // Chuyển đổi mảng byte thành hình ảnh
                                 using (MemoryStream stream1 = new MemoryStream(convertedBytes))
                                 {
                                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream1);
-                                    handleChat.writeData(image, lsts[1], "", 2, msg[0].Substring(0, msg[0].Length - 3), pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
+                                    handleChat.writeData(image, msg[2], "", 2, msg[0].Substring(0, msg[0].Length - 3), pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
                                 }
                             }
                             break;
@@ -493,21 +520,14 @@ namespace Chess_Game_Project
                             if (check)
                             {
                                 userControlLists.changeTextStatusActiveOffline(username);
-                                //tiến hành xóa đi phòng chat của user này 
-                                foreach (userControlChatOne control in createChatOneFrame.listChats)
-                                {
-                                    if (control.Tag.ToString().Contains(user.userName) && control.Tag.ToString().Contains(username))
-                                    {
-                                        createChatOneFrame.listChats.Remove(control);
-                                        break;
-                                    }
-                                }
+                                deleteFrameChat(username, "Người dùng đã offline, không thể chat với người này");
                             }
                             break;
                         case 7:
                             //nhan duoc 1 chuoi va tien hanh lay ra id cua nguoi choi can xoa
                             string[] lstStr = listMsg[1].Split(':');
                             string difUserID1 = lstStr[2];
+                            string difUserName1 = lstStr[1];
                             listFriends friend = null;
                             foreach (listFriends item in user.lists)
                             {
@@ -521,7 +541,11 @@ namespace Chess_Game_Project
                             {
                                 //tien hanh xoa khoi danh sach
                                 user.lists.Remove(friend);
+                                //hiển thị lại nút kết bạn
                                 userControlLists.showBtnMakeFriend(lstStr[1]);
+
+                                //hủy luồng chat với người chơi này
+                                deleteFrameChat(difUserName1, "Người dùng đã hủy kết bạn với bạn, không thể chat với người này");
 
                                 List<infoUser> lists2 = await handleGetLists.getListUser("friend", user, apiGetUserId);
                                 hanleDataIntoDatagridview.displayListFriends(lists2, userControlLists);
@@ -531,16 +555,23 @@ namespace Chess_Game_Project
                             string[] lst1 = listMsg[1].Split('+');
                             if (string.Equals(user.id, lst1[2])) //kiem tra xem neu chinh user do nhan duoc thong tin thi chi can thay the lai thong tin cu
                             {
-                                string preUserName = txtUserName.Text;
-                                txtUserName.Text = user.userName;
-                                ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + user.linkAvatar);
+                                string preUserName = lst1[0];
+                                txtUserName.Text = lst1[1];
+                                ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + lst1[3]);
                                 ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                                user.userName = lst1[1];
+                                user.linkAvatar = lst1[3];
+                                user.gmail = lst1[4];
+
+                                pnlMultiChatFrame.Controls.Clear();
+                                posY = 0;
 
                                 Action myAction = () =>
                                 {
-                                    foreach(userControlChatOne oldChat in createChatOneFrame.listChats)
+                                    foreach (userControlChatOne oldChat in createChatOneFrame.listChats)
                                     {
-                                        if(oldChat.Tag.ToString().Contains(preUserName))
+                                        if (oldChat.Tag.ToString().Contains(preUserName))
                                         {
                                             oldChat.Tag = oldChat.Tag.ToString().Replace(preUserName, user.userName);
                                         }
@@ -566,10 +597,16 @@ namespace Chess_Game_Project
                                 {
                                     if (item.Tag.ToString().Contains(user.userName) && item.Tag.ToString().Contains(lst1[0]))
                                     {
+                                        if(item.Visible)
+                                        {
+                                            item.Hide();
+                                            pnlChatOne.Hide();
+                                        }
                                         newChat = item;
+                                        break;
                                     }
                                 }
-                                if(newChat != null)
+                                if (newChat != null)
                                 {
                                     Action myAction = () =>
                                     {
@@ -624,8 +661,8 @@ namespace Chess_Game_Project
             catch (Exception ex)
             {
                 this.Close();
-                await handleLogOutRoom();
                 Login.showFormAgain.Show();
+                await handleLogOutRoom();
             }
         }
         private void btnSendIcon_Click(object sender, EventArgs e)
@@ -641,7 +678,7 @@ namespace Chess_Game_Project
 
             //tiến hành gửi dữ liệu đi
             byte[] imageBytes = File.ReadAllBytes(path);
-            string message = (int)manageChooseCases.setting.chatMulti + "*" + user.userName + "(2):" + Convert.ToBase64String(imageBytes) + "," + user.linkAvatar; ;
+            string message = (int)manageChooseCases.setting.chatMulti + "*" + user.userName + "(2):" + Convert.ToBase64String(imageBytes) + "," + user.linkAvatar;
             handleChat.sendData(client, message);
 
             handleChat.writeData(System.Drawing.Image.FromFile(path), user.linkAvatar, "", 2, user.userName, pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
@@ -656,8 +693,15 @@ namespace Chess_Game_Project
                     {
                         //tiến hành gửi dữ liệu đi
                         string message = (int)manageChooseCases.setting.chatOne + "*" + user.userName + "(1):" + chat.TextBox.Text.Trim() + ":" + user.linkAvatar + ":" + difUsernameUser;
-                        handleChat.sendData(client, message);
-                        handleChat.writeData(null, user.linkAvatar, chat.TextBox.Text.Trim(), 1, user.userName, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
+                        if (message.Contains(':'))
+                        {
+                            MessageBox.Show("Không được phép nhập kí tự \":\"", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                        }
+                        else
+                        {
+                            handleChat.sendData(client, message);
+                            handleChat.writeData(null, user.linkAvatar, chat.TextBox.Text.Trim(), 1, user.userName, chat.pnlChatOne, this, chat.pos, user.userName, parentDirectory, chat, chat.containsIcon);
+                        }
                     }
                     else
                     {
@@ -698,11 +742,19 @@ namespace Chess_Game_Project
                 if (txtSendMessage.Text.Length < 100)
                 {
                     //tiến hành gửi dữ liệu đi
-                    string message = (int)manageChooseCases.setting.chatMulti + "*" + user.userName + "(1):" + txtSendMessage.Text.Trim() + "," + user.linkAvatar;
-                    handleChat.sendData(client, message);
-                    handleChat.writeData(null, user.linkAvatar, txtSendMessage.Text.Trim(), 1, user.userName, pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
-                    if (pnlContainsIcon.Visible)
-                        pnlContainsIcon.Hide();
+                    string message = (int)manageChooseCases.setting.chatMulti + "*" + user.userName + "(1):" + txtSendMessage.Text.Trim() + ":" + user.linkAvatar;
+                    if (message.Contains(':'))
+                    {
+                        MessageBox.Show("Không được phép nhập kí tự \":\"", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    }
+                    else
+                    {
+                        handleChat.sendData(client, message);
+                        handleChat.writeData(null, user.linkAvatar, txtSendMessage.Text.Trim(), 1, user.userName, pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
+                        if (pnlContainsIcon.Visible)
+                            pnlContainsIcon.Hide();
+                    }
+
                 }
                 else
                 {

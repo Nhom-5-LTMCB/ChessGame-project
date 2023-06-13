@@ -204,7 +204,7 @@ namespace Chess_Game_Project.classes_handle
                             JToken tkData = await manageApi.callApiUsingDeleteMethod(apiPath);
                             if (tkData != null)
                             {
-                                string message = (int)manageChooseCases.setting.unFriend + "*" + dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString() + ":" + user.userName + ":" + user.id;
+                                string message = (int)manageChooseCases.setting.unFriend + "*" + difUsername + ":" + user.userName + ":" + user.id;
                                 handleChat.sendData(client, message);
                                 MessageBox.Show("Đã hủy kết bạn với người chơi này");
 
