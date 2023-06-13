@@ -72,35 +72,54 @@ namespace Chess_Game_Project
                     btnLogin.Enabled = true;
                     // Chuyển đổi sang đối tượng JSON
                     classes.infoUser user = JsonConvert.DeserializeObject<classes.infoUser>(tkData.ToString());
-                    if (string.Equals(user.statusActive, "online"))
-                    {
-                        MessageBox.Show("Tài khoản này hiện đang được sử dụng", "notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        btnLogin.Enabled = true;
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đăng nhập thành công");
-                        errorHideLabel.Text = "";
-                        errorHideLabel.Hide();
-                        //cập nhật trạng thái thành hoạt động
-                        string apiUser = apiGetUser + user.id;
-                        var data1 = new
-                        {
-                            userName = user.userName,
-                            gmail = user.gmail,
-                            linkAvatar = user.linkAvatar,
-                            statusActive = "online",
-                        };
-                        user.statusActive = "online";
-                        await manageApi.callApiUsingMethodPut(data1, apiUser);
-                        this.Hide();
+                    //if (string.Equals(user.statusActive, "online"))
+                    //{
+                    //    MessageBox.Show("Tài khoản này hiện đang được sử dụng", "notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //    btnLogin.Enabled = true;
+                    //    return;
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Đăng nhập thành công");
+                    //    errorHideLabel.Text = "";
+                    //    errorHideLabel.Hide();
+                    //    //cập nhật trạng thái thành hoạt động
+                    //    string apiUser = apiGetUser + user.id;
+                    //    var data1 = new
+                    //    {
+                    //        userName = user.userName,
+                    //        gmail = user.gmail,
+                    //        linkAvatar = user.linkAvatar,
+                    //        statusActive = "online",
+                    //    };
+                    //    user.statusActive = "online";
+                    //    await manageApi.callApiUsingMethodPut(data1, apiUser);
+                    //    this.Hide();
 
 
-                        //tạo ra giao diện chính
-                        LobbyInterface inter = new LobbyInterface(user);
-                        inter.Show();
-                    }
+                    //    //tạo ra giao diện chính
+                    //    LobbyInterface inter = new LobbyInterface(user);
+                    //    inter.Show();
+                    //}
+                    errorHideLabel.Text = "";
+                    errorHideLabel.Hide();
+                    //cập nhật trạng thái thành hoạt động
+                    string apiUser = apiGetUser + user.id;
+                    var data1 = new
+                    {
+                        userName = user.userName,
+                        gmail = user.gmail,
+                        linkAvatar = user.linkAvatar,
+                        statusActive = "online",
+                    };
+                    user.statusActive = "online";
+                    await manageApi.callApiUsingMethodPut(data1, apiUser);
+                    this.Hide();
+
+
+                    //tạo ra giao diện chính
+                    LobbyInterface inter = new LobbyInterface(user);
+                    inter.Show();
                 }
                 else
                 {
@@ -126,7 +145,7 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                btnLogin.Enabled = true;
             }
         }
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -174,6 +193,9 @@ namespace Chess_Game_Project
             pnlContent.Location = new Point((this.Width - pnlContent.Width) / 2,
                                         (this.Height - pnlContent.Height) / 2);
             this.TransparencyKey = Color.Empty;
+
+            txtPassword.Text = "123@Long";
+            txtUserName.Text = "ducngu";
         }
     }
 }
