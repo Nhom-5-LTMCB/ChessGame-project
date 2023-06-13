@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pTDQEfXlQdpb/BVNi9QlRVnXFmBakuXHseWVBZO9P+eTtYhc+GV+a2SDGxjk/3I0lZCKmeasEYU8+inuayFfZg==",
+  "dgSpecHash": "qjbWMXM8D8OfpfE7no/5/3HO1C/905kYvI+413ZYNYHPa9P/kDECBqAs3NhnKAGyywuhsEenGwcBqcJGcnK8rA==",
   "success": true,
-  "projectFilePath": "E:\\lập trình c#\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj",
+  "projectFilePath": "E:\\ChessGame-project\\ChessGame-Server\\ServerChessGame\\ServerChessGame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ltphi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
