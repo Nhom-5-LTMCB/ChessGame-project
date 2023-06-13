@@ -13,6 +13,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Security.Cryptography;
+using Chess_Game_Project.CryptoGraphy;
 
 namespace Chess_Game_Project.classes_handle
 {
@@ -26,7 +28,7 @@ namespace Chess_Game_Project.classes_handle
             Width = 0
         };
         public static int iconNumbers = 29;
-
+        
         public static void sendData(TcpClient client, string msg)
         {
             try
@@ -34,7 +36,7 @@ namespace Chess_Game_Project.classes_handle
                 if (client != null)
                 {
                     NetworkStream stream = client.GetStream();
-                    byte[] data = Encoding.UTF8.GetBytes(msg);
+                    byte[] data = Encoding.UTF8.GetBytes(encryptAndDecryptData.EncryptMessage(msg));
                     stream.Write(data, 0, data.Length);
                 }
             }
@@ -47,6 +49,7 @@ namespace Chess_Game_Project.classes_handle
         {
             try
             {
+                owner = "av";
                 if (mode == 1)
                 {
                     if (msg.Trim() == "")
@@ -102,7 +105,7 @@ namespace Chess_Game_Project.classes_handle
                             if (chat != null)
                             {
                                 chat.pos = posY + userControl.Height;
-                            }    
+                            }
                             else
                             {
                                 if (form == LobbyInterface.showInter)
@@ -162,7 +165,10 @@ namespace Chess_Game_Project.classes_handle
                             userControl.AutoSize = true;
                             userControl.Location = new System.Drawing.Point(pnl.Width - userControl.Width - 20, posY);
                             if (chat != null)
+                            {
+                                userControl.Location = new System.Drawing.Point(userControl.Location.X + 20, posY);
                                 chat.pos = posY + userControl.Height;
+                            }    
                             else
                             {
                                 if (form == LobbyInterface.showInter) LobbyInterface.posY += userControl.Height;
@@ -215,7 +221,6 @@ namespace Chess_Game_Project.classes_handle
                 oldButton.Location = new System.Drawing.Point(0, 0);
                 containsIcon.Show();
             }
-
         }
     }
 }

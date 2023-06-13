@@ -25,6 +25,7 @@ using Chess_Game_Project.classes_handle;
 using System.Xml.Linq;
 using Chess_Game_Project.manageUsers;
 using System.Text.RegularExpressions;
+using Chess_Game_Project.CryptoGraphy;
 
 namespace Chess_Game_Project
 {
@@ -306,7 +307,8 @@ namespace Chess_Game_Project
             catch (Exception ex)
             {
                 MessageBox.Show("Không thể kết nối tới server, vui lòng kiểm tra lại mạng của bạn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                this.Close();
+                Login.showFormAgain.Show();
             }
 
         }
@@ -324,7 +326,8 @@ namespace Chess_Game_Project
                     int length = stream.Read(data, 0, data.Length);
                     if (length == 0) return;
                     string message = Encoding.UTF8.GetString(data, 0, length);
-                    string[] listMsg = message.Split('*');
+                    string decryptData = encryptAndDecryptData.DecryptMessage(message);
+                    string[] listMsg = decryptData.Split('*');
                     switch (int.Parse(listMsg[0]))
                     {
                         case 0:

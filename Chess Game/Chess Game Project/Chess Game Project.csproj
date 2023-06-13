@@ -154,6 +154,7 @@
     <Compile Include="ContainUserControls\userControlRanks.Designer.cs">
       <DependentUpon>userControlRanks.cs</DependentUpon>
     </Compile>
+    <Compile Include="CryptoGraphy\encryptAndDecryptData.cs" />
     <Compile Include="InfoUserInterface.cs">
       <SubType>Form</SubType>
     </Compile>

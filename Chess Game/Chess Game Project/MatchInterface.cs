@@ -1,6 +1,7 @@
 ﻿using Chess_Game_Project.classes;
 using Chess_Game_Project.classes_handle;
 using Chess_Game_Project.ContainUserControls;
+using Chess_Game_Project.CryptoGraphy;
 using chessgames.backPieces;
 using chessgames.whitePieces;
 using Guna.UI2.WinForms;
@@ -144,7 +145,7 @@ namespace Chess_Game_Project
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
             int formWidth = (int)(screenWidth * 0.8);
-            int formHeight = (int)(screenHeight * 0.8);
+            int formHeight = (int)(screenHeight * 0.9);
             this.Size = new Size(formWidth, formHeight);
 
             // Đặt vị trí của form để nằm chính giữa màn hình
@@ -348,7 +349,8 @@ namespace Chess_Game_Project
                     ipEndPoint = new IPEndPoint(IPAddress.Parse(difIp), port);
 
                     string message = "<<<+" + JsonConvert.SerializeObject(currentPlayer) + "+" + myIp + "+>>>";
-                    byte[] sendData = Encoding.UTF8.GetBytes(message);
+                    string encryptData = encryptAndDecryptData.EncryptMessage(message);
+                    byte[] sendData = Encoding.UTF8.GetBytes(encryptData);
 
                     clientUDP.Send(sendData, sendData.Length, ipEndPoint);
 
@@ -1493,10 +1495,11 @@ namespace Chess_Game_Project
                     ipEndPoint = new IPEndPoint(IPAddress.Any, 0);
                     byte[] receive_buffer = clientUDP.Receive(ref ipEndPoint);
                     string data = Encoding.UTF8.GetString(receive_buffer);
+                    string decryptData = encryptAndDecryptData.DecryptMessage(data);
                     //đây sẽ là nơi mà chủ phòng nhận dữ liệu từ người chơi
-                    if (data.Contains("<<<") && data.Contains(">>>"))
+                    if (decryptData.Contains("<<<") && decryptData.Contains(">>>"))
                     {
-                        string[] lst = data.Split('+');
+                        string[] lst = decryptData.Split('+');
                         this.difPlayer = JsonConvert.DeserializeObject<infoUser>(lst[1]);
                         lbDifPlayer.Text = difPlayer.userName;
                         difIp = lst[2];
@@ -1507,7 +1510,7 @@ namespace Chess_Game_Project
                     }
                     else
                     {
-                        string[] strs = data.Split(':');
+                        string[] strs = decryptData.Split(':');
                         if (strs[0].Contains("(1)"))    //đây là chat 
                             handleChat.writeData(null, strs[2], strs[1], 1, strs[0].Substring(0, strs[0].Length - 3), listChat, this, posY, currentPlayer.userName, parentDirectory, null, pnlContainsIcon);
                         else if (strs[0].Contains("(2)")) // đây là gửi icon
@@ -1543,7 +1546,8 @@ namespace Chess_Game_Project
                 System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
                 string path = btn.Text;
                 byte[] imageBytes = File.ReadAllBytes(path);
-                byte[] data = Encoding.UTF8.GetBytes(currentPlayer.userName + "(2):" + Convert.ToBase64String(imageBytes) + ":" + currentPlayer.linkAvatar);
+                string encryptData = encryptAndDecryptData.EncryptMessage(currentPlayer.userName + "(2):" + Convert.ToBase64String(imageBytes) + ":" + currentPlayer.linkAvatar);
+                byte[] data = Encoding.UTF8.GetBytes(encryptData);
 
                 clientUDP.Send(data, data.Length, ipEndPoint);
 
@@ -1559,8 +1563,9 @@ namespace Chess_Game_Project
                 if (string.Equals(txtMessage.Text.Trim(), ""))
                     return;
                 string data = $"{currentPlayer.userName}(1):" + txtMessage.Text.Trim() + ":" + currentPlayer.linkAvatar;
+                string encryptData = encryptAndDecryptData.EncryptMessage(data);
                 ipEndPoint = new IPEndPoint(IPAddress.Parse(difIp), port);
-                byte[] send_buffer = Encoding.UTF8.GetBytes(data);
+                byte[] send_buffer = Encoding.UTF8.GetBytes(encryptData);
                 clientUDP.Send(send_buffer, send_buffer.Length, ipEndPoint);
                 handleChat.writeData(null, currentPlayer.linkAvatar, txtMessage.Text.Trim(), 1, currentPlayer.userName, listChat, this, posY, currentPlayer.userName, parentDirectory, null, pnlContainsIcon);
             }
