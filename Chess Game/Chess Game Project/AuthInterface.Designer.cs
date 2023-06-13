@@ -208,6 +208,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.errorHideLabel);
             this.Controls.Add(this.pnlContent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AuthInterface";
             this.Text = "AuthInterface";
             this.Load += new System.EventHandler(this.AuthInterface_Load);

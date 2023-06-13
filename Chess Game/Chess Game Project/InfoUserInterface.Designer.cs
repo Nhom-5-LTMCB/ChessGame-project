@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoUserInterface));
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnEditInfo = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnChangeImage = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -50,7 +51,6 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -90,6 +90,17 @@
             this.pnlContent.Size = new System.Drawing.Size(1129, 654);
             this.pnlContent.TabIndex = 2;
             this.pnlContent.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(377, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(457, 49);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Thông tin người chơi";
             // 
             // btnEditInfo
             // 
@@ -425,23 +436,13 @@
             this.lbID.TabIndex = 16;
             this.lbID.Text = "ID";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(377, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(469, 50);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Thông tin người chơi";
-            // 
             // InfoUserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 653);
             this.Controls.Add(this.pnlContent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InfoUserInterface";
             this.Text = "InfoUserInterface";
             this.Load += new System.EventHandler(this.InfoUserInterface_Load);

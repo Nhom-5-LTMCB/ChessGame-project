@@ -199,6 +199,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlContent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChangePasswordInterface";
             this.Text = "ChangePasswordInterface";
             this.Load += new System.EventHandler(this.ChangePasswordInterface_Load);

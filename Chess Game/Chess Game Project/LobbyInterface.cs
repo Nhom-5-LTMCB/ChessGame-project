@@ -26,6 +26,8 @@ using System.Xml.Linq;
 using Chess_Game_Project.manageUsers;
 using System.Text.RegularExpressions;
 using Chess_Game_Project.CryptoGraphy;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Reflection;
 
 namespace Chess_Game_Project
 {
@@ -153,7 +155,6 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi handleLogOutRoom: " + ex.Message);
             }
         }
         private void loopChildPanel(System.Windows.Forms.UserControl child)
@@ -338,11 +339,10 @@ namespace Chess_Game_Project
                             string[] lstAcceptFriend = listMsg[1].Split('+');
 
                             listFriends newPairOfAccept = JsonConvert.DeserializeObject<listFriends>(lstAcceptFriend[2]);
-                            user.lists.Add(newPairOfAccept);
-
 
                             if (newPairOfAccept != null)
                             {
+                                user.lists.Add(newPairOfAccept);
                                 userControlLists.hideBtnMakeFriend(lstAcceptFriend[1]);
 
                                 List<infoUser> lists = await handleGetLists.getListUser("waiting", user, apiGetUserId);
@@ -350,18 +350,21 @@ namespace Chess_Game_Project
                             }
                             break;
                         case 2:
-                            string[] lstBecomeFriend = listMsg[1].Split(':');
+                            string[] lstBecomeFriend = listMsg[1].Split('+');
                             string difUserID = lstBecomeFriend[1];
                             string difUsername1 = lstBecomeFriend[2];
                             if (!string.IsNullOrEmpty(difUserID))
                             {
                                 listFriends temp = null;
-                                foreach (listFriends item in user.lists)
+                                if(user.lists != null)
                                 {
-                                    if (item.listID.Contains(user.id) && item.listID.Contains(difUserID))
+                                    foreach (listFriends item in user.lists)
                                     {
-                                        temp = item;
-                                        break;
+                                        if (item.listID.Contains(user.id) && item.listID.Contains(difUserID))
+                                        {
+                                            temp = item;
+                                            break;
+                                        }
                                     }
                                 }
                                 if (temp != null)
@@ -528,9 +531,26 @@ namespace Chess_Game_Project
                             string[] lst1 = listMsg[1].Split('+');
                             if (string.Equals(user.id, lst1[2])) //kiem tra xem neu chinh user do nhan duoc thong tin thi chi can thay the lai thong tin cu
                             {
+                                string preUserName = txtUserName.Text;
                                 txtUserName.Text = user.userName;
                                 ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + user.linkAvatar);
                                 ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                                Action myAction = () =>
+                                {
+                                    foreach(userControlChatOne oldChat in createChatOneFrame.listChats)
+                                    {
+                                        if(oldChat.Tag.ToString().Contains(preUserName))
+                                        {
+                                            oldChat.Tag = oldChat.Tag.ToString().Replace(preUserName, user.userName);
+                                        }
+                                    }
+                                };
+                                // Sử dụng phương thức Invoke để thực thi đoạn mã trên luồng giao diện người dùng
+                                if (this.InvokeRequired)
+                                    this.Invoke(myAction);
+                                else
+                                    myAction();
                             }
                             else //neu nhung client dang online khac nhan duoc thi se reload lai danh sach
                             {
@@ -539,6 +559,31 @@ namespace Chess_Game_Project
                                 userControlLists.changeUserNameIntoDataListFriends(lst1[1], lst1[0]);
                                 rank.changeUserNameIntoDataRank(lst1[1], lst1[0]);
                                 history.changeUserNameIntoDataHistory(lst1[1], lst1[0]);
+
+                                //thay doi lai luong chat voi ten moi
+                                userControlChatOne newChat = null;
+                                foreach (userControlChatOne item in createChatOneFrame.listChats)
+                                {
+                                    if (item.Tag.ToString().Contains(user.userName) && item.Tag.ToString().Contains(lst1[0]))
+                                    {
+                                        newChat = item;
+                                    }
+                                }
+                                if(newChat != null)
+                                {
+                                    Action myAction = () =>
+                                    {
+                                        createChatOneFrame.listChats.Remove(newChat);
+                                        newChat.Tag = newChat.Tag.ToString().Replace(lst1[0], lst1[1]);
+                                        createChatOneFrame.listChats.Add(newChat);
+                                    };
+
+                                    // Sử dụng phương thức Invoke để thực thi đoạn mã trên luồng giao diện người dùng
+                                    if (this.InvokeRequired)
+                                        this.Invoke(myAction);
+                                    else
+                                        myAction();
+                                }
                             }
                             break;
                         case 9:
@@ -546,12 +591,21 @@ namespace Chess_Game_Project
                             //kiểm tra xem trong datagridview danh sách bạn bè có chứa user này hay không
                             if (userControlLists.checkExistsUsernameIntoDataListFriends(difUsername2))
                             {
-                                userControlLists.changeTextStatusActiveOnline(difUsername2);
-                                chat = new userControlChatOne();
-                                chat.Hide();
-                                chat.Tag = $"{user.userName},{difUsername2}";
-                                chat.Dock = DockStyle.Bottom;
-                                createChatOneFrame.listChats.Add(chat);
+                                Action myAction = () =>
+                                {
+                                    userControlLists.changeTextStatusActiveOnline(difUsername2);
+                                    chat = new userControlChatOne();
+                                    chat.Hide();
+                                    chat.Tag = $"{user.userName},{difUsername2}";
+                                    chat.Dock = DockStyle.Bottom;
+                                    createChatOneFrame.listChats.Add(chat);
+                                };
+
+                                // Sử dụng phương thức Invoke để thực thi đoạn mã trên luồng giao diện người dùng
+                                if (this.InvokeRequired)
+                                    this.Invoke(myAction);
+                                else
+                                    myAction();
                             }
                             break;
                         case 10:    //xu ly ket thuc phong dau
@@ -569,6 +623,7 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
+                this.Close();
                 await handleLogOutRoom();
                 Login.showFormAgain.Show();
             }
@@ -647,9 +702,7 @@ namespace Chess_Game_Project
                     handleChat.sendData(client, message);
                     handleChat.writeData(null, user.linkAvatar, txtSendMessage.Text.Trim(), 1, user.userName, pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);
                     if (pnlContainsIcon.Visible)
-                    {
                         pnlContainsIcon.Hide();
-                    }
                 }
                 else
                 {
@@ -746,7 +799,6 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("loi btnListFriend_Click: " + ex.Message);
             }
         }
         private async void btnHistory_Click(object sender, EventArgs e)

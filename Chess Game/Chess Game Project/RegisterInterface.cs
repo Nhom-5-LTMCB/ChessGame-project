@@ -91,11 +91,8 @@ namespace Chess_Game_Project
                         this.Close();
 
                         clearError();
-                        MessageBox.Show("Đăng ký thành công");
-                        LobbyInterface lb = new LobbyInterface(user);
-                        lb.Show();
 
-             
+                        Login.showFormAgain.Show();
                     }
                 }
                 else
@@ -140,7 +137,6 @@ namespace Chess_Game_Project
         {
             //đóng form register
             this.Close();
-
             //mở lại form login
             Login.showFormAgain.Show();
         }

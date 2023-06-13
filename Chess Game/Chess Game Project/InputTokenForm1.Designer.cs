@@ -140,6 +140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 465);
             this.Controls.Add(this.pnlContent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InputTokenForm1";
             this.Text = "InputTokenForm1";
             this.Load += new System.EventHandler(this.InputTokenForm1_Load);

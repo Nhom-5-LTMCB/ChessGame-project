@@ -141,7 +141,7 @@ namespace Chess_Game_Project.classes_handle
                         string id = dtAllUsers.Rows[i].Cells[0].Value.ToString();
                         bool check = false;
                         //so sánh với từng user trong list "friend" or "waiting" của user
-                        if (user.lists.Count != 0)
+                        if (user.lists != null)
                         {
                             for (int j = 0; j < user.lists.Count; j++)
                             {
@@ -168,7 +168,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi displayListUsers: " + ex.Message);
             }
         }
         public static void displayListFriends(List<infoUser> userLists, userControlLists userControlLists)
@@ -232,7 +231,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi displayListFriends: " + ex.Message);
             }
         }
         public static void displayListWaitingAccept(List<infoUser> userLists, userControlLists userControlLists)
@@ -272,7 +270,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi displayListWaitingAccept: " + ex.Message);
             }
         }
         public static void displayListRank(List<infoUser> userLists, infoUser user, userControlRanks rank)
@@ -311,7 +308,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi displayListRank: " + ex.Message);
             }
         }
         public static async Task displayListHistoryMatch(infoUser user, userControlHistory history, string apiGetUserId)
@@ -354,7 +350,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi displayListHistoryMatch: " + ex.Message);
             }
         }
 

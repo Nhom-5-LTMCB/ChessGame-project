@@ -137,7 +137,6 @@ namespace Chess_Game_Project
                 linkAvatar = user.linkAvatar,
                 statusActive = "online"
             };
-            //MessageBox.Show(user.linkAvatar + " " + preLinkAvatar + " " + user.userName + " " + preUserame + " " + user.gmail + " " + preEmail);
             if (string.Equals(user.linkAvatar, preLinkAvatar) && string.Equals(user.userName, txtUsername.Text))
             {
                 isUpdate = false;

@@ -191,7 +191,7 @@ namespace Chess_Game_Project
                 tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
                 tb.Font = new Font(tb.Font, FontStyle.Bold);
                 tb.Text = Convert.ToString((char)('a' + i));
-                tb.BackColor = Color.LemonChiffon;
+                tb.BackColor = Color.DarkSeaGreen;
                 tb.ReadOnly = true;
                 pnl.Controls.Add(tb);
             }
@@ -211,8 +211,8 @@ namespace Chess_Game_Project
                 btn.Font = new Font(btn.Font, FontStyle.Bold);
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
-                btn.BackColor = Color.LemonChiffon;
-                btn.Text = Convert.ToString(1 + i);
+                btn.BackColor = Color.DarkSeaGreen;
+                btn.Text = Convert.ToString(i + 1);
                 btn.Enabled = true;
                 pnl.Controls.Add(btn);
             }
@@ -248,7 +248,7 @@ namespace Chess_Game_Project
             System.Windows.Forms.Panel pnl = new System.Windows.Forms.Panel()
             {
                 Size = new Size(400, 15),
-                Location = new Point(310, 80)
+                Location = new Point(80, 3)  //310
             };
             System.Windows.Forms.Panel pnl1 = new System.Windows.Forms.Panel()
             {
@@ -257,14 +257,14 @@ namespace Chess_Game_Project
             };
             addTextBoxIntoPanelHorizontal(pnl);
             addTextBoxIntoPanelHorizontal(pnl1);
-            Controls.Add(pnl);
-            Controls.Add(pnl1);
+            pnlContainChessBoard.Controls.Add(pnl);
+            pnlContainChessBoard.Controls.Add(pnl1);
 
             //vertical
             System.Windows.Forms.Panel pnl2 = new System.Windows.Forms.Panel()
             {
                 Size = new Size(pnl.Size.Height, pnl.Size.Width),
-                Location = new Point(290, 100)
+                Location = new Point(60, 20)
             };
 
             System.Windows.Forms.Panel pnl3 = new System.Windows.Forms.Panel()
@@ -274,16 +274,16 @@ namespace Chess_Game_Project
             };
             addTextBoxIntoPanelVertical(pnl2);
             addTextBoxIntoPanelVertical(pnl3);
-            Controls.Add(pnl2);
-            Controls.Add(pnl3);
+            pnlContainChessBoard.Controls.Add(pnl2);
+            pnlContainChessBoard.Controls.Add(pnl3);
 
             for (int i = 0; i < 8; i++) // tượng trưng cho các dòng
             {
                 for (int j = 0; j < 8; j++) //tượng trưng cho các cột
                 {
                     tableBackground[i, j] = new userControlClick();
-                    tableBackground[i, j].Parent = pnlContent;
-                    tableBackground[i, j].Location = new Point(j * 50 + 310, i * 50 + 100);
+                    tableBackground[i, j].Parent = pnlContainChessBoard;
+                    tableBackground[i, j].Location = new Point(j * 50 + 80, i * 50 + 20);
                     tableBackground[i, j].posX = j;
                     tableBackground[i, j].posY = i;
                     tableBackground[i, j].Size = new Size(50, 50);
@@ -972,9 +972,9 @@ namespace Chess_Game_Project
                 //cập nhật lại điểm cho người thua
                 await manageApi.callApiUsingMethodPut(new { point = difPlayer.point - betPoint }, apiUpdateScore + difPlayer.id);
                 //thực hiện gửi dữ liệu xử lý thoát khỏi phòng
-
+                player.players = 1;
                 JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + currentPlayer.id);
-                if(tkData != null)
+                if (tkData != null)
                 {
                     infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
                     this.currentPlayer = user;
@@ -1592,7 +1592,7 @@ namespace Chess_Game_Project
             if (gameOver)
             {
                 JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + currentPlayer.id);
-                if(tkData != null)
+                if (tkData != null)
                 {
                     infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
                     this.currentPlayer = user;
@@ -1611,7 +1611,6 @@ namespace Chess_Game_Project
                 DialogResult dgResult = MessageBox.Show("Bạn có chắc muốn thoát khỏi phòng", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dgResult == DialogResult.Yes)
                 {
-
                     //kiểm tra xem trong phòng có 2 hay 1 người
                     if (player.players == 2)
                     {
@@ -1630,7 +1629,7 @@ namespace Chess_Game_Project
 
 
                         JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + currentPlayer.id);
-                        if(tkData != null)
+                        if (tkData != null)
                         {
                             infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
                             this.currentPlayer = user;
@@ -1651,8 +1650,8 @@ namespace Chess_Game_Project
                         string message = (int)manageChooseCases.setting.deleteRoom + "*" + matchId;
                         handleChat.sendData(currentTcpClient, message);
                     }
-
                     gameOver = true;
+                    posY = 0;
                     StopGame();
                     this.Close();
                     LobbyInterface.showInter.Show();
@@ -1679,8 +1678,14 @@ namespace Chess_Game_Project
             if (clientRcvData != null)
                 clientRcvData.Abort();
 
-            clientUDP.Close();  //đóng kết nối UDP
-            rcvDataUDPThread.Abort();   //đóng luồng dữ liệu của việc nhận dữ liệu chat 
+            if (clientUDP != null)//đóng kết nối UDP
+            {
+                clientUDP.Close();
+            }  
+            if(rcvDataUDPThread != null)
+            {
+                rcvDataUDPThread.Abort();
+            }  //đóng luồng dữ liệu của việc nhận dữ liệu chat 
 
             //cập nhật user.players về lại 1
             player.players = 1;

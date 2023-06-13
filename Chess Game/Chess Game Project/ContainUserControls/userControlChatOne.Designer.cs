@@ -137,9 +137,9 @@ namespace Chess_Game_Project.ContainUserControls
             // 
             this.pnlContainIconsChatOne.AutoScroll = true;
             this.pnlContainIconsChatOne.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlContainIconsChatOne.Location = new System.Drawing.Point(359, 54);
+            this.pnlContainIconsChatOne.Location = new System.Drawing.Point(372, 54);
             this.pnlContainIconsChatOne.Name = "pnlContainIconsChatOne";
-            this.pnlContainIconsChatOne.Size = new System.Drawing.Size(242, 263);
+            this.pnlContainIconsChatOne.Size = new System.Drawing.Size(229, 263);
             this.pnlContainIconsChatOne.TabIndex = 13;
             // 
             // userControlChatOne

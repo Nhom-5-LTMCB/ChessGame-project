@@ -36,7 +36,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi getListAllUser: " + ex.Message);
             }
         }
         public static async Task<List<infoUser>> getListUser(string status, infoUser user, string apiGetUserId)
@@ -44,35 +43,38 @@ namespace Chess_Game_Project.classes_handle
             try
             {
                 List<infoUser> lists = new List<infoUser>();
-                foreach (listFriends item in user.lists)
+                if(user.lists != null)
                 {
-                    //tiến hành lấy ra listID
-                    List<string> listid = item.listID;
-                    string apiPath = null;
-                    if (string.Equals(item.status.ToLower(), "waiting") && string.Equals(status.ToLower(), "waiting"))
+                    foreach (listFriends item in user.lists)
                     {
-                        if (listid[0] != user.id)
-                            apiPath = apiGetUserId + listid[0];
-                        else
-                            continue;
-                    }
-                    else if (string.Equals(item.status.ToLower(), "friend") && string.Equals(status.ToLower(), "friend"))
-                    {
-                        string id = "";
-                        foreach (string item1 in listid)
-                            if (item1 != user.id) id = item1;
-                        apiPath = apiGetUserId + id;
-                    }
-                    if(!string.IsNullOrEmpty(apiPath))
-                    {
-                        JToken tkData = await manageApi.callApiUsingGetMethodID(apiPath);
-                        if (tkData != null)
+                        //tiến hành lấy ra listID
+                        List<string> listid = item.listID;
+                        string apiPath = null;
+                        if (string.Equals(item.status.ToLower(), "waiting") && string.Equals(status.ToLower(), "waiting"))
                         {
-                            infoUser friend = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
-                            if (friend != null)
+                            if (listid[0] != user.id)
+                                apiPath = apiGetUserId + listid[0];
+                            else
+                                continue;
+                        }
+                        else if (string.Equals(item.status.ToLower(), "friend") && string.Equals(status.ToLower(), "friend"))
+                        {
+                            string id = "";
+                            foreach (string item1 in listid)
+                                if (item1 != user.id) id = item1;
+                            apiPath = apiGetUserId + id;
+                        }
+                        if (!string.IsNullOrEmpty(apiPath))
+                        {
+                            JToken tkData = await manageApi.callApiUsingGetMethodID(apiPath);
+                            if (tkData != null)
                             {
-                                if (item.status.ToLower() == status)
-                                    lists.Add(friend);
+                                infoUser friend = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
+                                if (friend != null)
+                                {
+                                    if (item.status.ToLower() == status)
+                                        lists.Add(friend);
+                                }
                             }
                         }
                     }
@@ -118,7 +120,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi getListFriends: " + ex.Message);
                 return null;
             }
         }

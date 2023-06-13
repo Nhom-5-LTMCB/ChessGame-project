@@ -42,14 +42,12 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi sendData: " + ex.Message);
             }
         }
         public static void writeData(Image imgContent, string linkAvt, string msg, int mode, string userName, Guna2Panel pnl, Form form, int posY, string owner, string pathImages, userControlChatOne chat, Panel pnlContainsIcon)
         {
             try
             {
-                owner = "av";
                 if (mode == 1)
                 {
                     if (msg.Trim() == "")

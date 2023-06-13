@@ -33,12 +33,15 @@ namespace Chess_Game_Project.classes_handle
 
                         string idPairOfFriends = "";
                         //Chấp nhận lời mời kêt bạn
-                        foreach (listFriends item in user.lists)
+                        if(user.lists != null)
                         {
-                            if (item.listID.Contains(id1) && item.listID.Contains(id2))
+                            foreach (listFriends item in user.lists)
                             {
-                                idPairOfFriends = item._id;
-                                break;
+                                if (item.listID.Contains(id1) && item.listID.Contains(id2))
+                                {
+                                    idPairOfFriends = item._id;
+                                    break;
+                                }
                             }
                         }
                         if (!string.IsNullOrEmpty(idPairOfFriends))
@@ -46,12 +49,11 @@ namespace Chess_Game_Project.classes_handle
                             string apiPath = apiUpdaStatusFriend + idPairOfFriends;
                             var data = new { };
                             JToken tkData = await manageApi.callApiUsingMethodPut(data, apiPath);
-
-                            if (!string.IsNullOrEmpty(tkData.ToString()))
+                            if (tkData != null)
                             {
                                 string difUser = dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
                                 string difUserId = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                                string message = (int)manageChooseCases.setting.acceptFriend + "*" + difUser + ":" + user.id + "+" + user.userName;
+                                string message = (int)manageChooseCases.setting.acceptFriend + "*" + difUser + "+" + user.id + "+" + user.userName;
                                 handleChat.sendData(client, message);
                                 //xóa dòng đó khỏi dữ liệu
                                 dataGridView.Rows.RemoveAt(e.RowIndex);
@@ -135,7 +137,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi UserControlLists_dtAllUsers_cellContentClick1: " + ex.Message);
             }
         }
         public async static Task<userControlChatOne> cellClickContent_ListFriends(DataGridView sender, infoUser user, DataGridViewCellEventArgs e, string apiGetUserId, Form form, Panel pnlChatOne, userControlLists lists, Guna2Button btnListFriend, userControlChatOne chat, TcpClient client, string apiDeleteFriend)
@@ -230,7 +231,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi UserControlLists_dtListFriends_cellContentClick1: " + ex.Message);
                 return null;
             }
         }
@@ -300,7 +300,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Loi dtGridContainListRooms_CellContentClick: " + ex.Message);
             }
         }
     }
