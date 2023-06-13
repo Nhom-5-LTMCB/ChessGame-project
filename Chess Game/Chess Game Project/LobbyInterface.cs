@@ -49,7 +49,7 @@ namespace Chess_Game_Project
         #region infoUser
         private infoUser user;
         private string linkAvatar;
-        private string ipAddress = "172.20.50.47";
+        private string ipAddress = "192.168.95.136";
         private string myIpAddress = "";
         private string difUsernameUser = "";
         #endregion
@@ -335,6 +335,7 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
+                handleLogOutRoom();
                 MessageBox.Show("Không thể kết nối tới server, vui lòng kiểm tra lại mạng của bạn", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
                 Login.showFormAgain.Show();
@@ -556,9 +557,19 @@ namespace Chess_Game_Project
                             if (string.Equals(user.id, lst1[2])) //kiem tra xem neu chinh user do nhan duoc thong tin thi chi can thay the lai thong tin cu
                             {
                                 string preUserName = lst1[0];
-                                txtUserName.Text = lst1[1];
-                                ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + lst1[3]);
-                                ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                                Action myAction2 = () =>
+                                {
+                                    txtUserName.Text = lst1[1];
+                                    ptboxAvatar.Image = System.Drawing.Image.FromFile($"{parentDirectory}\\" + lst1[3]);
+                                    ptboxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+                                };
+
+                                // Sử dụng phương thức Invoke để thực thi đoạn mã trên luồng giao diện người dùng
+                                if (this.InvokeRequired)
+                                    this.Invoke(myAction2);
+                                else
+                                    myAction2();
+
 
                                 user.userName = lst1[1];
                                 user.linkAvatar = lst1[3];
@@ -653,11 +664,20 @@ namespace Chess_Game_Project
                         case 10:    //xu ly ket thuc phong dau
                             string[] lstMsgRcv = listMsg[1].Split('+');
                             this.user = JsonConvert.DeserializeObject<infoUser>(lstMsgRcv[1]);
+                            Action myAction1 = async () =>
+                            {
+                                await handleReloadList.reloadListRanks(apiGetUserId, apiGetAllUser, user, rank);
+                                await handleReloadList.reloadListHistories(apiGetUserId, user, history);
 
-                            await handleReloadList.reloadListRanks(apiGetUserId, apiGetAllUser, user, rank);
-                            await handleReloadList.reloadListHistories(apiGetUserId, user, history);
+                                txtScore.Text = user.point.ToString();
+                            };
 
-                            txtScore.Text = user.point.ToString();
+                            // Sử dụng phương thức Invoke để thực thi đoạn mã trên luồng giao diện người dùng
+                            if (this.InvokeRequired)
+                                this.Invoke(myAction1);
+                            else
+                                myAction1();
+                            
 
                             deleteRoom(lstMsgRcv[2]);
                             break;
@@ -669,6 +689,7 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show("Đã có lỗi xảy ra trong việc truyền dữ liệu, vui lòng đăng nhập lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Login.showFormAgain.Show();
                 await handleLogOutRoom();
@@ -688,7 +709,7 @@ namespace Chess_Game_Project
 
             //tiến hành gửi dữ liệu đi
             byte[] imageBytes = File.ReadAllBytes(path);
-            string message = (int)manageChooseCases.setting.chatMulti + "*" + user.userName + "(2):" + Convert.ToBase64String(imageBytes) + "," + user.linkAvatar;
+            string message = (int)manageChooseCases.setting.chatMulti + "*" + user.userName + "(2):" + Convert.ToBase64String(imageBytes) + ":" + user.linkAvatar;
             handleChat.sendData(client, message);
 
             handleChat.writeData(System.Drawing.Image.FromFile(path), user.linkAvatar, "", 2, user.userName, pnlMultiChatFrame, this, posY, user.userName, parentDirectory, null, pnlContainsIcon);

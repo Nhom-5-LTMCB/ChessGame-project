@@ -609,6 +609,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1444, 770);
             this.Controls.Add(this.pnlCoverPage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LobbyInterface";
             this.Text = "LobbyInterface";

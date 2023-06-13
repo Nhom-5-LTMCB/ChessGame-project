@@ -289,6 +289,7 @@ namespace Chess_Game_Project
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(1486, 751);
             this.Controls.Add(this.pnlContent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MatchInterface";
             this.Text = "MatchInterface";
             this.Load += new System.EventHandler(this.MatchInterface_Load);

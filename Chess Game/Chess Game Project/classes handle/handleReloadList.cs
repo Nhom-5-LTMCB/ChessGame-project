@@ -66,7 +66,6 @@ namespace Chess_Game_Project.classes_handle
                 user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
                 hanleDataIntoDatagridview.displayListRank(users, user, rank);
 
-                MessageBox.Show("Làm mới thành công");
             }
         }
         public async static Task reloadListHistories(string apiGetUserId, infoUser user, userControlHistory history)
@@ -77,7 +76,6 @@ namespace Chess_Game_Project.classes_handle
                 user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
                 await hanleDataIntoDatagridview.displayListHistoryMatch(user, history, apiGetUserId);
 
-                MessageBox.Show("Làm mới thành công");
             }
         }
     }
