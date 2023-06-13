@@ -965,14 +965,12 @@ namespace Chess_Game_Project
                     player1 = currentPlayer.id + '-' + "win",
                     player2 = difPlayer.id + '-' + "lose"
                 };
-                string jsonData = JsonConvert.SerializeObject(obj);
                 await manageApi.callApiUsingMethodPut(obj, apiResultMatch + matchId);
                 //cập nhật lại điểmm cho người thắng
                 await manageApi.callApiUsingMethodPut(new { point = currentPlayer.point + betPoint }, apiUpdateScore + currentPlayer.id);
                 //cập nhật lại điểm cho người thua
                 await manageApi.callApiUsingMethodPut(new { point = difPlayer.point - betPoint }, apiUpdateScore + difPlayer.id);
                 //thực hiện gửi dữ liệu xử lý thoát khỏi phòng
-                player.players = 1;
                 JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + currentPlayer.id);
                 if (tkData != null)
                 {
@@ -1038,7 +1036,7 @@ namespace Chess_Game_Project
                     {
                         canNotMove = true;
                         isChoose = false;
-                        MessageBox.Show("Vui lòng chọn 1 quân trắng để thay thế");
+                        MessageBox.Show("Vui lòng chọn 1 quân trắng để thay thế", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                     }
                     else
                     {
@@ -1587,6 +1585,7 @@ namespace Chess_Game_Project
         //==================================================================================================================================
 
         //============================================  CÁC SỰ KIỆN KHÁC ===================================================================
+        
         private async void btnOutRoom_Click(object sender, EventArgs e)
         {
             if (gameOver)
@@ -1599,7 +1598,7 @@ namespace Chess_Game_Project
 
 
                     //gửi sự kiện tới server 
-                    string message = (int)manageChooseCases.setting.finishedRoom + "*" + currentPlayer.userName + "+" + JsonConvert.SerializeObject(currentPlayer) + "+" + matchId;
+                    string message = (int)manageChooseCases.setting.finishedRoom + "*" + currentPlayer.userName + "+" + JsonConvert.SerializeObject(currentPlayer) + "+" + matchId + "+";
                     handleChat.sendData(currentTcpClient, message);
                     StopGame();
                     this.Close();
@@ -1620,13 +1619,12 @@ namespace Chess_Game_Project
                             player1 = difPlayer.id + '-' + "win",
                             player2 = currentPlayer.id + '-' + "lose"
                         };
-                        await manageApi.callApiUsingMethodPut(null, apiResultMatch + matchId);
+                        await manageApi.callApiUsingMethodPut(obj, apiResultMatch + matchId);
                         //cập nhật lại điểmm cho người thắng
                         await manageApi.callApiUsingMethodPut(new { point = difPlayer.point + betPoint }, apiUpdateScore + difPlayer.id);
                         //cập nhật lại điểm cho người thua
                         await manageApi.callApiUsingMethodPut(new { point = currentPlayer.point - betPoint }, apiUpdateScore + currentPlayer.id);
                         //thực hiện gửi dữ liệu xử lý thoát khỏi phòng
-
 
                         JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + currentPlayer.id);
                         if (tkData != null)
@@ -1663,6 +1661,10 @@ namespace Chess_Game_Project
             for (int i = 0; i < 8; i++)
                 for (int j = 0; j < 8; j++)
                     chessboard.PossibleMoves[i, j] = 0;
+
+            pnlChatClientFrame.Controls.Clear();
+            posY = 0;
+
             //kết thúc timer
             if (timer != null)
                 timer.Stop();

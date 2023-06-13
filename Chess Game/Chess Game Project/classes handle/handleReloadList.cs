@@ -56,7 +56,7 @@ namespace Chess_Game_Project.classes_handle
                 MessageBox.Show("Làm mới thành công");
             }
         }
-        public async static Task reloadListRanks(string apiGetUserId, string apiGetAllUser, infoUser user, userControlLists lists, userControlRanks rank)
+        public async static Task reloadListRanks(string apiGetUserId, string apiGetAllUser, infoUser user, userControlRanks rank)
         {
             JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + user.id);
             if (!string.IsNullOrEmpty(tkData.ToString()))
@@ -69,7 +69,7 @@ namespace Chess_Game_Project.classes_handle
                 MessageBox.Show("Làm mới thành công");
             }
         }
-        public async static Task reloadListHistories(string apiGetUserId, infoUser user, userControlLists lists, userControlHistory history)
+        public async static Task reloadListHistories(string apiGetUserId, infoUser user, userControlHistory history)
         {
             JToken tkData = await manageApi.callApiUsingGetMethodID(apiGetUserId + user.id);
             if (!string.IsNullOrEmpty(tkData.ToString()))

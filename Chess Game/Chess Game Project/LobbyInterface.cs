@@ -648,6 +648,10 @@ namespace Chess_Game_Project
                         case 10:    //xu ly ket thuc phong dau
                             string[] lstMsgRcv = listMsg[1].Split('+');
                             this.user = JsonConvert.DeserializeObject<infoUser>(lstMsgRcv[1]);
+
+                            await handleReloadList.reloadListRanks(apiGetUserId, apiGetAllUser, user, rank);
+                            await handleReloadList.reloadListHistories(apiGetUserId, user, history);
+
                             txtScore.Text = user.point.ToString();
 
                             deleteRoom(lstMsgRcv[2]);
@@ -660,9 +664,9 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
-                this.Close();
                 Login.showFormAgain.Show();
                 await handleLogOutRoom();
+                this.Close();
             }
         }
         private void btnSendIcon_Click(object sender, EventArgs e)
@@ -882,11 +886,11 @@ namespace Chess_Game_Project
         }
         private async void Rank_btnLoadListRank_click(object sender, EventArgs e)
         {
-            await handleReloadList.reloadListRanks(apiGetUserId, apiGetAllUser, user, userControlLists, rank);
+            await handleReloadList.reloadListRanks(apiGetUserId, apiGetAllUser, user, rank);
         }
         private async void History_btnLoadListHistory_click(object sender, EventArgs e)
         {
-            await handleReloadList.reloadListHistories(apiGetUserId, user, userControlLists, history);
+            await handleReloadList.reloadListHistories(apiGetUserId, user, history);
         }
         private async void btnRandomRoom_Click(object sender, EventArgs e)
         {
