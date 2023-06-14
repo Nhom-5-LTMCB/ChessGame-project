@@ -357,7 +357,6 @@ namespace Chess_Game_Project
                     if (length == 0) return;
                     string message = Encoding.UTF8.GetString(data, 0, length);
                     string decryptData = encryptAndDecryptData.DecryptMessage(message);
-                    MessageBox.Show(decryptData);
                     string[] listMsg = decryptData.Split('*');
                     switch (int.Parse(listMsg[0]))
                     {
