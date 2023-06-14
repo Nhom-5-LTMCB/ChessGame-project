@@ -1639,7 +1639,6 @@ namespace Chess_Game_Project
                         {
                             infoUser user = JsonConvert.DeserializeObject<infoUser>(tkData.ToString());
                             this.currentPlayer = user;
-                            MessageBox.Show(tkData.ToString());
                             //tạo lại giao diện mới
                             MessageBox.Show("Bạn đã thua", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
 

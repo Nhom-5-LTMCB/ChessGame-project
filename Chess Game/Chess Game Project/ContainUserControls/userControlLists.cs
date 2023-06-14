@@ -124,7 +124,6 @@ namespace Chess_Game_Project.ContainUserControls
                     DataGridViewCell cell = dtAllUsers.Rows[row].Cells["userName"];
                     if (string.Equals(cell.Value.ToString(), userName))
                     {
-                        MessageBox.Show(cell.Value.ToString() + "\t" + userName);
                         //lay ra cot ket ban
                         DataGridViewCell cellMakeFriend = dtAllUsers.Rows[row].Cells[3];
                         cellMakeFriend.Style = new DataGridViewCellStyle { Padding = new Padding(0, 0, 0, 0) };

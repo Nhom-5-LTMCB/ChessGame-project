@@ -83,7 +83,6 @@ namespace Chess_Game_Project.classes_handle
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 return null;
             }
         }

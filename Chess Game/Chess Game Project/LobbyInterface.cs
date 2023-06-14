@@ -357,6 +357,7 @@ namespace Chess_Game_Project
                     if (length == 0) return;
                     string message = Encoding.UTF8.GetString(data, 0, length);
                     string decryptData = encryptAndDecryptData.DecryptMessage(message);
+                    MessageBox.Show(decryptData);
                     string[] listMsg = decryptData.Split('*');
                     switch (int.Parse(listMsg[0]))
                     {
@@ -689,7 +690,6 @@ namespace Chess_Game_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 MessageBox.Show("Đã có lỗi xảy ra trong việc truyền dữ liệu, vui lòng đăng nhập lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Login.showFormAgain.Show();
                 await handleLogOutRoom();
@@ -957,7 +957,6 @@ namespace Chess_Game_Project
                         handleChat.sendData(client, message);
 
                         string ipServer = hanleDataIntoDatagridview.columnData[randomRowIndex].ToString();
-                        MessageBox.Show("Ket noi toi ip: " + ipServer);
                         MatchInterface player = new MatchInterface(myIpAddress, ipServer, idMatch, ipServer, false, false, 1, match.betPoints, difUser, user, client);  //chủ phòng sẽ là cờ trắng
                         player.Show();
 

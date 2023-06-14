@@ -219,9 +219,7 @@ namespace ServerChessGame
                             if (!string.Equals(username, preUsername))
                             {
                                 TcpClient currentTcpClient = (TcpClient)clients[preUsername];
-                                Console.WriteLine("Đã thay " + preUsername + "\t" + clients.Count);
                                 clients.Remove(preUsername);
-                                Console.WriteLine("Thành " + username + "\t" + clients.Count);
                                 clients.Add(username, currentTcpClient);
 
                                 Thread currentThread = (Thread)manageChatThread[preUsername];
